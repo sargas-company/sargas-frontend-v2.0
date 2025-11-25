@@ -1,4 +1,5 @@
 import { RootLayout } from './layout'
+import { IntroSection } from './components/IntroSection'
 import './index.css'
 
 function App() {
@@ -6,9 +7,9 @@ function App() {
   return (
     <>
       <RootLayout>
-        <div>
-          ...
-        </div>
+        <main className="flex-1">
+          <IntroSection />
+        </main>
       </RootLayout>
     </>
   )
