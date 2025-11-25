@@ -1,0 +1,102 @@
+import { motion } from "framer-motion";
+import { useEffect, useMemo, useState } from "react";
+import asset1 from "../../assets/asset_01.avif";
+import asset2 from "../../assets/asset_02.avif";
+
+const IMAGES = [asset1, asset2, asset2];
+
+function getItemHeightByWidth(width: number) {
+  if (width >= 1440) return 113;
+  if (width >= 810) return 77;
+  return 53;
+}
+
+export function VerticalMotionList() {
+  const [index, setIndex] = useState(0);
+  const [itemHeight, setItemHeight] = useState<number | null>(null);
+  const [instant, setInstant] = useState(false);
+
+  const items = useMemo(() => [...IMAGES, ...IMAGES], []);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      const w = window.innerWidth;
+      setItemHeight(getItemHeightByWidth(w));
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
+  useEffect(() => {
+    if (!itemHeight) return;
+
+    const id = setInterval(() => {
+      setIndex((prev) => {
+        if (prev >= IMAGES.length) return IMAGES.length;
+        return prev + 1;
+      });
+    }, 3000);
+
+    return () => clearInterval(id);
+  }, [itemHeight]);
+
+  const y = itemHeight ? -index * itemHeight : 0;
+
+  return (
+    <div
+      className="
+        relative overflow-hidden
+        shadow-xl bg-black/10
+        rounded-[16px] md:rounded-[24px] xl:rounded-[36px]
+        w-[69px] h-[53px] md:w-[102px] md:h-[78px] xl:w-[148px] xl:h-[113px]
+        rotate-[-2deg]
+        border-2 border-black
+      "
+      style={{
+        boxShadow:
+          ".565274px .565274px .799418px -.708333px #00000080,1.44525px 1.44525px 2.04389px -1.41667px #0000007a,2.89741px 2.89741px 4.09755px -2.125px #00000075,5.49248px 5.49248px 7.76754px -2.83333px #00000069,10.9174px 10.9174px 15.4395px -3.54167px #00000052,24px 24px 33.9411px -4.25px #00000017",
+      }}
+    >
+      <motion.ul
+        className="flex flex-col w-full"
+        animate={{ y }}
+        transition={
+          instant
+            ? { duration: 0 }
+            : {
+                type: "tween",
+                duration: 0.6,
+                ease: "easeInOut",
+              }
+        }
+        onAnimationComplete={() => {
+          if (index === IMAGES.length) {
+            setInstant(true);
+            setIndex(0);
+
+            requestAnimationFrame(() => {
+              setInstant(false);
+            });
+          }
+        }}
+      >
+        {items.map((src, i) => (
+          <li
+            key={i}
+            className="w-full h-[53px] md:h-[77px] xl:h-[113px] flex-shrink-0 relative"
+          >
+            <img
+              src={src}
+              alt=""
+              className="w-full h-full object-cover select-none"
+              draggable={false}
+              onDragStart={(e) => e.preventDefault()}
+            />
+          </li>
+        ))}
+      </motion.ul>
+    </div>
+  );
+}

@@ -1,4 +1,5 @@
 import { RootLayout } from './layout'
+import { HeroSection } from './components/HeroSection'
 import './index.css'
 
 function App() {
@@ -6,9 +7,9 @@ function App() {
   return (
     <>
       <RootLayout>
-        <div>
-          ...
-        </div>
+        <>
+          <HeroSection />
+        </>
       </RootLayout>
     </>
   )
