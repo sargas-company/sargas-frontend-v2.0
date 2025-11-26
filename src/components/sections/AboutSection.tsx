@@ -9,15 +9,6 @@ type MarqueeColumnProps = {
   delay?: number;
 };
 
-const marqueeTransition = (speed: number, delay: number) => ({
-  duration: speed,
-  ease: "linear",
-  repeat: Infinity,
-  repeatType: "loop" as const,
-  repeatDelay: 0,
-  delay,
-});
-
 const MarqueeColumn = ({
   images,
   reverse = false,
@@ -31,7 +22,12 @@ const MarqueeColumn = ({
       <motion.div
         className="flex flex-col gap-4"
         animate={{ y: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={marqueeTransition(speed, delay)}
+        transition={{duration: speed,
+            ease: "linear",
+            repeat: Infinity,
+            repeatType: "loop" as const,
+            repeatDelay: 0,
+            delay}}
       >
         {loopImages.map((src, index) => (
           <div
