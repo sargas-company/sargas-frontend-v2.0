@@ -1,15 +1,15 @@
-import type { ReactNode } from "react";
-import { Header } from "./components/layout/Header";
+import type { ReactNode } from 'react'
+import { Header } from './components/layout/Header'
 
 type RootLayoutProps = {
-  children: ReactNode;
-};
+	children: ReactNode
+}
 
 export function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <div className="px-6 md:px-12 xl:px-30 flex flex-col max-w-[1440px] mx-auto">
-      <Header />
-      {children}
-    </div>
-  );
+	return (
+		<div className='mx-auto flex max-w-[1440px] flex-col px-6 md:px-12 xl:px-30'>
+			<Header />
+			{children}
+		</div>
+	)
 }

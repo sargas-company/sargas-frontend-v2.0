@@ -1,31 +1,31 @@
 type Props = {
-  open: boolean;
-  onToggle: () => void;
-};
+	open: boolean
+	onToggle: () => void
+}
 
 export const HeaderMenuButton = ({ open, onToggle }: Props) => {
-  return (
-    <button
-      type="button"
-      onClick={onToggle}
-      className="inline-flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white cursor-pointer"
-    >
-      <span className="relative block w-4 h-2">
-        <span
-          className={[
-            "absolute left-0 top-0 h-px w-full bg-black rounded-full",
-            "transition-transform duration-300 ease-in-out",
-            open ? "translate-y-[3.5px] rotate-45" : "",
-          ].join(" ")}
-        />
-        <span
-          className={[
-            "absolute left-0 bottom-0 h-px w-full bg-black rounded-full",
-            "transition-transform duration-300 ease-in-out",
-            open ? "-translate-y-[3.5px] -rotate-45" : "",
-          ].join(" ")}
-        />
-      </span>
-    </button>
-  );
-};
+	return (
+		<button
+			type='button'
+			onClick={onToggle}
+			className='inline-flex h-[44px] w-[44px] cursor-pointer items-center justify-center rounded-full bg-white'
+		>
+			<span className='relative block h-2 w-4'>
+				<span
+					className={[
+						'absolute top-0 left-0 h-px w-full rounded-full bg-black',
+						'transition-transform duration-300 ease-in-out',
+						open ? 'translate-y-[3.5px] rotate-45' : '',
+					].join(' ')}
+				/>
+				<span
+					className={[
+						'absolute bottom-0 left-0 h-px w-full rounded-full bg-black',
+						'transition-transform duration-300 ease-in-out',
+						open ? '-translate-y-[3.5px] -rotate-45' : '',
+					].join(' ')}
+				/>
+			</span>
+		</button>
+	)
+}

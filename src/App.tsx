@@ -5,16 +5,16 @@ import './index.css'
 import { AboutSection } from './components/sections/AboutSection'
 
 function App() {
-  return (
-    <div className="relative min-h-screen overflow-hidden">
-      <Background />
+	return (
+		<div className='relative min-h-screen overflow-hidden'>
+			<Background />
 
-      <RootLayout>
-        <HeroSection />
-        <AboutSection />
-      </RootLayout>
-    </div>
-  )
+			<RootLayout>
+				<HeroSection />
+				<AboutSection />
+			</RootLayout>
+		</div>
+	)
 }
 
 export default App
