@@ -2,7 +2,7 @@ import { RootLayout } from './layout'
 import { HeroSection } from './components/HeroSection'
 import { Background } from './components/layout/Background'
 import './index.css'
-import {AboutSection} from './components/AboutSection.tsx'
+import { AboutSection } from './components/sections/AboutSection'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
 
       <RootLayout>
         <HeroSection />
-          <AboutSection />
+        <AboutSection />
       </RootLayout>
     </div>
   )
