@@ -86,42 +86,62 @@ const asset4 = (
 
 const IMAGES = [asset1, asset2, asset3, asset4];
 
-export function HorizontalMotionList() {
+export const HorizontalMotionList = () => {
   const items = [...IMAGES, ...IMAGES];
 
   return (
-    <div
+    <motion.div
+      initial={{ y: -60, x: 30, rotate: 8, opacity: 0 }}
+      animate={{ y: 0, x: 0, rotate: 2, opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 35,
+        damping: 16,
+        mass: 0.8,
+        delay: 0,
+      }}
       className="
         relative overflow-hidden
-        shadow-xl bg-black/10
+        shadow-xl
         rounded-[16px] md:rounded-[24px] xl:rounded-[36px]
         w-[69px] h-[53px] md:w-[102px] md:h-[78px] xl:w-[148px] xl:h-[113px]
-        rotate-[2deg]
-        border-2 border-black
+        border-2 border-black bg-[#262626]
       "
       style={{
         boxShadow:
           ".565274px .565274px .799418px -.708333px #00000080,1.44525px 1.44525px 2.04389px -1.41667px #0000007a,2.89741px 2.89741px 4.09755px -2.125px #00000075,5.49248px 5.49248px 7.76754px -2.83333px #00000069,10.9174px 10.9174px 15.4395px -3.54167px #00000052,24px 24px 33.9411px -4.25px #00000017",
       }}
     >
-      <motion.ul
-        className="flex h-full w-max items-center bg-[#262626]"
-        animate={{ x: ["0%", "-50%"] }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear",
+          type: "tween",
+          duration: 0.4,
+          delay: 1,
         }}
+        className="h-full w-full"
       >
-        {items.map((icon, i) => (
-          <li
-            key={i}
-            className="flex items-center justify-center h-full px-6 flex-shrink-0 bg-[#262626]"
-          >
-            {icon}
-          </li>
-        ))}
-      </motion.ul>
-    </div>
+        <motion.ul
+          className="flex h-full w-max items-center bg-[#262626]"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 2,
+          }}
+        >
+          {items.map((icon, i) => (
+            <li
+              key={i}
+              className="flex items-center justify-center h-full px-6 flex-shrink-0 bg-[#262626]"
+            >
+              {icon}
+            </li>
+          ))}
+        </motion.ul>
+      </motion.div>
+    </motion.div>
   );
-}
+};
