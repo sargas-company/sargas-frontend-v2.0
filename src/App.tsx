@@ -1,17 +1,19 @@
 import { RootLayout } from './layout'
-import {AboutSection} from './components/AboutSection.tsx'
+import { HeroSection } from './components/HeroSection'
+import { Background } from './components/layout/Background'
 import './index.css'
+import {AboutSection} from './components/AboutSection.tsx'
 
 function App() {
-
   return (
-    <>
+    <div className="relative min-h-screen overflow-hidden">
+      <Background />
+
       <RootLayout>
-        <main className="flex-1">
+        <HeroSection />
           <AboutSection />
-        </main>
       </RootLayout>
-    </>
+    </div>
   )
 }
 

@@ -7,8 +7,8 @@ type RootLayoutProps = {
 
 export function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col px-6 md:px-12">
-        <Header />
+    <div className="px-6 md:px-12 xl:px-30 flex flex-col max-w-[1440px] mx-auto">
+      <Header />
       {children}
     </div>
   );

@@ -1,12 +1,13 @@
-import { useState } from "react";
+type Props = {
+  open: boolean;
+  onToggle: () => void;
+};
 
-export const HeaderMenuButton = () => {
-  const [open, setOpen] = useState(false);
-
+export const HeaderMenuButton = ({ open, onToggle }: Props) => {
   return (
     <button
       type="button"
-      onClick={() => setOpen((prev) => !prev)}
+      onClick={onToggle}
       className="inline-flex items-center justify-center w-[44px] h-[44px] rounded-full bg-white cursor-pointer"
     >
       <span className="relative block w-4 h-2">
