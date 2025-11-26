@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { RecentWorkButton } from "./RecentWorkButton";
 
 type MarqueeColumnProps = {
   images: string[];
@@ -83,39 +84,12 @@ export const IntroSection = () => {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/28 via-transparent to-transparent" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
 
-          <motion.div
+          <div
             className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="relative flex h-16 w-16 items-center justify-center rounded-full border border-black/10 bg-white/85 shadow-[0_14px_36px_rgba(0,0,0,0.3)] backdrop-blur"
-            >
-              <div className="absolute -top-10 left-1/2 flex -translate-x-1/2 rotate-[-17deg] items-center">
-                <div className="absolute inset-0 translate-y-1 scale-110 rounded-full bg-yellow-300/85 blur-[1px]" />
-                <div className="relative rounded-full bg-black px-3 py-1 text-xs font-semibold text-white shadow-[0_10px_22px_rgba(0,0,0,0.35)]">
-                  See Recent Work.
-                </div>
-              </div>
 
-              <span className="absolute inset-0 rounded-full border border-white/60" />
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 256 256"
-                  className="h-6 w-6"
-                  aria-hidden
-                >
-                  <g>
-                    <path d="M216,72H131.31L104,44.69A15.88,15.88,0,0,0,92.69,40H40A16,16,0,0,0,24,56V200.62A15.41,15.41,0,0,0,39.39,216h177.5A15.13,15.13,0,0,0,232,200.89V88A16,16,0,0,0,216,72ZM40,56H92.69l16,16H40Z" />
-                  </g>
-                </svg>
-              </div>
-            </motion.div>
-          </motion.div>
+          >
+            <RecentWorkButton />
+          </div>
         </div>
       </motion.div>
     </section>
