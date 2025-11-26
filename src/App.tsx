@@ -1,5 +1,5 @@
 import { RootLayout } from './layout'
-import { IntroSection } from './components/IntroSection'
+import {AboutSection} from './components/AboutSection.tsx'
 import './index.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <RootLayout>
         <main className="flex-1">
-          <IntroSection />
+          <AboutSection />
         </main>
       </RootLayout>
     </>
