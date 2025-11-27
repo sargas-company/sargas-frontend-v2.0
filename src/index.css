@@ -1,4 +1,5 @@
 @import 'https://fonts.googleapis.com/css2?family=Inter+Display:wght@100..900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap';
 @import 'tailwindcss';
 
 @theme {
@@ -13,6 +14,7 @@
 	--breakpoint-3xl: 1920px;
 
 	--font-inter: 'Inter Display', system-ui, sans-serif;
+	--font-serif: 'Instrument Serif', 'Instrument Serif Placeholder', serif;
 }
 
 :root {
