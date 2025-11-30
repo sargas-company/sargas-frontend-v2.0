@@ -1,5 +1,6 @@
 import { RootLayout } from './layout'
 import { HeroSection } from './components/HeroSection'
+import { IntroTextSection } from './components/IntroTextSection'
 import { Background } from './components/layout/Background'
 import './index.css'
 import { AboutSection } from './components/sections/AboutSection'
@@ -13,7 +14,9 @@ function App() {
 			<RootLayout>
 				<HeroSection />
 				<AboutSection />
+        		<IntroTextSection />
 				<ProcessSection />
+				<div className='h-[1000px]'>s</div>
 			</RootLayout>
 		</div>
 	)
