@@ -63,6 +63,7 @@ export const FooterSection = () => {
 	}, [viewportHeight])
 
 	const contentY = useTransform(scrollYProgress, [0, 1], [-360, endOffset])
+	const contentOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1])
 	return (
 		<section
 			ref={sectionRef}
@@ -75,7 +76,7 @@ export const FooterSection = () => {
 				<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_10%_10%,rgba(255,255,255,0.12),transparent_45%),radial-gradient(120%_120%_at_80%_20%,rgba(255,255,255,0.06),transparent_50%),linear-gradient(120deg,rgba(255,255,255,0.18),transparent_32%)] opacity-70' />
 
 				<motion.div
-					style={{ y: contentY }}
+					style={{ y: contentY, opacity: contentOpacity }}
 					className='relative flex min-h-[90vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[75vh] md:px-16 md:py-16'
 				>
 					<div className='mt-4 space-y-6 md:mt-2'>
