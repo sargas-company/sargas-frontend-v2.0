@@ -1,9 +1,23 @@
 import noiseImage from '../../assets/noise.webp'
 
-export const Background = () => {
+type BackgroundProps = {
+	variant?: 'global' | 'section'
+}
+
+export const Background = ({ variant = 'global' }: BackgroundProps) => {
+	const noiseClass =
+		variant === 'section'
+			? 'pointer-events-none absolute inset-0 z-0 opacity-[0.04]'
+			: 'pointer-events-none fixed inset-x-0 top-1/2 z-0 h-screen -translate-y-1/2 opacity-[0.04]'
+
+	const streakClass =
+		variant === 'section'
+			? 'pointer-events-none absolute inset-0 -z-10 overflow-hidden'
+			: 'pointer-events-none absolute inset-0 -z-10 h-[200vh] overflow-hidden'
+
 	return (
 		<>
-			<div className='pointer-events-none fixed inset-x-0 top-1/2 z-0 h-screen -translate-y-1/2 opacity-[0.04]'>
+			<div className={noiseClass}>
 				<div
 					className='absolute inset-0'
 					style={{
@@ -17,7 +31,7 @@ export const Background = () => {
 				/>
 			</div>
 			<div
-				className='pointer-events-none absolute inset-0 -z-10 h-[200vh] overflow-hidden'
+				className={streakClass}
 				style={{
 					background: 'linear-gradient(225deg, #ffffff 0%, #dbdbdb 100%)',
 					WebkitMask:
