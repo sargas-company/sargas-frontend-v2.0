@@ -4,7 +4,7 @@ import { CommentsSection } from './CommentsSection.tsx'
 
 const ProcessSection = () => {
 	return (
-		<section className='py-16'>
+		<section className='pb-16'>
 			<div className='flex w-full items-center justify-center'>
 				<SectionTitle
 					title='
