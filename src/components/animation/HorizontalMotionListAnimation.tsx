@@ -65,7 +65,7 @@ const asset4 = (
 
 const IMAGES = [asset1, asset2, asset3, asset4]
 
-export const HorizontalMotionList = () => {
+export const HorizontalMotionListAnimation = () => {
 	const items = [...IMAGES, ...IMAGES]
 
 	return (

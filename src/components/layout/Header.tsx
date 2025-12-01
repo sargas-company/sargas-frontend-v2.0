@@ -2,9 +2,13 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { HeaderMenuButton } from './HeaderMenuButton'
 import { HeaderDropdown } from './HeaderDropdown'
+import { Link, useLocation } from 'react-router-dom'
 
 export const Header = () => {
 	const [open, setOpen] = useState(false)
+	const location = useLocation()
+
+	const isHome = location.pathname === '/'
 
 	return (
 		<motion.header
@@ -19,9 +23,15 @@ export const Header = () => {
 			}}
 		>
 			<div className='mx-auto flex h-full max-w-[1440px] items-center justify-between'>
-				<a href='#' className='rounded-[22px] bg-white px-6 py-2.5 text-black'>
-					<strong>Hanzo</strong>
-				</a>
+				{isHome ? (
+					<Link to='/' className='rounded-[22px] bg-white px-6 py-2.5 text-black'>
+						<strong>Hanzo</strong>
+					</Link>
+				) : (
+					<Link to='/' className='rounded-[22px] bg-white px-6 py-2.5 text-black'>
+						<strong>← Back</strong>
+					</Link>
+				)}
 
 				<div className='relative'>
 					<HeaderMenuButton open={open} onToggle={() => setOpen((v) => !v)} />

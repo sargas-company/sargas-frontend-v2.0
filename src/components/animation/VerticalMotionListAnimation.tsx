@@ -11,7 +11,7 @@ function getItemHeightByWidth(width: number) {
 	return 53
 }
 
-export const VerticalMotionList = () => {
+export const VerticalMotionListAnimation = () => {
 	const [index, setIndex] = useState(0)
 	const [itemHeight, setItemHeight] = useState<number | null>(null)
 	const [instant, setInstant] = useState(false)

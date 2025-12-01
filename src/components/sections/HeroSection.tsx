@@ -1,8 +1,9 @@
-import { VerticalMotionList } from './ui/VerticalMotionList'
-import { HorizontalMotionList } from './ui/HorizontalMotionList'
-import { HeroSectionButton } from './ui/HeroSectionButton'
+import { VerticalMotionListAnimation } from '../animation/VerticalMotionListAnimation'
+import { HorizontalMotionListAnimation } from '../animation/HorizontalMotionListAnimation'
+import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { motion } from 'framer-motion'
-import { HeroSectionLetterAnimation } from './animation/HeroSectionLetterAnimation'
+import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
+import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
 
 export const HeroSection = () => {
 	return (
@@ -44,7 +45,7 @@ export const HeroSection = () => {
 						</h1>
 					</div>
 					<div>
-						<VerticalMotionList />
+						<VerticalMotionListAnimation />
 					</div>
 					<div>
 						<h1>
@@ -70,7 +71,7 @@ export const HeroSection = () => {
 						<h1>
 							<strong>
 								<span className='text-[44px] leading-[1.25em] font-normal tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
-									{'For'.split('').map((letter, index) => {
+									{'for'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
 												initialDelay={1.2}
@@ -87,7 +88,7 @@ export const HeroSection = () => {
 						</h1>
 					</div>
 					<div>
-						<HorizontalMotionList />
+						<HorizontalMotionListAnimation />
 					</div>
 					<div>
 						<h1>
@@ -137,7 +138,7 @@ export const HeroSection = () => {
 				}}
 				className='flex flex-wrap justify-center gap-2 gap-4'
 			>
-				<HeroSectionButton />
+				<HeroSectionButton title='Choose your plan' icon={<ArrowRightIcon />} withOutline />
 				<div className='flex flex-col justify-center gap-0.5'>
 					<div className='flex'>
 						<img
