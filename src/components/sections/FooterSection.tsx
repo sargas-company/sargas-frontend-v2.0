@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Background } from '../layout/Background'
 import { XIcon } from '../ui/icons/XIcon'
@@ -34,6 +34,19 @@ const socialLinks: SocialLink[] = [
 	},
 ]
 
+const useViewportHeight = () => {
+	const [height, setHeight] = useState<number | null>(null)
+
+	useEffect(() => {
+		const handleResize = () => setHeight(window.innerHeight)
+		handleResize()
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
+	return height
+}
+
 export const FooterSection = () => {
 	const sectionRef = useRef<HTMLDivElement | null>(null)
 	const { scrollYProgress } = useScroll({
@@ -41,13 +54,21 @@ export const FooterSection = () => {
 		offset: ['start end', 'end start'],
 	})
 
-	const contentY = useTransform(scrollYProgress, [0, 1], [-360, 1160])
+	const viewportHeight = useViewportHeight()
+
+	const endOffset = useMemo(() => {
+		if (!viewportHeight) return 1160
+		const computed = 0.857 * viewportHeight - 91.3
+		return Math.min(1760, Math.max(680, computed))
+	}, [viewportHeight])
+
+	const contentY = useTransform(scrollYProgress, [0, 1], [-360, endOffset])
 	return (
 		<section
 			ref={sectionRef}
-			className='relative isolate w-screen -mx-[calc(50vw-50%)] min-h-screen px-4 py-12 text-white md:px-8 md:py-16'
+			className='relative isolate w-screen -mx-[calc(50vw-50%)] min-h-screen max-h-[100vh] h-[100vh] px-2 py-2 text-white md:px-2 md:py-2'
 		>
-			<div className='relative mx-auto w-full max-w-[1600px] overflow-hidden rounded-[36px] border-8 border-neutral-200/70 bg-black'>
+			<div className='relative mx-auto w-full h-full max-w-[100vw] max-h-[100vh] overflow-hidden rounded-[25px] bg-black md:max-w-[100vw]  md:max-h-[100vh] '>
 				<div className='pointer-events-none absolute inset-0 -z-10 opacity-40'>
 					<Background variant='section' />
 				</div>
@@ -55,7 +76,7 @@ export const FooterSection = () => {
 
 				<motion.div
 					style={{ y: contentY }}
-					className='relative flex min-h-[70vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[75vh] md:px-16 md:py-16'
+					className='relative flex min-h-[90vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[75vh] md:px-16 md:py-16'
 				>
 					<div className='mt-4 space-y-6 md:mt-2'>
 						<div className='flex items-center justify-center gap-4 text-sm font-medium text-white/60 md:text-base'>
