@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { SectionTitle } from '../ui/SectionTitle'
-import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { FAQPlusIcon } from '../ui/icons/FAQPlusIcon.tsx'
 import { motion } from 'framer-motion'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon.tsx'
+import { HeroSectionButton } from '../ui/HeroSectionButton.tsx'
 
 type FAQItem = {
 	question: string
@@ -117,8 +117,8 @@ const FAQSection: React.FC = () => {
 						className='mx-auto w-full max-w-[600px] lg:max-w-[500px]'
 					>
 						<div className='rounded-2xl bg-[#e8e8e8] p-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] md:p-8'>
-							<div className='flex items-center gap-4'>
-								<div className='h-[64px] w-[64px] overflow-hidden rounded-full bg-black/10 shadow-[0_12px_18px_rgba(0,0,0,0.25)]'>
+							<div className='flex items-center gap-6'>
+								<div className='h-[82px] w-[82px] overflow-hidden rounded-full shadow-[0_0_0_8px_#ffffff40,12px_16px_16px_#0000001a]'>
 									<img
 										src='https://framerusercontent.com/images/zRVCa2eOgJIf1mJK5PYcBLrYI.png?width=512'
 										alt='Portrait'
@@ -127,10 +127,10 @@ const FAQSection: React.FC = () => {
 								</div>
 
 								<div className='flex flex-col leading-tight'>
-									<p className='text-[16px] leading-[1.6] tracking-[-0.02em] text-black'>
+									<p className='text-[22px] leading-[1.7] font-medium tracking-[-0.02em] text-black'>
 										Have more questions?
 									</p>
-									<p className='text-[16px] leading-[1.6] tracking-[-0.02em] text-black'>
+									<p className='text-[22px] leading-[1.7] font-medium tracking-[-0.02em] text-black'>
 										Book a free discovery call
 									</p>
 								</div>
@@ -140,11 +140,12 @@ const FAQSection: React.FC = () => {
 								<HeroSectionButton
 									title='Book a Discovery Call'
 									icon={<ArrowRightIcon />}
-									withOutline={false}
+									withOutline={true}
+									fullWidth={true}
 								/>
 							</div>
 
-							<p className='text-center mt-6 text-[13px] leading-[1.7] text-black/55'>
+							<p className='mt-6 text-center text-[13px] leading-[1.7] text-black/55'>
 								Or, email me at{' '}
 								<a
 									href='mailto:joris@hanzo.com'
@@ -155,7 +156,6 @@ const FAQSection: React.FC = () => {
 							</p>
 						</div>
 					</motion.figure>
-
 
 					<div className='w-full lg:flex-1'>
 						<div className='border-t border-black/10'>

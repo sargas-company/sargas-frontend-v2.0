@@ -4,9 +4,10 @@ type HeroSectionButtonProps = {
 	title: string
 	icon: ReactNode
 	withOutline?: boolean
+	fullWidth?: boolean
 }
 
-export const HeroSectionButton = ({ title, icon, withOutline }: HeroSectionButtonProps) => {
+export const HeroSectionButton = ({ title, icon, withOutline, fullWidth=false }: HeroSectionButtonProps) => {
 	const [hovered, setHovered] = useState(false)
 
 	const baseShadow = `
@@ -21,9 +22,10 @@ export const HeroSectionButton = ({ title, icon, withOutline }: HeroSectionButto
     inset -10px 0 10px -45px rgba(255,255,255,0.7)
   `
 
+	const isFullWidth = fullWidth && 'w-full'
 	return (
 		<div
-			className={`inline-flex items-center justify-center overflow-hidden rounded-[33px] ${withOutline ? 'grow bg-white/50 p-2 md:grow-0' : 'grow-0 p-0'}`}
+			className={`${isFullWidth} inline-flex items-center justify-center overflow-hidden rounded-[33px] ${withOutline ? 'grow bg-white/50 p-2 md:grow-0' : 'grow-0 p-0'}`}
 		>
 			<a
 				href='#'
