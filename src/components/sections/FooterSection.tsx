@@ -41,10 +41,13 @@ export const FooterSection = () => {
 		offset: ['start end', 'end start'],
 	})
 
-	const contentY = useTransform(scrollYProgress, [0, 1], [-60, 60])
+	const contentY = useTransform(scrollYProgress, [0, 1], [-360, 1160])
 	return (
-		<section ref={sectionRef} className='relative isolate w-full px-4 py-12 text-white md:py-16'>
-			<div className='relative mx-auto w-full max-w-6xl overflow-hidden rounded-[36px] border-8 border-neutral-200/70 bg-black'>
+		<section
+			ref={sectionRef}
+			className='relative isolate w-screen -mx-[calc(50vw-50%)] min-h-screen px-4 py-12 text-white md:px-8 md:py-16'
+		>
+			<div className='relative mx-auto w-full max-w-[1600px] overflow-hidden rounded-[36px] border-8 border-neutral-200/70 bg-black'>
 				<div className='pointer-events-none absolute inset-0 -z-10 opacity-40'>
 					<Background variant='section' />
 				</div>
@@ -52,7 +55,7 @@ export const FooterSection = () => {
 
 				<motion.div
 					style={{ y: contentY }}
-					className='relative flex min-h-[540px] flex-col justify-between gap-8 px-6 py-10 text-center md:min-h-[620px] md:px-16 md:py-14 lg:py-16'
+					className='relative flex min-h-[70vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[75vh] md:px-16 md:py-16'
 				>
 					<div className='mt-4 space-y-6 md:mt-2'>
 						<div className='flex items-center justify-center gap-4 text-sm font-medium text-white/60 md:text-base'>
@@ -70,29 +73,30 @@ export const FooterSection = () => {
 								or just for chatting.
 							</p>
 						</div>
-					</div>
-
-					<div className='flex flex-col items-center gap-10'>
-						<button className='group relative inline-flex items-center justify-center rounded-full bg-neutral-700/70 px-3 py-2 shadow-[0_12px_38px_rgba(0,0,0,0.35)] backdrop-blur transition hover:bg-neutral-600/70'>
+						<div className='flex flex-col items-center gap-10'>
+							<button className='group relative inline-flex items-center justify-center rounded-full bg-neutral-700/70 px-3 py-2 shadow-[0_12px_38px_rgba(0,0,0,0.35)] backdrop-blur transition hover:bg-neutral-600/70'>
 							<span className='inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition duration-300 group-hover:-translate-y-0.5 md:px-7 md:py-3.5 md:text-base'>
 								Book a free intro call
 								<span className='inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-sm font-semibold text-black'>
 									→
 								</span>
 							</span>
-						</button>
+							</button>
 
-						<div className='flex flex-col items-center gap-4 text-sm text-white/70'>
-							<div className='flex items-center gap-3'>
-								<span className='h-px w-16 bg-white/20 md:w-20' />
-								<span className='whitespace-nowrap'>© Hanzo Studio, 2025</span>
-								<span className='h-px w-16 bg-white/20 md:w-20' />
+							<div className='flex flex-col items-center gap-4 text-sm text-white/70'>
+								<div className='flex items-center gap-3'>
+									<span className='h-px w-16 bg-white/20 md:w-20' />
+									<span className='whitespace-nowrap'>© Hanzo Studio, 2025</span>
+									<span className='h-px w-16 bg-white/20 md:w-20' />
+								</div>
 							</div>
 						</div>
 					</div>
+
+
 				</motion.div>
 
-				<div className='relative z-10 flex items-center justify-center pb-8'>
+				<div className='relative z-10 flex items-center justify-center pb-10 pt-2'>
 					<div className='flex items-center gap-3 md:gap-4'>
 						{socialLinks.map((item) => (
 							<a
