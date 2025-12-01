@@ -3,6 +3,7 @@ import { IntroTextSection } from '../components/sections/IntroTextSection'
 import { AboutSection } from '../components/sections/AboutSection'
 import { BenefitsSection } from '../components/sections/BenefitsSection'
 import ProcessSection from '../components/sections/ProcessSection.tsx'
+import ProjectsSection from '../components/sections/ProjectsSection.tsx'
 
 export const HomePage = () => {
 	return (
@@ -12,6 +13,7 @@ export const HomePage = () => {
 			<IntroTextSection />
 			<ProcessSection />
 			<BenefitsSection />
+			<ProjectsSection />
 		</>
 	)
 }
