@@ -20,6 +20,15 @@ export const Background = ({ variant = 'global' }: BackgroundProps) => {
 			? 'linear-gradient(225deg, #2f2f2f 0%, #0f0f0f 100%)'
 			: 'linear-gradient(225deg, #ffffff 0%, #dbdbdb 100%)'
 
+	// const streakMask =
+	// 	variant === 'section'
+	// 		? 'linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 22%, rgba(255,255,255,0.2) 45%, rgba(255,255,255,0) 60%)'
+	// 		: 'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)'
+const streakMask =
+		variant === 'section'
+			? 'linear-gradient(165deg, #fff 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0) 100%)'
+			: 'radial-gradient(90% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)'
+
 	return (
 		<>
 			<div className={noiseClass}>
@@ -39,14 +48,8 @@ export const Background = ({ variant = 'global' }: BackgroundProps) => {
 				className={streakClass}
 				style={{
 					background: baseGradient,
-					WebkitMask:
-						variant === 'section'
-							? undefined
-							: 'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)',
-					mask:
-						variant === 'section'
-							? undefined
-							: 'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)',
+					WebkitMask: streakMask,
+					mask: streakMask,
 				}}
 			>
 				<div
