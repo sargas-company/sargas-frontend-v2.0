@@ -69,7 +69,7 @@ const ExperienceRow: React.FC<ExperienceItem> = ({ role, company, period }) => (
 )
 const ProjectsSection: React.FC = () => {
 	return (
-		<section className='relative w-full'>
+		<section className='relative w-full' id='about'>
 			<div className='mx-auto flex w-full max-w-[1600px] flex-col items-center gap-8 py-10 md:gap-10 md:py-16 lg:gap-14 lg:py-20'>
 				<div className='flex flex-col items-center gap-2.5 text-center'>
 					<SectionTitle title='Our Projects' />

@@ -4,15 +4,15 @@ import { CommentsSection } from './CommentsSection.tsx'
 
 const ProcessSection = () => {
 	return (
-		<section className='pb-16'>
+		<section className='pb-16' id='process'>
 			<div className='flex flex-col items-center gap-2.5'>
 				<SectionTitle title='Our Process, Explained!' />
-				<h2 className='text-[28px] leading-[1.4] tracking-[-0.04em] break-words whitespace-pre-wrap md:text-[48px] mb-15'>
+				<h2 className='mb-15 text-[28px] leading-[1.4] tracking-[-0.04em] break-words whitespace-pre-wrap md:text-[48px]'>
 					Here's how it works
 				</h2>
 			</div>
 
-			<div className='relative box-border flex h-min w-full flex-none flex-row items-start justify-center gap-6 overflow-visible p-0 font-sans text-[12px] mb-5'>
+			<div className='relative mb-5 box-border flex h-min w-full flex-none flex-row items-start justify-center gap-6 overflow-visible p-0 font-sans text-[12px]'>
 				<motion.div
 					initial={{ x: '100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
 					whileInView={{ x: 0, y: 0, rotate: -5, opacity: 1, zIndex: 1 }}
@@ -98,4 +98,3 @@ const ProcessSection = () => {
 }
 
 export default ProcessSection
-

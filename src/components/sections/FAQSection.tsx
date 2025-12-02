@@ -98,7 +98,7 @@ const FAQRow: React.FC<FAQRowProps> = ({ item, defaultOpen = false }) => {
 
 const FAQSection: React.FC = () => {
 	return (
-		<section className='relative w-full'>
+		<section className='relative w-full' id='faq'>
 			<div className='mx-auto flex w-full max-w-[1600px] flex-col gap-10 px-4 py-10 md:px-8 md:py-16 lg:gap-14 lg:px-12 lg:py-20'>
 				{/* Заголовок */}
 				<div className='flex flex-col items-center gap-2.5 text-center'>

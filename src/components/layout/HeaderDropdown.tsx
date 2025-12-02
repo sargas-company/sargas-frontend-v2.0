@@ -10,27 +10,27 @@ type Props = {
 const menuOptions = [
 	{
 		title: 'Process',
-		link: '#',
+		link: '/#process',
 	},
 	{
 		title: 'Work',
-		link: '#',
+		link: '/#work',
 	},
 	{
 		title: 'About',
-		link: '#',
+		link: '/#about',
 	},
 	{
 		title: 'Pricing',
-		link: '#',
+		link: '/#pricing',
 	},
 	{
 		title: 'FAQ',
-		link: '#',
+		link: '/#faq',
 	},
 	{
 		title: 'Contact',
-		link: '#',
+		link: '/#cta',
 	},
 	{
 		title: 'Get Template',

@@ -73,13 +73,16 @@ export const FooterSection = () => {
 		<section
 			ref={sectionRef}
 			className='relative isolate -mx-[calc(50vw-50%)] h-[100vh] max-h-[100vh] min-h-screen w-screen px-2 py-2 text-white md:px-2 md:py-2'
+			id='cta'
 		>
-
 			<div className='relative mx-auto h-full max-h-[100vh] w-full max-w-[100vw] overflow-hidden rounded-[25px] bg-black md:max-h-[100vh] md:max-w-[100vw]'>
 				<div className='pointer-events-none absolute inset-0 z-0 opacity-8 mix-blend-screen'>
 					<Background variant='section' />
 				</div>
-				<div className='pointer-events-none absolute inset-0 z-10 opacity-5 mix-blend-screen' style={{ backgroundImage: `url(${noiseImage})`, backgroundSize: '220px' }} />
+				<div
+					className='pointer-events-none absolute inset-0 z-10 opacity-5 mix-blend-screen'
+					style={{ backgroundImage: `url(${noiseImage})`, backgroundSize: '220px' }}
+				/>
 				<div className='pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(140%_160%_at_15%_15%,rgba(255,255,255,0.22),transparent_45%),radial-gradient(130%_130%_at_82%_18%,rgba(255,255,255,0.12),transparent_52%),linear-gradient(120deg,rgba(255,255,255,0.18),transparent_42%)] opacity-35 mix-blend-screen' />
 
 				<motion.div
@@ -110,11 +113,15 @@ export const FooterSection = () => {
 							</div>
 						</div>
 
-						<HeroSectionButton title='	Book a free intro call' icon={<ArrowRightIcon />} withOutline />
+						<HeroSectionButton
+							title='	Book a free intro call'
+							icon={<ArrowRightIcon />}
+							withOutline
+						/>
 					</div>
 				</motion.div>
 
-				<div className='relative z-10 flex flex-col gap-5 items-center justify-between pt-2 pb-10 md:px-35 md:flex-row'>
+				<div className='relative z-10 flex flex-col items-center justify-between gap-5 pt-2 pb-10 md:flex-row md:px-35'>
 					<div className='flex flex-col items-center gap-1 text-sm text-white/70 md:gap-3.5'>
 						<span className='h-[0.5px] w-full bg-white' />
 						<span className='px-4 whitespace-nowrap text-white'>© Hanzo Studio, 2025</span>
