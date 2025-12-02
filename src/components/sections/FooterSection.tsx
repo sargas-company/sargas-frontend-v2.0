@@ -4,6 +4,8 @@ import { Background } from '../layout/Background'
 import { XIcon } from '../ui/icons/XIcon'
 import { LinkedInIcon } from '../ui/icons/LinkedInIcon'
 import { InstagramIcon } from '../ui/icons/InstagramIcon'
+import { SectionTitle } from '../ui/SectionTitle.tsx'
+import { IconAt } from '../ui/icons/IconAtю.tsx'
 
 type SocialLink = {
 	label: string
@@ -15,7 +17,7 @@ const socialLinks: SocialLink[] = [
 	{
 		label: 'Email',
 		href: 'mailto:hello@hanzostudio.com',
-		render: (className: string) => <span className={`text-lg font-semibold ${className}`}>@</span>,
+		render: (className: string) => <IconAt className={className} size={18} color={'white'} />,
 	},
 	{
 		label: 'X',
@@ -67,9 +69,9 @@ export const FooterSection = () => {
 	return (
 		<section
 			ref={sectionRef}
-			className='relative isolate w-screen -mx-[calc(50vw-50%)] min-h-screen max-h-[100vh] h-[100vh] px-2 py-2 text-white md:px-2 md:py-2'
+			className='relative isolate -mx-[calc(50vw-50%)] h-[100vh] max-h-[100vh] min-h-screen w-screen px-2 py-2 text-white md:px-2 md:py-2'
 		>
-			<div className='relative mx-auto w-full h-full max-w-[100vw] max-h-[100vh] overflow-hidden rounded-[25px] bg-black md:max-w-[100vw]  md:max-h-[100vh] '>
+			<div className='relative mx-auto h-full max-h-[100vh] w-full max-w-[100vw] overflow-hidden rounded-[25px] bg-black md:max-h-[100vh] md:max-w-[100vw]'>
 				<div className='pointer-events-none absolute inset-0 -z-10 opacity-40'>
 					<Background variant='section' />
 				</div>
@@ -79,30 +81,37 @@ export const FooterSection = () => {
 					style={{ y: contentY, opacity: contentOpacity }}
 					className='relative flex min-h-[90vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[75vh] md:px-16 md:py-16'
 				>
-					<div className='mt-4 space-y-6 md:mt-2'>
-						<div className='flex items-center justify-center gap-4 text-sm font-medium text-white/60 md:text-base'>
-							<span className='h-px w-16 bg-white/20' />
-							<span className='italic'>2 spots available</span>
-							<span className='h-px w-16 bg-white/20' />
+					<div className='mt-4 space-y-8 md:mt-2'>
+						<div className='flex items-center justify-center'>
+							<SectionTitle
+								title='2 spots available'
+								textColor={'text-white/60'}
+								lineColor={'rgba(255, 255, 255, 0.5)'}
+							/>
 						</div>
-						<div className='space-y-2'>
-							<h2 className='text-4xl font-semibold leading-none tracking-tight md:text-6xl'>
+
+						<div className='space-y-5'>
+							<h2 className='text-4xl leading-none tracking-tight md:text-8xl'>
 								<span className='text-white'>Let&apos;s</span>{' '}
 								<span className='font-medium text-neutral-400'>Connect</span>
 							</h2>
-							<p className='mx-auto max-w-2xl text-base leading-relaxed text-white/80 md:text-lg'>
-								Feel free to contact me if having any questions. I&apos;m available for new projects
-								or just for chatting.
-							</p>
+							<div>
+								<p className='mx-auto max-w-2xl text-base leading-relaxed tracking-tight text-white/80 md:text-xl'>
+									Feel free to contact me if having any questions.
+								</p>
+								<p className='mx-auto max-w-2xl text-base leading-relaxed tracking-tight text-white/80 md:text-xl'>
+									I&apos;m available for new projects or just for chatting.
+								</p>
+							</div>
 						</div>
 						<div className='flex flex-col items-center gap-10'>
 							<button className='group relative inline-flex items-center justify-center rounded-full bg-neutral-700/70 px-3 py-2 shadow-[0_12px_38px_rgba(0,0,0,0.35)] backdrop-blur transition hover:bg-neutral-600/70'>
-							<span className='inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition duration-300 group-hover:-translate-y-0.5 md:px-7 md:py-3.5 md:text-base'>
-								Book a free intro call
-								<span className='inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-sm font-semibold text-black'>
-									→
+								<span className='inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition duration-300 group-hover:-translate-y-0.5 md:px-7 md:py-3.5 md:text-base'>
+									Book a free intro call
+									<span className='inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-sm font-semibold text-black'>
+										→
+									</span>
 								</span>
-							</span>
 							</button>
 
 							<div className='flex flex-col items-center gap-4 text-sm text-white/70'>
@@ -114,11 +123,9 @@ export const FooterSection = () => {
 							</div>
 						</div>
 					</div>
-
-
 				</motion.div>
 
-				<div className='relative z-10 flex items-center justify-center pb-10 pt-2'>
+				<div className='relative z-10 flex items-center justify-center pt-2 pb-10'>
 					<div className='flex items-center gap-3 md:gap-4'>
 						{socialLinks.map((item) => (
 							<a
