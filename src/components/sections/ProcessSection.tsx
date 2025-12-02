@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { CommentsSection } from './CommentsSection.tsx'
+import { AnimateRightWave } from '../ui/icons/wave/AnimateRightIcon.tsx'
+import { AnimateLeftWave } from '../ui/icons/wave/AnimateLeftWave.tsx'
 
 const ProcessSection = () => {
 	return (
@@ -13,6 +15,16 @@ const ProcessSection = () => {
 			</div>
 
 			<div className='relative mb-5 box-border flex h-min w-full flex-none flex-row items-start justify-center gap-6 overflow-visible p-0 font-sans text-[12px]'>
+				<div className='pointer-events-none absolute inset-0 hidden lg:block'>
+					<AnimateRightWave
+						size={260}
+						className='z-20 absolute  top-[29%] left-[57%] rotate-[285deg]'
+					/>
+					<AnimateLeftWave
+						size={320}
+						className='z-20 absolute bottom-[58%] right-[62%] rotate-[340deg]'
+					/>
+				</div>
 				<motion.div
 					initial={{ x: '100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
 					whileInView={{ x: 0, y: 0, rotate: -5, opacity: 1, zIndex: 1 }}
