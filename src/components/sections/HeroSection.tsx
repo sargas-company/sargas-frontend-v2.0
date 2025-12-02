@@ -5,6 +5,10 @@ import { motion } from 'framer-motion'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
 import devImg from '../../assets/dev.avif'
+import dev_01Img from '../../assets/dev_01.avif'
+import dev_02Img from '../../assets/dev_02.avif'
+import dev_03Img from '../../assets/dev_03.avif'
+import dev_04Img from '../../assets/dev_04.avif'
 
 export const HeroSection = () => {
 	return (
@@ -147,19 +151,19 @@ export const HeroSection = () => {
 							className='h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src={devImg}
+							src={dev_01Img}
 							className='relative right-1.5 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src={devImg}
+							src={dev_02Img}
 							className='relative right-3 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src={devImg}
+							src={dev_03Img}
 							className='relative right-4.5 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src={devImg}
+							src={dev_04Img}
 							className='relative right-6 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 					</div>

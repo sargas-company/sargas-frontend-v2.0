@@ -6,7 +6,7 @@ import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import devImg from '../../assets/dev.avif'
-import dev1Img from '../../assets/dev_01.avif'
+import dev1Img from '../../assets/dev_02.avif'
 import { PhoneIcon } from '../ui/icons/PhoneIcon'
 import { AnalyticsIcon } from '../ui/icons/AnalyticsIcon'
 import { MonitorIcon } from '../ui/icons/MonitorIcon'
@@ -164,7 +164,10 @@ export const PricingSection = () => {
 			>
 				<div className='flex flex-1 flex-col justify-between gap-8'>
 					<div className='flex flex-col gap-6'>
-						<div className='flex items-center gap-4'>
+						<div
+							className='flex w-min cursor-pointer items-center gap-4'
+							onClick={() => setIsCustom((prev) => !prev)}
+						>
 							<span
 								className={[
 									'text-[16px] md:text-[18px]',
@@ -176,8 +179,7 @@ export const PricingSection = () => {
 
 							<button
 								type='button'
-								onClick={() => setIsCustom((prev) => !prev)}
-								className='relative flex h-[24px] w-[44px] items-center justify-center overflow-hidden rounded-full bg-[#FF5E00] shadow-[0_0_0_3px_rgba(255,255,255,0.25),12px_16px_16px_0_rgba(0,0,0,0.1)] focus:outline-none'
+								className='relative flex h-[24px] w-[44px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#FF5E00] shadow-[0_0_0_3px_rgba(255,255,255,0.25),12px_16px_16px_0_rgba(0,0,0,0.1)] focus:outline-none'
 							>
 								<motion.span
 									initial={false}
