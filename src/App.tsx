@@ -1,4 +1,3 @@
-// src/App.tsx
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import { RootLayout } from './layout'
@@ -10,23 +9,26 @@ import { NitroPage } from './pages/work/NitroPage'
 import './index.css'
 
 import { FargoPage } from './pages/work/FargoPage'
+import { SmoothScrollProvider } from './components/layout/SmoothScrollProvider'
 function App() {
 	return (
 		<BrowserRouter>
-			<div className='relative min-h-screen overflow-hidden'>
-				<Background />
-				<RouteTransitionOverlay />
+			<SmoothScrollProvider>
+				<div className='relative min-h-screen overflow-hidden'>
+					<Background />
+					<RouteTransitionOverlay />
 
-				<RootLayout>
-					<Routes>
-						<Route path='/' element={<HomePage />} />
-						<Route path='/work/strida' element={<StridaPage />} />
-						<Route path='/work/bravo' element={<BravoPage />} />
-						<Route path='/work/nitro' element={<NitroPage />} />
-						<Route path='/work/fargo' element={<FargoPage />} />
-					</Routes>
-				</RootLayout>
-			</div>
+					<RootLayout>
+						<Routes>
+							<Route path='/' element={<HomePage />} />
+							<Route path='/work/strida' element={<StridaPage />} />
+							<Route path='/work/bravo' element={<BravoPage />} />
+							<Route path='/work/nitro' element={<NitroPage />} />
+							<Route path='/work/fargo' element={<FargoPage />} />
+						</Routes>
+					</RootLayout>
+				</div>
+			</SmoothScrollProvider>
 		</BrowserRouter>
 	)
 }
