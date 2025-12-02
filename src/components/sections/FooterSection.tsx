@@ -1,11 +1,13 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Background } from '../layout/Background'
+// import { Background } from '../layout/Background'
 import { XIcon } from '../ui/icons/XIcon'
 import { LinkedInIcon } from '../ui/icons/LinkedInIcon'
 import { InstagramIcon } from '../ui/icons/InstagramIcon'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
-import { IconAt } from '../ui/icons/IconAtю.tsx'
+import { IconAt } from '../ui/icons/IconAt.tsx'
+import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon.tsx'
+import { HeroSectionButton } from '../ui/HeroSectionButton.tsx'
 
 type SocialLink = {
 	label: string
@@ -71,15 +73,14 @@ export const FooterSection = () => {
 			ref={sectionRef}
 			className='relative isolate -mx-[calc(50vw-50%)] h-[100vh] max-h-[100vh] min-h-screen w-screen px-2 py-2 text-white md:px-2 md:py-2'
 		>
-			<div className='relative mx-auto h-full max-h-[100vh] w-full max-w-[100vw] overflow-hidden rounded-[25px] bg-black md:max-h-[100vh] md:max-w-[100vw]'>
-				<div className='pointer-events-none absolute inset-0 -z-10 opacity-40'>
-					<Background variant='section' />
-				</div>
-				<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_10%_10%,rgba(255,255,255,0.12),transparent_45%),radial-gradient(120%_120%_at_80%_20%,rgba(255,255,255,0.06),transparent_50%),linear-gradient(120deg,rgba(255,255,255,0.18),transparent_32%)] opacity-70' />
 
+			<div className='relative mx-auto h-full max-h-[100vh] w-full max-w-[100vw] overflow-hidden rounded-[25px] bg-black md:max-h-[100vh] md:max-w-[100vw]'>
+
+				{/*<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_10%_10%,rgba(255,255,255,0.12),transparent_45%),radial-gradient(120%_120%_at_80%_20%,rgba(255,255,255,0.06),transparent_50%),linear-gradient(120deg,rgba(255,255,255,0.18),transparent_32%)] opacity-70' />*/}
+				{/*<Background />*/}
 				<motion.div
 					style={{ y: contentY, opacity: contentOpacity }}
-					className='relative flex min-h-[90vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[75vh] md:px-16 md:py-16'
+					className='relative flex min-h-[80vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[85vh] md:px-16 md:py-16'
 				>
 					<div className='mt-4 space-y-8 md:mt-2'>
 						<div className='flex items-center justify-center'>
@@ -104,28 +105,18 @@ export const FooterSection = () => {
 								</p>
 							</div>
 						</div>
-						<div className='flex flex-col items-center gap-10'>
-							<button className='group relative inline-flex items-center justify-center rounded-full bg-neutral-700/70 px-3 py-2 shadow-[0_12px_38px_rgba(0,0,0,0.35)] backdrop-blur transition hover:bg-neutral-600/70'>
-								<span className='inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition duration-300 group-hover:-translate-y-0.5 md:px-7 md:py-3.5 md:text-base'>
-									Book a free intro call
-									<span className='inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-sm font-semibold text-black'>
-										→
-									</span>
-								</span>
-							</button>
 
-							<div className='flex flex-col items-center gap-4 text-sm text-white/70'>
-								<div className='flex items-center gap-3'>
-									<span className='h-px w-16 bg-white/20 md:w-20' />
-									<span className='whitespace-nowrap'>© Hanzo Studio, 2025</span>
-									<span className='h-px w-16 bg-white/20 md:w-20' />
-								</div>
-							</div>
-						</div>
+						<HeroSectionButton title='	Book a free intro call' icon={<ArrowRightIcon />} withOutline />
 					</div>
 				</motion.div>
 
-				<div className='relative z-10 flex items-center justify-center pt-2 pb-10'>
+				<div className='relative z-10 flex flex-col gap-5 items-center justify-between pt-2 pb-10 md:px-35 md:flex-row'>
+					<div className='flex flex-col items-center gap-1 text-sm text-white/70 md:gap-3.5'>
+						<span className='h-[0.5px] w-full bg-white' />
+						<span className='px-4 whitespace-nowrap text-white'>© Hanzo Studio, 2025</span>
+						<span className='h-[0.5px] w-full bg-white' />
+					</div>
+
 					<div className='flex items-center gap-3 md:gap-4'>
 						{socialLinks.map((item) => (
 							<a
