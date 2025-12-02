@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-// import { Background } from '../layout/Background'
+import { Background } from '../layout/Background'
+import noiseImage from '../../assets/noise.webp'
 import { XIcon } from '../ui/icons/XIcon'
 import { LinkedInIcon } from '../ui/icons/LinkedInIcon'
 import { InstagramIcon } from '../ui/icons/InstagramIcon'
@@ -75,9 +76,12 @@ export const FooterSection = () => {
 		>
 
 			<div className='relative mx-auto h-full max-h-[100vh] w-full max-w-[100vw] overflow-hidden rounded-[25px] bg-black md:max-h-[100vh] md:max-w-[100vw]'>
+				<div className='pointer-events-none absolute inset-0 z-0 opacity-8 mix-blend-screen'>
+					<Background variant='section' />
+				</div>
+				<div className='pointer-events-none absolute inset-0 z-10 opacity-5 mix-blend-screen' style={{ backgroundImage: `url(${noiseImage})`, backgroundSize: '220px' }} />
+				<div className='pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(140%_160%_at_15%_15%,rgba(255,255,255,0.22),transparent_45%),radial-gradient(130%_130%_at_82%_18%,rgba(255,255,255,0.12),transparent_52%),linear-gradient(120deg,rgba(255,255,255,0.18),transparent_42%)] opacity-35 mix-blend-screen' />
 
-				{/*<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_10%_10%,rgba(255,255,255,0.12),transparent_45%),radial-gradient(120%_120%_at_80%_20%,rgba(255,255,255,0.06),transparent_50%),linear-gradient(120deg,rgba(255,255,255,0.18),transparent_32%)] opacity-70' />*/}
-				{/*<Background />*/}
 				<motion.div
 					style={{ y: contentY, opacity: contentOpacity }}
 					className='relative flex min-h-[80vh] flex-col justify-between gap-8 px-6 py-12 text-center md:min-h-[85vh] md:px-16 md:py-16'

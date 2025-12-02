@@ -15,6 +15,11 @@ export const Background = ({ variant = 'global' }: BackgroundProps) => {
 			? 'pointer-events-none absolute inset-0 -z-10 overflow-hidden'
 			: 'pointer-events-none absolute inset-0 -z-10 h-[200vh] overflow-hidden'
 
+	const baseGradient =
+		variant === 'section'
+			? 'linear-gradient(225deg, #2f2f2f 0%, #0f0f0f 100%)'
+			: 'linear-gradient(225deg, #ffffff 0%, #dbdbdb 100%)'
+
 	return (
 		<>
 			<div className={noiseClass}>
@@ -33,10 +38,15 @@ export const Background = ({ variant = 'global' }: BackgroundProps) => {
 			<div
 				className={streakClass}
 				style={{
-					background: 'linear-gradient(225deg, #ffffff 0%, #dbdbdb 100%)',
+					background: baseGradient,
 					WebkitMask:
-						'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)',
-					mask: 'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)',
+						variant === 'section'
+							? undefined
+							: 'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)',
+					mask:
+						variant === 'section'
+							? undefined
+							: 'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)',
 				}}
 			>
 				<div
