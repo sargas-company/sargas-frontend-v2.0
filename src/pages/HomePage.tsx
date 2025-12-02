@@ -4,6 +4,7 @@ import { AboutSection } from '../components/sections/AboutSection'
 import { BenefitsSection } from '../components/sections/BenefitsSection'
 import ProcessSection from '../components/sections/ProcessSection.tsx'
 import ProjectsSection from '../components/sections/ProjectsSection.tsx'
+import { PricingSection } from '../components/sections/PricingSection.tsx'
 import FAQSection from '../components/sections/FAQSection.tsx'
 
 export const HomePage = () => {
@@ -15,6 +16,7 @@ export const HomePage = () => {
 			<ProcessSection />
 			<BenefitsSection />
 			<ProjectsSection />
+			<PricingSection />
 			<FAQSection />
 		</>
 	)
