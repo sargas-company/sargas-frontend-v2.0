@@ -4,6 +4,7 @@ import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { motion } from 'framer-motion'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
+import devImg from '../../assets/dev.avif'
 
 export const HeroSection = () => {
 	return (
@@ -142,23 +143,23 @@ export const HeroSection = () => {
 				<div className='flex flex-col justify-center gap-0.5'>
 					<div className='flex'>
 						<img
-							src='https://framerusercontent.com/images/75ILrhKQhUkwU1dH15BUDezAQ.png?scale-down-to=512&width=1536&height=1024'
+							src={devImg}
 							className='h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src='https://framerusercontent.com/images/75ILrhKQhUkwU1dH15BUDezAQ.png?scale-down-to=512&width=1536&height=1024'
+							src={devImg}
 							className='relative right-1.5 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src='https://framerusercontent.com/images/75ILrhKQhUkwU1dH15BUDezAQ.png?scale-down-to=512&width=1536&height=1024'
+							src={devImg}
 							className='relative right-3 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src='https://framerusercontent.com/images/75ILrhKQhUkwU1dH15BUDezAQ.png?scale-down-to=512&width=1536&height=1024'
+							src={devImg}
 							className='relative right-4.5 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 						<img
-							src='https://framerusercontent.com/images/75ILrhKQhUkwU1dH15BUDezAQ.png?scale-down-to=512&width=1536&height=1024'
+							src={devImg}
 							className='relative right-6 h-[31px] w-[31px] rounded-full border border-white object-cover'
 						/>
 					</div>

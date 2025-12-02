@@ -5,12 +5,14 @@ type LetterAnimationProps = {
 	children: ReactNode
 	delayRate: number
 	initialDelay: number
+	animCallback?: () => void
 }
 
 export const HeroSectionLetterAnimation = ({
 	children,
 	delayRate = 0,
 	initialDelay = 0,
+	animCallback,
 }: LetterAnimationProps) => {
 	return (
 		<motion.span
@@ -23,6 +25,7 @@ export const HeroSectionLetterAnimation = ({
 				delay: initialDelay + delayRate,
 			}}
 			className='inline-block'
+			onAnimationComplete={animCallback ? animCallback : () => {}}
 		>
 			{children}
 		</motion.span>
