@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import { RootLayout } from './layout'
 import { Background } from './components/layout/Background'
+import { RouteTransitionOverlay } from './components/layout/RouteTransitionOverlay'
 import { StridaPage } from './pages/work/StridaPage'
 import { BravoPage } from './pages/work/BravoPage'
 import { NitroPage } from './pages/work/NitroPage'
@@ -14,6 +15,7 @@ function App() {
 		<BrowserRouter>
 			<div className='relative min-h-screen overflow-hidden'>
 				<Background />
+				<RouteTransitionOverlay />
 
 				<RootLayout>
 					<Routes>

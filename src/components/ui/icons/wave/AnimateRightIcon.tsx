@@ -15,7 +15,7 @@ export const AnimateRightWave = ({
 												className = '',
 												strokeWidth = 1,
 												duration = 3,
-												delay = 2.8,
+												delay = 2,
 }: IconProps) => {
 	return (
 		<motion.svg
