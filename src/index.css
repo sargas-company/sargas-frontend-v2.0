@@ -14,11 +14,12 @@
 	--breakpoint-3xl: 1920px;
 
 	--font-inter: 'Inter Display', system-ui, sans-serif;
+	--font-sans: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 	--font-serif: 'Instrument Serif', 'Instrument Serif Placeholder', serif;
 }
 
 :root {
-	font-family: var(--font-inter), Avenir, Helvetica, Arial, sans-serif;
+	font-family: var(--font-inter), var(--font-sans), Avenir, Helvetica, Arial, sans-serif;
 
 	font-weight: 400;
 
