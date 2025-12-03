@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import shopifyLogo from '../../assets/shopifyLogo.png'
 import clutchLogo from '../../assets/clutchLogo.png'
 import { TrendBoardIcon } from '../ui/icons/TrendBoardIcon.tsx'
@@ -79,20 +80,30 @@ export const AboutUsProjectsSection = () => {
 						<div className='relative flex flex-col justify-end gap-6'>
 							<div className='relative mx-auto w-full max-w-[640px]'>
 								<div className='relative mx-auto aspect-[4/3] w-full'>
-									<div className='absolute top-[4%] left-[6%] h-[82%] w-[82%] rotate-[-6deg] overflow-clip rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:rounded-[18px]'>
+									<motion.div
+										whileHover={{ y: -30, x: -15, rotate: -4 }}
+										transition={{ duration: 0.4, ease: 'easeOut' }}
+										className='absolute top-[4%] left-[6%] h-[82%] w-[82%] rotate-[-6deg] overflow-clip rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:rounded-[18px]'
+										style={{ willChange: 'transform' }}
+									>
 										<img
 											src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da717af91f07fe813a_FImcuts%20-%208.webp'
 											alt='Project collage'
-											className='h-full w-full object-cover transition-transform duration-500 hover:scale-[1.015]'
+											className='h-full w-full object-cover'
 										/>
-									</div>
-									<div className='absolute top-[34%] left-[28%] h-[62%] w-[70%] rotate-[5deg] overflow-clip rounded-[12px] shadow-[0_16px_36px_rgba(0,0,0,0.35)] sm:rounded-[16px]'>
+									</motion.div>
+									<motion.div
+										whileHover={{ y: -39, x: 12, rotate: 6 }}
+										transition={{ duration: 0.4, ease: 'easeOut' }}
+										className='absolute top-[44%] left-[38%] h-[62%] w-[70%] rotate-[5deg] overflow-clip rounded-[12px] sm:rounded-[16px]'
+										style={{ willChange: 'transform' }}
+									>
 										<img
 											src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da113411a208993274_Group%201395.webp'
 											alt='Project collage'
-											className='h-full w-full object-cover transition-transform duration-500 hover:scale-[1.015]'
+											className='h-full w-full  max-h-[90%] max-w-[90%] object-contain'
 										/>
-									</div>
+									</motion.div>
 								</div>
 							</div>
 
@@ -145,16 +156,22 @@ export const AboutUsProjectsSection = () => {
 								</div>
 
 								<div className='relative flex items-center justify-center'>
-									<img
+									<motion.img
+										whileHover={{ y: -10, x: -8, rotate: -4 }}
+										transition={{ duration: 0.35, ease: 'easeOut' }}
 										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75db0f8fca58c29c278a_Upwork%20Case%20-%20v.%2011-2%201.webp'
 										alt='Showcase A'
 										className='w-[75%] max-w-[260px] rotate-[-3deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.15)]'
+										style={{ willChange: 'transform' }}
 									/>
 
-									<img
+									<motion.img
+										whileHover={{ y: -12, x: 10, rotate: 5 }}
+										transition={{ duration: 0.35, ease: 'easeOut' }}
 										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75db0f8fca58c29c278a_Upwork%20Case%20-%20v.%2011-2%201.webp'
 										alt='Showcase B'
 										className='absolute top-6 right-2 w-[70%] max-w-[240px] rotate-[4deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.15)]'
+										style={{ willChange: 'transform' }}
 									/>
 								</div>
 							</div>
