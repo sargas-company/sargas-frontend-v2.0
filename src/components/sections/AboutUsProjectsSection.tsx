@@ -2,6 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import shopifyLogo from '../../assets/shopifyLogo.png'
 import clutchLogo from '../../assets/clutchLogo.png'
+import project_1 from '../../assets/Project_1.webp'
+import project_2 from '../../assets/Project_2.webp'
+import project_3 from '../../assets/Project_3.webp'
+import project_4 from '../../assets/Project_4.webp'
 import { TrendBoardIcon } from '../ui/icons/TrendBoardIcon.tsx'
 type StatCardProps = {
 	id: string
@@ -64,7 +68,6 @@ export const AboutUsProjectsSection = () => {
 	return (
 		<section className='w-full py-12 md:py-16'>
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
-				{/* HEADER */}
 				<div className='text-center'>
 					<h2 className='text-[26px] font-semibold tracking-tight text-black md:text-[32px]'>
 						A few words{' '}
@@ -73,7 +76,6 @@ export const AboutUsProjectsSection = () => {
 					<div className='mx-auto mt-1 h-[2px] w-16 rounded-full bg-black/15' />
 				</div>
 
-				{/* GRID */}
 				<div className='grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_1fr] lg:gap-8'>
 					<div className='relative min-h-[320px] overflow-hidden rounded-[26px] bg-neutral-900 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.18)] sm:min-h-[420px] sm:rounded-[28px] sm:p-8 lg:p-10'>
 						<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(90%_90%_at_0%_0%,rgba(255,255,255,0.08),transparent),radial-gradient(80%_80%_at_80%_10%,rgba(255,255,255,0.05),transparent)]' />
@@ -81,13 +83,13 @@ export const AboutUsProjectsSection = () => {
 							<div className='relative mx-auto w-full max-w-[640px]'>
 								<div className='relative mx-auto aspect-[4/3] w-full'>
 									<motion.div
-										whileHover={{ y: -30, x: -15, rotate: -4 }}
+										whileHover={{ y: -15, x: -30, rotate: -3 }}
 										transition={{ duration: 0.4, ease: 'easeOut' }}
 										className='absolute top-[4%] left-[6%] h-[82%] w-[82%] rotate-[-6deg] overflow-clip rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:rounded-[18px]'
 										style={{ willChange: 'transform' }}
 									>
 										<img
-											src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da717af91f07fe813a_FImcuts%20-%208.webp'
+											src={project_2}
 											alt='Project collage'
 											className='h-full w-full object-cover'
 										/>
@@ -99,9 +101,9 @@ export const AboutUsProjectsSection = () => {
 										style={{ willChange: 'transform' }}
 									>
 										<img
-											src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da113411a208993274_Group%201395.webp'
+											src={project_1}
 											alt='Project collage'
-											className='h-full w-full  max-h-[90%] max-w-[90%] object-contain'
+											className='h-full max-h-[90%] w-full max-w-[90%] object-contain'
 										/>
 									</motion.div>
 								</div>
@@ -118,9 +120,7 @@ export const AboutUsProjectsSection = () => {
 						</div>
 					</div>
 
-					{/* RIGHT SIDE — STATS GRID */}
 					<div className='xs:grid-cols-2 xs:gap-6 grid grid-cols-1 gap-[2.7vw]'>
-						{/* CARD 1 */}
 						<StatCard
 							id={sitesEnum.SHOPIFY}
 							icon={<img src={shopifyLogo} alt='' className='h-6 w-6' />}
@@ -128,7 +128,6 @@ export const AboutUsProjectsSection = () => {
 							description='Shopify brands grown through our retainers'
 						/>
 
-						{/* CARD 2 */}
 						<StatCard
 							id={sitesEnum.CLATCH}
 							icon={<img src={clutchLogo} alt='' className='h-4 w-auto' />}
@@ -156,21 +155,23 @@ export const AboutUsProjectsSection = () => {
 								</div>
 
 								<div className='relative flex items-center justify-center'>
-									<motion.img
-										whileHover={{ y: -10, x: -8, rotate: -4 }}
-										transition={{ duration: 0.35, ease: 'easeOut' }}
-										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75db0f8fca58c29c278a_Upwork%20Case%20-%20v.%2011-2%201.webp'
-										alt='Showcase A'
-										className='w-[75%] max-w-[260px] rotate-[-3deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.15)]'
-										style={{ willChange: 'transform' }}
-									/>
+
 
 									<motion.img
 										whileHover={{ y: -12, x: 10, rotate: 5 }}
 										transition={{ duration: 0.35, ease: 'easeOut' }}
-										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75db0f8fca58c29c278a_Upwork%20Case%20-%20v.%2011-2%201.webp'
+										src={project_3}
 										alt='Showcase B'
 										className='absolute top-6 right-2 w-[70%] max-w-[240px] rotate-[4deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.15)]'
+										style={{ willChange: 'transform' }}
+									/>
+
+									<motion.img
+										whileHover={{ y: -10, x: -8, rotate: -4 }}
+										transition={{ duration: 0.35, ease: 'easeOut' }}
+										src={project_4}
+										alt='Showcase A'
+										className='w-[75%] max-w-[260px] rotate-[-3deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.15)]'
 										style={{ willChange: 'transform' }}
 									/>
 								</div>
