@@ -1,6 +1,7 @@
 import React from 'react'
 import shopifyLogo from '../../assets/shopifyLogo.png'
 import clutchLogo from '../../assets/clutchLogo.png'
+import { TrendBoardIcon } from '../ui/icons/TrendBoardIcon.tsx'
 type StatCardProps = {
 	id: string
 	icon?: React.ReactNode
@@ -28,7 +29,6 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 				{id === sitesEnum.CLATCH && (
 					<div className='flex shrink-0 items-start justify-start'>{icon}</div>
 				)}
-
 
 				<div className='flex w-full flex-col'>
 					<div className='flex flex-wrap items-center gap-2'>
@@ -74,41 +74,36 @@ export const AboutUsProjectsSection = () => {
 
 				{/* GRID */}
 				<div className='grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_1fr] lg:gap-8'>
-					<div className='/* mobile (<= ~480) */ /* десктоп (>= sm, у тебя это 640px) */ relative flex min-h-[100vw] min-w-auto flex-col items-stretch justify-between overflow-clip rounded-[4.44vw] bg-neutral-900 bg-cover bg-center p-[6.66vw] sm:min-h-[40rem] sm:min-w-[40rem] sm:rounded-[1.75rem] sm:p-10'>
-						{/* background light textures */}
+					<div className='relative min-h-[320px] overflow-hidden rounded-[26px] bg-neutral-900 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.18)] sm:min-h-[420px] sm:rounded-[28px] sm:p-8 lg:p-10'>
 						<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(90%_90%_at_0%_0%,rgba(255,255,255,0.08),transparent),radial-gradient(80%_80%_at_80%_10%,rgba(255,255,255,0.05),transparent)]' />
-						{/* IMAGES */}
+						<div className='relative flex flex-col justify-end gap-6'>
+							<div className='relative mx-auto w-full max-w-[640px]'>
+								<div className='relative mx-auto aspect-[4/3] w-full'>
+									<div className='absolute top-[4%] left-[6%] h-[82%] w-[82%] rotate-[-6deg] overflow-clip rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:rounded-[18px]'>
+										<img
+											src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da717af91f07fe813a_FImcuts%20-%208.webp'
+											alt='Project collage'
+											className='h-full w-full object-cover transition-transform duration-500 hover:scale-[1.015]'
+										/>
+									</div>
+									<div className='absolute top-[34%] left-[28%] h-[62%] w-[70%] rotate-[5deg] overflow-clip rounded-[12px] shadow-[0_16px_36px_rgba(0,0,0,0.35)] sm:rounded-[16px]'>
+										<img
+											src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da113411a208993274_Group%201395.webp'
+											alt='Project collage'
+											className='h-full w-full object-cover transition-transform duration-500 hover:scale-[1.015]'
+										/>
+									</div>
+								</div>
+							</div>
 
-						<div className='mt-[0.9375rem] ml-[0.9375rem] h-[19.375rem] w-[27.1875rem] rotate-[-6.14deg] overflow-clip rounded-[1rem] shadow-[1rem_1rem_1.5rem_#0003] transition-all duration-300'>
-							<img
-								src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da717af91f07fe813a_FImcuts%20-%208.webp'
-								alt='Project collage'
-								className='h-full w-full transition-transform duration-500 hover:scale-[1.015]'
-							/>
-						</div>
-
-						<div
-							className={
-								'h-[16.875rem] w-[25rem] rounded-[0.625rem] ' +
-								' absolute inset-[12.9375rem_auto_auto_15rem] ' +
-								' overflow-clip transition-all duration-400 ' +
-								' rotate-[5.3deg] shadow-[1rem_1rem_1.5rem_#0003]'
-							}
-						>
-							<img
-								src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/689f75da113411a208993274_Group%201395.webp'
-								alt='Project collage'
-								className='h-full w-full transition-transform duration-500 hover:scale-[1.015]'
-							/>
-						</div>
-						{/* TEXT */}
-						<div className='relative mt-7 text-left text-white'>
-							<p className='text-4xl leading-none font-semibold md:text-5xl'>
-								10<span className='align-super text-2xl font-semibold'>+</span> years
-							</p>
-							<p className='mt-2 text-sm text-white/70 md:text-base'>
-								scaling e-commerce brands
-							</p>
+							<div className='relative text-left text-white'>
+								<p className='text-4xl leading-[1.05] font-semibold md:text-5xl'>
+									10<span className='align-super text-2xl font-semibold'>+</span> years
+								</p>
+								<p className='mt-2 text-sm text-white/70 md:text-base'>
+									scaling e-commerce brands
+								</p>
+							</div>
 						</div>
 					</div>
 
@@ -131,10 +126,12 @@ export const AboutUsProjectsSection = () => {
 						/>
 
 						<div className='col-span-2'>
-							<div className='grid h-full grid-cols-1 gap-6 rounded-[22px] bg-white px-6 py-6 shadow-[0_20px_60px_rgba(0,0,0,0.08)] md:grid-cols-2 md:px-10 md:py-10'>
+							<div className='grid h-full grid-cols-1 gap-6 rounded-[22px] bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] md:grid-cols-2'>
 								<div className='flex h-full flex-col justify-between'>
-									<div className='flex h-10 w-10 items-center justify-center rounded-2xl bg-black text-white shadow-sm'>
-										<span className='text-lg font-semibold'>W</span>
+									<div className='h-12 w-12 shrink-0 rounded-[1rem] bg-[#1b1b1b] p-[1px]'>
+										<div className='relative z-[2] flex h-full w-full items-center justify-center rounded-[1rem] bg-[linear-gradient(184deg,#292929,#1b1b1b)] shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024]'>
+											<TrendBoardIcon color={'white'} />
+										</div>
 									</div>
 
 									<div className='flex flex-col'>
