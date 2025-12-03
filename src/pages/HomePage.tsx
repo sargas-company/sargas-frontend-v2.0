@@ -7,6 +7,7 @@ import ProjectsSection from '../components/sections/ProjectsSection.tsx'
 import { PricingSection } from '../components/sections/PricingSection.tsx'
 import FAQSection from '../components/sections/FAQSection.tsx'
 import { MultiStepInfoSection } from '../components/sections/MultiStepInfoSection.tsx'
+import { RetainerAlternativeSection } from '../components/sections/RetainerAlternativeSection.tsx'
 
 export const HomePage = () => {
 	return (
@@ -18,6 +19,7 @@ export const HomePage = () => {
 			<ProcessSection />
 			<BenefitsSection />
 			<ProjectsSection />
+			<RetainerAlternativeSection />
 			<PricingSection />
 			<FAQSection />
 		</>
