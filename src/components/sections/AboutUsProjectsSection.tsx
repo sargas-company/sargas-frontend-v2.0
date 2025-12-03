@@ -13,113 +13,44 @@ const sitesEnum = {
 	SHOPIFY: 'SHOPIFY',
 }
 
-// const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
-// 	return (
-// 		// <div className='flex h-full flex-col justify-between rounded-[22px] bg-white px-6 py-6 shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition will-change-transform hover:-translate-y-1 md:px-7 md:py-8'>
-// 		<div className='flex items-start rounded-[2rem] bg-[linear-gradient(165deg,#e8e8e880,#fff_25%)] p-6 shadow-[0_2px_6px_#0000000a] saturate-[1.4] backdrop-blur-[12px]'>
-// 			<div className='flex h-full flex-col items-start justify-between gap-3'>
-// 				{id === sitesEnum.SHOPIFY && (
-// 					<div className='h-12 w-12 min-w-12 rounded-[1rem] bg-[#1b1b1b] p-[1px]'>
-// 						<div className='relative z-[2] flex h-full w-full min-w-full items-center justify-center rounded-[1rem] bg-[linear-gradient(184deg,#292929,#1b1b1b)] shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024]'>
-// 							{icon}
-// 						</div>
-// 					</div>
-// 				)}
-//
-// 				{id === sitesEnum.CLATCH && (
-// 					<div className='flex items-start justify-start'>{icon}</div>
-// 				)}
-//
-// 				<div className='flex flex-col'>
-// 					<div className='flex items-center gap-2'>
-// 						<span className='text-[34px] leading-none font-semibold text-black md:text-[38px]'>
-// 							{rate}
-// 						</span>
-// 						{id === sitesEnum.CLATCH && (
-// 							<div className='flex gap-1'>
-// 								<img
-// 									src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
-// 									alt=''
-// 									className='h-4 w-4'
-// 								/>
-// 								<img
-// 									src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
-// 									alt=''
-// 									className='h-4 w-4'
-// 								/>
-// 								<img
-// 									src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
-// 									alt=''
-// 									className='h-4 w-4'
-// 								/>
-// 								<img
-// 									src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
-// 									alt=''
-// 									className='h-4 w-4'
-// 								/>
-// 								<img
-// 									src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
-// 									alt=''
-// 									className='h-4 w-4'
-// 								/>
-// 							</div>
-// 						)}
-// 					</div>
-//
-// 					<span className='mt-1 text-sm font-semibold text-black/60 md:text-base'>
-// 						{description}
-// 					</span>
-// 				</div>
-// 			</div>
-// 		</div>
-// 	)
-// }
 const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 	return (
-		<div className="flex w-full items-start rounded-[2rem] bg-[linear-gradient(165deg,#e8e8e880,#fff_25%)]
-            p-5 sm:p-6 shadow-[0_2px_6px_#0000000a] saturate-[1.4] backdrop-blur-[12px]">
-
-			<div className="flex h-full flex-col items-start justify-between gap-3 w-full">
-
-				{/* Icon wrappers — adaptive */}
+		<div className='flex w-full items-start rounded-[2rem] bg-[linear-gradient(165deg,#e8e8e880,#fff_25%)] p-5 shadow-[0_2px_6px_#0000000a] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
+			<div className='flex h-full w-full flex-col items-start justify-between gap-3'>
 				{id === sitesEnum.SHOPIFY && (
-					<div className="h-12 w-12 rounded-[1rem] bg-[#1b1b1b] p-[1px] shrink-0">
-						<div className="relative z-[2] flex h-full w-full items-center justify-center
-                            rounded-[1rem] bg-[linear-gradient(184deg,#292929,#1b1b1b)]
-                            shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024]">
+					<div className='h-12 w-12 shrink-0 rounded-[1rem] bg-[#1b1b1b] p-[1px]'>
+						<div className='relative z-[2] flex h-full w-full items-center justify-center rounded-[1rem] bg-[linear-gradient(184deg,#292929,#1b1b1b)] shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024]'>
 							{icon}
 						</div>
 					</div>
 				)}
 
 				{id === sitesEnum.CLATCH && (
-					<div className="flex items-start justify-start shrink-0">
-						{icon}
-					</div>
+					<div className='flex shrink-0 items-start justify-start'>{icon}</div>
 				)}
 
-				{/* TEXT */}
-				<div className="flex flex-col w-full">
-					<div className="flex items-center gap-2 flex-wrap">
-						<span className="text-[28px] sm:text-[34px] md:text-[38px] leading-none font-semibold text-black">
+
+				<div className='flex w-full flex-col'>
+					<div className='flex flex-wrap items-center gap-2'>
+						<span className='text-[28px] leading-none font-semibold text-black sm:text-[34px] md:text-[38px]'>
 							{rate}
 						</span>
 
 						{id === sitesEnum.CLATCH && (
-							<div className="flex gap-1 shrink-0">
+							<div className='flex shrink-0 gap-1'>
 								{[...Array(5)].map((_, i) => (
 									<img
 										key={i}
-										src="https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg"
-										alt=""
-										className="h-4 w-4"
+										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
+										alt=''
+										className='h-4 w-4'
 									/>
 								))}
 							</div>
 						)}
 					</div>
 
-					<span className="mt-1 text-sm sm:text-base font-semibold text-black/60 leading-snug break-words">
+					<span className='mt-1 text-sm leading-snug font-semibold break-words text-black/60 sm:text-base'>
 						{description}
 					</span>
 				</div>
@@ -128,11 +59,8 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 	)
 }
 
-
 export const AboutUsProjectsSection = () => {
 	return (
-
-
 		<section className='w-full py-12 md:py-16'>
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
 				{/* HEADER */}
@@ -149,7 +77,6 @@ export const AboutUsProjectsSection = () => {
 					<div className='/* mobile (<= ~480) */ /* десктоп (>= sm, у тебя это 640px) */ relative flex min-h-[100vw] min-w-auto flex-col items-stretch justify-between overflow-clip rounded-[4.44vw] bg-neutral-900 bg-cover bg-center p-[6.66vw] sm:min-h-[40rem] sm:min-w-[40rem] sm:rounded-[1.75rem] sm:p-10'>
 						{/* background light textures */}
 						<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(90%_90%_at_0%_0%,rgba(255,255,255,0.08),transparent),radial-gradient(80%_80%_at_80%_10%,rgba(255,255,255,0.05),transparent)]' />
-
 						{/* IMAGES */}
 
 						<div className='mt-[0.9375rem] ml-[0.9375rem] h-[19.375rem] w-[27.1875rem] rotate-[-6.14deg] overflow-clip rounded-[1rem] shadow-[1rem_1rem_1.5rem_#0003] transition-all duration-300'>
@@ -174,7 +101,6 @@ export const AboutUsProjectsSection = () => {
 								className='h-full w-full transition-transform duration-500 hover:scale-[1.015]'
 							/>
 						</div>
-
 						{/* TEXT */}
 						<div className='relative mt-7 text-left text-white'>
 							<p className='text-4xl leading-none font-semibold md:text-5xl'>
@@ -220,7 +146,6 @@ export const AboutUsProjectsSection = () => {
 										</span>
 									</div>
 								</div>
-
 
 								<div className='relative flex items-center justify-center'>
 									<img
