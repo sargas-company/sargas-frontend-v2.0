@@ -4,6 +4,7 @@ type MultiStepInfoButtonProps = {
 	title: string
 	img?: string | null
 	link?: string
+	variant?: 'black' | 'white'
 }
 
 const letterVariants: Variants = {
@@ -24,15 +25,26 @@ const letterVariants: Variants = {
 	}),
 }
 
-export const MultiStepInfoButton = ({ title, img, link }: MultiStepInfoButtonProps) => {
+export const MultiStepInfoButton = ({
+	title,
+	img,
+	link,
+	variant = 'black',
+}: MultiStepInfoButtonProps) => {
 	const letters = Array.from(title)
 
+	const bgClass =
+		variant === 'white'
+			? 'bg-[linear-gradient(#ffffff,#e5e5e5)]'
+			: 'bg-[linear-gradient(#292929_24%,#1b1b1b)]'
+
+	const paddingClass = img ? 'p-1 pr-6' : 'px-6 py-[13.5px]'
+
+	const textColor = variant === 'white' ? 'text-black font-semibold' : 'text-white'
 	const button = (
 		<motion.button
 			type='button'
-			className={`flex min-h-10 cursor-pointer items-center justify-start gap-3 rounded-full bg-[linear-gradient(#292929_24%,#1b1b1b)] shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024] transition-transform duration-150 ease-out ${
-				img ? 'p-1 pr-6' : 'px-6 py-[13.5px]'
-			}`}
+			className={`flex min-h-10 cursor-pointer items-center justify-start gap-3 rounded-full ${bgClass} border-[#d9d9d9] border-1 shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024] transition-transform duration-150 ease-out ${paddingClass} `}
 			initial='rest'
 			animate='rest'
 			whileHover='hover'
@@ -45,7 +57,7 @@ export const MultiStepInfoButton = ({ title, img, link }: MultiStepInfoButtonPro
 				/>
 			)}
 
-			<span className='flex overflow-hidden text-xs font-medium text-white'>
+			<span className={`flex overflow-hidden text-xs font-medium ${textColor}`}>
 				{letters.map((char, index) =>
 					char === ' ' ? (
 						<span key={index} className='inline-block w-[0.35em]' />

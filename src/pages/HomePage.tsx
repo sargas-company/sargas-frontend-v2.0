@@ -9,6 +9,7 @@ import FAQSection from '../components/sections/FAQSection.tsx'
 import { MultiStepInfoSection } from '../components/sections/MultiStepInfoSection.tsx'
 import AboutUsProjectsSection from '../components/sections/AboutUsProjectsSection'
 import { RetainerAlternativeSection } from '../components/sections/RetainerAlternativeSection.tsx'
+import { QuestionAnswerSection } from '../components/sections/QuestionAnswerSection.tsx'
 
 export const HomePage = () => {
 	return (
@@ -17,6 +18,7 @@ export const HomePage = () => {
 			<AboutSection />
 			<IntroTextSection />
 			<MultiStepInfoSection />
+			<QuestionAnswerSection/>
 			<AboutUsProjectsSection />
 			<ProcessSection />
 			<BenefitsSection />
