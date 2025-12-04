@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScribbleUnderline } from './icons/ScribbleUnderline.tsx'
+import { AnimatedScribbleUnderline } from '../animation/AnimatedScribbleUnderline.tsx'
 
 type HeadingWithScribbleProps = {
 	prefix: string
@@ -27,8 +27,8 @@ export const HeadingWithScribble: React.FC<HeadingWithScribbleProps> = ({
 
 			<span className="relative inline-block text-black/60">
         {highlight}
-				<span className="pointer-events-none absolute left-0 right-0 bottom-[-0.35em]">
-          <ScribbleUnderline className="w-full h-[13px] text-black/40" />
+				<span className="pointer-events-none absolute left-0 right-0 bottom-[-0.25em]">
+          <AnimatedScribbleUnderline className="w-full h-[13px] text-black/40" />
         </span>
       </span>
 		</h2>
