@@ -7,6 +7,7 @@ import project_2 from '../../assets/Project_2.webp'
 import project_3 from '../../assets/Project_3.webp'
 import project_4 from '../../assets/Project_4.webp'
 import { TrendBoardIcon } from '../ui/icons/TrendBoardIcon.tsx'
+import { HeadingWithScribble } from '../ui/HeadingWithScribble.tsx'
 type StatCardProps = {
 	id: string
 	icon?: React.ReactNode
@@ -68,12 +69,8 @@ export const AboutUsProjectsSection = () => {
 	return (
 		<section className='w-full py-12 md:py-16'>
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
-				<div className='text-center'>
-					<h2 className='text-[26px] font-semibold tracking-tight text-black md:text-[32px]'>
-						A few words{' '}
-						<span className='relative inline-block font-normal text-black/70'>About us</span>
-					</h2>
-					<div className='mx-auto mt-1 h-[2px] w-16 rounded-full bg-black/15' />
+				<div className='flex items-center justify-center'>
+					<HeadingWithScribble prefix='A few words' highlight='About Us' />
 				</div>
 
 				<div className='grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_1fr] lg:gap-8'>
@@ -155,8 +152,6 @@ export const AboutUsProjectsSection = () => {
 								</div>
 
 								<div className='relative flex items-center justify-center'>
-
-
 									<motion.img
 										whileHover={{ y: -12, x: 10, rotate: 5 }}
 										transition={{ duration: 0.35, ease: 'easeOut' }}
