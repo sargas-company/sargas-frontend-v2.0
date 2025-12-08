@@ -2,7 +2,6 @@ import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { RecentWorkButton } from '../ui/buttons/RecentWorkButton'
 
-
 type MarqueeColumnProps = {
 	images: string[]
 	reverse?: boolean
@@ -10,7 +9,6 @@ type MarqueeColumnProps = {
 }
 
 const MarqueeColumn = ({ images, reverse = false, speed = 26 }: MarqueeColumnProps) => {
-	// Умножаем массив, чтобы создать супер-длинную ленту
 	const MULTIPLIER = 20
 	const loopImages = Array.from({ length: MULTIPLIER }).flatMap(() => images)
 
@@ -64,7 +62,7 @@ const rightColumnImages = [
 const AboutSectionFrame = ({ children }: { children: ReactNode }) => {
 	return (
 		<div className='relative w-full max-w-[1440px] rounded-[36px] border-8 border-white/40'>
-			<div className='relative aspect-[9/16] w-full overflow-hidden rounded-[36px] bg-[#181818]'>
+			<div className='relative aspect-[4/5] w-full overflow-hidden rounded-[36px] bg-[#181818]'>
 				{children}
 			</div>
 		</div>
@@ -84,13 +82,11 @@ const AboutSectionContent = () => {
 			}}
 		>
 			<div className='relative flex h-full flex-col gap-4 px-5 md:flex-row md:gap-5'>
-
-				<div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-black/70 via-black/10 to-transparent" />
+				<div className='pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-black/70 via-black/15 to-transparent' />
 
 				<MarqueeColumn images={leftColumnImages} speed={500} />
 				<MarqueeColumn images={rightColumnImages} reverse speed={500} />
 			</div>
-
 
 			<div className='absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
 				<RecentWorkButton />
@@ -101,7 +97,7 @@ const AboutSectionContent = () => {
 
 export const AboutSection = () => {
 	return (
-		<section className='relative isolate flex min-h-[60vh] w-full items-center justify-center'>
+		<section className='relative isolate flex h-auto min-h-[60vh] w-full items-center justify-center'>
 			<AboutSectionFrame>
 				<AboutSectionContent />
 			</AboutSectionFrame>

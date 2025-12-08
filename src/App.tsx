@@ -10,12 +10,14 @@ import './index.css'
 
 import { FargoPage } from './pages/work/FargoPage'
 import { SmoothScrollProvider } from './components/layout/SmoothScrollProvider'
+import { HashScrollHandler } from './components/layout/HashScrollHandler'
 function App() {
 	return (
 		<BrowserRouter>
 			<SmoothScrollProvider>
 				<div className='relative min-h-screen '>
 					<Background />
+					<HashScrollHandler />
 					<RouteTransitionOverlay />
 
 					<RootLayout>

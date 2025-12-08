@@ -10,8 +10,8 @@ export const SmoothScrollProvider: React.FC<Props> = ({ children }) => {
 		const lenis = new Lenis({
 			autoRaf: true,
 			smoothWheel: true,
-			lerp: 0.08, //"stickiness"
-			wheelMultiplier: 0.8, // sensitivity
+			lerp: 0.2, //"stickiness"
+			wheelMultiplier: 0.85, // sensitivity
 			orientation: "vertical",
 			gestureOrientation: "vertical",
 			// syncTouch: false,
