@@ -14,20 +14,20 @@ export const HeroSection = () => {
 	return (
 		<div className='flex flex-col gap-6 pt-[180px] pb-20 md:gap-7 md:pb-14 xl:gap-12 xl:pb-[118px]'>
 			<div className='flex flex-col items-center gap-9'>
-				{/*<motion.div*/}
-				{/*	initial={{ opacity: 0 }}*/}
-				{/*	animate={{ opacity: 1 }}*/}
-				{/*	transition={{*/}
-				{/*		type: 'tween',*/}
-				{/*		duration: 1,*/}
-				{/*		ease: 'linear',*/}
-				{/*		delay: 1.5,*/}
-				{/*	}}*/}
-				{/*	className='flex items-center gap-2 rounded-full bg-white px-4 py-2'*/}
-				{/*>*/}
-				{/*	<div className='h-1.5 w-1.5 rounded-full bg-[#0cb300]' />*/}
-				{/*	<div>Booking Open — 2 Spots Left</div>*/}
-				{/*</motion.div>*/}
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{
+						type: 'tween',
+						duration: 1,
+						ease: 'linear',
+						delay: 1.5,
+					}}
+					className='flex items-center gap-2 rounded-full bg-white px-4 py-2'
+				>
+					<div className='h-1.5 w-1.5 rounded-full bg-[#0cb300]' />
+					<div>Booking Open — Spots Left</div>
+				</motion.div>
 				<div className='flex h-min max-w-none flex-none flex-wrap items-center justify-center gap-1.5 md:max-w-[718px] md:gap-2 xl:max-w-[980px]'>
 					<div>
 						<h1>
