@@ -158,7 +158,6 @@ export const PricingSection = () => {
 			</div>
 
 			<motion.div
-				layout
 				transition={{ type: 'spring', stiffness: 280, damping: 30, mass: 0.4 }}
 				className='relative flex flex-wrap justify-start gap-[60px] rounded-[24px] bg-white/50 p-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_0_rgba(0,0,0,0.1)] md:p-9 xl:p-[60px]'
 			>
