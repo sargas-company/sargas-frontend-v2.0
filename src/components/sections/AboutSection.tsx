@@ -2,47 +2,46 @@ import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { RecentWorkButton } from '../ui/buttons/RecentWorkButton'
 
+
 type MarqueeColumnProps = {
 	images: string[]
 	reverse?: boolean
 	speed?: number
-	delay?: number
 }
 
-const MarqueeColumn = ({ images, reverse = false, speed = 26, delay = 0 }: MarqueeColumnProps) => {
-	const loopImages = [...images, ...images]
+const MarqueeColumn = ({ images, reverse = false, speed = 26 }: MarqueeColumnProps) => {
+	// Умножаем массив, чтобы создать супер-длинную ленту
+	const MULTIPLIER = 20
+	const loopImages = Array.from({ length: MULTIPLIER }).flatMap(() => images)
 
 	return (
 		<div className='relative flex-1 overflow-hidden rounded-[22px]'>
-			<motion.div
-				className='flex flex-col gap-4'
-				animate={{ y: reverse ? ['-50%', '0%'] : ['0%', '-50%'] }}
-				transition={{
-					duration: speed,
-					ease: 'linear',
-					repeat: Infinity,
-					repeatType: 'loop' as const,
-					repeatDelay: 0,
-					delay,
+			<div
+				className='animate-vertical-marquee flex flex-col gap-4'
+				style={{
+					animationDuration: `${speed}s`,
+					animationDirection: reverse ? 'reverse' : 'normal',
 				}}
 			>
 				{loopImages.map((src, index) => (
 					<div
-						key={`${src}-${index}`}
-						className='relative aspect-[4/3] w-full overflow-hidden rounded-[22px]'
+						key={index}
+						className='relative aspect-[4/3] w-full shrink-0 overflow-hidden rounded-[22px]'
 					>
 						<img
 							src={src}
 							alt='Recent work preview'
 							loading='lazy'
-							className='h-full w-full object-cover'
+							className='pointer-events-none h-full w-full object-cover select-none'
 						/>
 					</div>
 				))}
-			</motion.div>
+			</div>
 		</div>
 	)
 }
+
+export default MarqueeColumn
 
 const leftColumnImages = [
 	'https://framerusercontent.com/images/670uUrkwoRnzhCl9b3kEMwUmgE4.jpg?width=1120&height=840',
@@ -85,9 +84,13 @@ const AboutSectionContent = () => {
 			}}
 		>
 			<div className='relative flex h-full flex-col gap-4 px-5 md:flex-row md:gap-5'>
-				<MarqueeColumn images={leftColumnImages} speed={60} />
-				<MarqueeColumn images={rightColumnImages} reverse speed={60} />
+
+				<div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-b from-black/70 via-black/10 to-transparent" />
+
+				<MarqueeColumn images={leftColumnImages} speed={500} />
+				<MarqueeColumn images={rightColumnImages} reverse speed={500} />
 			</div>
+
 
 			<div className='absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
 				<RecentWorkButton />
@@ -98,7 +101,7 @@ const AboutSectionContent = () => {
 
 export const AboutSection = () => {
 	return (
-		<section className='relative isolate flex min-h-screen w-full items-center justify-center'>
+		<section className='relative isolate flex min-h-[60vh] w-full items-center justify-center'>
 			<AboutSectionFrame>
 				<AboutSectionContent />
 			</AboutSectionFrame>
