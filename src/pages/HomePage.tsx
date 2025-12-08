@@ -6,10 +6,8 @@ import ProcessSection from '../components/sections/ProcessSection.tsx'
 import ProjectsSection from '../components/sections/ProjectsSection.tsx'
 import { PricingSection } from '../components/sections/PricingSection.tsx'
 import FAQSection from '../components/sections/FAQSection.tsx'
-import { MultiStepInfoSection } from '../components/sections/MultiStepInfoSection.tsx'
 import AboutUsProjectsSection from '../components/sections/AboutUsProjectsSection'
 import { RetainerAlternativeSection } from '../components/sections/RetainerAlternativeSection.tsx'
-import { QuestionAnswerSection } from '../components/sections/QuestionAnswerSection.tsx'
 
 export const HomePage = () => {
 	return (
@@ -17,8 +15,8 @@ export const HomePage = () => {
 			<HeroSection />
 			<AboutSection />
 			<IntroTextSection />
-			<MultiStepInfoSection />
-			<QuestionAnswerSection/>
+			{/*<MultiStepInfoSection />*/}
+			{/*<QuestionAnswerSection/>*/}
 			<AboutUsProjectsSection />
 			<ProcessSection />
 			<BenefitsSection />

@@ -14,26 +14,26 @@ export const HeroSection = () => {
 	return (
 		<div className='flex flex-col gap-6 pt-[180px] pb-20 md:gap-7 md:pb-14 xl:gap-12 xl:pb-[118px]'>
 			<div className='flex flex-col items-center gap-9'>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						type: 'tween',
-						duration: 1,
-						ease: 'linear',
-						delay: 1.5,
-					}}
-					className='flex items-center gap-2 rounded-full bg-white px-4 py-2'
-				>
-					<div className='h-1.5 w-1.5 rounded-full bg-[#0cb300]' />
-					<div>Booking Open — 2 Spots Left</div>
-				</motion.div>
+				{/*<motion.div*/}
+				{/*	initial={{ opacity: 0 }}*/}
+				{/*	animate={{ opacity: 1 }}*/}
+				{/*	transition={{*/}
+				{/*		type: 'tween',*/}
+				{/*		duration: 1,*/}
+				{/*		ease: 'linear',*/}
+				{/*		delay: 1.5,*/}
+				{/*	}}*/}
+				{/*	className='flex items-center gap-2 rounded-full bg-white px-4 py-2'*/}
+				{/*>*/}
+				{/*	<div className='h-1.5 w-1.5 rounded-full bg-[#0cb300]' />*/}
+				{/*	<div>Booking Open — 2 Spots Left</div>*/}
+				{/*</motion.div>*/}
 				<div className='flex h-min max-w-none flex-none flex-wrap items-center justify-center gap-1.5 md:max-w-[718px] md:gap-2 xl:max-w-[980px]'>
 					<div>
 						<h1>
 							<strong>
 								<span className='text-[44px] leading-[1.25em] !font-medium tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
-									{'Unlimited'.split('').map((letter, index) => {
+									{'AI-ready'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
 												initialDelay={0.5}
@@ -57,7 +57,7 @@ export const HeroSection = () => {
 							<strong>
 								<span className='h-full px-1.5 md:px-2 xl:px-2.5' />
 								<span className='text-[44px] leading-[1.25em] font-normal tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
-									{'Design'.split('').map((letter, index) => {
+									{'platform'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
 												initialDelay={1.2}
@@ -76,7 +76,7 @@ export const HeroSection = () => {
 						<h1>
 							<strong>
 								<span className='text-[44px] leading-[1.25em] font-normal tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
-									{'for'.split('').map((letter, index) => {
+									{'for \u00A0 B2B'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
 												initialDelay={1.2}
@@ -100,7 +100,7 @@ export const HeroSection = () => {
 							<strong>
 								<span className='h-full px-1.5 md:px-2 xl:px-2.5' />
 								<span className='text-[44px] leading-[1.25em] !font-medium tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
-									{'Solid Startups'.split('').map((letter, index) => {
+									{'Teams'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
 												initialDelay={1.4}
