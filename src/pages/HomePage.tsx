@@ -21,8 +21,8 @@ export const HomePage = () => {
 			<ProcessSection />
 			<BenefitsSection />
 			<ProjectsSection />
-			<RetainerAlternativeSection />
 			<PricingSection />
+			<RetainerAlternativeSection />
 			<FAQSection />
 		</>
 	)

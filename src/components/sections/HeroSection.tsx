@@ -4,11 +4,8 @@ import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { motion } from 'framer-motion'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
-import devImg from '../../assets/dev.avif'
-import dev_01Img from '../../assets/dev_01.avif'
-import dev_02Img from '../../assets/dev_02.avif'
-import dev_03Img from '../../assets/dev_03.avif'
-import dev_04Img from '../../assets/dev_04.avif'
+import UpIcon from '../../assets/UpworkIcon.webp'
+import { ClutchIcon } from '../ui/icons/ClutchIcon.tsx'
 
 export const HeroSection = () => {
 	return (
@@ -132,44 +129,59 @@ export const HeroSection = () => {
 					</p>
 				</motion.div>
 			</div>
-			<motion.div
-				initial={{ opacity: 0, y: 30 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{
-					type: 'tween',
-					duration: 1,
-					ease: 'linear',
-					delay: 1.5,
-				}}
-				className='flex flex-wrap justify-center gap-2 gap-4'
+
+			<div
+				className={'flex flex-col items-center justify-center gap-5 md:flex-row md:items-start'}
 			>
-				<HeroSectionButton title='Choose your plan' icon={<ArrowRightIcon />} withOutline />
-				<div className='flex flex-col justify-center gap-0.5'>
-					<div className='flex'>
-						<img
-							src={devImg}
-							className='h-[31px] w-[31px] rounded-full border border-white object-cover'
-						/>
-						<img
-							src={dev_01Img}
-							className='relative right-1.5 h-[31px] w-[31px] rounded-full border border-white object-cover'
-						/>
-						<img
-							src={dev_02Img}
-							className='relative right-3 h-[31px] w-[31px] rounded-full border border-white object-cover'
-						/>
-						<img
-							src={dev_03Img}
-							className='relative right-4.5 h-[31px] w-[31px] rounded-full border border-white object-cover'
-						/>
-						<img
-							src={dev_04Img}
-							className='relative right-6 h-[31px] w-[31px] rounded-full border border-white object-cover'
-						/>
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{
+						type: 'tween',
+						duration: 1,
+						ease: 'linear',
+						delay: 1.5,
+					}}
+					className='flex flex-wrap justify-center gap-2 gap-4'
+				>
+					<HeroSectionButton title='Choose your plan' icon={<ArrowRightIcon />} withOutline />
+				</motion.div>
+
+				<div className='flex flex-col items-center justify-center gap-5'>
+					<div className='mt-2 flex items-center justify-center gap-6'>
+						<div
+							className={`flex h-full w-full min-w-[90px] items-center gap-2 rounded-full bg-white p-1 px-4 py-3 whitespace-nowrap`}
+							style={{
+								boxShadow:
+									'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
+							}}
+						>
+							<p
+								className='flex items-center justify-center rounded-full text-[12px] font-light'
+								style={{ background: "#ff5e00'" }}
+							></p>
+							<ClutchIcon />
+						</div>
+
+						<div
+							className={`flex h-full w-full items-center gap-2 rounded-full bg-white p-1 px-4 py-3 whitespace-nowrap`}
+							style={{
+								boxShadow:
+									'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
+							}}
+						>
+							<p
+								className='flex items-center justify-center rounded-full text-[12px] font-light'
+								style={{ background: "#ff5e00'" }}
+							>
+								100% JSS
+							</p>
+							<img src={UpIcon} alt='' className={'max-w-[70px]'} />
+						</div>
 					</div>
-					<p className='text-xs text-black/50'>Trusted by Leaders</p>
+					<p className='text-xs text-black/50'>Trusted by Clients</p>
 				</div>
-			</motion.div>
+			</div>
 		</div>
 	)
 }
