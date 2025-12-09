@@ -130,22 +130,22 @@ export const HeroSection = () => {
 				</motion.div>
 			</div>
 
-			<div
+			<motion.div
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					type: 'tween',
+					duration: 1,
+					ease: 'linear',
+					delay: 1.5,
+				}}
 				className={'flex flex-col items-center justify-center gap-5 md:flex-row md:items-start'}
 			>
-				<motion.div
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{
-						type: 'tween',
-						duration: 1,
-						ease: 'linear',
-						delay: 1.5,
-					}}
-					className='flex flex-wrap justify-center gap-2 gap-4'
+				<div
+					className='flex flex-wrap justify-center gap-4'
 				>
 					<HeroSectionButton title='Choose your plan' icon={<ArrowRightIcon />} withOutline />
-				</motion.div>
+				</div>
 
 				<div className='flex flex-col items-center justify-center gap-5'>
 					<div className='mt-2 flex items-center justify-center gap-6'>
@@ -181,7 +181,7 @@ export const HeroSection = () => {
 					</div>
 					<p className='text-xs text-black/50'>Trusted by Clients</p>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	)
 }
