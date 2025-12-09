@@ -67,7 +67,7 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 
 export const AboutUsProjectsSection = () => {
 	return (
-		<section className='w-full py-12 md:py-16'>
+		<section className='w-full pb-20 md:pb-50'>
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
 				<div className='flex items-center justify-center'>
 					<HeadingWithScribble prefix='A few words' highlight='About Us' />

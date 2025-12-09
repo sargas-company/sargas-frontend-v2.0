@@ -176,7 +176,7 @@ export const IntroTextSection = () => {
 					mask: 'radial-gradient(50% 50%, #000 0%, transparent 100%)',
 				}}
 			/>
-			<div className='flex min-h-screen flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-14 xl:gap-0 xl:py-20'>
+			<div className='flex min-h-[75vh] flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-10 xl:gap-0 xl:py-18'>
 				<SectionTitle title='Hello!' />
 				<div className='relative flex h-min max-w-[940px] flex-col gap-[260px] pb-[280px] md:gap-12 md:px-[96px] md:py-12 xl:px-[120px]'>
 					<p className='font-inter-display text-center text-[28px] leading-[1.4em] font-normal tracking-[-0.04em] text-black md:text-[32px] xl:text-[44px]'>

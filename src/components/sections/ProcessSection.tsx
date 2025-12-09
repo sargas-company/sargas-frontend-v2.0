@@ -6,7 +6,7 @@ import { AnimateLeftWave } from '../ui/icons/wave/AnimateLeftWave.tsx'
 
 const ProcessSection = () => {
 	return (
-		<section className='pb-16' id='process'>
+		<section className='pb-20 md:pb-50' id='process'>
 			<div className='flex flex-col items-center gap-2.5'>
 				<SectionTitle title='Our Process, Explained!' />
 				<h2 className='mb-15 text-[28px] leading-[1.4] tracking-[-0.04em] break-words whitespace-pre-wrap md:text-[48px]'>

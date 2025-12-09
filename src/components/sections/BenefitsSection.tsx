@@ -35,7 +35,7 @@ const benefits = [
 export const BenefitsSection = () => {
 	return (
 		<div
-			className='flex flex-col items-center gap-6 py-10 md:gap-7 md:py-14 xl:gap-12 xl:py-30'
+			className='flex flex-col items-center gap-6 pb-20 md:gap-7 md:pb-54 xl:gap-12 xl:pb-50'
 			id='work'
 		>
 			<div className='flex flex-col items-center gap-2.5'>

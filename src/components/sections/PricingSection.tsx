@@ -147,7 +147,7 @@ export const PricingSection = () => {
 
 	return (
 		<div
-			className='flex flex-col gap-6 py-10 md:gap-9 md:py-14 xl:gap-15 xl:pt-[120px] xl:pb-[160px]'
+			className='flex flex-col pb-20 gap-6 md:gap-9 md:pb-50 xl:gap-15 xl:pb-[160px]'
 			id='pricing'
 		>
 			<div className='flex flex-col items-center gap-2.5'>
