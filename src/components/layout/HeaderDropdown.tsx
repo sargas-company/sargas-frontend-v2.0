@@ -6,33 +6,38 @@ import { InstagramIcon } from '../ui/icons/InstagramIcon'
 
 type Props = {
 	open: boolean,
-	bold?: boolean
 }
 
 const menuOptions = [
 	{
 		title: 'Process',
 		link: '/#process',
+		bold: true
 	},
 	{
 		title: 'Work',
 		link: '/#work',
+		bold: true
 	},
 	{
 		title: 'About',
 		link: '/#about',
+		bold: true
 	},
 	{
 		title: 'Pricing',
 		link: '/#pricing',
+		bold: true
 	},
 	{
 		title: 'FAQ',
 		link: '/#faq',
+		bold: true
 	},
 	{
 		title: 'Contact',
 		link: '/#cta',
+		bold: true
 	},
 ]
 
