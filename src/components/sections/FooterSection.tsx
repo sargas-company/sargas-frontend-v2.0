@@ -73,47 +73,47 @@ const socialLinks: SocialLink[] = [
 // ]
 
 
-const useTimeByZone = (zones: string[]) => {
-	const zonesKey = zones.join('|')
-
-	const [times, setTimes] = useState<Record<string, string>>({})
-
-	useEffect(() => {
-		let mounted = true
-
-		const update = () => {
-			if (!mounted) return
-			const now = new Date()
-			const next: Record<string, string> = {}
-
-			for (const zone of zones) {
-				try {
-					next[zone] = new Intl.DateTimeFormat('en-GB', {
-						hour: '2-digit',
-						minute: '2-digit',
-						hour12: false,
-						timeZone: zone,
-					}).format(now)
-				} catch (e) {
-
-					next[zone] = '--:--'
-				}
-			}
-
-			if (mounted) setTimes(next)
-		}
-
-		update()
-		const id = setInterval(update, 60_000)
-
-		return () => {
-			mounted = false
-			clearInterval(id)
-		}
-	}, [zonesKey])
-
-	return times
-}
+// const useTimeByZone = (zones: string[]) => {
+// 	const zonesKey = zones.join('|')
+//
+// 	const [times, setTimes] = useState<Record<string, string>>({})
+//
+// 	useEffect(() => {
+// 		let mounted = true
+//
+// 		const update = () => {
+// 			if (!mounted) return
+// 			const now = new Date()
+// 			const next: Record<string, string> = {}
+//
+// 			for (const zone of zones) {
+// 				try {
+// 					next[zone] = new Intl.DateTimeFormat('en-GB', {
+// 						hour: '2-digit',
+// 						minute: '2-digit',
+// 						hour12: false,
+// 						timeZone: zone,
+// 					}).format(now)
+// 				} catch (e) {
+//
+// 					next[zone] = '--:--'
+// 				}
+// 			}
+//
+// 			if (mounted) setTimes(next)
+// 		}
+//
+// 		update()
+// 		const id = setInterval(update, 60_000)
+//
+// 		return () => {
+// 			mounted = false
+// 			clearInterval(id)
+// 		}
+// 	}, [zonesKey])
+//
+// 	return times
+// }
 
 const useViewportHeight = () => {
 	const [height, setHeight] = useState<number | null>(null)
