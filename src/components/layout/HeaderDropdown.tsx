@@ -12,32 +12,32 @@ const menuOptions = [
 	{
 		title: 'Process',
 		link: '/#process',
-		bold: true
+		bold: false
 	},
 	{
 		title: 'Work',
 		link: '/#work',
-		bold: true
+		bold: false
 	},
 	{
 		title: 'About',
 		link: '/#about',
-		bold: true
+		bold: false
 	},
 	{
 		title: 'Pricing',
 		link: '/#pricing',
-		bold: true
+		bold: false
 	},
 	{
 		title: 'FAQ',
 		link: '/#faq',
-		bold: true
+		bold: false
 	},
 	{
 		title: 'Contact',
 		link: '/#cta',
-		bold: true
+		bold: false
 	},
 ]
 
