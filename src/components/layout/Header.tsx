@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { HeaderMenuButton } from './HeaderMenuButton'
 import { HeaderDropdown } from './HeaderDropdown'
