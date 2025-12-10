@@ -11,20 +11,6 @@ export const HeroSection = () => {
 	return (
 		<div className='flex flex-col gap-6 pt-[180px] pb-20 md:gap-7 md:pb-14 xl:gap-12 xl:pb-[118px]'>
 			<div className='flex flex-col items-center gap-9'>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						type: 'tween',
-						duration: 1,
-						ease: 'linear',
-						delay: 1.5,
-					}}
-					className='flex items-center gap-2 rounded-full bg-white px-4 py-2'
-				>
-					<div className='h-1.5 w-1.5 rounded-full bg-[#0cb300]' />
-					<div>Booking Open — Spots Left</div>
-				</motion.div>
 				<div className='flex h-min max-w-none flex-none flex-wrap items-center justify-center gap-1.5 md:max-w-[718px] md:gap-2 xl:max-w-[980px]'>
 					<div>
 						<h1>
@@ -144,39 +130,35 @@ export const HeroSection = () => {
 				<div
 					className='flex flex-wrap justify-center gap-4'
 				>
-					<HeroSectionButton title='Choose your plan' icon={<ArrowRightIcon />} withOutline />
+					<HeroSectionButton title='Book a free intro call' icon={<ArrowRightIcon />} withOutline />
 				</div>
 
 				<div className='flex flex-col items-center justify-center gap-5'>
 					<div className='mt-2 flex items-center justify-center gap-6'>
 						<div
-							className={`flex h-full w-full min-w-[90px] items-center gap-2 rounded-full bg-white p-1 px-4 py-3 whitespace-nowrap`}
+							className={`flex h-full w-full min-w-[90px] items-center gap-2 rounded-full bg-white px-6 py-[15px] whitespace-nowrap`}
 							style={{
 								boxShadow:
 									'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
 							}}
 						>
-							<p
-								className='flex items-center justify-center rounded-full text-[12px] font-light'
-								style={{ background: "#ff5e00'" }}
-							></p>
 							<ClutchIcon />
 						</div>
 
 						<div
-							className={`flex h-full w-full items-center gap-2 rounded-full bg-white p-1 px-4 py-3 whitespace-nowrap`}
+							className={`flex h-full w-full items-center gap-2 rounded-full bg-white p-1 px-7 py-3 whitespace-nowrap`}
 							style={{
 								boxShadow:
 									'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
 							}}
 						>
 							<p
-								className='flex items-center justify-center rounded-full text-[12px] font-light'
+								className='flex items-center justify-center rounded-full text-[16px] font-medium'
 								style={{ background: "#ff5e00'" }}
 							>
 								100% JSS
 							</p>
-							<img src={UpIcon} alt='' className={'max-w-[70px]'} />
+							<img src={UpIcon} alt='' className={'max-w-[95px]'} />
 						</div>
 					</div>
 					<p className='text-xs text-black/50'>Trusted by Clients</p>

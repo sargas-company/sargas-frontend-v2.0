@@ -33,11 +33,6 @@ const menuOptions = [
 		title: 'Contact',
 		link: '/#cta',
 	},
-	{
-		title: 'Get Template',
-		link: '#',
-		bold: true,
-	},
 ]
 
 const socials = [

@@ -1,8 +1,8 @@
 export const ClutchIcon = () => {
 	return (
 		<svg
-			width='125'
-			height='15'
+			width='135'
+			height='18'
 			viewBox='0 0 125 22'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'

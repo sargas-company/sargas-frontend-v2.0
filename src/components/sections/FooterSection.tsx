@@ -43,33 +43,33 @@ const socialLinks: SocialLink[] = [
 ]
 
 const timezones = [
-	{
-		country: 'United States',
-		code: 'US',
-		img: usImg,
-		addressLine1: '136 Madison Avenue,',
-		addressLine2: 'New York',
-		utcOffset: 'UTC -6',
-		timeZone: 'America/New_York',
-	},
-	{
-		country: 'Spain',
-		code: 'ES',
-		img: esImg,
-		addressLine1: '147 Carrer de Alaba,',
-		addressLine2: 'Barcelona',
-		utcOffset: 'UTC -1',
-		timeZone: 'Europe/Madrid',
-	},
-	{
-		country: 'Poland',
-		code: 'PL',
-		img: plImg,
-		addressLine1: '126/134 Marszałkowska',
-		addressLine2: 'Warsaw',
-		utcOffset: 'UTC -1',
-		timeZone: 'Europe/Warsaw',
-	},
+	// {
+	// 	country: 'United States',
+	// 	code: 'US',
+	// 	img: usImg,
+	// 	addressLine1: '136 Madison Avenue,',
+	// 	addressLine2: 'New York',
+	// 	utcOffset: 'UTC -6',
+	// 	timeZone: 'America/New_York',
+	// },
+	// {
+	// 	country: 'Spain',
+	// 	code: 'ES',
+	// 	img: esImg,
+	// 	addressLine1: '147 Carrer de Alaba,',
+	// 	addressLine2: 'Barcelona',
+	// 	utcOffset: 'UTC -1',
+	// 	timeZone: 'Europe/Madrid',
+	// },
+	// {
+	// 	country: 'Poland',
+	// 	code: 'PL',
+	// 	img: plImg,
+	// 	addressLine1: '126/134 Marszałkowska',
+	// 	addressLine2: 'Warsaw',
+	// 	utcOffset: 'UTC -1',
+	// 	timeZone: 'Europe/Warsaw',
+	// },
 ]
 
 
@@ -173,7 +173,7 @@ export const FooterSection = () => {
 					<div className='mt-4 translate-y-[-50px] space-y-8 md:mt-2'>
 						<div className='flex items-center justify-center'>
 							<SectionTitle
-								title='2 spots available'
+								title='We are available'
 								textColor={'text-white/60'}
 								lineColor={'rgba(255, 255, 255, 0.5)'}
 							/>
@@ -242,7 +242,7 @@ export const FooterSection = () => {
 				<div className='relative z-10 mt-45 flex flex-col items-center justify-between gap-5 pt-2 pb-10 md:mt-0 md:flex-row md:px-35'>
 					<div className='flex flex-col items-center gap-1 text-sm text-white/70 md:gap-3.5'>
 						<span className='h-[0.5px] w-full bg-white' />
-						<span className='px-4 whitespace-nowrap text-white'>© Hanzo Studio, 2025</span>
+						<span className='px-4 whitespace-nowrap text-white'>© Sargas Agency, 2025</span>
 						<span className='h-[0.5px] w-full bg-white' />
 					</div>
 

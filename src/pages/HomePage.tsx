@@ -20,9 +20,9 @@ export const HomePage = () => {
 			<AboutUsProjectsSection />
 			<ProcessSection />
 			<BenefitsSection />
-			<ProjectsSection />
+			{/*<ProjectsSection />*/}
 			<PricingSection />
-			<RetainerAlternativeSection />
+			{/*<RetainerAlternativeSection />*/}
 			<FAQSection />
 		</>
 	)

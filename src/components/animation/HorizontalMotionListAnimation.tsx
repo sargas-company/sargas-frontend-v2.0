@@ -102,17 +102,17 @@ export const HorizontalMotionListAnimation = () => {
 						duration: 25,
 						repeat: Infinity,
 						ease: 'linear',
-						delay: 2,
+						delay: 20000000,
 					}}
 				>
-					{items.map((icon, i) => (
+
 						<li
-							key={i}
+
 							className='flex h-full flex-shrink-0 items-center justify-center bg-[#262626] px-6'
 						>
-							{icon}
+							{asset3}
 						</li>
-					))}
+
 				</motion.ul>
 			</motion.div>
 		</motion.div>
