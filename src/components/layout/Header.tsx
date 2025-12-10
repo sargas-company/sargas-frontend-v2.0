@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { HeaderMenuButton } from './HeaderMenuButton'
 import { HeaderDropdown } from './HeaderDropdown'
 import { Link, useLocation } from 'react-router-dom'
-import {HorizontalMotionListAnimation} from "../animation/HorizontalMotionListAnimation.tsx";
+import {HorizontalMotionListAnimationV2Header} from "../animation/HorizontalMotionListAnimationV2Header.tsx";
 
 export const Header = () => {
 	const [open, setOpen] = useState(false)
@@ -13,7 +13,7 @@ export const Header = () => {
 
 	return (
 		<motion.header
-			className='fixed top-0 left-0 z-20 h-20 w-full px-6 md:px-12 xl:px-30'
+			className='absolute top-0 left-0 z-20 h-20 w-full px-6 md:px-12 xl:px-30'
 			initial={{ opacity: 0, y: -50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{
@@ -26,7 +26,7 @@ export const Header = () => {
 			<div className='mx-auto flex h-full max-w-[1440px] items-center justify-between'>
 				{isHome ? (
 					<Link to='/' className='rounded-[22px] mt-20 px-6 py-2.5 text-black flex align-middle'>
-						<HorizontalMotionListAnimation />
+						<HorizontalMotionListAnimationV2Header />
 					</Link>
 				) : (
 					<Link to='/' className='rounded-[22px] bg-white px-6 py-2.5 text-black'>

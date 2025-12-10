@@ -40,7 +40,7 @@ export const HeroSection = () => {
 							<strong>
 								<span className='h-full px-1.5 md:px-2 xl:px-2.5' />
 								<span className='text-[44px] leading-[1.25em] font-normal tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
-									{'platform'.split('').map((letter, index) => {
+									{'platforms'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
 												initialDelay={1.2}
