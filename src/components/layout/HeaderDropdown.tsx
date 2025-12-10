@@ -5,7 +5,8 @@ import { LinkedInIcon } from '../ui/icons/LinkedInIcon'
 import { InstagramIcon } from '../ui/icons/InstagramIcon'
 
 type Props = {
-	open: boolean
+	open: boolean,
+	bold?: boolean
 }
 
 const menuOptions = [
