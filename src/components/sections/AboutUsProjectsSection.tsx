@@ -10,8 +10,6 @@ import project_4 from '../../assets/case_studies/local_service.png'
 import { TrendBoardIcon } from '../ui/icons/TrendBoardIcon.tsx'
 import { HeadingWithScribble } from '../ui/HeadingWithScribble.tsx'
 import {CommentsSectionClutch} from "./CommentsSectionClutch.tsx";
-import {CommentsSectionUpwork} from "./CommentsSectionUpwork.tsx";
-import {SectionTitle} from "../ui/SectionTitle.tsx";
 import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
 type StatCardProps = {
 	id: string

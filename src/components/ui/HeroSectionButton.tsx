@@ -33,7 +33,7 @@ export const HeroSectionButton = ({ title, href = '#', icon, withOutline, fullWi
 				rel='noopener noreferrer'
 				className='group inline-flex w-full items-center justify-center gap-3 rounded-[154px] bg-black px-6 py-3 text-[16px] font-medium text-white'
 				style={{
-					boxShadow: hovered ? hoverShadow : baseShadow,
+					// boxShadow: hovered ? hoverShadow : baseShadow,
 					transition: 'box-shadow 500ms ease-out, transform 150ms ease-out',
 				}}
 				onMouseEnter={() => setHovered(true)}

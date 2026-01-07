@@ -49,7 +49,6 @@ const StatCardLogo = ({ icon, rate }: StatCardProps) => {
 						<div className='flex shrink-0 gap-1'>
 							{[...Array(5)].map((_, i) => (
 								<HeroSectionLetterAnimation
-									loop={true}
 									initialDelay={0.5}
 									delayRate={i * 0.07}
 									key={i}

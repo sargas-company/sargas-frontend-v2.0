@@ -1,9 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { XIcon } from '../ui/icons/XIcon'
-import { LinkedInIcon } from '../ui/icons/LinkedInIcon'
-import { InstagramIcon } from '../ui/icons/InstagramIcon'
-import {UpIcon} from "../ui/icons/UpIcon.tsx";
 import {IconAt} from "../ui/icons/IconAt.tsx";
 import {WAIcon} from "../ui/icons/WAIcon.tsx";
 import {TGIcon} from "../ui/icons/TGIcon.tsx";
@@ -76,7 +72,7 @@ export const HeaderDropdown = ({ open }: Props) => {
 		})
 	}
 
-	const isMailto = (href) => /^\s*mailto:/i.test(String(href ?? ""));
+	const isMailto = (href: string) => /^\s*mailto:/i.test(String(href ?? ""));
 
 	return (
 		<AnimatePresence>
