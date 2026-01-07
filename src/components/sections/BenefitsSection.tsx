@@ -1,34 +1,37 @@
 import { SectionTitle } from '../ui/SectionTitle'
 import { BenefitCard } from '../ui/BenefitCard'
-import StridaImg from '../../assets/Strida.avif'
-import BravoImg from '../../assets/Bravo.avif'
-import NitroImg from '../../assets/Nitro.avif'
-import FargoImg from '../../assets/Fargo.avif'
+
+import Ai4u from '../../assets/case_studies/recent/ai4u.png'
+import Services from '../../assets/case_studies/recent/service.png'
+import Webild from '../../assets/case_studies/recent/webild.png'
+import Sophia from '../../assets/case_studies/recent/sophia.png'
+
+
 
 const benefits = [
 	{
 		title: 'Strida',
 		chips: ['portfolio', 'sidebar'],
 		link: '/work/strida',
-		img: StridaImg,
+		img: Webild,
 	},
 	{
 		title: 'Bravo',
 		chips: ['UI/UX', 'App'],
 		link: '/work/bravo',
-		img: BravoImg,
+		img: Sophia,
 	},
 	{
 		title: 'Nitro',
 		chips: ['Design System', 'Web'],
 		link: '/work/nitro',
-		img: NitroImg,
+		img: Services,
 	},
 	{
 		title: 'Fargo',
 		chips: ['SaaS', 'Web'],
 		link: '/work/fargo',
-		img: FargoImg,
+		img: Ai4u,
 	},
 ]
 

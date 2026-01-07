@@ -4,35 +4,100 @@ import { useRef } from 'react'
 import { DesignSystemsIcon } from '../ui/icons/DesignSystemsIcon'
 import { UIUXIcon } from '../ui/icons/UIUXIcon'
 import { ResearchIcon } from '../ui/icons/ResearchIcon'
-import { AnimationIcon } from '../ui/icons/AnimationIcon'
 import { PrototypingIcon } from '../ui/icons/PrototypingIcon'
 import { StrategyIcon } from '../ui/icons/StrategyIcon'
 import { IntroChip } from '../ui/IntroChip'
 import { IntroTextSectionWordAnimation } from '../animation/IntroTextSectionWordAnimation'
+import {SecurityIcon} from "../ui/icons/SecurityIcon.tsx";
+
+import aws from '../../assets/tech/aws.svg'
+import docker from '../../assets/tech/docker.svg'
+import javascript from '../../assets/tech/javascript.svg'
+import n8n from '../../assets/tech/n8n.svg'
+import nestjs from '../../assets/tech/nestjs.svg'
+import nextJs from '../../assets/tech/nextjs.svg'
+import nginx from '../../assets/tech/nginx.svg'
+import nodejs from '../../assets/tech/nodejs.svg'
+import reactjs from '../../assets/tech/reactjs.svg'
+import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
 
 const Content = [
 	'We',
 	'help',
+	'B2B',
+	'teams',
+	'and',
 	'startups',
+	'build',
+	'AI-ready',
+	'SaaS',
+	'platforms',
+	'marketplaces',
 	'and',
-	'enterprise',
-	'to',
-	'establish',
-	'an',
-	'emotional',
-	'connection',
-	'between',
-	'their',
-	'products',
+	'internal',
+	'tools',
+	'with',
+	'production-grade',
+	'APIs',
 	'and',
-	'happy',
-	'engaged',
-	'customer',
+	'automation',
+	'that',
+	'removes',
+	'manual',
+	'work'
+]
+
+const technologies = [
+	{
+		src: aws,
+		alt: 'aws',
+		width: '50px'
+	},
+	{
+		src: docker,
+		alt: 'docker',
+		width: '50px'
+	},
+	{
+		src: javascript,
+		alt: 'javascript',
+		width: '50px'
+	},
+	{
+		src: nodejs,
+		alt: 'nodejs',
+		width: '50px'
+	},
+	{
+		src: nestjs,
+		alt: 'nestjs',
+		width: '50px'
+	},
+	{
+		src: nextJs,
+		alt: 'nextJs',
+		width: '50px'
+	},
+	{
+		src: n8n,
+		alt: 'n8n',
+		width: '90px'
+	},
+	{
+		src: nginx,
+		alt: 'nginx',
+		width: '50px'
+	},
+	{
+		src: reactjs,
+		alt: 'reactjs',
+		width: '50px'
+	}
 ]
 
 const chips = [
 	{
-		title: 'Design systems',
+		title: 'API & Integrations',
 		icon: DesignSystemsIcon,
 		bg: '#ff5e00',
 		rotation: 3,
@@ -51,7 +116,7 @@ const chips = [
 		},
 	},
 	{
-		title: 'UI/UX',
+		title: 'UX for SaaS / Product UX',
 		icon: UIUXIcon,
 		bg: '#474747',
 		rotation: 4,
@@ -59,7 +124,7 @@ const chips = [
       absolute
       bottom-[137px] left-[25%] -translate-x-1/2
       md:bottom-auto md:top-[43%] md:left-[-21px] md:translate-x-0 md:-translate-y-1/2
-      xl:top-1/2 xl:left-[-57px]
+      xl:top-1/2 xl:left-[-157px]
     `,
 		animation: {
 			fromX: -200,
@@ -70,7 +135,7 @@ const chips = [
 		},
 	},
 	{
-		title: 'Research',
+		title: 'Automation',
 		icon: ResearchIcon,
 		bg: '#05a7ff',
 		rotation: -4,
@@ -89,8 +154,8 @@ const chips = [
 		},
 	},
 	{
-		title: 'Animation',
-		icon: AnimationIcon,
+		title: 'Security',
+		icon: SecurityIcon,
 		bg: '#52ff69',
 		rotation: -5,
 		positionClass: `
@@ -127,7 +192,7 @@ const chips = [
 		},
 	},
 	{
-		title: 'Strategy',
+		title: 'Architecture Strategy',
 		icon: StrategyIcon,
 		bg: '#ffd500',
 		rotation: 4,
@@ -176,7 +241,7 @@ export const IntroTextSection = () => {
 					mask: 'radial-gradient(50% 50%, #000 0%, transparent 100%)',
 				}}
 			/>
-			<div className='flex min-h-[75vh] flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-10 xl:gap-0 xl:py-18'>
+			<div className='flex min-h-[75vh] flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-10 xl:gap-0 xl:py-18 xl:mb-15 xl:mt-15'>
 				<SectionTitle title='Hello!' />
 				<div className='relative flex h-min max-w-[940px] flex-col gap-[260px] pb-[280px] md:gap-12 md:px-[96px] md:py-12 xl:px-[120px]'>
 					<p className='font-inter-display text-center text-[28px] leading-[1.4em] font-normal tracking-[-0.04em] text-black md:text-[32px] xl:text-[44px]'>
@@ -192,6 +257,17 @@ export const IntroTextSection = () => {
 
 					{chips.map((chip) => (
 						<IntroChip key={chip.title} chip={chip} />
+					))}
+				</div>
+				<div className='flex flex-row items-center mt-5' >
+					{technologies.map((item, index) => (
+						<HeroSectionLetterAnimation
+							initialDelay={0.5}
+							delayRate={index * 0.07}
+							key={index}
+						>
+							<img width={item.width} height='auto' className='ml-4' src={item.src} alt={item.alt}/>
+						</HeroSectionLetterAnimation>
 					))}
 				</div>
 			</div>

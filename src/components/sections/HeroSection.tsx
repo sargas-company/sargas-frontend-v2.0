@@ -6,6 +6,8 @@ import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimat
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
 import UpIcon from '../../assets/UpworkIcon.webp'
 import { ClutchIcon } from '../ui/icons/ClutchIcon.tsx'
+import {Link} from "react-router-dom";
+import {NeonFrame} from "../animation/NeonFrame.tsx";
 
 export const HeroSection = () => {
 	return (
@@ -109,9 +111,8 @@ export const HeroSection = () => {
 						delay: 1.5,
 					}}
 				>
-					<p className='max-w-[434px] text-center leading-[1.7] tracking-[0em] text-balance text-black/50'>
-						We help startups and brands create beautiful, functional products — fast and
-						hassle-free.
+					<p className='max-w-[500px] text-center leading-[1.7] tracking-[0em] text-balance text-black/50'>
+						We engineer AI-ready products for B2B teams and startups: SaaS, marketplaces, internal systems, integrations and automation
 					</p>
 				</motion.div>
 			</div>
@@ -130,12 +131,24 @@ export const HeroSection = () => {
 				<div
 					className='flex flex-wrap justify-center gap-4'
 				>
-					<HeroSectionButton title='Book a free intro call' icon={<ArrowRightIcon />} withOutline />
+					<NeonFrame>
+					<HeroSectionButton
+						title='Book a free intro call'
+						icon={<ArrowRightIcon />}
+						href='https://calendly.com/contact-sargas/60-minute-meeting'
+						withOutline
+					/>
+					</NeonFrame>
 				</div>
 
 				<div className='flex flex-col items-center justify-center gap-5'>
 					<div className='mt-2 flex items-center justify-center gap-6'>
-						<div
+
+						<Link
+							to='https://clutch.co/profile/sargas-agency-o'
+							target='_blank'
+							rel="noreferrer"
+
 							className={`flex h-full w-full min-w-[90px] items-center gap-2 rounded-full bg-white px-6 py-[15px] whitespace-nowrap`}
 							style={{
 								boxShadow:
@@ -143,9 +156,13 @@ export const HeroSection = () => {
 							}}
 						>
 							<ClutchIcon />
-						</div>
+						</Link>
 
-						<div
+						<Link
+							to='https://www.upwork.com/agencies/1772989322229334016'
+							target='_blank'
+							rel="noreferrer"
+
 							className={`flex h-full w-full items-center gap-2 rounded-full bg-white p-1 px-7 py-3 whitespace-nowrap`}
 							style={{
 								boxShadow:
@@ -159,7 +176,8 @@ export const HeroSection = () => {
 								100% JSS
 							</p>
 							<img src={UpIcon} alt='' className={'max-w-[95px]'} />
-						</div>
+						</Link>
+
 					</div>
 					<p className='text-xs text-black/50'>Trusted by Clients</p>
 				</div>

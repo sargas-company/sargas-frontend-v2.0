@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { useEffect, useMemo, useState } from 'react'
-import asset1 from '../../assets/asset_01.avif'
-import asset2 from '../../assets/asset_02.avif'
+import asset1 from '../../assets/case_studies/slider_preview_2.png'
+import asset2 from '../../assets/case_studies/slider_preview_1_new.png'
 
-const IMAGES = [asset1, asset2, asset2]
+const IMAGES = [asset1, asset2]
 
 function getItemHeightByWidth(width: number) {
 	if (width >= 1440) return 113

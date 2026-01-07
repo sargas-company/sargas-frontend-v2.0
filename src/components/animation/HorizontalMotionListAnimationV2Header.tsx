@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import {Link} from "react-router-dom";
 
 // const asset2 = (
 // 	<svg xmlns='http://www.w3.org/2000/svg' width='100' height='40' fill='none' overflow='visible'>
@@ -85,9 +86,8 @@ export const HorizontalMotionListAnimationV2Header = () => {
 						delay: 20000000,
 					}}
 				>
-
-						<li
-
+						<Link
+							to='https://sargas.io'
 							className='flex h-full flex-shrink-0 items-center justify-center bg-[transparent] px-5 pl-[29px]'
 						>
 							<img
@@ -96,7 +96,7 @@ export const HorizontalMotionListAnimationV2Header = () => {
 								className='h-auto w-9 mr-4'
 							/>
 							<strong className="accent-white align-middle uppercase text-[23px] !font-medium tracking-[-0.11em] md:text-[80px] xl:text-[38px]">Sargas</strong>
-						</li>
+						</Link>
 
 				</motion.ul>
 			</motion.div>

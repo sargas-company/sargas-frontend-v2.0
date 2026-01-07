@@ -9,9 +9,9 @@ import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { IconAt } from '../ui/icons/IconAt.tsx'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon.tsx'
 import { HeroSectionButton } from '../ui/HeroSectionButton.tsx'
-// import usImg from '../../assets/us_timezone.png'
-// import esImg from '../../assets/es_timezone.webp'
-// import plImg from '../../assets/pl_timezone.webp'
+import {WAIcon} from "../ui/icons/WAIcon.tsx";
+import {TGIcon} from "../ui/icons/TGIcon.tsx";
+import {LnIcon} from "../ui/icons/lnIcon.tsx";
 
 type SocialLink = {
 	label: string
@@ -21,25 +21,25 @@ type SocialLink = {
 
 const socialLinks: SocialLink[] = [
 	{
-		label: 'Email',
-		href: 'mailto:hello@hanzostudio.com',
-		render: (className: string) => <IconAt className={className} size={18} color={'white'} />,
+		label: 'Telegram',
+		href: 'https://telegram.me/vadym_chervonchenko',
+		render: (className: string) => <TGIcon color='#fff' className={className} size={20} />,
 	},
 	{
-		label: 'X',
-		href: 'https://x.com',
-		render: (className: string) => <XIcon className={className} size={18} />,
+		label: 'WhatsApp',
+		href: 'https://wa.me/380993013514',
+		render: (className: string) => <WAIcon color='#fff' className={className} size={20} />,
 	},
 	{
 		label: 'LinkedIn',
-		href: 'https://www.linkedin.com',
-		render: (className: string) => <LinkedInIcon className={className} size={18} />,
+		href: 'https://ua.linkedin.com/in/vadym-chervonchenko-118053167',
+		render: (className: string) => <LnIcon color='#fff' className={className} size={20} />,
 	},
 	{
-		label: 'Instagram',
-		href: 'https://www.instagram.com',
-		render: (className: string) => <InstagramIcon className={className} size={18} />,
-	},
+		label: 'Email',
+		href: 'mailto:contact@sargas.io',
+		render: (className: string) => <IconAt className={className} size={20} color={'white'} />,
+	}
 ]
 
 // const timezones = [
@@ -146,6 +146,8 @@ export const FooterSection = () => {
 	const contentY = useTransform(scrollYProgress, [0, 1], [-360, endOffset])
 	const contentOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1])
 
+	const isMailto = (href) => /^\s*mailto:/i.test(String(href ?? ""));
+
 	// const zones = useMemo(() => timezones.map((t) => t.timeZone), [])
 
 	// const timeByZone = useTimeByZone(zones)
@@ -196,6 +198,7 @@ export const FooterSection = () => {
 
 						<HeroSectionButton
 							title='	Book a free intro call'
+							href='https://calendly.com/contact-sargas/60-minute-meeting'
 							icon={<ArrowRightIcon />}
 							withOutline
 						/>
@@ -251,6 +254,7 @@ export const FooterSection = () => {
 							<a
 								key={item.label}
 								href={item.href}
+								target={!isMailto(item.href) ? '_blank' : undefined}
 								aria-label={item.label}
 								className='flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-white/50 hover:bg-white/5 md:h-12 md:w-12'
 							>

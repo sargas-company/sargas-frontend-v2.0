@@ -3,6 +3,11 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { XIcon } from '../ui/icons/XIcon'
 import { LinkedInIcon } from '../ui/icons/LinkedInIcon'
 import { InstagramIcon } from '../ui/icons/InstagramIcon'
+import {UpIcon} from "../ui/icons/UpIcon.tsx";
+import {IconAt} from "../ui/icons/IconAt.tsx";
+import {WAIcon} from "../ui/icons/WAIcon.tsx";
+import {TGIcon} from "../ui/icons/TGIcon.tsx";
+import {LnIcon} from "../ui/icons/lnIcon.tsx";
 
 type Props = {
 	open: boolean,
@@ -10,18 +15,18 @@ type Props = {
 
 const menuOptions = [
 	{
+		title: 'About',
+		link: '/#about',
+		bold: false
+	},
+	{
 		title: 'Process',
 		link: '/#process',
 		bold: false
 	},
 	{
-		title: 'Work',
+		title: 'Case Studies',
 		link: '/#work',
-		bold: false
-	},
-	{
-		title: 'About',
-		link: '/#about',
 		bold: false
 	},
 	{
@@ -43,17 +48,21 @@ const menuOptions = [
 
 const socials = [
 	{
-		link: '#',
-		component: XIcon,
+		link: 'https://ua.linkedin.com/in/vadym-chervonchenko-118053167',
+		component: LnIcon
 	},
 	{
-		link: '#',
-		component: LinkedInIcon,
+		link: 'https://wa.me/380993013514',
+		component: WAIcon
 	},
 	{
-		link: '#',
-	component: InstagramIcon,
-},
+		link: 'https://telegram.me/vadym_chervonchenko',
+		component: TGIcon
+	},
+	{
+		link: 'mailto:contact@sargas.io',
+		component: IconAt
+	},
 ]
 
 export const HeaderDropdown = ({ open }: Props) => {
@@ -66,6 +75,8 @@ export const HeaderDropdown = ({ open }: Props) => {
 			if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 		})
 	}
+
+	const isMailto = (href) => /^\s*mailto:/i.test(String(href ?? ""));
 
 	return (
 		<AnimatePresence>
@@ -114,8 +125,25 @@ export const HeaderDropdown = ({ open }: Props) => {
 							</motion.p>
 						)
 					})}
+
 					<motion.div
-						className='flex gap-4 pt-6'
+						className='flex gap-4'
+						initial={{ y: 24, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						transition={{
+							duration: 0.25,
+							ease: 'easeOut',
+							delay: 0.4,
+						}}
+					>
+
+					<p className='mt-10'>Let’s chat. We’re online!</p>
+
+					</motion.div>
+
+
+					<motion.div
+						className='flex gap-4'
 						initial={{ y: 24, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{
@@ -130,11 +158,15 @@ export const HeaderDropdown = ({ open }: Props) => {
 							return (
 								<a
 									href={item.link}
+									target={!isMailto(item.link) ? '_blank' : undefined}
+									rel="noreferrer"
+
 									key={index}
 									className='group flex h-11 w-11 items-center justify-center rounded-full border border-black/50 transition-colors duration-200 hover:border-black'
 								>
 									<Icon
 										size={20}
+										color='#000'
 										className='transition-transform duration-200 group-hover:scale-110'
 									/>
 								</a>

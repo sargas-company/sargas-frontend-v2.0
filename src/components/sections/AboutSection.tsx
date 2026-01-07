@@ -2,6 +2,20 @@ import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { RecentWorkButton } from '../ui/buttons/RecentWorkButton'
 
+import ai4u from '../../assets/case_studies/ai4u.png'
+import astrology from '../../assets/case_studies/astrology.png'
+import black from '../../assets/case_studies/black_e-com.png'
+import dios from '../../assets/case_studies/dios.png'
+import localService from '../../assets/case_studies/local_service.png'
+import mexStar from '../../assets/case_studies/mex_star.png'
+import sophia from '../../assets/case_studies/sophia.png'
+import tangle from '../../assets/case_studies/tangle.png'
+import taycan from '../../assets/case_studies/taycan.png'
+import webild from '../../assets/case_studies/webild.png'
+import iketo from '../../assets/case_studies/iketo.png'
+import edtech from '../../assets/case_studies/ed_tech.png'
+
+
 type MarqueeColumnProps = {
 	images: string[]
 	reverse?: boolean
@@ -42,21 +56,21 @@ const MarqueeColumn = ({ images, reverse = false, speed = 26 }: MarqueeColumnPro
 export default MarqueeColumn
 
 const leftColumnImages = [
-	'https://framerusercontent.com/images/670uUrkwoRnzhCl9b3kEMwUmgE4.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/J4Ox47KYv4g8Lb2C0PXNkjDaA.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/wo0P2ApHuac8yCSOoIU4GYSCkOc.png?width=1600&height=1200',
-	'https://framerusercontent.com/images/670uUrkwoRnzhCl9b3kEMwUmgE4.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/J4Ox47KYv4g8Lb2C0PXNkjDaA.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/wo0P2ApHuac8yCSOoIU4GYSCkOc.png?width=1600&height=1200',
+	`${ai4u}`,
+	`${webild}`,
+	`${astrology}`,
+	`${taycan}`,
+	`${dios}`,
+	`${tangle}`
 ]
 
 const rightColumnImages = [
-	'https://framerusercontent.com/images/9nNEv94U4EwW3ZkcswuOBMt2jk.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/cpbJvQoTTkomFOd8RSNsHF3b8.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/TWgBR6dpy8VfcVcGIy2oyBYzyY.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/9nNEv94U4EwW3ZkcswuOBMt2jk.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/cpbJvQoTTkomFOd8RSNsHF3b8.jpg?width=1120&height=840',
-	'https://framerusercontent.com/images/TWgBR6dpy8VfcVcGIy2oyBYzyY.jpg?width=1120&height=840',
+	`${localService}`,
+	`${sophia}`,
+	`${mexStar}`,
+	`${iketo}`,
+	`${black}`,
+	`${edtech}`,
 ]
 
 const AboutSectionFrame = ({ children }: { children: ReactNode }) => {
@@ -97,7 +111,9 @@ const AboutSectionContent = () => {
 
 export const AboutSection = () => {
 	return (
-		<section className='relative isolate flex h-auto min-h-[60vh] w-full items-center justify-center'>
+		<section
+			className='relative isolate flex h-auto min-h-[60vh] w-full items-center justify-center'
+		>
 			<AboutSectionFrame>
 				<AboutSectionContent />
 			</AboutSectionFrame>

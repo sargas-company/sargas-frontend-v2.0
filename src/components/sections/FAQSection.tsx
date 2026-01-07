@@ -12,39 +12,44 @@ type FAQItem = {
 
 const FAQ_ITEMS: FAQItem[] = [
 	{
-		question: 'What’s the difference between a subscription and a custom project?',
+		question: 'What’s the difference between Fixed Price and a Retainer?',
 		answer:
-			'The subscription is ongoing and flexible — ideal for continuous design needs. Custom projects are one-time, fixed-scope engagements for larger goals like a rebrand or product launch.',
+			'Fixed Price is best for a clearly defined scope with a set timeline and milestones. Retainer is ongoing development where you reserve a developer or a team month-to-month, with flexible priorities and continuous delivery.',
 	},
 	{
-		question: 'How fast is the turnaround?',
+		question: 'What’s included in the Retainer?',
 		answer:
-			'Most requests are completed within a few business days, depending on complexity and current workload.',
+			'A Retainer reserves monthly capacity for a dedicated developer or team. We run weekly planning, provide async updates, and deliver continuously (staging to production) so priorities can evolve without resetting the process.',
 	},
 	{
-		question: 'How many requests can I make?',
+		question: 'What’s the minimum commitment?',
 		answer:
-			'You can add as many requests as you like to your queue. They will be delivered one by one in priority order.',
+			'Fixed Price projects start from $5,000 and are scoped before we lock budget and milestones. Retainers are monthly engagements and typically start with 1 month to validate fit and delivery cadence.',
 	},
 	{
-		question: 'What types of design do you handle?',
+		question: 'How fast can we start?',
 		answer:
-			'I handle product design, marketing assets, web design, and brand support for digital-first companies.',
+			'Typically within a few business days after aligning on scope (Fixed) or capacity (Retainer). If you have an urgent timeline, we’ll confirm availability on the call.',
 	},
 	{
-		question: 'What tools do you use?',
+		question: 'How do you scope a Fixed Price project?',
 		answer:
-			'Primarily Figma for design, plus supporting tools for prototyping, documentation, and handoff.',
+			'We clarify goals, constraints, and acceptance criteria, then propose milestones with deliverables and timeline. After approval, we lock scope and budget. Changes are handled via a separate change request.',
 	},
 	{
-		question: 'Can I pause the subscription?',
+		question: 'How do communication and updates work?',
 		answer:
-			'Yes, you can pause or resume your subscription anytime if you don’t have active work.',
+			'You’ll have a single point of contact, async updates, and regular check-ins (1–2 per week). We keep work visible in your preferred tools (Linear, Jira, ClickUp, and GitHub).',
 	},
 	{
-		question: 'Do you offer development too?',
+		question: 'What types of projects are a good fit?',
 		answer:
-			'I collaborate closely with development teams and can support implementation, but my core focus is design.',
+			'Web apps, dashboards, SaaS MVPs, integrations, performance improvements, and product iterations. If you already have a mobile app, we can align the web platform with existing flows and UX.',
+	},
+	{
+		question: 'Can you take over an existing codebase?',
+		answer:
+			'Yes. We start with a quick technical review, identify risks and priorities, and propose the safest path forward (stabilize, improve, then ship).',
 	},
 ]
 
@@ -119,9 +124,9 @@ const FAQSection: React.FC = () => {
 							<div className='flex items-center gap-6'>
 								<div className='h-[82px] w-[82px] overflow-hidden rounded-full shadow-[0_0_0_8px_#ffffff40,12px_16px_16px_#0000001a]'>
 									<img
-										src='https://framerusercontent.com/images/zRVCa2eOgJIf1mJK5PYcBLrYI.png?width=512'
+										src='https://sargas.io/img/svg/logo.png'
 										alt='Portrait'
-										className='h-full w-full object-cover'
+										className='object-contain w-full h-full'
 									/>
 								</div>
 
@@ -139,6 +144,7 @@ const FAQSection: React.FC = () => {
 								<HeroSectionButton
 									title='Book a Discovery Call'
 									icon={<ArrowRightIcon />}
+									href='https://calendly.com/contact-sargas/60-minute-meeting'
 									withOutline={true}
 									fullWidth={true}
 								/>
@@ -147,10 +153,11 @@ const FAQSection: React.FC = () => {
 							<p className='mt-6 text-center text-[13px] leading-[1.7] text-black/55'>
 								Or, email me at{' '}
 								<a
-									href='mailto:joris@hanzo.com'
+									target='_blank'
+									href='mailto:contact@sargas.io'
 									className='text-[13px] font-medium text-[rgb(255,55,0)]'
 								>
-									joris@hanzo.com
+									contact@sargas.io
 								</a>
 							</p>
 						</div>

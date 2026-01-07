@@ -1,13 +1,18 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import shopifyLogo from '../../assets/shopifyLogo.png'
+import upworkLogo from '../../assets/socials-upwork.svg'
 import clutchLogo from '../../assets/clutchLogo.png'
-import project_1 from '../../assets/Project_1.webp'
-import project_2 from '../../assets/Project_2.webp'
-import project_3 from '../../assets/Project_3.webp'
-import project_4 from '../../assets/Project_4.webp'
+import project_1 from '../../assets/case_studies/black_e-com.png'
+import project_2 from '../../assets/case_studies/sophia.png'
+
+import project_3 from '../../assets/case_studies/webild.png'
+import project_4 from '../../assets/case_studies/local_service.png'
 import { TrendBoardIcon } from '../ui/icons/TrendBoardIcon.tsx'
 import { HeadingWithScribble } from '../ui/HeadingWithScribble.tsx'
+import {CommentsSectionClutch} from "./CommentsSectionClutch.tsx";
+import {CommentsSectionUpwork} from "./CommentsSectionUpwork.tsx";
+import {SectionTitle} from "../ui/SectionTitle.tsx";
+import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
 type StatCardProps = {
 	id: string
 	icon?: React.ReactNode
@@ -16,7 +21,7 @@ type StatCardProps = {
 }
 
 const sitesEnum = {
-	CLATCH: 'CLATCH',
+	CLUTCH: 'CLUTCH',
 	SHOPIFY: 'SHOPIFY',
 }
 
@@ -32,7 +37,7 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 					</div>
 				)}
 
-				{id === sitesEnum.CLATCH && (
+				{id === sitesEnum.CLUTCH && (
 					<div className='flex shrink-0 items-start justify-start'>{icon}</div>
 				)}
 
@@ -42,15 +47,21 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 							{rate}
 						</span>
 
-						{id === sitesEnum.CLATCH && (
+						{id === sitesEnum.CLUTCH && (
 							<div className='flex shrink-0 gap-1'>
 								{[...Array(5)].map((_, i) => (
+									<HeroSectionLetterAnimation
+										initialDelay={0.5}
+										delayRate={i * 0.07}
+										key={i}
+									>
 									<img
 										key={i}
 										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
 										alt=''
 										className='h-4 w-4'
 									/>
+									</HeroSectionLetterAnimation>
 								))}
 							</div>
 						)}
@@ -67,12 +78,26 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 
 export const AboutUsProjectsSection = () => {
 	return (
-		<section className='w-full pb-20 md:pb-50'>
+		<section className='w-full pb-20 md:pb-40'>
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
-				<div className='flex items-center justify-center'>
-					<HeadingWithScribble prefix='A few words' highlight='About Us' />
-				</div>
 
+				<motion.div
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, amount: 0.55 }}
+					transition={{ type: "tween", duration: 1.4, ease: "easeOut" }}
+				>
+					<div className="flex items-center justify-center">
+						<HeadingWithScribble prefix="A few words" highlight="About Us" />
+					</div>
+				</motion.div>
+
+				<motion.div
+					initial={{ opacity: 0, y: 14, filter: "blur(10px)" }}
+					whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+					viewport={{ once: true, amount: 0.45 }}
+					transition={{ duration: 0.7, ease: "easeOut" }}
+				>
 				<div className='grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_1fr] lg:gap-8'>
 					<div className='relative min-h-[320px] overflow-hidden rounded-[26px] bg-neutral-900 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.18)] sm:min-h-[420px] sm:rounded-[28px] sm:p-8 lg:p-10'>
 						<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(90%_90%_at_0%_0%,rgba(255,255,255,0.08),transparent),radial-gradient(80%_80%_at_80%_10%,rgba(255,255,255,0.05),transparent)]' />
@@ -108,28 +133,27 @@ export const AboutUsProjectsSection = () => {
 
 							<div className='relative text-left text-white'>
 								<p className='text-4xl leading-[1.05] font-semibold md:text-5xl'>
-									10<span className='align-super text-2xl font-semibold'>+</span> years
+									7<span className='align-super text-2xl font-semibold'>+</span> years
 								</p>
 								<p className='mt-2 text-sm text-white/70 md:text-base'>
-									scaling e-commerce brands
+									building B2B platforms
 								</p>
 							</div>
 						</div>
 					</div>
-
 					<div className='xs:grid-cols-2 xs:gap-6 grid grid-cols-1 gap-[2.7vw]'>
 						<StatCard
 							id={sitesEnum.SHOPIFY}
-							icon={<img src={shopifyLogo} alt='' className='h-6 w-6' />}
-							rate='90+'
-							description='Shopify brands grown through our retainers'
+							icon={<TrendBoardIcon color={'white'} />}
+							rate='58+'
+							description='Platforms shipped. SaaS, marketplaces, internal tools'
 						/>
 
 						<StatCard
-							id={sitesEnum.CLATCH}
+							id={sitesEnum.CLUTCH}
 							icon={<img src={clutchLogo} alt='' className='h-4 w-auto' />}
 							rate='5.0'
-							description='Top 3 Shopify agency in Spain & Poland'
+							description='Clear comms. On-time delivery'
 						/>
 
 						<div className='col-span-2'>
@@ -137,7 +161,7 @@ export const AboutUsProjectsSection = () => {
 								<div className='flex h-full flex-col justify-between'>
 									<div className='h-12 w-12 shrink-0 rounded-[1rem] bg-[#1b1b1b] p-[1px]'>
 										<div className='relative z-[2] flex h-full w-full items-center justify-center rounded-[1rem] bg-[linear-gradient(184deg,#292929,#1b1b1b)] shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024]'>
-											<TrendBoardIcon color={'white'} />
+											<img src={upworkLogo} alt='' className='h-6 w-6' />
 										</div>
 									</div>
 
@@ -174,7 +198,10 @@ export const AboutUsProjectsSection = () => {
 						</div>
 					</div>
 				</div>
+				</motion.div>
 			</div>
+
+			<CommentsSectionClutch />
 		</section>
 	)
 }

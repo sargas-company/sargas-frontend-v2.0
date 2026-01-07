@@ -7,7 +7,7 @@ type HeroSectionButtonProps = {
 	fullWidth?: boolean
 }
 
-export const HeroSectionButton = ({ title, icon, withOutline, fullWidth=false }: HeroSectionButtonProps) => {
+export const HeroSectionButton = ({ title, href = '#', icon, withOutline, fullWidth=false }: HeroSectionButtonProps) => {
 	const [hovered, setHovered] = useState(false)
 
 	const baseShadow = `
@@ -28,7 +28,8 @@ export const HeroSectionButton = ({ title, icon, withOutline, fullWidth=false }:
 			className={`${isFullWidth} inline-flex items-center justify-center overflow-hidden rounded-[33px] ${withOutline ? 'grow bg-white/50 p-2 md:grow-0' : 'grow-0 p-0'}`}
 		>
 			<a
-				href='#'
+				href={href}
+				target='_blank'
 				rel='noopener noreferrer'
 				className='group inline-flex w-full items-center justify-center gap-3 rounded-[154px] bg-black px-6 py-3 text-[16px] font-medium text-white'
 				style={{

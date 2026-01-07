@@ -5,8 +5,10 @@ import { PlusCircleIcon } from '../ui/icons/PlusCircleIcon'
 import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
-import devImg from '../../assets/dev.avif'
-import dev1Img from '../../assets/dev_02.avif'
+
+import avatar2 from '../../assets/avatars/avatar_2.jpg'
+import avatar4 from '../../assets/avatars/avatar_4.jpg'
+
 import { PhoneIcon } from '../ui/icons/PhoneIcon'
 import { AnalyticsIcon } from '../ui/icons/AnalyticsIcon'
 import { MonitorIcon } from '../ui/icons/MonitorIcon'
@@ -17,90 +19,92 @@ import { SparkPlusIcon } from '../ui/icons/SparkPlusIcon'
 import { BoxIcon } from '../ui/icons/BoxIcon'
 import { UserFocusIcon } from '../ui/icons/UserFocusIcon'
 
-const monthlyDetails = {
+const retainerDetails = {
 	list: [
-		'Unlimited design requests',
-		'Fast turnaround',
-		'Fixed monthly rate',
-		'Async communication',
-		'Flexible scope',
-		'Pause anytime',
+		'Reserved monthly capacity',
+		'Weekly planning & priority alignment',
+		'Async updates + 1–2 sync calls/week',
+		'Continuous delivery (staging + prod)',
+		'Code reviews & best practices',
+		'Flexible month-to-month engagement',
 	],
 	content: [
-		'Astrid’s',
-		'minimalist',
-		'design',
-		'approach',
-		'transformed',
-		'our',
-		'brand.',
-		'The',
-		'simplicity',
+		'Sargas',
+		'Agency',
+		'is',
+		'an',
+		'excellent',
+		'development',
+		'team',
+		'highly',
+		'skilled',
+		'committed',
 		'and',
-		'clarity',
-		'she',
-		'brought',
-		'to',
-		'our',
-		'identity',
-		'made',
-		'us',
-		'stand',
-		'out',
-		'in',
-		'a',
-		'crowded',
-		'market.',
-		'Our',
-		'customers',
-		'immediately',
-		'noticed',
-		'the',
-		'difference.',
+		'strong',
+		'problem',
+		'solvers',
+		'We',
+		'would',
+		'definitely',
+		'work',
+		'with',
+		'them',
+		'again.'
 	],
-	name: 'Helena Moreau',
-	position: 'Creative Director at Studio Novo',
-	img: dev1Img,
+	position: 'CEO of KlickTipp',
+	name: 'Mario Wolosz',
+	img: avatar4,
 }
 
-const customDetails = {
+const fixedDetails = {
 	list: [
-		'Tailored scope & deliverables',
-		'One-off fee or milestone billing',
-		'End-to-end collaboration',
-		'High-impact execution',
-		'Workshops & reviews',
-		'Full documentation & assets',
+		'Scope & deliverables defined upfront',
+		'Fixed budget & timeline',
+		'Milestones & release plan',
+		'QA + production launch',
+		'Weekly updates & demos',
+		'Change requests scoped separately',
 	],
 	content: [
-		'Effortless',
-		'process.',
-		'Exceptional',
-		'results.',
-		'Working',
+		'Sargas',
+		'Agency',
+		'OÜ',
+		'has',
+		'delivered',
+		'a',
+		'fully',
+		'functional',
+		'web',
+		'app',
+		'that',
+		'is',
+		'aligned',
 		'with',
-		'Joris',
-		'felt',
-		'like',
-		'having',
-		'an',
-		'in-house',
-		'designer',
-		'on',
-		'speed',
-		'dial.',
+		'existing',
+		'mobile',
+		'platforms.',
+		'The',
+		'team',
+		'has',
+		'improved',
+		'consistency',
+		'across',
+		'platforms,',
+		'enhancing',
+		'the',
+		'UX.'
 	],
-	name: 'Tom Richter',
-	position: 'Founder & CEO at Corelytics',
-	img: devImg,
+	name: 'Egor Antonyuk',
+	position: 'Product Owner, Clowder',
+	img: avatar2,
 }
 
 const advantages = [
-	{ title: 'Senior-level quality', icon: PhoneIcon },
+	{ title: 'Senior engineering', icon: PhoneIcon },
 	{ title: 'Systems thinking', icon: MonitorIcon },
 	{ title: 'Developer-friendly', icon: ArrowLoopIcon },
 	{ title: 'Clear process', icon: AnalyticsIcon },
-	{ title: 'On-brand, every time', icon: BulbIcon },
+	{ title: 'Product mindset', icon: BulbIcon },
 	{ title: 'Reliable partner', icon: GearIcon },
 	{ title: 'Fast execution', icon: SparkPlusIcon },
 	{ title: 'Thoughtful feedback', icon: BoxIcon },
@@ -120,7 +124,7 @@ function useViewportWidth() {
 }
 
 export const PricingSection = () => {
-	const [isCustom, setIsCustom] = useState(false)
+	const [isRetainer, setIsCustom] = useState(false)
 	const width = useViewportWidth()
 	const [isAnimated, setIsAnimated] = useState(false)
 
@@ -130,7 +134,7 @@ export const PricingSection = () => {
 
 	if (width >= 1200) {
 		priceShift = 140
-		labelShiftCustom = -210
+		labelShiftCustom = -195
 		labelShiftMonthly = 20
 	} else if (width >= 810) {
 		priceShift = 120
@@ -142,8 +146,8 @@ export const PricingSection = () => {
 		labelShiftMonthly = 15
 	}
 
-	const items = isCustom ? customDetails.list : monthlyDetails.list
-	const content = isCustom ? customDetails.content : monthlyDetails.content
+	const items = isRetainer ? retainerDetails.list : fixedDetails.list
+	const content = isRetainer ? retainerDetails.content : fixedDetails.content
 
 	return (
 		<div
@@ -153,7 +157,7 @@ export const PricingSection = () => {
 			<div className='flex flex-col items-center gap-2.5'>
 				<SectionTitle title='Pricing' />
 				<h2 className='text-[28px] leading-[1.4] tracking-[-0.04em] break-words whitespace-pre-wrap md:text-[48px]'>
-					Fixed Price, Zero Limits
+					Fixed Price / Retainer
 				</h2>
 			</div>
 
@@ -170,10 +174,10 @@ export const PricingSection = () => {
 							<span
 								className={[
 									'text-[16px] md:text-[18px]',
-									isCustom ? 'text-black' : 'text-[#FF3700]',
+									isRetainer ? 'text-black' : 'text-[#FF3700]',
 								].join(' ')}
 							>
-								Monthly
+								Fixed
 							</span>
 
 							<button
@@ -182,7 +186,7 @@ export const PricingSection = () => {
 							>
 								<motion.span
 									initial={false}
-									animate={{ x: isCustom ? 20 : 0 }}
+									animate={{ x: isRetainer ? 20 : 0 }}
 									transition={{
 										type: 'spring',
 										stiffness: 280,
@@ -196,43 +200,75 @@ export const PricingSection = () => {
 							<span
 								className={[
 									'text-[16px] md:text-[18px]',
-									isCustom ? 'text-[#FF3700]' : 'text-black',
+									isRetainer ? 'text-[#FF3700]' : 'text-black',
 								].join(' ')}
 							>
-								Custom
+								Retainer
 							</span>
 						</div>
 						<div className='relative'>
+							{isRetainer &&
+								<div className='flex items-end'>
+									<motion.span
+										className='relative z-10 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black md:text-[56px] lg:text-[72px]'
+										animate={{ x: isRetainer ? 0 : priceShift }}
+										transition={{ type: 'spring', stiffness: 400, damping: 40 }}
+									>$6,500</motion.span>
+
+									<motion.span
+										className='relative z-0 -ml-4 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[56px] lg:text-[72px]'
+										animate={{ x: isRetainer ? labelShiftMonthly : labelShiftCustom }}
+										transition={{ type: 'spring', stiffness: 400, damping: 40 }}
+									>/mo</motion.span>
+								</div>
+							}
+
+							{isRetainer &&
+								<div className='flex items-end mb-10 text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
+									Dedicated Developer
+								</div>
+							}
+
 							<div className='flex items-end'>
 								<motion.span
 									className='relative z-10 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black md:text-[56px] lg:text-[72px]'
-									animate={{ x: isCustom ? priceShift : 0 }}
+									animate={{ x: isRetainer ? 0 : priceShift }}
 									transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 								>
-									{isCustom ? '$11,500' : '$7,500'}
+									{isRetainer ? '$13,000' : '$5,000'}
 								</motion.span>
 
 								<motion.span
 									className='relative z-0 -ml-4 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[56px] lg:text-[72px]'
-									animate={{ x: isCustom ? labelShiftCustom : labelShiftMonthly }}
+									animate={{ x: isRetainer ? labelShiftMonthly : labelShiftCustom }}
 									transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 								>
-									{isCustom ? 'from' : '/mo'}
+									{isRetainer ? '/mo' : 'from'}
 								</motion.span>
 							</div>
+
+							{isRetainer &&
+								<div className='flex flex-col justify-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
+									<span className='mb-4'>Dedicated Team</span>
+
+									<span>A cross-functional team reserved for your product each month (usually 2 core engineers + lead support).<br/>
+									We manage the setup - you focus on priorities and results.</span>
+								</div>
+							}
+
+							{!isRetainer &&
+								<div className='flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
+									Fixed-scope project <br/> Milestone-based delivery
+								</div>
+							}
 						</div>
 					</div>
 
 					<div className='flex flex-col items-center gap-2 pt-9 md:items-start'>
-						<div className='flex items-center gap-2'>
-							<div className='h-1.5 w-1.5 rounded-full bg-[#0cb300]' />
-							<div className='tracking-0 text-xs leading-[1.5em] text-black/50'>
-								Booking Open — 2 Spots Left
-							</div>
-						</div>
 						<div>
 							<HeroSectionButton
-								title='Book Free Discovery Call'
+								title={isRetainer ? 'Book Free Discovery Call' : 'Get a Free Project Quote'}
+								href='https://calendly.com/contact-sargas/60-minute-meeting'
 								icon={<ArrowRightIcon />}
 								withOutline
 							/>
@@ -295,14 +331,14 @@ export const PricingSection = () => {
 						<p className='pr-12 text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
 							{content.map((word, wordIndex) => (
 								<span
-									key={`${wordIndex}-${isCustom ? 'c' : 'a'}`}
+									key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
 									className='mr-[0.3em] inline-block'
 								>
 									{word.split('').map((letter, letterIndex) => (
 										<HeroSectionLetterAnimation
 											initialDelay={0.1}
 											delayRate={wordIndex * 0.07}
-											key={`${wordIndex}-${letterIndex}-${isCustom ? 'c' : 'a'}`}
+											key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
 										>
 											{letter}
 										</HeroSectionLetterAnimation>
@@ -312,14 +348,14 @@ export const PricingSection = () => {
 						</p>
 						<div className='flex items-center gap-4'>
 							<img
-								src={isCustom ? customDetails.img : monthlyDetails.img}
+								src={isRetainer ? retainerDetails.img : fixedDetails.img}
 								alt='dev'
 								className='h-[65px] w-[65px] rounded-full object-cover'
 							/>
 							<div className='tracking-0 leading-[1.7em]'>
-								<p>{isCustom ? customDetails.name : monthlyDetails.name}</p>
+								<p>{isRetainer ? retainerDetails.name : fixedDetails.name}</p>
 								<p className='text-black/50'>
-									{isCustom ? customDetails.position : monthlyDetails.position}
+									{isRetainer ? retainerDetails.position : fixedDetails.position}
 								</p>
 							</div>
 						</div>
