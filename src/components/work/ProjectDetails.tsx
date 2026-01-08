@@ -41,9 +41,6 @@ export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 									alt={index + 'test'}
 								/>
 							</div>
-							<h4 className='text-lg md:text-xl'>
-								<span>{item.title}</span>
-							</h4>
 						</div>
 					)
 				})}
