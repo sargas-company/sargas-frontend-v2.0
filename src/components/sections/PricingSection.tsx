@@ -197,7 +197,6 @@ export const PricingSection = () => {
 
 	const items = isRetainer ? retainerDetails.list : fixedDetails.list
 	const content = isRetainer ? retainerDetails.content : fixedDetails.content
-	const priceDescription = isRetainer ? retainerDetails.priceDescription : fixedDetails.priceDescription
 
 	return (
 		<div
@@ -356,7 +355,7 @@ export const PricingSection = () => {
 
 							{!isRetainer &&
 								<div className='flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
-									{priceDescription.map((word, wordIndex) => (
+									{fixedDetails.priceDescription.map((word, wordIndex) => (
 										<span
 											key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
 											className='mr-[0.3em] inline-block'
