@@ -18,6 +18,7 @@ import { GearIcon } from '../ui/icons/GearIcon'
 import { SparkPlusIcon } from '../ui/icons/SparkPlusIcon'
 import { BoxIcon } from '../ui/icons/BoxIcon'
 import { UserFocusIcon } from '../ui/icons/UserFocusIcon'
+import {BenefitCardCustom} from "../ui/BenefitCardCustom.tsx";
 
 const retainerDetails = {
 	list: [
@@ -346,19 +347,21 @@ export const PricingSection = () => {
 								</span>
 							))}
 						</p>
-						<div className='flex items-center gap-4'>
-							<img
-								src={isRetainer ? retainerDetails.img : fixedDetails.img}
-								alt='dev'
-								className='h-[65px] w-[65px] rounded-full object-cover'
-							/>
-							<div className='tracking-0 leading-[1.7em]'>
-								<p>{isRetainer ? retainerDetails.name : fixedDetails.name}</p>
-								<p className='text-black/50'>
-									{isRetainer ? retainerDetails.position : fixedDetails.position}
-								</p>
+						<BenefitCardCustom href='https://clowder.com/'>
+							<div className='flex items-center gap-4'>
+								<img
+									src={isRetainer ? retainerDetails.img : fixedDetails.img}
+									alt='dev'
+									className='h-[65px] w-[65px] rounded-full object-cover'
+								/>
+								<div className='tracking-0 leading-[1.7em]'>
+									<p>{isRetainer ? retainerDetails.name : fixedDetails.name}</p>
+									<p className='text-black/50'>
+										{isRetainer ? retainerDetails.position : fixedDetails.position}
+									</p>
+								</div>
 							</div>
-						</div>
+						</BenefitCardCustom>
 					</div>
 				</div>
 			</motion.div>
