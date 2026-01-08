@@ -6,7 +6,7 @@ type ProjectDetailsProps = {
 		img: string
 		sections: { title: string; items: string[] }[]
 	}
-	details: { img: string; title: string }[]
+	details: { img: string; }[]
 }
 
 export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
