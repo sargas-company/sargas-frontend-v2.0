@@ -13,14 +13,10 @@ export const HomePage = () => {
 			<HeroSection />
 			<AboutSection />
 			<IntroTextSection />
-			{/*<MultiStepInfoSection />*/}
-			{/*<QuestionAnswerSection/>*/}
 			<AboutUsProjectsSection />
 			<ProcessSection />
 			<BenefitsSection />
-			{/*<ProjectsSection />*/}
 			<PricingSection />
-			{/*<RetainerAlternativeSection />*/}
 			<FAQSection />
 		</>
 	)
