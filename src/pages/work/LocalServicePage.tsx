@@ -101,6 +101,7 @@ export const LocalServicePage = () => {
 				<PageHero
 					title='Local Services App'
 					content={content}
+					sections={[]}
 					chips={['React Native', 'Marketplace', 'Maps', 'Mobile App']}
 				/>
 				<ProjectDetails {...project_details} />

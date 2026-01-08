@@ -98,6 +98,7 @@ export const GraffitiPage = () => {
 				<PageHero
 					title='Graffiti Chronicles'
 					content={content}
+					sections={[]}
 					chips={['Cultural Heritage', 'Digital Exhibition', 'Web Development']}
 					href='https://graffiti-chronicles.shadowsproject.org'
 				/>
