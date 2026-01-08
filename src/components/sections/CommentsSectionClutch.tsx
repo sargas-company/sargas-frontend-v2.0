@@ -127,7 +127,11 @@ const Testimonial: React.FC<TestimonialProps> = ({
 	siteUrl = '',
 	className,
 	initialDelay = 0,
-    cardStat = {}
+    cardStat = {
+		title: '',
+		size: 0,
+		period: ''
+	}
 }) => {
 	return (
 		<div
