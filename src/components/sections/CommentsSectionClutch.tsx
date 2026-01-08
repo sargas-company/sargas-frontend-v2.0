@@ -1,6 +1,6 @@
-import React, {useMemo} from 'react'
+import React from 'react'
 import { BlurTypingText } from '../animation/ProcessSectionBlurTypingAnimation.tsx'
-import {motion, useInView} from 'framer-motion'
+import {motion} from 'framer-motion'
 import clutchLogo from '../../assets/clutchLogo.png'
 import avatar1 from '../../assets/avatars/avatar_1.jpg'
 import avatar2 from '../../assets/avatars/avatar_2.jpg'
@@ -18,10 +18,19 @@ type TestimonialProps = {
 	cardStat: object
 }
 
-type StatCardProps = {
+type StatCardPropsLogo = {
 	icon?: React.ReactNode
 	rate: string
 }
+
+type StatCardProps = {
+	data: {
+		title: string
+		size: string | number
+		period: string
+	}
+}
+
 
 const cards = [
 	{
@@ -36,7 +45,7 @@ const cards = [
 	}
 ]
 
-const StatCardLogo = ({ icon, rate }: StatCardProps) => {
+const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	return (
 		<div className='flex w-[190px] items-center justify-between rounded-[1rem] shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
@@ -72,7 +81,7 @@ const StatCardLogo = ({ icon, rate }: StatCardProps) => {
 	)
 }
 
-const StatCard = ({data: {title, size, period}}) => {
+const StatCard = ({data: {title, size, period}}: StatCardProps) => {
 	return (
 		<div className='flex h-full w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] py-6 px-12 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] '>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
