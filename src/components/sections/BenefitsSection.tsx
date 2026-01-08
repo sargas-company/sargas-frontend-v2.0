@@ -6,8 +6,6 @@ import Services from '../../assets/case_studies/recent/service.png'
 import Webild from '../../assets/case_studies/recent/webild.png'
 import Sophia from '../../assets/case_studies/recent/sophia.png'
 
-
-
 const benefits = [
 	{
 		title: 'Webild',
@@ -35,17 +33,15 @@ const benefits = [
 	},
 ]
 
-
-
 export const BenefitsSection = () => {
 	return (
 		<div
-			className='flex flex-col items-center gap-6 pb-20 md:gap-7 md:pb-54 xl:gap-12 xl:pb-50'
+			className='md:pb-54 xl:pb-50 flex flex-col items-center gap-6 pb-20 md:gap-7 xl:gap-12'
 			id='work'
 		>
 			<div className='flex flex-col items-center gap-2.5'>
 				<SectionTitle title='Our Projects' />
-				<h2 className='text-[28px] leading-[1.4] tracking-[-0.04em] break-words whitespace-pre-wrap md:text-[48px]'>
+				<h2 className='whitespace-pre-wrap break-words text-[28px] leading-[1.4] tracking-[-0.04em] md:text-[48px]'>
 					Recent Case Studies
 				</h2>
 			</div>

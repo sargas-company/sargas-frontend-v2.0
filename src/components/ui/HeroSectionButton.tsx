@@ -9,7 +9,14 @@ type HeroSectionButtonProps = {
 	fullWidth?: boolean
 }
 
-export const HeroSectionButton = ({ title, href = undefined, target = '_blank', icon, withOutline, fullWidth = false }: HeroSectionButtonProps) => {
+export const HeroSectionButton = ({
+	title,
+	href = undefined,
+	target = '_blank',
+	icon,
+	withOutline,
+	fullWidth = false,
+}: HeroSectionButtonProps) => {
 	const isFullWidth = fullWidth && 'w-full'
 	return (
 		<div

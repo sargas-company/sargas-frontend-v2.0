@@ -70,7 +70,7 @@ const ExperienceRow: React.FC<ExperienceItem> = ({ role, company, period }) => (
 const ProjectsSection: React.FC = () => {
 	return (
 		<section className='relative w-full' id='about'>
-			<div className='mx-auto flex w-full max-w-[1600px] flex-col items-center gap-8 pb-20 md:gap-10 md:pb-50 lg:gap-14 lg:pb-50'>
+			<div className='md:pb-50 lg:pb-50 mx-auto flex w-full max-w-[1600px] flex-col items-center gap-8 pb-20 md:gap-10 lg:gap-14'>
 				<div className='flex flex-col items-center gap-2.5 text-center'>
 					<SectionTitle title='Our Projects' />
 					<h2 className='flex flex-wrap items-baseline justify-center text-[28px] leading-[1.4] tracking-[-0.04em] md:text-[48px]'>
@@ -129,7 +129,7 @@ const ProjectsSection: React.FC = () => {
 								</div>
 
 								<div className='pointer-events-auto flex flex-col gap-0.5 text-black'>
-									<span className='text-right text-[14px] leading-tight font-medium'>
+									<span className='text-right text-[14px] font-medium leading-tight'>
 										Joris van Dijk
 									</span>
 									<span className='text-[12px] leading-tight text-black/50'>

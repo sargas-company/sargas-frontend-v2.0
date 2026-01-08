@@ -13,7 +13,7 @@ export const HeaderMenuButton = ({ open, onToggle }: Props) => {
 			<span className='relative block h-2 w-4'>
 				<span
 					className={[
-						'absolute top-0 left-0 h-px w-full rounded-full bg-black',
+						'absolute left-0 top-0 h-px w-full rounded-full bg-black',
 						'transition-transform duration-300 ease-in-out',
 						open ? 'translate-y-[3.5px] rotate-45' : '',
 					].join(' ')}

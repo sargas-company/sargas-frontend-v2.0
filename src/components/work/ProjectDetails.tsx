@@ -6,13 +6,13 @@ type ProjectDetailsProps = {
 		img: string
 		sections: { title: string; items: string[] }[]
 	}
-	details: { img: string; }[]
+	details: { img: string }[]
 }
 
 export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 	return (
 		<motion.div
-			className='flex flex-col gap-12 md:gap-16 xl:gap-20 group w-[70%] my-0 mx-auto transform-gpu [will-change:transform,opacity]'
+			className='group mx-auto my-0 flex w-[70%] transform-gpu flex-col gap-12 [will-change:transform,opacity] md:gap-16 xl:gap-20'
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{
@@ -26,7 +26,7 @@ export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 				<img
 					src={main.img}
 					alt={main.name + ' name'}
-					className='transition-transform duration-750 ease-in-out hover:scale-105'
+					className='duration-750 transition-transform ease-in-out hover:scale-105'
 				/>
 			</div>
 
@@ -37,7 +37,7 @@ export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 							<div className='overflow-hidden rounded-[30px]'>
 								<img
 									src={item.img}
-									className='transition-transform duration-750 ease-in-out hover:scale-105'
+									className='duration-750 transition-transform ease-in-out hover:scale-105'
 									alt={index + 'test'}
 								/>
 							</div>

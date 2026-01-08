@@ -48,23 +48,19 @@ const cards: CardStat[] = [
 
 const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	return (
-		<div className='flex w-[190px] items-center justify-between rounded-[1rem] shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
+		<div className='flex w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex shrink-0 items-center justify-start'>{icon}</div>
 
 				<div className='flex justify-center'>
-					<div className='flex flex-wrap flex-col items-center gap-2'>
-						<span className='text-[28px] leading-none font-semibold text-black sm:text-[34px] md:text-[38px]'>
+					<div className='flex flex-col flex-wrap items-center gap-2'>
+						<span className='text-[28px] font-semibold leading-none text-black sm:text-[34px] md:text-[38px]'>
 							{rate}
 						</span>
 
 						<div className='flex shrink-0 gap-1'>
 							{[...Array(5)].map((_, i) => (
-								<HeroSectionLetterAnimation
-									initialDelay={0.5}
-									delayRate={i * 0.07}
-									key={i}
-								>
+								<HeroSectionLetterAnimation initialDelay={0.5} delayRate={i * 0.07} key={i}>
 									<img
 										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
 										alt=''
@@ -82,36 +78,36 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 
 const StatCard = ({ data: { title, size, period } }: StatCardProps) => {
 	return (
-		<div className='flex h-full w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] py-6 px-12 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] '>
+		<div className='flex h-full w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] px-12 py-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px]'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex h-full w-full flex-col items-start justify-between text-[15px]'>
-					<ul className='w-full h-full'>
-						<li className='mt-2 mb-2  text-sm font-semibold text-black/80 md:text-base'>
+					<ul className='h-full w-full'>
+						<li className='mb-2 mt-2 text-sm font-semibold text-black/80 md:text-base'>
 							{title}
 						</li>
 
 						<li className='flex items-center'>
 							<span className='pb-5 text-[20px]'>$</span>
-							<span className='text-[40px] mt-1 font-semibold text-black/80'>{size}</span>
-							<span className='pt-4 pl-1'>(size)</span>
+							<span className='mt-1 text-[40px] font-semibold text-black/80'>{size}</span>
+							<span className='pl-1 pt-4'>(size)</span>
 						</li>
 
 						<li>
-							<div className='text-sm font-normal text-black/60 md:text-base flex justify-between items-center'>
+							<div className='flex items-center justify-between text-sm font-normal text-black/60 md:text-base'>
 								<span>Costs</span>
-								<span className='text-[22px] mt-1 font-bold text-black/80'>5.0</span>
+								<span className='mt-1 text-[22px] font-bold text-black/80'>5.0</span>
 							</div>
-							<div className='text-sm font-normal text-black/60 md:text-base flex justify-between items-center'>
+							<div className='flex items-center justify-between text-sm font-normal text-black/60 md:text-base'>
 								<span>Quality</span>
-								<span className='text-[22px] mt-1 font-bold text-black/80'>5.0</span>
+								<span className='mt-1 text-[22px] font-bold text-black/80'>5.0</span>
 							</div>
-							<div className='text-sm font-normal text-black/60 md:text-base flex justify-between items-center'>
+							<div className='flex items-center justify-between text-sm font-normal text-black/60 md:text-base'>
 								<span>Schedule</span>
-								<span className='text-[22px] mt-1 font-bold text-black/80'>5.0</span>
+								<span className='mt-1 text-[22px] font-bold text-black/80'>5.0</span>
 							</div>
 						</li>
 
-						<div className='mt-4 text-sm font-semibold text-black/60 md:text-base flex justify-between items-center'>
+						<div className='mt-4 flex items-center justify-between text-sm font-semibold text-black/60 md:text-base'>
 							<span>{period}</span>
 						</div>
 					</ul>
@@ -122,19 +118,19 @@ const StatCard = ({ data: { title, size, period } }: StatCardProps) => {
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({
-													 quote,
-													 name,
-													 role,
-													 avatarSrc,
-													 siteUrl = '',
-													 className,
-													 initialDelay = 0,
-													 cardStat = {
-														 title: '',
-														 size: 0,
-														 period: '',
-													 },
-												 }) => {
+	quote,
+	name,
+	role,
+	avatarSrc,
+	siteUrl = '',
+	className,
+	initialDelay = 0,
+	cardStat = {
+		title: '',
+		size: 0,
+		period: '',
+	},
+}) => {
 	return (
 		<div
 			className={[
@@ -166,7 +162,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 			</div>
 
 			<motion.div
-				className='mt-3 flex items-center gap-15 w-full'
+				className='gap-15 mt-3 flex w-full items-center'
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -177,10 +173,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					delay: initialDelay + 0.2,
 				}}
 			>
-				<StatCardLogo
-					icon={<img src={clutchLogo} alt='' className='w-[100px]' />}
-					rate='5.0'
-				/>
+				<StatCardLogo icon={<img src={clutchLogo} alt='' className='w-[100px]' />} rate='5.0' />
 
 				<StatCard data={cardStat} />
 			</motion.div>
@@ -209,7 +202,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					</div>
 
 					<div className='flex flex-col'>
-						<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
+						<span className='text-[16px] font-medium leading-tight text-black'>{name}</span>
 						<span className='text-[14px] leading-tight text-black/60'>{role}</span>
 					</div>
 				</BenefitCardCustom>
@@ -220,7 +213,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 
 export const CommentsSectionClutch: React.FC = () => {
 	return (
-		<section className='relative w-full mt-15'>
+		<section className='mt-15 relative w-full'>
 			<div className='relative flex w-full max-w-[1600px] flex-col gap-16 lg:flex-row lg:gap-24'>
 				<div className='pointer-events-none absolute inset-y-6 left-1/2 hidden w-px bg-black/10 lg:block' />
 
@@ -236,7 +229,7 @@ export const CommentsSectionClutch: React.FC = () => {
 				/>
 
 				<Testimonial
-					quote="Thanks to Sargas, the client experienced high traffic and user engagement. The website also received positive feedback from users regarding its new features and overall performance. The team was highly communicative and responsive; their members regularly updated the client about their progress."
+					quote='Thanks to Sargas, the client experienced high traffic and user engagement. The website also received positive feedback from users regarding its new features and overall performance. The team was highly communicative and responsive; their members regularly updated the client about their progress.'
 					name='Priyadarshan Joshi'
 					role='CEO, Upnexo Technologies Private Limited'
 					avatarSrc={avatar1}

@@ -50,7 +50,7 @@ export const BenefitCard = ({ title, chips, link, img }: BenefitCardProps) => {
 				<img
 					src={img}
 					alt={title}
-					className='h-full w-full object-cover transition-transform duration-750 ease-in-out group-hover:scale-105'
+					className='duration-750 h-full w-full object-cover transition-transform ease-in-out group-hover:scale-105'
 				/>
 			</div>
 

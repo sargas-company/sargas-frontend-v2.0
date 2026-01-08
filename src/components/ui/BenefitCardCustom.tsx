@@ -6,9 +6,11 @@ import {
 	type ComponentPropsWithoutRef,
 } from 'react'
 
-type BenefitCardProps = PropsWithChildren<{
-	href?: string
-} & Omit<ComponentPropsWithoutRef<'a'>, 'href' | 'children'>>
+type BenefitCardProps = PropsWithChildren<
+	{
+		href?: string
+	} & Omit<ComponentPropsWithoutRef<'a'>, 'href' | 'children'>
+>
 
 export const BenefitCardCustom = ({ href = '', children, ...aProps }: BenefitCardProps) => {
 	const [isHovering, setIsHovering] = useState(false)

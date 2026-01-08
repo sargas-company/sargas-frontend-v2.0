@@ -1,29 +1,31 @@
 import { motion } from 'framer-motion'
 
 const asset1 = (
-	<svg width="170" viewBox="0 0 174 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<g filter="url(#filter0_d_186_761)">
-			<rect x="38.4004" y="33.3999" width="42.3291" height="13" rx="3" fill="#555555"/>
-			<rect x="84.0713" y="33.3999" width="42.3291" height="22" rx="3" fill="#555555"/>
-			<rect x="84.0713" y="58.3999" width="42.3291" height="23" rx="3" fill="#555555"/>
-			<rect x="38.4004" y="49.3999" width="42.3291" height="32" rx="3" fill="#555555"/>
+	<svg width='170' viewBox='0 0 174 115' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<g filter='url(#filter0_d_186_761)'>
+			<rect x='38.4004' y='33.3999' width='42.3291' height='13' rx='3' fill='#555555' />
+			<rect x='84.0713' y='33.3999' width='42.3291' height='22' rx='3' fill='#555555' />
+			<rect x='84.0713' y='58.3999' width='42.3291' height='23' rx='3' fill='#555555' />
+			<rect x='38.4004' y='49.3999' width='42.3291' height='32' rx='3' fill='#555555' />
 		</g>
-		<defs>
-		</defs>
+		<defs></defs>
 	</svg>
 )
 const asset2 = (
-	<svg width="170" viewBox="0 0 174 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<g filter="url(#filter0_d_186_760)">
-		</g>
-		<path d="M32.4004 56.0928L63.3954 46.3418V53.2743L42.6233 59.2646L63.3954 65.3517V72.3779L32.4004 62.5531V56.0928Z" fill="#555555"/>
-		<path d="M69.6992 77.3999L85.5091 37.3999H95.0683L79.3184 77.3999H69.6992Z" fill="#555555"/>
-		<path d="M132.4 62.627L101.405 72.3779V65.4454L122.177 59.4553L101.405 53.3682V46.3418L132.4 56.1667V62.627Z" fill="#555555"/>
-		<defs>
-		</defs>
+	<svg width='170' viewBox='0 0 174 115' fill='none' xmlns='http://www.w3.org/2000/svg'>
+		<g filter='url(#filter0_d_186_760)'></g>
+		<path
+			d='M32.4004 56.0928L63.3954 46.3418V53.2743L42.6233 59.2646L63.3954 65.3517V72.3779L32.4004 62.5531V56.0928Z'
+			fill='#555555'
+		/>
+		<path d='M69.6992 77.3999L85.5091 37.3999H95.0683L79.3184 77.3999H69.6992Z' fill='#555555' />
+		<path
+			d='M132.4 62.627L101.405 72.3779V65.4454L122.177 59.4553L101.405 53.3682V46.3418L132.4 56.1667V62.627Z'
+			fill='#555555'
+		/>
+		<defs></defs>
 	</svg>
 )
-
 
 const IMAGES = [asset1, asset2]
 

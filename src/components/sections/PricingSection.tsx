@@ -18,7 +18,7 @@ import { GearIcon } from '../ui/icons/GearIcon'
 import { SparkPlusIcon } from '../ui/icons/SparkPlusIcon'
 import { BoxIcon } from '../ui/icons/BoxIcon'
 import { UserFocusIcon } from '../ui/icons/UserFocusIcon'
-import {BenefitCardCustom} from "../ui/BenefitCardCustom.tsx";
+import { BenefitCardCustom } from '../ui/BenefitCardCustom.tsx'
 
 const retainerDetails = {
 	list: [
@@ -50,16 +50,10 @@ const retainerDetails = {
 		'work',
 		'with',
 		'them',
-		'again.'
+		'again.',
 	],
-	devTitle: [
-		'Dedicated',
-		'Developer'
-	],
-	teamTitle: [
-		'Dedicated',
-		'Team'
-	],
+	devTitle: ['Dedicated', 'Developer'],
+	teamTitle: ['Dedicated', 'Team'],
 	teamDescription: [
 		'A',
 		'cross-functional',
@@ -130,18 +124,9 @@ const fixedDetails = {
 		'platforms,',
 		'enhancing',
 		'the',
-		'UX.'
+		'UX.',
 	],
-	priceDescription: [
-		'Fixed',
-		'-',
-		'scope',
-		'project.',
-		'Milestone',
-		'-',
-		'based',
-		'delivery.',
-	],
+	priceDescription: ['Fixed', '-', 'scope', 'project.', 'Milestone', '-', 'based', 'delivery.'],
 
 	name: 'Egor Antonyuk',
 	position: 'Product Owner, Clowder',
@@ -200,12 +185,12 @@ export const PricingSection = () => {
 
 	return (
 		<div
-			className='flex flex-col pb-20 gap-6 md:gap-9 md:pb-50 xl:gap-15 xl:pb-[160px]'
+			className='md:pb-50 xl:gap-15 flex flex-col gap-6 pb-20 md:gap-9 xl:pb-[160px]'
 			id='pricing'
 		>
 			<div className='flex flex-col items-center gap-2.5'>
 				<SectionTitle title='Pricing' />
-				<h2 className='text-[28px] leading-[1.4] tracking-[-0.04em] break-words whitespace-pre-wrap md:text-[48px]'>
+				<h2 className='whitespace-pre-wrap break-words text-[28px] leading-[1.4] tracking-[-0.04em] md:text-[48px]'>
 					Fixed Price / Retainer
 				</h2>
 			</div>
@@ -242,7 +227,7 @@ export const PricingSection = () => {
 										damping: 30,
 										mass: 0.4,
 									}}
-									className='absolute top-1/2 left-[2px] h-5 w-5 -translate-y-1/2 rounded-full bg-white shadow-[0_4px_8px_rgba(0,0,0,0.2)]'
+									className='absolute left-[2px] top-1/2 h-5 w-5 -translate-y-1/2 rounded-full bg-white shadow-[0_4px_8px_rgba(0,0,0,0.2)]'
 								/>
 							</button>
 
@@ -256,24 +241,28 @@ export const PricingSection = () => {
 							</span>
 						</div>
 						<div className='relative'>
-							{isRetainer &&
+							{isRetainer && (
 								<div className='flex items-end'>
 									<motion.span
 										className='relative z-10 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black md:text-[56px] lg:text-[72px]'
 										animate={{ x: isRetainer ? 0 : priceShift }}
 										transition={{ type: 'spring', stiffness: 400, damping: 40 }}
-									>$6,500</motion.span>
+									>
+										$6,500
+									</motion.span>
 
 									<motion.span
 										className='relative z-0 -ml-4 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[56px] lg:text-[72px]'
 										animate={{ x: isRetainer ? labelShiftMonthly : labelShiftCustom }}
 										transition={{ type: 'spring', stiffness: 400, damping: 40 }}
-									>/mo</motion.span>
+									>
+										/mo
+									</motion.span>
 								</div>
-							}
+							)}
 
-							{isRetainer &&
-								<div className='flex items-end mb-10 text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
+							{isRetainer && (
+								<div className='mb-10 flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
 									{retainerDetails.devTitle.map((word, wordIndex) => (
 										<span
 											key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
@@ -291,7 +280,7 @@ export const PricingSection = () => {
 										</span>
 									))}
 								</div>
-							}
+							)}
 
 							<div className='flex items-end'>
 								<motion.span
@@ -311,7 +300,7 @@ export const PricingSection = () => {
 								</motion.span>
 							</div>
 
-							{isRetainer &&
+							{isRetainer && (
 								<div className='flex flex-col justify-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
 									<span className='mb-4'>
 										{retainerDetails.teamTitle.map((word, wordIndex) => (
@@ -319,16 +308,16 @@ export const PricingSection = () => {
 												key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
 												className='mr-[0.3em] inline-block'
 											>
-											{word.split('').map((letter, letterIndex) => (
-												<HeroSectionLetterAnimation
-													initialDelay={0.1}
-													delayRate={wordIndex * 0.07}
-													key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
-												>
-													{letter}
-												</HeroSectionLetterAnimation>
-											))}
-										</span>
+												{word.split('').map((letter, letterIndex) => (
+													<HeroSectionLetterAnimation
+														initialDelay={0.1}
+														delayRate={wordIndex * 0.07}
+														key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
+													>
+														{letter}
+													</HeroSectionLetterAnimation>
+												))}
+											</span>
 										))}
 									</span>
 
@@ -338,22 +327,22 @@ export const PricingSection = () => {
 												key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
 												className='mr-[0.3em] inline-block'
 											>
-											{word.split('').map((letter, letterIndex) => (
-												<HeroSectionLetterAnimation
-													initialDelay={0.1}
-													delayRate={wordIndex * 0.07}
-													key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
-												>
-													{letter}
-												</HeroSectionLetterAnimation>
-											))}
-										</span>
+												{word.split('').map((letter, letterIndex) => (
+													<HeroSectionLetterAnimation
+														initialDelay={0.1}
+														delayRate={wordIndex * 0.07}
+														key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
+													>
+														{letter}
+													</HeroSectionLetterAnimation>
+												))}
+											</span>
 										))}
 									</span>
 								</div>
-							}
+							)}
 
-							{!isRetainer &&
+							{!isRetainer && (
 								<div className='flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
 									{fixedDetails.priceDescription.map((word, wordIndex) => (
 										<span
@@ -372,7 +361,7 @@ export const PricingSection = () => {
 										</span>
 									))}
 								</div>
-							}
+							)}
 						</div>
 					</div>
 
@@ -388,7 +377,7 @@ export const PricingSection = () => {
 					</div>
 				</div>
 
-				<div className='flex h-min min-w-[248px] flex-1 rotate-1 flex-col items-center justify-center gap-6 rounded-xl bg-white/75 p-6 md:p-9 xl:p-15'>
+				<div className='xl:p-15 flex h-min min-w-[248px] flex-1 rotate-1 flex-col items-center justify-center gap-6 rounded-xl bg-white/75 p-6 md:p-9'>
 					<div className='flex w-full flex-col gap-9'>
 						<h4 className='text-lg leading-[1.6em] tracking-[-0.02em] md:text-xl xl:text-2xl'>
 							<strong>What&apos;s included</strong>
@@ -482,7 +471,7 @@ export const PricingSection = () => {
 					return (
 						<div key={index} className='flex items-center gap-2'>
 							<item.icon />
-							<span className='tracking-0 leading-[1.7em] whitespace-nowrap text-black/50'>
+							<span className='tracking-0 whitespace-nowrap leading-[1.7em] text-black/50'>
 								{item.title}
 							</span>
 							<div className='relative h-px w-full bg-black/10'></div>

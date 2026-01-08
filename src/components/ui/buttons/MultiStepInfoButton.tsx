@@ -44,7 +44,7 @@ export const MultiStepInfoButton = ({
 	const button = (
 		<motion.button
 			type='button'
-			className={`flex min-h-10 cursor-pointer items-center justify-start gap-3 rounded-full ${bgClass} border-[#d9d9d9] border-1 shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024] transition-transform duration-150 ease-out ${paddingClass} `}
+			className={`flex min-h-10 cursor-pointer items-center justify-start gap-3 rounded-full ${bgClass} border-1 border-[#d9d9d9] shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024] transition-transform duration-150 ease-out ${paddingClass} `}
 			initial='rest'
 			animate='rest'
 			whileHover='hover'

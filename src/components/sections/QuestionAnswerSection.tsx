@@ -107,8 +107,8 @@ export const QuestionAnswerSection = () => {
 													}}
 													className='overflow-hidden'
 												>
-													<div className='pt-4 pb-[1.5rem]'>
-														<p className='text-sm leading-[1.4] font-normal text-[#909090]'>
+													<div className='pb-[1.5rem] pt-4'>
+														<p className='text-sm font-normal leading-[1.4] text-[#909090]'>
 															{step.answer}
 														</p>
 													</div>

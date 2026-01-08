@@ -65,7 +65,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					<img src={avatarSrc} alt={name} className='h-full w-full object-cover' />
 				</div>
 				<div className='flex flex-col'>
-					<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
+					<span className='text-[16px] font-medium leading-tight text-black'>{name}</span>
 					<span className='text-[14px] leading-tight text-black/60'>{role}</span>
 				</div>
 			</motion.div>

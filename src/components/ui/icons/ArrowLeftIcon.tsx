@@ -12,7 +12,6 @@ export const ArrowLeftIcon = () => {
 				/>
 			</svg>
 
-
 			<svg
 				viewBox='0 0 256 256'
 				className='h-5 w-5 rotate-180'

@@ -24,7 +24,7 @@ export const Background = ({ variant = 'global' }: BackgroundProps) => {
 	// 	variant === 'section'
 	// 		? 'linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 22%, rgba(255,255,255,0.2) 45%, rgba(255,255,255,0) 60%)'
 	// 		: 'radial-gradient(125% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)'
-const streakMask =
+	const streakMask =
 		variant === 'section'
 			? 'linear-gradient(165deg, #fff 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0) 100%)'
 			: 'radial-gradient(90% 100% at 0 0, #000 0%, #00000039 88.2883%, #0000 100%)'

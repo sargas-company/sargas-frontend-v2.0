@@ -1,9 +1,9 @@
 import React, { useEffect, type ReactNode } from 'react'
-import Lenis from "lenis";
+import Lenis from 'lenis'
 
 type Props = {
-	children: ReactNode;
-};
+	children: ReactNode
+}
 
 export const SmoothScrollProvider: React.FC<Props> = ({ children }) => {
 	useEffect(() => {
@@ -12,15 +12,15 @@ export const SmoothScrollProvider: React.FC<Props> = ({ children }) => {
 			smoothWheel: true,
 			lerp: 0.2, //"stickiness"
 			wheelMultiplier: 0.85, // sensitivity
-			orientation: "vertical",
-			gestureOrientation: "vertical",
+			orientation: 'vertical',
+			gestureOrientation: 'vertical',
 			// syncTouch: false,
-		});
+		})
 
 		return () => {
-			lenis.destroy();
-		};
-	}, []);
+			lenis.destroy()
+		}
+	}, [])
 
-	return <>{children}</>;
-};
+	return <>{children}</>
+}

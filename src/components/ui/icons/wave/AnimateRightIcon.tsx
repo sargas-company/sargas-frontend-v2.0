@@ -10,12 +10,12 @@ type IconProps = {
 }
 
 export const AnimateRightWave = ({
-												size = '100%',
-												color = 'rgb(255, 55, 0)',
-												className = '',
-												strokeWidth = 1,
-												duration = 3,
-												delay = 0.5,
+	size = '100%',
+	color = 'rgb(255, 55, 0)',
+	className = '',
+	strokeWidth = 1,
+	duration = 3,
+	delay = 0.5,
 }: IconProps) => {
 	return (
 		<motion.svg

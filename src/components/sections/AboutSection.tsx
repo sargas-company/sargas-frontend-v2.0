@@ -15,7 +15,6 @@ import webild from '../../assets/case_studies/webild.png'
 import iketo from '../../assets/case_studies/iketo.png'
 import edtech from '../../assets/case_studies/ed_tech.png'
 
-
 type MarqueeColumnProps = {
 	images: string[]
 	reverse?: boolean
@@ -44,7 +43,7 @@ const MarqueeColumn = ({ images, reverse = false, speed = 26 }: MarqueeColumnPro
 							src={src}
 							alt='Recent work preview'
 							loading='lazy'
-							className='pointer-events-none h-full w-full object-cover select-none'
+							className='pointer-events-none h-full w-full select-none object-cover'
 						/>
 					</div>
 				))}
@@ -61,7 +60,7 @@ const leftColumnImages = [
 	`${astrology}`,
 	`${taycan}`,
 	`${dios}`,
-	`${tangle}`
+	`${tangle}`,
 ]
 
 const rightColumnImages = [
@@ -102,7 +101,7 @@ const AboutSectionContent = () => {
 				<MarqueeColumn images={rightColumnImages} reverse speed={500} />
 			</div>
 
-			<div className='absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
+			<div className='absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center'>
 				<RecentWorkButton />
 			</div>
 		</motion.div>
@@ -111,9 +110,7 @@ const AboutSectionContent = () => {
 
 export const AboutSection = () => {
 	return (
-		<section
-			className='relative isolate flex h-auto min-h-[60vh] w-full items-center justify-center'
-		>
+		<section className='relative isolate flex h-auto min-h-[60vh] w-full items-center justify-center'>
 			<AboutSectionFrame>
 				<AboutSectionContent />
 			</AboutSectionFrame>

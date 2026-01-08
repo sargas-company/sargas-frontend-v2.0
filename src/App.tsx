@@ -16,7 +16,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<SmoothScrollProvider>
-				<div className='relative min-h-screen '>
+				<div className='relative min-h-screen'>
 					<Background />
 					<HashScrollHandler />
 					<RouteTransitionOverlay />

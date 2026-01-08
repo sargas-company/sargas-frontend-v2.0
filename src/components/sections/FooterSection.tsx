@@ -6,9 +6,9 @@ import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { IconAt } from '../ui/icons/IconAt.tsx'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon.tsx'
 import { HeroSectionButton } from '../ui/HeroSectionButton.tsx'
-import {WAIcon} from "../ui/icons/WAIcon.tsx";
-import {TGIcon} from "../ui/icons/TGIcon.tsx";
-import {LnIcon} from "../ui/icons/lnIcon.tsx";
+import { WAIcon } from '../ui/icons/WAIcon.tsx'
+import { TGIcon } from '../ui/icons/TGIcon.tsx'
+import { LnIcon } from '../ui/icons/lnIcon.tsx'
 
 type SocialLink = {
 	label: string
@@ -36,7 +36,7 @@ const socialLinks: SocialLink[] = [
 		label: 'Email',
 		href: 'mailto:contact@sargas.io',
 		render: (className: string) => <IconAt className={className} size={20} color={'white'} />,
-	}
+	},
 ]
 
 // const timezones = [
@@ -68,7 +68,6 @@ const socialLinks: SocialLink[] = [
 // 	// 	timeZone: 'Europe/Warsaw',
 // 	// },
 // ]
-
 
 // const useTimeByZone = (zones: string[]) => {
 // 	const zonesKey = zones.join('|')
@@ -143,7 +142,7 @@ export const FooterSection = () => {
 	const contentY = useTransform(scrollYProgress, [0, 1], [-360, endOffset])
 	const contentOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1])
 
-	const isMailto = (href: string) => /^\s*mailto:/i.test(String(href ?? ""));
+	const isMailto = (href: string) => /^\s*mailto:/i.test(String(href ?? ''))
 
 	return (
 		<section
@@ -152,7 +151,7 @@ export const FooterSection = () => {
 			id='cta'
 		>
 			<div className='relative mx-auto h-full max-h-none w-full max-w-[100vw] overflow-hidden rounded-[25px] bg-black md:h-[100vh] md:max-h-[100vh] md:max-w-[100vw]'>
-				<div className='pointer-events-none absolute inset-0 z-0 opacity-8 mix-blend-screen'>
+				<div className='opacity-8 pointer-events-none absolute inset-0 z-0 mix-blend-screen'>
 					<Background variant='section' />
 				</div>
 				<div
@@ -235,10 +234,10 @@ export const FooterSection = () => {
 					{/*</div>*/}
 				</motion.div>
 
-				<div className='relative z-10 mt-45 flex flex-col items-center justify-between gap-5 pt-2 pb-10 md:mt-0 md:flex-row md:px-35'>
+				<div className='mt-45 md:px-35 relative z-10 flex flex-col items-center justify-between gap-5 pb-10 pt-2 md:mt-0 md:flex-row'>
 					<div className='flex flex-col items-center gap-1 text-sm text-white/70 md:gap-3.5'>
 						<span className='h-[0.5px] w-full bg-white' />
-						<span className='px-4 whitespace-nowrap text-white'>© Sargas Agency, 2025</span>
+						<span className='whitespace-nowrap px-4 text-white'>© Sargas Agency, 2025</span>
 						<span className='h-[0.5px] w-full bg-white' />
 					</div>
 

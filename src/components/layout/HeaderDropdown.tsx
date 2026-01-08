@@ -1,63 +1,63 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useLocation, useNavigate } from 'react-router-dom'
-import {IconAt} from "../ui/icons/IconAt.tsx";
-import {WAIcon} from "../ui/icons/WAIcon.tsx";
-import {TGIcon} from "../ui/icons/TGIcon.tsx";
-import {LnIcon} from "../ui/icons/lnIcon.tsx";
+import { IconAt } from '../ui/icons/IconAt.tsx'
+import { WAIcon } from '../ui/icons/WAIcon.tsx'
+import { TGIcon } from '../ui/icons/TGIcon.tsx'
+import { LnIcon } from '../ui/icons/lnIcon.tsx'
 
 type Props = {
-	open: boolean,
+	open: boolean
 }
 
 const menuOptions = [
 	{
 		title: 'About',
 		link: '/#about',
-		bold: false
+		bold: false,
 	},
 	{
 		title: 'Process',
 		link: '/#process',
-		bold: false
+		bold: false,
 	},
 	{
 		title: 'Case Studies',
 		link: '/#work',
-		bold: false
+		bold: false,
 	},
 	{
 		title: 'Pricing',
 		link: '/#pricing',
-		bold: false
+		bold: false,
 	},
 	{
 		title: 'FAQ',
 		link: '/#faq',
-		bold: false
+		bold: false,
 	},
 	{
 		title: 'Contact',
 		link: '/#cta',
-		bold: false
+		bold: false,
 	},
 ]
 
 const socials = [
 	{
 		link: 'https://ua.linkedin.com/in/vadym-chervonchenko-118053167',
-		component: LnIcon
+		component: LnIcon,
 	},
 	{
 		link: 'https://wa.me/380993013514',
-		component: WAIcon
+		component: WAIcon,
 	},
 	{
 		link: 'https://telegram.me/vadym_chervonchenko',
-		component: TGIcon
+		component: TGIcon,
 	},
 	{
 		link: 'mailto:contact@sargas.io',
-		component: IconAt
+		component: IconAt,
 	},
 ]
 
@@ -72,7 +72,7 @@ export const HeaderDropdown = ({ open }: Props) => {
 		})
 	}
 
-	const isMailto = (href: string) => /^\s*mailto:/i.test(String(href ?? ""));
+	const isMailto = (href: string) => /^\s*mailto:/i.test(String(href ?? ''))
 
 	return (
 		<AnimatePresence>
@@ -132,11 +132,8 @@ export const HeaderDropdown = ({ open }: Props) => {
 							delay: 0.4,
 						}}
 					>
-
-					<p className='mt-10'>Let’s chat. We’re online!</p>
-
+						<p className='mt-10'>Let’s chat. We’re online!</p>
 					</motion.div>
-
 
 					<motion.div
 						className='flex gap-4'
@@ -155,8 +152,7 @@ export const HeaderDropdown = ({ open }: Props) => {
 								<a
 									href={item.link}
 									target={!isMailto(item.link) ? '_blank' : undefined}
-									rel="noreferrer"
-
+									rel='noreferrer'
 									key={index}
 									className='group flex h-11 w-11 items-center justify-center rounded-full border border-black/50 transition-colors duration-200 hover:border-black'
 								>

@@ -52,7 +52,7 @@ export const RouteTransitionOverlay = () => {
 						animate={{ x: '60vw', y: '-60vh' }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.6, ease: 'easeInOut' }}
-						className='absolute h-[32vh] w-[200vw] -left-[40vw] -bottom-[30vh] rotate-[-320deg]'
+						className='absolute -bottom-[30vh] -left-[40vw] h-[32vh] w-[200vw] rotate-[-320deg]'
 						style={{ filter: 'blur(10px)' }}
 					>
 						<div
@@ -64,7 +64,7 @@ export const RouteTransitionOverlay = () => {
 							}}
 						/>
 					</motion.div>
-					<div className='absolute inset-0 bg-gradient-to-br from-white/8 via-white/12 to-white/8 backdrop-blur-[1px]' />
+					<div className='from-white/8 via-white/12 to-white/8 absolute inset-0 bg-gradient-to-br backdrop-blur-[1px]' />
 				</div>
 			)}
 		</AnimatePresence>

@@ -2,15 +2,15 @@ import { motion } from 'framer-motion'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { LinkIcon } from '../ui/icons/LinkIcon'
-import aws from "../../assets/tech/aws.svg";
-import docker from "../../assets/tech/docker.svg";
-import javascript from "../../assets/tech/javascript.svg";
-import nodejs from "../../assets/tech/nodejs.svg";
-import nestjs from "../../assets/tech/nestjs.svg";
-import nextJs from "../../assets/tech/nextjs.svg";
-import n8n from "../../assets/tech/n8n.svg";
-import nginx from "../../assets/tech/nginx.svg";
-import reactjs from "../../assets/tech/reactjs.svg";
+import aws from '../../assets/tech/aws.svg'
+import docker from '../../assets/tech/docker.svg'
+import javascript from '../../assets/tech/javascript.svg'
+import nodejs from '../../assets/tech/nodejs.svg'
+import nestjs from '../../assets/tech/nestjs.svg'
+import nextJs from '../../assets/tech/nextjs.svg'
+import n8n from '../../assets/tech/n8n.svg'
+import nginx from '../../assets/tech/nginx.svg'
+import reactjs from '../../assets/tech/reactjs.svg'
 
 type PageSection = {
 	title: string
@@ -29,57 +29,63 @@ const technologies = [
 	{
 		src: aws,
 		alt: 'aws',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: docker,
 		alt: 'docker',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: javascript,
 		alt: 'javascript',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: nodejs,
 		alt: 'nodejs',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: nestjs,
 		alt: 'nestjs',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: nextJs,
 		alt: 'nextJs',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: n8n,
 		alt: 'n8n',
-		width: '90px'
+		width: '90px',
 	},
 	{
 		src: nginx,
 		alt: 'nginx',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: reactjs,
 		alt: 'reactjs',
-		width: '50px'
-	}
+		width: '50px',
+	},
 ]
 
-export const PageHero = ({ title, sections = [], content, chips, href = undefined }: PageHeroProps) => {
+export const PageHero = ({
+	title,
+	sections = [],
+	content,
+	chips,
+	href = undefined,
+}: PageHeroProps) => {
 	return (
 		<div className='flex'>
 			<div className='hidden w-[150px] xl:block' />
 			<div className='flex grow flex-col gap-9'>
 				<motion.div
-					className='flex flex-col items-start justify-between gap-4 md:flex-row transform-gpu [will-change:transform,opacity]'
+					className='flex transform-gpu flex-col items-start justify-between gap-4 [will-change:transform,opacity] md:flex-row'
 					style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
 					initial={{ opacity: 0, y: -50 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -96,7 +102,7 @@ export const PageHero = ({ title, sections = [], content, chips, href = undefine
 
 					<div className='flex gap-1'>
 						{chips.map((chip, index) => (
-							<span key={index} className='rounded-full bg-white px-4 py-2 text-md'>
+							<span key={index} className='text-md rounded-full bg-white px-4 py-2'>
 								{chip}
 							</span>
 						))}
@@ -124,7 +130,7 @@ export const PageHero = ({ title, sections = [], content, chips, href = undefine
 					{sections.map((item, index) => {
 						return (
 							<div key={index} className='flex flex-col gap-2'>
-								<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
+								<h4 className='font-serif text-2xl italic leading-[1.2em] tracking-normal text-black/50'>
 									<HeroSectionLetterAnimation
 										initialDelay={1}
 										delayRate={index * 0.15}
@@ -156,8 +162,8 @@ export const PageHero = ({ title, sections = [], content, chips, href = undefine
 					})}
 				</div>
 
-				<div className='flex flex-col items-start' >
-					<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
+				<div className='flex flex-col items-start'>
+					<h4 className='font-serif text-2xl italic leading-[1.2em] tracking-normal text-black/50'>
 						{['Stack'].map((str, index) => {
 							return (
 								<HeroSectionLetterAnimation
@@ -177,7 +183,13 @@ export const PageHero = ({ title, sections = [], content, chips, href = undefine
 								delayRate={index * 0.07}
 								key={index}
 							>
-								<img width={item.width} height='auto' className='mr-4' src={item.src} alt={item.alt}/>
+								<img
+									width={item.width}
+									height='auto'
+									className='mr-4'
+									src={item.src}
+									alt={item.alt}
+								/>
 							</HeroSectionLetterAnimation>
 						))}
 					</div>

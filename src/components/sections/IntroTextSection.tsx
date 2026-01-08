@@ -8,7 +8,7 @@ import { PrototypingIcon } from '../ui/icons/PrototypingIcon'
 import { StrategyIcon } from '../ui/icons/StrategyIcon'
 import { IntroChip } from '../ui/IntroChip'
 import { IntroTextSectionWordAnimation } from '../animation/IntroTextSectionWordAnimation'
-import {SecurityIcon} from "../ui/icons/SecurityIcon.tsx";
+import { SecurityIcon } from '../ui/icons/SecurityIcon.tsx'
 
 import aws from '../../assets/tech/aws.svg'
 import docker from '../../assets/tech/docker.svg'
@@ -19,7 +19,7 @@ import nextJs from '../../assets/tech/nextjs.svg'
 import nginx from '../../assets/tech/nginx.svg'
 import nodejs from '../../assets/tech/nodejs.svg'
 import reactjs from '../../assets/tech/reactjs.svg'
-import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
+import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation.tsx'
 
 const Content = [
 	'We',
@@ -44,55 +44,55 @@ const Content = [
 	'that',
 	'removes',
 	'manual',
-	'work'
+	'work',
 ]
 
 const technologies = [
 	{
 		src: aws,
 		alt: 'aws',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: docker,
 		alt: 'docker',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: javascript,
 		alt: 'javascript',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: nodejs,
 		alt: 'nodejs',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: nestjs,
 		alt: 'nestjs',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: nextJs,
 		alt: 'nextJs',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: n8n,
 		alt: 'n8n',
-		width: '90px'
+		width: '90px',
 	},
 	{
 		src: nginx,
 		alt: 'nginx',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: reactjs,
 		alt: 'reactjs',
-		width: '50px'
-	}
+		width: '50px',
+	},
 ]
 
 const chips = [
@@ -241,10 +241,10 @@ export const IntroTextSection = () => {
 					mask: 'radial-gradient(50% 50%, #000 0%, transparent 100%)',
 				}}
 			/>
-			<div className='flex min-h-[75vh] flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-10 xl:gap-0 xl:py-18 xl:mb-15 xl:mt-15'>
+			<div className='xl:py-18 xl:mb-15 xl:mt-15 flex min-h-[75vh] flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-10 xl:gap-0'>
 				<SectionTitle title='Hello!' />
 				<div className='relative flex h-min max-w-[940px] flex-col gap-[260px] pb-[280px] md:gap-12 md:px-[96px] md:py-12 xl:px-[120px]'>
-					<p className='font-inter-display text-center text-[28px] leading-[1.4em] font-normal tracking-[-0.04em] text-black md:text-[32px] xl:text-[44px]'>
+					<p className='font-inter-display text-center text-[28px] font-normal leading-[1.4em] tracking-[-0.04em] text-black md:text-[32px] xl:text-[44px]'>
 						{Content.map((word, index) => (
 							<IntroTextSectionWordAnimation
 								key={index}
@@ -259,14 +259,20 @@ export const IntroTextSection = () => {
 						<IntroChip key={chip.title} chip={chip} />
 					))}
 				</div>
-				<div className='flex flex-row items-center mt-5' >
+				<div className='mt-5 flex flex-row items-center'>
 					{technologies.map((item, index) => (
 						<HeroSectionLetterAnimation
 							initialDelay={0.5}
 							delayRate={index * 0.07}
 							key={index}
 						>
-							<img width={item.width} height='auto' className='ml-4' src={item.src} alt={item.alt}/>
+							<img
+								width={item.width}
+								height='auto'
+								className='ml-4'
+								src={item.src}
+								alt={item.alt}
+							/>
 						</HeroSectionLetterAnimation>
 					))}
 				</div>

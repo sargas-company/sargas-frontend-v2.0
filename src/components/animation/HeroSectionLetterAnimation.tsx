@@ -17,11 +17,14 @@ export const HeroSectionLetterAnimation = ({
 	return (
 		<motion.span
 			initial={{ opacity: 0, filter: 'blur(10px)', y: 10, x: -5 }}
-			whileInView={{ opacity: 1, filter: "blur(0px)", y: 0, x: 0 }}
-
+			whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0, x: 0 }}
 			viewport={{ once: true, amount: 0.6 }}
-			transition={{ type: "tween", duration: 0.2, ease: "easeOut", delay: initialDelay + delayRate }}
-
+			transition={{
+				type: 'tween',
+				duration: 0.2,
+				ease: 'easeOut',
+				delay: initialDelay + delayRate,
+			}}
 			className='inline-block'
 			onAnimationComplete={animCallback ? animCallback : () => {}}
 		>

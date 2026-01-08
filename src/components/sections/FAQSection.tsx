@@ -90,8 +90,8 @@ const FAQRow: React.FC<FAQRowProps> = ({ item, defaultOpen = false }) => {
 						'overflow-hidden text-[16px] leading-[1.7] text-black/55',
 						'transition-all duration-300 ease-out',
 						isOpen
-							? 'translate-y-0 pt-1 pb-4 opacity-100'
-							: '-translate-y-1 pt-0 pb-0 opacity-0',
+							? 'translate-y-0 pb-4 pt-1 opacity-100'
+							: '-translate-y-1 pb-0 pt-0 opacity-0',
 					].join(' ')}
 				>
 					{item.answer}
@@ -104,7 +104,7 @@ const FAQRow: React.FC<FAQRowProps> = ({ item, defaultOpen = false }) => {
 const FAQSection: React.FC = () => {
 	return (
 		<section className='relative w-full' id='faq'>
-			<div className='mx-auto flex w-full max-w-[1600px] flex-col gap-10 px-4 pb-20 md:px-8 md:pb-30 lg:gap-14 lg:px-12 '>
+			<div className='md:pb-30 mx-auto flex w-full max-w-[1600px] flex-col gap-10 px-4 pb-20 md:px-8 lg:gap-14 lg:px-12'>
 				<div className='flex flex-col items-center gap-2.5 text-center'>
 					<SectionTitle title='FAQ' />
 					<h2 className='flex flex-wrap items-baseline justify-center text-[28px] leading-[1.4] tracking-[-0.04em] md:text-[48px]'>
@@ -126,15 +126,15 @@ const FAQSection: React.FC = () => {
 									<img
 										src='https://sargas.io/img/svg/logo.png'
 										alt='Portrait'
-										className='object-contain w-full h-full'
+										className='h-full w-full object-contain'
 									/>
 								</div>
 
 								<div className='flex flex-col leading-tight'>
-									<p className='text-[22px] leading-[1.7] font-medium tracking-[-0.02em] text-black'>
+									<p className='text-[22px] font-medium leading-[1.7] tracking-[-0.02em] text-black'>
 										Have more questions?
 									</p>
-									<p className='text-[22px] leading-[1.7] font-medium tracking-[-0.02em] text-black'>
+									<p className='text-[22px] font-medium leading-[1.7] tracking-[-0.02em] text-black'>
 										Book a free discovery call
 									</p>
 								</div>
