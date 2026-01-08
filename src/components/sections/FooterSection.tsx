@@ -143,11 +143,7 @@ export const FooterSection = () => {
 	const contentY = useTransform(scrollYProgress, [0, 1], [-360, endOffset])
 	const contentOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1])
 
-	const isMailto = (href) => /^\s*mailto:/i.test(String(href ?? ""));
-
-	// const zones = useMemo(() => timezones.map((t) => t.timeZone), [])
-
-	// const timeByZone = useTimeByZone(zones)
+	const isMailto = (href: string) => /^\s*mailto:/i.test(String(href ?? ""));
 
 	return (
 		<section
