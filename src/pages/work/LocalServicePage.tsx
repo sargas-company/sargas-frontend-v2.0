@@ -12,12 +12,11 @@ const project_details = {
 		name: 'Local Services App',
 		img: Services,
 		sections: [
-			{
-				title: 'Services',
-				items: ['Product Design,', 'Strategy, Branding', 'No-Code', 'Development'],
-			},
-			{ title: 'Stack', items: ['Framer, Figma,', 'Adove CC'] },
-			{ title: 'Timeline', items: ['4 Weeks'] },
+			{ title: 'Platform', items: ['Web + Admin'] },
+			{ title: 'Deliverables', items: ['UI kit', 'Build', 'Handover'] },
+			{ title: 'Integrations', items: ['n8n', 'Auth', 'Storage'] },
+			{ title: 'Team', items: ['1 designer', '2 engineers'] },
+			{ title: 'Timeline', items: ['3 weeks'] },
 		],
 	},
 	details: [
@@ -37,46 +36,34 @@ const project_details = {
 }
 
 const content = [
-	'Nitro',
-	'is',
-	'a',
-	'premium',
-	'Framer',
-	'template',
+	'A',
+	'mobile',
+	'platform',
 	'for',
-	'designers',
-	'with',
-	'an',
-	'advanced',
-	'layout',
+	'local',
+	'services',
+	'where',
+	'businesses',
+	'create',
+	'profiles,',
+	'publish',
+	'offers,',
 	'and',
-	'a',
-	'ton',
-	'of',
-	'little',
-	'big',
-	'details',
-	'to',
-	'catch',
-	'the',
-	'visitor.',
-	'With',
-	'more',
-	'than',
-	'200',
-	'copies',
-	'sold,',
-	'it',
-	'remains',
+	'manage',
+	'appointments,',
+	'while',
+	'customers',
+	'discover',
+	'providers',
+	'and',
+	'book',
+	'in',
+	'seconds',
+	'-',
+	'all',
+	'in',
 	'one',
-	'of',
-	'the',
-	'most',
-	'successful',
-	'templates',
-	'on',
-	'a',
-	'market.',
+	'place.',
 ]
 
 const benefits = [
@@ -101,7 +88,7 @@ export const LocalServicePage = () => {
 				<PageHero
 					title='Local Services App'
 					content={content}
-					sections={[]}
+					sections={project_details.main.sections}
 					chips={['React Native', 'Marketplace', 'Maps', 'Mobile App']}
 				/>
 				<ProjectDetails {...project_details} />

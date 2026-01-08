@@ -79,7 +79,8 @@ export const PageHero = ({ title, sections = [], content, chips, href = undefine
 			<div className='hidden w-[150px] xl:block' />
 			<div className='flex grow flex-col gap-9'>
 				<motion.div
-					className='flex flex-col items-start justify-between gap-4 md:flex-row'
+					className='flex flex-col items-start justify-between gap-4 md:flex-row transform-gpu [will-change:transform,opacity]'
+					style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
 					initial={{ opacity: 0, y: -50 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{
@@ -92,6 +93,7 @@ export const PageHero = ({ title, sections = [], content, chips, href = undefine
 					<h2 className='text-[28px] leading-[1.4] tracking-[-0.04em] md:text-[32px] xl:text-[48px]'>
 						{title}
 					</h2>
+
 					<div className='flex gap-1'>
 						{chips.map((chip, index) => (
 							<span key={index} className='rounded-full bg-white px-4 py-2 text-md'>
@@ -100,6 +102,7 @@ export const PageHero = ({ title, sections = [], content, chips, href = undefine
 						))}
 					</div>
 				</motion.div>
+
 				<div>
 					<p className='max-w-[650px] text-lg leading-[1.6] tracking-[-0.02em] md:text-xl xl:text-2xl'>
 						{content.map((word, index) => {

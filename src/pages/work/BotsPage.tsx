@@ -12,12 +12,11 @@ const project_details = {
 		name: 'AI Bots Builder',
 		img: Ai4u,
 		sections: [
-			{
-				title: 'Services',
-				items: ['Product Design,', 'Strategy, Branding', 'No-Code', 'Development'],
-			},
-			{ title: 'Stack', items: ['Framer, Figma,', 'Adove CC'] },
-			{ title: 'Timeline', items: ['4 Weeks'] },
+			{ title: 'Platform', items: ['Web + Admin'] },
+			{ title: 'Deliverables', items: ['UI kit', 'Build', 'Handover'] },
+			{ title: 'Integrations', items: ['n8n', 'Auth', 'Storage'] },
+			{ title: 'Team', items: ['1 designer', '2 engineers'] },
+			{ title: 'Timeline', items: ['3 weeks'] },
 		],
 	},
 	details: [
@@ -37,46 +36,31 @@ const project_details = {
 }
 
 const content = [
-	'Nitro',
+	'AI4U',
 	'is',
 	'a',
-	'premium',
-	'Framer',
-	'template',
+	'platform',
 	'for',
-	'designers',
-	'with',
-	'an',
-	'advanced',
-	'layout',
+	'creating',
 	'and',
-	'a',
-	'ton',
-	'of',
-	'little',
-	'big',
-	'details',
-	'to',
-	'catch',
-	'the',
-	'visitor.',
-	'With',
-	'more',
-	'than',
-	'200',
-	'copies',
-	'sold,',
-	'it',
-	'remains',
+	'managing',
+	'AI',
+	'agents',
+	'for',
+	'your',
+	'business',
+	'in',
 	'one',
-	'of',
-	'the',
-	'most',
-	'successful',
-	'templates',
-	'on',
+	'click',
+	'-',
+	'from',
+	'ready-made',
+	'roles',
+	'to',
 	'a',
-	'market.',
+	'live',
+	'agent',
+	'dashboard.',
 ]
 
 const benefits = [
@@ -101,7 +85,7 @@ export const BotsPage = () => {
 				<PageHero
 					title='AI Bots Builder'
 					content={content}
-					sections={[]}
+					sections={project_details.main.sections}
 					chips={['AI Agents', 'Automation', 'SaaS', 'Integrations']}
 					href='https://ai4u.linkaiil.com'
 				/>

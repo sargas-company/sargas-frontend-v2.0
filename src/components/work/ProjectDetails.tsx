@@ -12,7 +12,7 @@ type ProjectDetailsProps = {
 export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 	return (
 		<motion.div
-			className='flex flex-col gap-12 md:gap-16 xl:gap-20 group w-[70%] my-0 mx-auto'
+			className='flex flex-col gap-12 md:gap-16 xl:gap-20 group w-[70%] my-0 mx-auto transform-gpu [will-change:transform,opacity]'
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{

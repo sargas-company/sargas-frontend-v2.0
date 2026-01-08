@@ -52,6 +52,43 @@ const retainerDetails = {
 		'them',
 		'again.'
 	],
+	devTitle: [
+		'Dedicated',
+		'Developer'
+	],
+	teamTitle: [
+		'Dedicated',
+		'Team'
+	],
+	teamDescription: [
+		'A',
+		'cross-functional',
+		'team',
+		'reserved',
+		'for',
+		'your',
+		'product',
+		'each',
+		'month',
+		'(usually',
+		'2',
+		'core',
+		'engineers',
+		'+',
+		'lead',
+		'support).',
+		'We',
+		'manage',
+		'the',
+		'setup',
+		'-',
+		'you',
+		'focus',
+		'on',
+		'priorities',
+		'and',
+		'results.',
+	],
 	position: 'CEO of KlickTipp',
 	name: 'Mario Wolosz',
 	img: avatar4,
@@ -95,6 +132,17 @@ const fixedDetails = {
 		'the',
 		'UX.'
 	],
+	priceDescription: [
+		'Fixed',
+		'-',
+		'scope',
+		'project.',
+		'Milestone',
+		'-',
+		'based',
+		'delivery.',
+	],
+
 	name: 'Egor Antonyuk',
 	position: 'Product Owner, Clowder',
 	img: avatar2,
@@ -149,6 +197,7 @@ export const PricingSection = () => {
 
 	const items = isRetainer ? retainerDetails.list : fixedDetails.list
 	const content = isRetainer ? retainerDetails.content : fixedDetails.content
+	const priceDescription = isRetainer ? retainerDetails.priceDescription : fixedDetails.priceDescription
 
 	return (
 		<div
@@ -226,7 +275,22 @@ export const PricingSection = () => {
 
 							{isRetainer &&
 								<div className='flex items-end mb-10 text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
-									Dedicated Developer
+									{retainerDetails.devTitle.map((word, wordIndex) => (
+										<span
+											key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
+											className='mr-[0.3em] inline-block'
+										>
+											{word.split('').map((letter, letterIndex) => (
+												<HeroSectionLetterAnimation
+													initialDelay={0.1}
+													delayRate={wordIndex * 0.07}
+													key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
+												>
+													{letter}
+												</HeroSectionLetterAnimation>
+											))}
+										</span>
+									))}
 								</div>
 							}
 
@@ -250,16 +314,64 @@ export const PricingSection = () => {
 
 							{isRetainer &&
 								<div className='flex flex-col justify-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
-									<span className='mb-4'>Dedicated Team</span>
+									<span className='mb-4'>
+										{retainerDetails.teamTitle.map((word, wordIndex) => (
+											<span
+												key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
+												className='mr-[0.3em] inline-block'
+											>
+											{word.split('').map((letter, letterIndex) => (
+												<HeroSectionLetterAnimation
+													initialDelay={0.1}
+													delayRate={wordIndex * 0.07}
+													key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
+												>
+													{letter}
+												</HeroSectionLetterAnimation>
+											))}
+										</span>
+										))}
+									</span>
 
-									<span>A cross-functional team reserved for your product each month (usually 2 core engineers + lead support).<br/>
-									We manage the setup - you focus on priorities and results.</span>
+									<span>
+										{retainerDetails.teamDescription.map((word, wordIndex) => (
+											<span
+												key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
+												className='mr-[0.3em] inline-block'
+											>
+											{word.split('').map((letter, letterIndex) => (
+												<HeroSectionLetterAnimation
+													initialDelay={0.1}
+													delayRate={wordIndex * 0.07}
+													key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
+												>
+													{letter}
+												</HeroSectionLetterAnimation>
+											))}
+										</span>
+										))}
+									</span>
 								</div>
 							}
 
 							{!isRetainer &&
 								<div className='flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
-									Fixed-scope project <br/> Milestone-based delivery
+									{priceDescription.map((word, wordIndex) => (
+										<span
+											key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
+											className='mr-[0.3em] inline-block'
+										>
+											{word.split('').map((letter, letterIndex) => (
+												<HeroSectionLetterAnimation
+													initialDelay={0.1}
+													delayRate={wordIndex * 0.07}
+													key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
+												>
+													{letter}
+												</HeroSectionLetterAnimation>
+											))}
+										</span>
+									))}
 								</div>
 							}
 						</div>

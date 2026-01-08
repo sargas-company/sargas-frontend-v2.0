@@ -12,12 +12,11 @@ const project_details = {
 		name: 'Graffiti Chronicles',
 		img: Sophia,
 		sections: [
-			{
-				title: 'Services',
-				items: ['Product Design,', 'Strategy, Branding', 'No-Code', 'Development'],
-			},
-			{ title: 'Stack', items: ['Framer, Figma,', 'Adove CC'] },
-			{ title: 'Timeline', items: ['4 Weeks'] },
+			{ title: 'Platform', items: ['Web + Admin'] },
+			{ title: 'Deliverables', items: ['UI kit', 'Build', 'Handover'] },
+			{ title: 'Integrations', items: ['n8n', 'Auth', 'Storage'] },
+			{ title: 'Team', items: ['1 designer', '2 engineers'] },
+			{ title: 'Timeline', items: ['3 weeks'] },
 		],
 	},
 	details: [
@@ -37,43 +36,33 @@ const project_details = {
 }
 
 const content = [
-	'Bravo',
+	'Graffiti',
+	'Chronicles',
 	'is',
-	'a',
-	'high-converting',
-	'agency',
-	'website',
-	'template',
-	'full',
-	'of',
-	'surprising',
-	'and',
-	'catchy',
-	'details.',
-	'It',
-	'works',
-	'well',
-	'with',
-	'productized',
-	'services,',
-	'unlimited',
-	'subscriptions,',
-	'and',
-	'classic',
-	'models.',
-	'Set',
-	'it',
-	'up',
-	'in',
 	'an',
-	'hour,',
-	'and',
-	'your',
-	'own',
-	'agency',
-	'will',
-	'be',
-	'live!',
+	'immersive',
+	'online',
+	'exhibition',
+	'that',
+	'brings',
+	'the',
+	'graffiti',
+	'of',
+	'St',
+	'Sophia',
+	'Cathedral',
+	'in',
+	'Kyiv',
+	'to',
+	'life',
+	'-',
+	'turning',
+	'digitized',
+	'inscriptions',
+	'into',
+	'an',
+	'interactive',
+	'story.',
 ]
 
 const benefits = [
@@ -98,7 +87,7 @@ export const GraffitiPage = () => {
 				<PageHero
 					title='Graffiti Chronicles'
 					content={content}
-					sections={[]}
+					sections={project_details.main.sections}
 					chips={['Cultural Heritage', 'Digital Exhibition', 'Web Development']}
 					href='https://graffiti-chronicles.shadowsproject.org'
 				/>
