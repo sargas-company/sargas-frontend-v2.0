@@ -101,6 +101,7 @@ export const BotsPage = () => {
 				<PageHero
 					title='AI Bots Builder'
 					content={content}
+					sections={[]}
 					chips={['AI Agents', 'Automation', 'SaaS', 'Integrations']}
 					href='https://ai4u.linkaiil.com'
 				/>
