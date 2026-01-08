@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { AnimateRightWave } from '../ui/icons/wave/AnimateRightIcon.tsx'
 import { AnimateLeftWave } from '../ui/icons/wave/AnimateLeftWave.tsx'
-import React from "react";
 import {CommentsSectionUpwork} from "./CommentsSectionUpwork.tsx";
 
 const ProcessSection = () => {
