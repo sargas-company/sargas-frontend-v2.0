@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 type HeroSectionButtonProps = {
 	title: string
@@ -24,8 +24,6 @@ export const HeroSectionButton = ({ title, href = undefined, target = '_blank', 
 					// boxShadow: hovered ? hoverShadow : baseShadow,
 					transition: 'box-shadow 500ms ease-out, transform 150ms ease-out',
 				}}
-				onMouseEnter={() => setHovered(true)}
-				onMouseLeave={() => setHovered(false)}
 			>
 				<span className='whitespace-nowrap'>{title}</span>
 

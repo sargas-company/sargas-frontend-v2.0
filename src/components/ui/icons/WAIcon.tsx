@@ -4,7 +4,7 @@ type IconProps = SVGProps<SVGSVGElement> & {
     size?: number
 }
 
-export const WAIcon = ({ size = 20, color = '#000', className, ...props }: IconProps) => {
+export const WAIcon = ({ color = '#000', className }: IconProps) => {
     return (
         <svg
             width="21"

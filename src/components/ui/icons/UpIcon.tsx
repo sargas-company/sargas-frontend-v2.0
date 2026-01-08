@@ -4,7 +4,7 @@ type IconProps = SVGProps<SVGSVGElement> & {
     size?: number
 }
 
-export const UpIcon = ({ size = 20, className, ...props }: IconProps) => {
+export const UpIcon = ({ className }: IconProps) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
