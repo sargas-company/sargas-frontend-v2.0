@@ -1,12 +1,19 @@
 import React from 'react'
 import { BlurTypingText } from '../animation/ProcessSectionBlurTypingAnimation.tsx'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import UpIcon from '../../assets/others/upwork-logo.svg'
 import avatar3 from '../../assets/avatars/avatar_3.jpg'
 import avatar4 from '../../assets/avatars/avatar_4.jpg'
-import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
-import {Link} from "react-router-dom";
-import {BenefitCardCustom} from "../ui/BenefitCardCustom.tsx";
+import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation.tsx'
+import { BenefitCardCustom } from '../ui/BenefitCardCustom.tsx'
+
+type CardStat = {
+	title: string
+	earned: string | number
+	rate: string | number
+	hours: string | number
+	period: string
+}
 
 type TestimonialProps = {
 	quote: string
@@ -15,37 +22,40 @@ type TestimonialProps = {
 	siteUrl?: string
 	avatarSrc: string
 	initialDelay?: number
-	className?: string,
-	cardStat: object
+	className?: string
+	cardStat?: CardStat
 }
 
-type StatCardProps = {
+type StatCardPropsLogo = {
 	icon?: React.ReactNode
 	rate: string
 }
 
-const cards = [
+type StatCardProps = {
+	data: CardStat
+}
+
+const cards: CardStat[] = [
 	{
 		title: 'Integrations between KlickTipp and other tools (n8n/Nest.js)',
 		earned: '20,224.00',
 		rate: 35,
 		hours: '600+',
-		period: 'Aug 16, 2024 - Nov 27, 2024'
+		period: 'Aug 16, 2024 - Nov 27, 2024',
 	},
 	{
 		title: 'SaaS application development | Nest.js, Next.js',
 		earned: '63,420.00',
 		rate: 35,
 		hours: '1,500+',
-		period: 'Nov 7, 2023 - Jan 30, 2025'
+		period: 'Nov 7, 2023 - Jan 30, 2025',
 	},
 ]
 
-const StatCardLogo = ({ icon, rate }: StatCardProps) => {
+const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	return (
 		<div className='flex w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3 mb-2.5'>
-
 				<div className='flex shrink-0 items-center justify-start'>{icon}</div>
 
 				<div className='flex justify-center'>
@@ -57,17 +67,15 @@ const StatCardLogo = ({ icon, rate }: StatCardProps) => {
 						<div className='flex shrink-0 gap-1'>
 							{[...Array(5)].map((_, i) => (
 								<HeroSectionLetterAnimation
-									loop={true}
 									initialDelay={0.5}
 									delayRate={i * 0.07}
 									key={i}
 								>
-								<img
-									key={i}
-									src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
-									alt=''
-									className='h-4 w-4'
-								/>
+									<img
+										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
+										alt=''
+										className='h-4 w-4'
+									/>
 								</HeroSectionLetterAnimation>
 							))}
 						</div>
@@ -78,7 +86,7 @@ const StatCardLogo = ({ icon, rate }: StatCardProps) => {
 	)
 }
 
-const StatCard = ({data: {title, earned, rate, hours, period}}) => {
+const StatCard = ({ data: { title, earned, rate, hours, period } }: StatCardProps) => {
 	return (
 		<div className='flex h-full w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] px-12 py-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px]'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
@@ -93,6 +101,7 @@ const StatCard = ({data: {title, earned, rate, hours, period}}) => {
 							<span className='text-[40px] mt-1 font-semibold text-black/80'>{earned}</span>
 							<span className='pt-5'>(earned)</span>
 						</li>
+
 						<li>
 							<div className='text-sm font-normal text-black/60 md:text-base flex justify-between items-center'>
 								<span>Rate per hour</span>
@@ -102,6 +111,7 @@ const StatCard = ({data: {title, earned, rate, hours, period}}) => {
 									<span className='text-[22px] mt-1 font-bold text-black/80'>{rate}</span>
 								</span>
 							</div>
+
 							<div className='text-sm font-normal text-black/60 md:text-base flex justify-between items-center'>
 								<span>Spent hours</span>
 								<span className='text-[22px] mt-1 font-bold text-black/80'>{hours}</span>
@@ -126,7 +136,13 @@ const Testimonial: React.FC<TestimonialProps> = ({
 	avatarSrc,
 	className,
 	initialDelay = 0,
-	cardStat = {}
+	cardStat = {
+		title: '',
+		earned: '',
+		rate: '',
+		hours: '',
+		period: '',
+	},
 }) => {
 	return (
 		<div
@@ -169,9 +185,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					ease: 'easeOut',
 					delay: initialDelay + 0.2,
 				}}
-			>
-
-			</motion.div>
+			/>
 
 			<motion.div
 				className='mt-3 flex items-center gap-15 w-full'
@@ -186,12 +200,18 @@ const Testimonial: React.FC<TestimonialProps> = ({
 				}}
 			>
 				<StatCardLogo
-					icon={<img src={UpIcon} style={{marginBottom: '-16px'}} alt='' className='w-[100px]' />}
+					icon={
+						<img
+							src={UpIcon}
+							style={{ marginBottom: '-16px' }}
+							alt=''
+							className='w-[100px]'
+						/>
+					}
 					rate='5.0'
 				/>
-				<StatCard
-					data={cardStat}
-				/>
+
+				<StatCard data={cardStat} />
 			</motion.div>
 
 			<motion.div
@@ -216,6 +236,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 							className='h-full w-full object-cover'
 						/>
 					</div>
+
 					<div className='flex flex-col'>
 						<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
 						<span className='text-[14px] leading-tight text-black/60'>{role}</span>
@@ -244,7 +265,7 @@ export const CommentsSectionUpwork: React.FC = () => {
 				/>
 
 				<Testimonial
-					quote='Sargas Agency delivered high-quality work quickly across multiple areas of our platform, including frontend, backend, and a browser extension. The team was highly flexible, adapting seamlessly to changes in scope, code standards, and team processes - a critical factor in a fast-moving startup environment. We’d be happy to work with them again.'
+					quote="Sargas Agency delivered high-quality work quickly across multiple areas of our platform, including frontend, backend, and a browser extension. The team was highly flexible, adapting seamlessly to changes in scope, code standards, and team processes - a critical factor in a fast-moving startup environment. We’d be happy to work with them again."
 					name='Verified Client'
 					role='Product Founder'
 					avatarSrc={avatar3}
