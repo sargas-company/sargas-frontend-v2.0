@@ -4,7 +4,7 @@ type IconProps = SVGProps<SVGSVGElement> & {
     size?: number
 }
 
-export const LnIcon = ({ size = 20, color = '#000', className, ...props }: IconProps) => {
+export const LnIcon = ({ color = '#000', className }: IconProps) => {
     return (
         <svg
             className={className}

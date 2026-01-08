@@ -10,20 +10,6 @@ type HeroSectionButtonProps = {
 }
 
 export const HeroSectionButton = ({ title, href = undefined, target = '_blank', icon, withOutline, fullWidth = false }: HeroSectionButtonProps) => {
-	const [hovered, setHovered] = useState(false)
-
-	const baseShadow = `
-    inset 0 -10px 45px rgba(255,255,255,0),
-    inset 10px 0 10px -45px rgba(255,255,255,0),
-    inset -10px 0 10px -45px rgba(255,255,255,0)
-  `
-
-	const hoverShadow = `
-    inset 0 -10px 45px rgba(255,255,255,0.7),
-    inset 10px 0 10px -45px rgba(255,255,255,0.7),
-    inset -10px 0 10px -45px rgba(255,255,255,0.7)
-  `
-
 	const isFullWidth = fullWidth && 'w-full'
 	return (
 		<div

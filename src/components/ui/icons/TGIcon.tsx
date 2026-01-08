@@ -4,7 +4,7 @@ type IconProps = SVGProps<SVGSVGElement> & {
     size?: number
 }
 
-export const TGIcon = ({ size = 20, color = '#000', className, ...props }: IconProps) => {
+export const TGIcon = ({ color = '#000', className }: IconProps) => {
     return (
         <svg
             width="21"
