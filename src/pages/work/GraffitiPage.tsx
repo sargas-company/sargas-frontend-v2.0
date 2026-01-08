@@ -2,17 +2,15 @@ import { PageHero } from '../../components/work/PageHero'
 import { WorkLayout } from '../../components/work/WorkLayout'
 import { ProjectDetails } from '../../components/work/ProjectDetails'
 import { ProjectsLinks } from '../../components/work/ProjecsLinks'
-import StridaImg from '../../assets/Strida.avif'
-import NitroImg from '../../assets/Nitro.avif'
-import BravoMainImg from '../../assets/Bravo.avif'
-import Bravo_01 from '../../assets/Bravo_01.avif'
-import Bravo_02 from '../../assets/Bravo_02.avif'
-import Bravo_03 from '../../assets/Bravo_03.avif'
+
+import Ai4u from '../../assets/case_studies/recent/ai4u.png'
+import Services from '../../assets/case_studies/recent/service.png'
+import Sophia from '../../assets/case_studies/recent/sophia.png'
 
 const project_details = {
 	main: {
-		name: 'Bravo',
-		img: BravoMainImg,
+		name: 'Graffiti Chronicles',
+		img: Sophia,
 		sections: [
 			{
 				title: 'Services',
@@ -24,15 +22,15 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Bravo_01,
+			img: Sophia,
 			title: 'Mobile Mockup',
 		},
 		{
-			img: Bravo_02,
+			img: Sophia,
 			title: 'Hero Section',
 		},
 		{
-			img: Bravo_03,
+			img: Sophia,
 			title: 'Web Page Visual',
 		},
 	],
@@ -80,24 +78,29 @@ const content = [
 
 const benefits = [
 	{
-		title: 'Strida',
-		chips: ['portfolio', 'sidebar'],
-		link: '/work/strida',
-		img: StridaImg,
+		title: 'Local Services App',
+		chips: ['React Native', 'Marketplace', 'Maps', 'Mobile App'],
+		link: '/work/local-service',
+		img: Services,
 	},
 	{
-		title: 'Nitro',
-		chips: ['Design System', 'Web'],
-		link: '/work/nitro',
-		img: NitroImg,
+		title: 'AI Bots Builder',
+		chips: ['AI Agents', 'Automation', 'SaaS', 'Integrations'],
+		link: '/work/ai-bots',
+		img: Ai4u,
 	},
 ]
 
-export const BravoPage = () => {
+export const GraffitiPage = () => {
 	return (
 		<>
 			<WorkLayout>
-				<PageHero title='Bravo' content={content} chips={['UI/UX', 'App']} />
+				<PageHero
+					title='Graffiti Chronicles'
+					content={content}
+					chips={['Cultural Heritage', 'Digital Exhibition', 'Web Development']}
+					href='https://graffiti-chronicles.shadowsproject.org'
+				/>
 				<ProjectDetails {...project_details} />
 				<ProjectsLinks links={benefits} />
 			</WorkLayout>

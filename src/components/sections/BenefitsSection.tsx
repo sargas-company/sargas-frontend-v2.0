@@ -10,30 +10,32 @@ import Sophia from '../../assets/case_studies/recent/sophia.png'
 
 const benefits = [
 	{
-		title: 'Strida',
-		chips: ['portfolio', 'sidebar'],
-		link: '/work/strida',
+		title: 'Webild',
+		chips: ['AI', 'SaaS', 'Prompt-to-Website', 'Builder'],
+		link: '/work/webild',
 		img: Webild,
 	},
 	{
-		title: 'Bravo',
-		chips: ['UI/UX', 'App'],
-		link: '/work/bravo',
+		title: 'Graffiti Chronicles',
+		chips: ['Cultural Heritage', 'Digital Exhibition'],
+		link: '/work/graffiti',
 		img: Sophia,
 	},
 	{
-		title: 'Nitro',
-		chips: ['Design System', 'Web'],
-		link: '/work/nitro',
+		title: 'Local Services App',
+		chips: ['React Native', 'Marketplace', 'Maps', 'Mobile App'],
+		link: '/work/local-service',
 		img: Services,
 	},
 	{
-		title: 'Fargo',
-		chips: ['SaaS', 'Web'],
-		link: '/work/fargo',
+		title: 'AI Bots Builder',
+		chips: ['AI Agents', 'Automation', 'SaaS', 'Integrations'],
+		link: '/work/ai-bots',
 		img: Ai4u,
 	},
 ]
+
+
 
 export const BenefitsSection = () => {
 	return (

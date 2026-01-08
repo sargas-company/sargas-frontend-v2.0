@@ -12,7 +12,7 @@ type ProjectDetailsProps = {
 export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 	return (
 		<motion.div
-			className='flex flex-col gap-12 md:gap-16 xl:gap-20'
+			className='overflow-hidden flex flex-col gap-12 md:gap-16 xl:gap-20 group w-[70%] my-0 mx-auto'
 			initial={{ opacity: 0, y: 50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{
@@ -22,9 +22,11 @@ export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 				delay: 1,
 			}}
 		>
-			<div>
-				<img src={main.img} alt={main.name + ' name'} className='rounded-[24px]' />
-			</div>
+			<img
+				src={main.img}
+				alt={main.name + ' name'}
+				className='rounded-[24px]'
+			/>
 			<div className='flex justify-between'>
 				{main.sections.map((item, index) => {
 					return (
@@ -52,9 +54,13 @@ export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 				{details.map((item, index) => {
 					return (
 						<div key={index} className='flex flex-col gap-6'>
-							<img src={item.img} className='rounded-[24px]' />
+							<img
+								src={item.img}
+								className='rounded-[24px]'
+								alt={index + 'test'}
+							/>
 							<h4 className='text-lg md:text-xl'>
-								<strong>{item.title}</strong>
+								<span>{item.title}</span>
 							</h4>
 						</div>
 					)

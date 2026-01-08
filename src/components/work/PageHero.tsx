@@ -2,14 +2,72 @@ import { motion } from 'framer-motion'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { LinkIcon } from '../ui/icons/LinkIcon'
+import aws from "../../assets/tech/aws.svg";
+import docker from "../../assets/tech/docker.svg";
+import javascript from "../../assets/tech/javascript.svg";
+import nodejs from "../../assets/tech/nodejs.svg";
+import nestjs from "../../assets/tech/nestjs.svg";
+import nextJs from "../../assets/tech/nextjs.svg";
+import n8n from "../../assets/tech/n8n.svg";
+import nginx from "../../assets/tech/nginx.svg";
+import reactjs from "../../assets/tech/reactjs.svg";
 
 type PageHeroProps = {
 	title: string
 	content: string[]
 	chips: string[]
+	href?: string
 }
 
-export const PageHero = ({ title, content, chips }: PageHeroProps) => {
+const technologies = [
+	{
+		src: aws,
+		alt: 'aws',
+		width: '50px'
+	},
+	{
+		src: docker,
+		alt: 'docker',
+		width: '50px'
+	},
+	{
+		src: javascript,
+		alt: 'javascript',
+		width: '50px'
+	},
+	{
+		src: nodejs,
+		alt: 'nodejs',
+		width: '50px'
+	},
+	{
+		src: nestjs,
+		alt: 'nestjs',
+		width: '50px'
+	},
+	{
+		src: nextJs,
+		alt: 'nextJs',
+		width: '50px'
+	},
+	{
+		src: n8n,
+		alt: 'n8n',
+		width: '90px'
+	},
+	{
+		src: nginx,
+		alt: 'nginx',
+		width: '50px'
+	},
+	{
+		src: reactjs,
+		alt: 'reactjs',
+		width: '50px'
+	}
+]
+
+export const PageHero = ({ title, content, chips, href = undefined }: PageHeroProps) => {
 	return (
 		<div className='flex'>
 			<div className='hidden w-[150px] xl:block' />
@@ -30,7 +88,7 @@ export const PageHero = ({ title, content, chips }: PageHeroProps) => {
 					</h2>
 					<div className='flex gap-1'>
 						{chips.map((chip, index) => (
-							<span key={index} className='rounded-full bg-white px-3 py-1 text-xs'>
+							<span key={index} className='rounded-full bg-white px-4 py-2 text-md'>
 								{chip}
 							</span>
 						))}
@@ -52,6 +110,19 @@ export const PageHero = ({ title, content, chips }: PageHeroProps) => {
 						})}
 					</p>
 				</div>
+
+				<div className='flex flex-row items-center mt-5' >
+					{technologies.map((item, index) => (
+						<HeroSectionLetterAnimation
+							initialDelay={0.5}
+							delayRate={index * 0.07}
+							key={index}
+						>
+							<img width={item.width} height='auto' className='ml-4' src={item.src} alt={item.alt}/>
+						</HeroSectionLetterAnimation>
+					))}
+				</div>
+
 				<motion.div
 					className='flex gap-2'
 					initial={{ opacity: 0 }}
@@ -63,14 +134,18 @@ export const PageHero = ({ title, content, chips }: PageHeroProps) => {
 						delay: 0.4,
 					}}
 				>
-					<HeroSectionButton title='Live Link' icon={<LinkIcon />} />
+					<HeroSectionButton
+						title={`${href ? 'Live Link' : 'Link under NDA'}`}
+						href={href}
+						icon={<LinkIcon />}
+					/>
 					<div className='inline-flex grow-0 items-center justify-center overflow-hidden rounded-[33px] p-2'>
 						<a
-							href='#'
+							href='#cta'
 							rel='noopener noreferrer'
 							className='group box-border inline-flex w-full items-center justify-center gap-3 rounded-[154px] border border-black/40 bg-transparent px-6 py-3 text-[16px] font-medium text-black transition-all duration-300 ease-out hover:border-black'
 						>
-							<span className='whitespace-nowrap'>Contact me</span>
+							<span className='whitespace-nowrap'>Contact us</span>
 						</a>
 					</div>
 				</motion.div>

@@ -1,16 +1,18 @@
-import React from 'react'
+import React, {useMemo} from 'react'
 import { BlurTypingText } from '../animation/ProcessSectionBlurTypingAnimation.tsx'
-import { motion } from 'framer-motion'
+import {motion, useInView} from 'framer-motion'
 import clutchLogo from '../../assets/clutchLogo.png'
 import avatar1 from '../../assets/avatars/avatar_1.jpg'
 import avatar2 from '../../assets/avatars/avatar_2.jpg'
 import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
+import {BenefitCardCustom} from "../ui/BenefitCardCustom.tsx";
 
 type TestimonialProps = {
 	quote: string
 	name: string
 	role: string
 	avatarSrc: string
+	siteUrl?: string
 	initialDelay?: number
 	className?: string,
 	cardStat: object
@@ -113,6 +115,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 	name,
 	role,
 	avatarSrc,
+	siteUrl = '',
 	className,
 	initialDelay = 0,
     cardStat = {}
@@ -180,13 +183,21 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					delay: initialDelay + 0.2,
 				}}
 			>
-				<div className='h-[64px] w-[64px] overflow-hidden rounded-full bg-black/10'>
-					<img src={avatarSrc} alt={name} className='h-full w-full object-cover' />
-				</div>
-				<div className='flex flex-col'>
-					<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
-					<span className='text-[14px] leading-tight text-black/60'>{role}</span>
-				</div>
+				<BenefitCardCustom href={siteUrl}>
+					<div className='h-[64px] w-[64px] overflow-hidden rounded-full bg-black/10'>
+						<img
+							width={200}
+							height={200}
+							src={avatarSrc}
+							alt={name}
+							className='h-full w-full object-cover'
+						/>
+					</div>
+					<div className='flex flex-col'>
+						<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
+						<span className='text-[14px] leading-tight text-black/60'>{role}</span>
+					</div>
+				</BenefitCardCustom>
 			</motion.div>
 		</div>
 	)
@@ -202,6 +213,7 @@ export const CommentsSectionClutch: React.FC = () => {
 					quote="Sargas Agency OÜ has delivered a fully functional web app that is aligned with existing mobile platforms. The team has improved consistency across platforms, enhancing the UX. Sargas Agency OÜ's flexibility and ability to adapt quickly to the client's processes and requirements are impressive."
 					name='Egor Antonyuk'
 					role='Product Owner, Clowder'
+					siteUrl='https://clowder.com/'
 					avatarSrc={avatar2}
 					className='mt-[80px]'
 					cardStat={cards[0]}

@@ -3,11 +3,13 @@ import { useState, type ReactNode } from 'react'
 type HeroSectionButtonProps = {
 	title: string
 	icon: ReactNode
+	href: string | undefined
 	withOutline?: boolean
+	target?: string
 	fullWidth?: boolean
 }
 
-export const HeroSectionButton = ({ title, href = '#', icon, withOutline, fullWidth=false }: HeroSectionButtonProps) => {
+export const HeroSectionButton = ({ title, href = undefined, target = '_blank', icon, withOutline, fullWidth = false }: HeroSectionButtonProps) => {
 	const [hovered, setHovered] = useState(false)
 
 	const baseShadow = `
@@ -29,9 +31,9 @@ export const HeroSectionButton = ({ title, href = '#', icon, withOutline, fullWi
 		>
 			<a
 				href={href}
-				target='_blank'
+				target={target}
 				rel='noopener noreferrer'
-				className='group inline-flex w-full items-center justify-center gap-3 rounded-[154px] bg-black px-6 py-3 text-[16px] font-medium text-white'
+				className={`group inline-flex w-full ${target === '_self' && 'flex-row-reverse'} items-center justify-center gap-3 rounded-[154px] bg-black px-6 py-3 text-[16px] font-medium text-white`}
 				style={{
 					// boxShadow: hovered ? hoverShadow : baseShadow,
 					transition: 'box-shadow 500ms ease-out, transform 150ms ease-out',

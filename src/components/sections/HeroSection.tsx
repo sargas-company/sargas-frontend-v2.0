@@ -117,19 +117,31 @@ export const HeroSection = () => {
 				</motion.div>
 			</div>
 
-			<motion.div
-				initial={{ opacity: 0, y: 30 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{
-					type: 'tween',
-					duration: 1,
-					ease: 'linear',
-					delay: 1.5,
-				}}
+			<div
 				className={'flex flex-col items-center justify-center gap-5 md:flex-row md:items-start'}
 			>
-				<div
-					className='flex flex-wrap justify-center gap-4'
+				<motion.div
+					initial={{
+						opacity: 0,
+						boxShadow: "rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px",
+					}}
+					animate={{
+						// opacity растёт, а тень сначала делаем сильнее, потом приводим к финальной
+						opacity: [0, 0.2, 1],
+						boxShadow: [
+							"rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px",
+							"rgba(255,255,255,0.8) 0px 0px 8px, rgba(0,0,0,0.3) 15px 16px 16px 0px",
+							"rgba(255,255,255,0.25) 0px 0px 8px, rgba(0,0,0,0.1) 30px 50px 25px 0px",
+						],
+					}}
+					transition={{
+						duration: 1,
+						ease: "easeOut",
+						delay: 1.5,
+						times: [0, 0.2, 1],
+					}}
+					style={{ willChange: "opacity, box-shadow" }}
+					className='flex flex-wrap justify-center gap-4 rounded-[32px]'
 				>
 					<NeonFrame>
 					<HeroSectionButton
@@ -139,49 +151,108 @@ export const HeroSection = () => {
 						withOutline
 					/>
 					</NeonFrame>
-				</div>
+				</motion.div>
 
 				<div className='flex flex-col items-center justify-center gap-5'>
 					<div className='mt-2 flex items-center justify-center gap-6'>
-
-						<Link
-							to='https://clutch.co/profile/sargas-agency-o'
-							target='_blank'
-							rel="noreferrer"
-
-							className={`flex h-full w-full min-w-[90px] items-center gap-2 rounded-full bg-white px-6 py-[15px] whitespace-nowrap`}
-							style={{
-								boxShadow:
-									'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
+						<motion.div
+							initial={{
+								opacity: 0,
+								boxShadow: "rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px",
 							}}
-						>
-							<ClutchIcon />
-						</Link>
-
-						<Link
-							to='https://www.upwork.com/agencies/1772989322229334016'
-							target='_blank'
-							rel="noreferrer"
-
-							className={`flex h-full w-full items-center gap-2 rounded-full bg-white p-1 px-7 py-3 whitespace-nowrap`}
-							style={{
-								boxShadow:
-									'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
+							animate={{
+								// opacity растёт, а тень сначала делаем сильнее, потом приводим к финальной
+								opacity: [0, 0.2, 1],
+								boxShadow: [
+									"rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px",
+									"rgba(255,255,255,0.8) 0px 0px 8px, rgba(0,0,0,0.3) 15px 16px 16px 0px",
+									"rgba(255,255,255,0.25) 0px 0px 8px, rgba(0,0,0,0.1) 30px 50px 25px 0px",
+								],
 							}}
+							transition={{
+								duration: 1,
+								ease: "easeOut",
+								delay: 1.5,
+								times: [0, 0.2, 1],
+							}}
+							style={{ willChange: "opacity, box-shadow" }}
+							className='rounded-[32px]'
 						>
-							<p
-								className='flex items-center justify-center rounded-full text-[16px] font-medium'
-								style={{ background: "#ff5e00'" }}
+							<Link
+								to='https://clutch.co/profile/sargas-agency-o'
+								target='_blank'
+								rel="noreferrer"
+
+								className={`flex h-full w-full min-w-[90px] items-center gap-2 rounded-full px-6 py-[15px] whitespace-nowrap`}
+								style={{
+									backgroundColor: 'white',
+									boxShadow:
+										'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
+								}}
 							>
-								100% JSS
-							</p>
-							<img src={UpIcon} alt='' className={'max-w-[95px]'} />
-						</Link>
+								<ClutchIcon />
+							</Link>
+						</motion.div>
+
+						<motion.div
+							initial={{
+								opacity: 0,
+								boxShadow: "rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px",
+							}}
+							animate={{
+								// opacity растёт, а тень сначала делаем сильнее, потом приводим к финальной
+								opacity: [0, 0.2, 1],
+								boxShadow: [
+									"rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px",
+									"rgba(255,255,255,0.8) 0px 0px 8px, rgba(0,0,0,0.3) 15px 16px 16px 0px",
+									"rgba(255,255,255,0.25) 0px 0px 8px, rgba(0,0,0,0.1) 30px 50px 25px 0px",
+								],
+							}}
+							transition={{
+								duration: 1,
+								ease: "easeOut",
+								delay: 1.5,
+								times: [0, 0.2, 1],
+							}}
+							style={{ willChange: "opacity, box-shadow" }}
+							className='rounded-[32px]'
+						>
+							<Link
+								to='https://www.upwork.com/agencies/1772989322229334016'
+								target='_blank'
+								rel="noreferrer"
+
+								className={`flex h-full w-full items-center gap-2 rounded-full bg-white p-1 px-7 py-3 whitespace-nowrap`}
+								style={{
+									boxShadow:
+										'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',
+								}}
+							>
+								<p
+									className='flex items-center justify-center rounded-full text-[16px] font-medium'
+									style={{ background: "#ff5e00'" }}
+								>
+									100% JSS
+								</p>
+								<img src={UpIcon} alt='' className={'max-w-[95px]'} />
+							</Link>
+						</motion.div>
 
 					</div>
-					<p className='text-xs text-black/50'>Trusted by Clients</p>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{
+							type: 'tween',
+							duration: 1,
+							ease: 'linear',
+							delay: 1.5,
+						}}
+					>
+						<p className='text-xs text-black/50'>Trusted by Clients</p>
+					</motion.div>
 				</div>
-			</motion.div>
+			</div>
 		</div>
 	)
 }

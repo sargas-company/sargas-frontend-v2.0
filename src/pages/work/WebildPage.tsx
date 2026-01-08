@@ -2,17 +2,15 @@ import { PageHero } from '../../components/work/PageHero'
 import { WorkLayout } from '../../components/work/WorkLayout'
 import { ProjectDetails } from '../../components/work/ProjectDetails'
 import { ProjectsLinks } from '../../components/work/ProjecsLinks'
-import StridaMainImg from '../../assets/Strida.avif'
-import Strida_01 from '../../assets/Strida_01.avif'
-import Strida_02 from '../../assets/Strida_02.avif'
-import Strida_03 from '../../assets/Strida_03.avif'
-import NitroImg from '../../assets/Nitro.avif'
-import BravoImg from '../../assets/Bravo.avif'
+
+import Services from '../../assets/case_studies/recent/service.png'
+import Webild from '../../assets/case_studies/recent/webild.png'
+import Sophia from '../../assets/case_studies/recent/sophia.png'
 
 const project_details = {
 	main: {
-		name: 'Strida',
-		img: StridaMainImg,
+		name: 'Webild',
+		img: Webild,
 		sections: [
 			{ title: 'Stack', items: ['Framer'] },
 			{ title: 'Timeline', items: ['3 Weeks'] },
@@ -20,15 +18,15 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Strida_01,
+			img: Webild,
 			title: 'Works catalogue',
 		},
 		{
-			img: Strida_02,
+			img: Webild,
 			title: 'Project Page',
 		},
 		{
-			img: Strida_03,
+			img: Webild,
 			title: 'About Page',
 		},
 	],
@@ -72,24 +70,29 @@ const content = [
 
 const benefits = [
 	{
-		title: 'Bravo',
-		chips: ['UI/UX', 'App'],
-		link: '/work/bravo',
-		img: BravoImg,
+		title: 'Graffiti Chronicles',
+		chips: ['Cultural Heritage', 'Digital Exhibition'],
+		link: '/work/graffiti',
+		img: Sophia,
 	},
 	{
-		title: 'Nitro',
-		chips: ['Design System', 'Web'],
-		link: '/work/nitro',
-		img: NitroImg,
+		title: 'Local Services App',
+		chips: ['React Native', 'Marketplace', 'Maps', 'Mobile App'],
+		link: '/work/local-service',
+		img: Services,
 	},
 ]
 
-export const StridaPage = () => {
+export const WebildPage = () => {
 	return (
 		<>
 			<WorkLayout>
-				<PageHero title='Strida' content={content} chips={['portfolio', 'sidebar']} />
+				<PageHero
+					title='Webild'
+					content={content}
+					chips={['AI', 'SaaS', 'Prompt-to-Website', 'Builder']}
+					href='https://webild.io'
+				/>
 				<ProjectDetails {...project_details} />
 				<ProjectsLinks links={benefits} />
 			</WorkLayout>

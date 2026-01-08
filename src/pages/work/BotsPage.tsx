@@ -2,17 +2,15 @@ import { PageHero } from '../../components/work/PageHero'
 import { WorkLayout } from '../../components/work/WorkLayout'
 import { ProjectDetails } from '../../components/work/ProjectDetails'
 import { ProjectsLinks } from '../../components/work/ProjecsLinks'
-import StridaImg from '../../assets/Strida.avif'
-import NitroMainImg from '../../assets/Nitro.avif'
-import BravoImg from '../../assets/Bravo.avif'
-import Nitro_01 from '../../assets/Nitro_01.avif'
-import Nitro_02 from '../../assets/Nitro_02.avif'
-import Nitro_03 from '../../assets/Nitro_03.avif'
+
+import Ai4u from '../../assets/case_studies/recent/ai4u.png'
+import Webild from '../../assets/case_studies/recent/webild.png'
+import Sophia from '../../assets/case_studies/recent/sophia.png'
 
 const project_details = {
 	main: {
-		name: 'Nitro',
-		img: NitroMainImg,
+		name: 'AI Bots Builder',
+		img: Ai4u,
 		sections: [
 			{
 				title: 'Services',
@@ -24,16 +22,16 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Nitro_01,
-			title: 'Dynamic Project Slider',
+			img: Ai4u,
+			title: 'Hero Section',
 		},
 		{
-			img: Nitro_02,
-			title: 'Mobile Mockup Visual',
+			img: Ai4u,
+			title: 'Introduction Section',
 		},
 		{
-			img: Nitro_03,
-			title: 'About Page',
+			img: Ai4u,
+			title: 'Features Section',
 		},
 	],
 }
@@ -83,24 +81,29 @@ const content = [
 
 const benefits = [
 	{
-		title: 'Strida',
-		chips: ['portfolio', 'sidebar'],
-		link: '/work/strida',
-		img: StridaImg,
+		title: 'Webild',
+		chips: ['AI', 'SaaS', 'Prompt-to-Website', 'Builder'],
+		link: '/work/webild',
+		img: Webild,
 	},
 	{
-		title: 'Bravo',
-		chips: ['UI/IX', 'App'],
-		link: '/work/bravo',
-		img: BravoImg,
+		title: 'Graffiti Chronicles',
+		chips: ['Cultural Heritage', 'Digital Exhibition'],
+		link: '/work/graffiti',
+		img: Sophia,
 	},
 ]
 
-export const NitroPage = () => {
+export const BotsPage = () => {
 	return (
 		<>
 			<WorkLayout>
-				<PageHero title='Nitro' content={content} chips={['Design System', 'Web']} />
+				<PageHero
+					title='AI Bots Builder'
+					content={content}
+					chips={['AI Agents', 'Automation', 'SaaS', 'Integrations']}
+					href='https://ai4u.linkaiil.com'
+				/>
 				<ProjectDetails {...project_details} />
 				<ProjectsLinks links={benefits} />
 			</WorkLayout>

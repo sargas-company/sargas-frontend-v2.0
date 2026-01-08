@@ -1,15 +1,18 @@
 import React from 'react'
 import { BlurTypingText } from '../animation/ProcessSectionBlurTypingAnimation.tsx'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 import UpIcon from '../../assets/others/upwork-logo.svg'
 import avatar3 from '../../assets/avatars/avatar_3.jpg'
 import avatar4 from '../../assets/avatars/avatar_4.jpg'
 import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
+import {Link} from "react-router-dom";
+import {BenefitCardCustom} from "../ui/BenefitCardCustom.tsx";
 
 type TestimonialProps = {
 	quote: string
 	name: string
 	role: string
+	siteUrl?: string
 	avatarSrc: string
 	initialDelay?: number
 	className?: string,
@@ -119,6 +122,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 	quote,
 	name,
 	role,
+	siteUrl = '',
 	avatarSrc,
 	className,
 	initialDelay = 0,
@@ -202,13 +206,21 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					delay: initialDelay + 0.2,
 				}}
 			>
-				<div className='h-[64px] w-[64px] overflow-hidden rounded-full bg-black/10'>
-					<img src={avatarSrc} alt={name} className='h-full w-full object-cover' />
-				</div>
-				<div className='flex flex-col'>
-					<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
-					<span className='text-[14px] leading-tight text-black/60'>{role}</span>
-				</div>
+				<BenefitCardCustom href={siteUrl}>
+					<div className='h-[64px] w-[64px] overflow-hidden rounded-full bg-black/10'>
+						<img
+							width={200}
+							height={200}
+							src={avatarSrc}
+							alt={name}
+							className='h-full w-full object-cover'
+						/>
+					</div>
+					<div className='flex flex-col'>
+						<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
+						<span className='text-[14px] leading-tight text-black/60'>{role}</span>
+					</div>
+				</BenefitCardCustom>
 			</motion.div>
 		</div>
 	)
@@ -225,6 +237,7 @@ export const CommentsSectionUpwork: React.FC = () => {
 					name='Mario Wolosz'
 					role='CEO of KlickTipp'
 					avatarSrc={avatar4}
+					siteUrl='https://www.klicktipp.com'
 					className='mt-[80px]'
 					initialDelay={0.1}
 					cardStat={cards[0]}

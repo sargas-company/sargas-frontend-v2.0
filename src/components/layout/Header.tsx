@@ -4,6 +4,8 @@ import { HeaderMenuButton } from './HeaderMenuButton'
 import { HeaderDropdown } from './HeaderDropdown'
 import { Link, useLocation } from 'react-router-dom'
 import {HorizontalMotionListAnimationV2Header} from "../animation/HorizontalMotionListAnimationV2Header.tsx";
+import {HeroSectionButton} from "../ui/HeroSectionButton.tsx";
+import {ArrowLeftIcon} from "../ui/icons/ArrowLeftIcon.tsx";
 
 export const Header = () => {
 	const [open, setOpen] = useState(false)
@@ -29,9 +31,7 @@ export const Header = () => {
 						<HorizontalMotionListAnimationV2Header />
 					</Link>
 				) : (
-					<Link to='/' className='rounded-[22px] bg-white px-6 py-2.5 text-black'>
-						<strong>← Back</strong>
-					</Link>
+					<HeroSectionButton href='/#work' title='Back' target='_self' icon={<ArrowLeftIcon />} />
 				)}
 
 				<div className='relative'>

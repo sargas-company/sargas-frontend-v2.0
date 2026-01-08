@@ -2,17 +2,15 @@ import { PageHero } from '../../components/work/PageHero'
 import { WorkLayout } from '../../components/work/WorkLayout'
 import { ProjectDetails } from '../../components/work/ProjectDetails'
 import { ProjectsLinks } from '../../components/work/ProjecsLinks'
-import StridaImg from '../../assets/Strida.avif'
-import BravoImg from '../../assets/Bravo.avif'
-import Fargo_01 from '../../assets/Fargo_01.avif'
-import Fargo_02 from '../../assets/Fargo_02.avif'
-import Fargo_03 from '../../assets/Fargo_03.avif'
-import FargoMainImg from '../../assets/Fargo.avif'
+
+import Services from '../../assets/case_studies/recent/service.png'
+import Webild from '../../assets/case_studies/recent/webild.png'
+import Sophia from '../../assets/case_studies/recent/sophia.png'
 
 const project_details = {
 	main: {
-		name: 'Fargo',
-		img: FargoMainImg,
+		name: 'Local Services App',
+		img: Services,
 		sections: [
 			{
 				title: 'Services',
@@ -24,16 +22,16 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Fargo_01,
-			title: 'Hero Section',
+			img: Services,
+			title: 'Dynamic Project Slider',
 		},
 		{
-			img: Fargo_02,
-			title: 'Introduction Section',
+			img: Services,
+			title: 'Mobile Mockup Visual',
 		},
 		{
-			img: Fargo_03,
-			title: 'Features Section',
+			img: Services,
+			title: 'About Page',
 		},
 	],
 }
@@ -83,24 +81,28 @@ const content = [
 
 const benefits = [
 	{
-		title: 'Strida',
-		chips: ['portfolio', 'sidebar'],
-		link: '/work/strida',
-		img: StridaImg,
+		title: 'Webild',
+		chips: ['AI', 'SaaS', 'Prompt-to-Website', 'Builder'],
+		link: '/work/webild',
+		img: Webild,
 	},
 	{
-		title: 'Bravo',
-		chips: ['UI/UX', 'App'],
-		link: '/work/bravo',
-		img: BravoImg,
+		title: 'Graffiti Chronicles',
+		chips: ['Cultural Heritage', 'Digital Exhibition'],
+		link: '/work/graffiti',
+		img: Sophia,
 	},
 ]
 
-export const FargoPage = () => {
+export const LocalServicePage = () => {
 	return (
 		<>
 			<WorkLayout>
-				<PageHero title='Bravo' content={content} chips={['SaaS', 'Web']} />
+				<PageHero
+					title='Local Services App'
+					content={content}
+					chips={['React Native', 'Marketplace', 'Maps', 'Mobile App']}
+				/>
 				<ProjectDetails {...project_details} />
 				<ProjectsLinks links={benefits} />
 			</WorkLayout>
