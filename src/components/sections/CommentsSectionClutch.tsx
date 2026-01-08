@@ -1,11 +1,17 @@
 import React from 'react'
 import { BlurTypingText } from '../animation/ProcessSectionBlurTypingAnimation.tsx'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import clutchLogo from '../../assets/clutchLogo.png'
 import avatar1 from '../../assets/avatars/avatar_1.jpg'
 import avatar2 from '../../assets/avatars/avatar_2.jpg'
-import {HeroSectionLetterAnimation} from "../animation/HeroSectionLetterAnimation.tsx";
-import {BenefitCardCustom} from "../ui/BenefitCardCustom.tsx";
+import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation.tsx'
+import { BenefitCardCustom } from '../ui/BenefitCardCustom.tsx'
+
+type CardStat = {
+	title: string
+	size: string | number
+	period: string
+}
 
 type TestimonialProps = {
 	quote: string
@@ -14,8 +20,8 @@ type TestimonialProps = {
 	avatarSrc: string
 	siteUrl?: string
 	initialDelay?: number
-	className?: string,
-	cardStat: object
+	className?: string
+	cardStat?: CardStat
 }
 
 type StatCardPropsLogo = {
@@ -24,32 +30,26 @@ type StatCardPropsLogo = {
 }
 
 type StatCardProps = {
-	data: {
-		title: string
-		size: string | number
-		period: string
-	}
+	data: CardStat
 }
 
-
-const cards = [
+const cards: CardStat[] = [
 	{
 		title: 'Web App & UX/UI Redesign for Community Engagement Co',
 		size: '10k - 49k',
-		period: 'Jun 2023 - Ongoing'
+		period: 'Jun 2023 - Ongoing',
 	},
 	{
 		title: 'Website/Platform Development & UI/UX Design',
 		size: '10k - 49k',
-		period: 'Jan 2023 - March 2025'
-	}
+		period: 'Jan 2023 - March 2025',
+	},
 ]
 
 const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	return (
 		<div className='flex w-[190px] items-center justify-between rounded-[1rem] shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
-
 				<div className='flex shrink-0 items-center justify-start'>{icon}</div>
 
 				<div className='flex justify-center'>
@@ -57,6 +57,7 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 						<span className='text-[28px] leading-none font-semibold text-black sm:text-[34px] md:text-[38px]'>
 							{rate}
 						</span>
+
 						<div className='flex shrink-0 gap-1'>
 							{[...Array(5)].map((_, i) => (
 								<HeroSectionLetterAnimation
@@ -64,13 +65,11 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 									delayRate={i * 0.07}
 									key={i}
 								>
-
-								<img
-									key={i}
-									src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
-									alt=''
-									className='h-4 w-4'
-								/>
+									<img
+										src='https://cdn.prod.website-files.com/689f75b5070c55df84340628/68a372854ac90bed057c73a0_star%20(1).svg'
+										alt=''
+										className='h-4 w-4'
+									/>
 								</HeroSectionLetterAnimation>
 							))}
 						</div>
@@ -81,19 +80,22 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	)
 }
 
-const StatCard = ({data: {title, size, period}}: StatCardProps) => {
+const StatCard = ({ data: { title, size, period } }: StatCardProps) => {
 	return (
 		<div className='flex h-full w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] py-6 px-12 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] '>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex h-full w-full flex-col items-start justify-between text-[15px]'>
 					<ul className='w-full h-full'>
-						<li className='mt-2 mb-2  text-sm font-semibold text-black/80 md:text-base'>{title}</li>
+						<li className='mt-2 mb-2  text-sm font-semibold text-black/80 md:text-base'>
+							{title}
+						</li>
 
 						<li className='flex items-center'>
 							<span className='pb-5 text-[20px]'>$</span>
 							<span className='text-[40px] mt-1 font-semibold text-black/80'>{size}</span>
 							<span className='pt-4 pl-1'>(size)</span>
 						</li>
+
 						<li>
 							<div className='text-sm font-normal text-black/60 md:text-base flex justify-between items-center'>
 								<span>Costs</span>
@@ -120,19 +122,19 @@ const StatCard = ({data: {title, size, period}}: StatCardProps) => {
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({
-	quote,
-	name,
-	role,
-	avatarSrc,
-	siteUrl = '',
-	className,
-	initialDelay = 0,
-    cardStat = {
-		title: '',
-		size: 0,
-		period: ''
-	}
-}) => {
+													 quote,
+													 name,
+													 role,
+													 avatarSrc,
+													 siteUrl = '',
+													 className,
+													 initialDelay = 0,
+													 cardStat = {
+														 title: '',
+														 size: 0,
+														 period: '',
+													 },
+												 }) => {
 	return (
 		<div
 			className={[
@@ -179,9 +181,8 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					icon={<img src={clutchLogo} alt='' className='w-[100px]' />}
 					rate='5.0'
 				/>
-				<StatCard
-					data={cardStat}
-				/>
+
+				<StatCard data={cardStat} />
 			</motion.div>
 
 			<motion.div
@@ -206,6 +207,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 							className='h-full w-full object-cover'
 						/>
 					</div>
+
 					<div className='flex flex-col'>
 						<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
 						<span className='text-[14px] leading-tight text-black/60'>{role}</span>
