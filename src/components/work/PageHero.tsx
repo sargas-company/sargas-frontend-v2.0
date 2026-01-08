@@ -12,11 +12,17 @@ import n8n from "../../assets/tech/n8n.svg";
 import nginx from "../../assets/tech/nginx.svg";
 import reactjs from "../../assets/tech/reactjs.svg";
 
+type PageSection = {
+	title: string
+	items: string[]
+}
+
 type PageHeroProps = {
 	title: string
 	content: string[]
 	chips: string[]
 	href?: string
+	sections: PageSection[]
 }
 
 const technologies = [
@@ -67,7 +73,7 @@ const technologies = [
 	}
 ]
 
-export const PageHero = ({ title, content, chips, href = undefined }: PageHeroProps) => {
+export const PageHero = ({ title, sections = [], content, chips, href = undefined }: PageHeroProps) => {
 	return (
 		<div className='flex'>
 			<div className='hidden w-[150px] xl:block' />
@@ -111,16 +117,67 @@ export const PageHero = ({ title, content, chips, href = undefined }: PageHeroPr
 					</p>
 				</div>
 
-				<div className='flex flex-row items-center mt-5' >
-					{technologies.map((item, index) => (
-						<HeroSectionLetterAnimation
-							initialDelay={0.5}
-							delayRate={index * 0.07}
-							key={index}
-						>
-							<img width={item.width} height='auto' className='ml-4' src={item.src} alt={item.alt}/>
-						</HeroSectionLetterAnimation>
-					))}
+				<div className='flex justify-between'>
+					{sections.map((item, index) => {
+						return (
+							<div key={index} className='flex flex-col gap-2'>
+								<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
+									<HeroSectionLetterAnimation
+										initialDelay={1}
+										delayRate={index * 0.15}
+										key={index}
+									>
+										{item.title}
+									</HeroSectionLetterAnimation>
+								</h4>
+								<div className='flex flex-col'>
+									{item.items.map((str, indexS) => {
+										return (
+											<HeroSectionLetterAnimation
+												initialDelay={1}
+												delayRate={index * 0.15}
+												key={index}
+											>
+												<p
+													key={indexS}
+													className='text-lg leading-[1.5em] tracking-[-0.02em] md:text-xl'
+												>
+													{str}
+												</p>
+											</HeroSectionLetterAnimation>
+										)
+									})}
+								</div>
+							</div>
+						)
+					})}
+				</div>
+
+				<div className='flex flex-col items-start' >
+					<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
+						{['Stack'].map((str, index) => {
+							return (
+								<HeroSectionLetterAnimation
+									initialDelay={1}
+									delayRate={index * 0.55}
+									key={index}
+								>
+									{str}
+								</HeroSectionLetterAnimation>
+							)
+						})}
+					</h4>
+					<div className='flex flex-row items-center justify-start'>
+						{technologies.map((item, index) => (
+							<HeroSectionLetterAnimation
+								initialDelay={0.5}
+								delayRate={index * 0.07}
+								key={index}
+							>
+								<img width={item.width} height='auto' className='mr-4' src={item.src} alt={item.alt}/>
+							</HeroSectionLetterAnimation>
+						))}
+					</div>
 				</div>
 
 				<motion.div

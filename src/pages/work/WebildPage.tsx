@@ -12,60 +12,58 @@ const project_details = {
 		name: 'Webild',
 		img: Webild,
 		sections: [
-			{ title: 'Stack', items: ['Framer'] },
-			{ title: 'Timeline', items: ['3 Weeks'] },
+			{ title: 'Platform', items: ['Web + Admin'] },
+			{ title: 'Deliverables', items: ['UI kit', 'Build', 'Handover'] },
+			{ title: 'Integrations', items: ['n8n', 'Auth', 'Storage'] },
+			{ title: 'Team', items: ['1 designer', '2 engineers'] },
+			{ title: 'Timeline', items: ['3 weeks'] },
 		],
 	},
 	details: [
 		{
 			img: Webild,
-			title: 'Works catalogue',
 		},
 		{
 			img: Webild,
-			title: 'Project Page',
 		},
 		{
 			img: Webild,
-			title: 'About Page',
 		},
 	],
 }
 
 const content = [
-	'Strida',
-	'offers',
+	'Webild',
+	'is',
 	'a',
-	'smooth',
+	'prompt-to-website',
+	'builder',
+	'that',
+	'turns',
+	'raw',
+	'ideas',
+	'into',
+	'production-ready',
+	'pages.',
+	'From',
+	'layout',
 	'and',
-	'powerful',
-	'experience',
-	'when',
-	'presenting',
-	'your',
-	'work',
-	'in',
-	'a',
-	'full-screen',
-	'format.',
-	'It',
-	'combines',
-	'bold',
-	'Swiss',
-	'typography,',
-	'smooth',
-	'animations,',
-	'sidebar',
-	'navigations,',
-	'flexible',
-	'CMS',
-	'—',
-	'everything',
+	'typography',
 	'to',
-	'make',
-	'your',
-	'portfolio',
-	'rock.',
+	'responsive',
+	'sections',
+	'and',
+	'clean',
+	'interactions',
+	'-',
+	'you',
+	'describe',
+	'the',
+	'vibe,',
+	'we',
+	'ship',
+	'the',
+	'site.',
 ]
 
 const benefits = [
@@ -90,6 +88,7 @@ export const WebildPage = () => {
 				<PageHero
 					title='Webild'
 					content={content}
+					sections={project_details.main.sections}
 					chips={['AI', 'SaaS', 'Prompt-to-Website', 'Builder']}
 					href='https://webild.io'
 				/>
