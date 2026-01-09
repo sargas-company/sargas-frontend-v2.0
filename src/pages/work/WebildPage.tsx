@@ -7,6 +7,13 @@ import Services from '../../assets/case_studies/recent/service.png'
 import Webild from '../../assets/case_studies/recent/webild.png'
 import Sophia from '../../assets/case_studies/recent/sophia.png'
 
+import firstImg from '../../assets/case_studies/recent/webild/1.png'
+import secondImg from '../../assets/case_studies/recent/webild/2.png'
+import thirdImg from '../../assets/case_studies/recent/webild/3.png'
+import forthImg from '../../assets/case_studies/recent/webild/4.png'
+
+
+
 const project_details = {
 	main: {
 		name: 'Webild',
@@ -21,13 +28,16 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Webild,
+			img: thirdImg,
 		},
 		{
-			img: Webild,
+			img: forthImg,
 		},
 		{
-			img: Webild,
+			img: secondImg,
+		},
+		{
+			img: firstImg,
 		},
 	],
 }

@@ -14,7 +14,7 @@ const ProcessSection = () => {
 				</h2>
 			</div>
 
-			<div className='relative mb-5 box-border flex h-min w-full flex-wrap justify-center gap-3 overflow-visible p-0 font-sans text-[12px]'>
+			<div className='grid xl:grid-cols-3 md:grid-cols-2 xl:auto-rows-auto relative mb-5 box-border h-min w-full flex-wrap justify-center gap-3 overflow-visible p-0 font-sans text-[12px]'>
 				<div className='pointer-events-none absolute inset-0 hidden lg:block'>
 					<AnimateRightWave
 						size={200}
@@ -33,6 +33,7 @@ const ProcessSection = () => {
 						className='absolute bottom-[33%] right-[5%] z-20 rotate-[130deg]'
 					/>
 				</div>
+
 				<motion.div
 					initial={{ x: '100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
 					whileInView={{ x: 0, y: 0, rotate: -5, opacity: 1, zIndex: 1 }}
@@ -41,7 +42,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='xl:col-start-1 xl:row-start-1 md:col-start-1 md:row-start-1 relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -67,7 +68,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='relative flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='xl:col-start-2 xl:row-start-1 md:col-start-2 md:row-start-1 relative flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -93,7 +94,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='xl:col-start-3 xl:row-start-1 md:col-start-1 md:row-start-2 relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -119,7 +120,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='xl:col-start-2 xl:row-start-2 md:col-start-2 md:row-start-3  relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -145,7 +146,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='xl:col-start-3 xl:row-start-2 md:col-start-2 md:row-start-2 relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -162,6 +163,7 @@ const ProcessSection = () => {
 						</div>
 					</div>
 				</motion.div>
+
 			</div>
 
 			<CommentsSectionUpwork />

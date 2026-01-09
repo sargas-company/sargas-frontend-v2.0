@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
-import { RecentWorkButton } from '../ui/buttons/RecentWorkButton'
+import { WorkButton } from '../ui/buttons/RecentWorkButton'
 
 import ai4u from '../../assets/case_studies/ai4u.png'
 import astrology from '../../assets/case_studies/astrology.png'

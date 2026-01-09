@@ -5,7 +5,7 @@ import { ProjectsLinks } from '../../components/work/ProjecsLinks'
 
 import Ai4u from '../../assets/case_studies/recent/ai4u.png'
 import Services from '../../assets/case_studies/recent/service.png'
-import Sophia from '../../assets/case_studies/recent/sophia.png'
+import Sophia from '../../assets/case_studies//sophia.png'
 
 const project_details = {
 	main: {
