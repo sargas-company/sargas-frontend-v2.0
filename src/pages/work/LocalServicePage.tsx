@@ -7,6 +7,10 @@ import Services from '../../assets/case_studies/recent/service.png'
 import Webild from '../../assets/case_studies/recent/webild.png'
 import Sophia from '../../assets/case_studies/recent/sophia.png'
 
+import firstImg from '../../assets/case_studies/recent/local_services/1.png'
+import secondImg from '../../assets/case_studies/recent/local_services/2.png'
+import thirdImg from '../../assets/case_studies/recent/local_services/3.png'
+
 const project_details = {
 	main: {
 		name: 'Local Services App',
@@ -21,16 +25,13 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Services,
-			title: 'Dynamic Project Slider',
+			img: firstImg
 		},
 		{
-			img: Services,
-			title: 'Mobile Mockup Visual',
+			img: secondImg
 		},
 		{
-			img: Services,
-			title: 'About Page',
+			img: thirdImg
 		},
 	],
 }
