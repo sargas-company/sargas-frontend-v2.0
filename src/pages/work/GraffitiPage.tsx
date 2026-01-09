@@ -7,6 +7,11 @@ import Ai4u from '../../assets/case_studies/recent/ai4u.png'
 import Services from '../../assets/case_studies/recent/service.png'
 import Sophia from '../../assets/case_studies/recent/sophia.png'
 
+import firstImg from '../../assets/case_studies/recent/sophia/1a.png'
+import secondImg from '../../assets/case_studies/recent/sophia/2a.png'
+import thirdImg from '../../assets/case_studies/recent/sophia/3a.png'
+import forthImg from '../../assets/case_studies/recent/sophia/4a.png'
+
 const project_details = {
 	main: {
 		name: 'Graffiti Chronicles',
@@ -21,16 +26,16 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Sophia,
-			title: 'Mobile Mockup',
+			img: firstImg
 		},
 		{
-			img: Sophia,
-			title: 'Hero Section',
+			img: thirdImg
 		},
 		{
-			img: Sophia,
-			title: 'Web Page Visual',
+			img: forthImg
+		},
+		{
+			img: secondImg
 		},
 	],
 }
