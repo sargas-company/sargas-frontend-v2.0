@@ -7,6 +7,10 @@ import Ai4u from '../../assets/case_studies/recent/ai4u.png'
 import Webild from '../../assets/case_studies/recent/webild.png'
 import Sophia from '../../assets/case_studies/recent/sophia.png'
 
+import firstImg from '../../assets/case_studies/recent/bots/1.png'
+import secondImg from '../../assets/case_studies/recent/bots/2.png'
+import thirdImg from '../../assets/case_studies/recent/bots/3.png'
+
 const project_details = {
 	main: {
 		name: 'AI Bots Builder',
@@ -21,16 +25,13 @@ const project_details = {
 	},
 	details: [
 		{
-			img: Ai4u,
-			title: 'Hero Section',
+			img: firstImg
 		},
 		{
-			img: Ai4u,
-			title: 'Introduction Section',
+			img: secondImg
 		},
 		{
-			img: Ai4u,
-			title: 'Features Section',
+			img: thirdImg
 		},
 	],
 }

@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
-import { AnimateRightWave } from '../ui/icons/wave/AnimateRightIcon.tsx'
-import { AnimateLeftWave } from '../ui/icons/wave/AnimateLeftWave.tsx'
 import { CommentsSectionUpwork } from './CommentsSectionUpwork.tsx'
 
 const ProcessSection = () => {
@@ -15,25 +13,6 @@ const ProcessSection = () => {
 			</div>
 
 			<div className='grid xl:grid-cols-3 md:grid-cols-2 xl:auto-rows-auto relative mb-5 box-border h-min w-full flex-wrap justify-center gap-3 overflow-visible p-0 font-sans text-[12px]'>
-				<div className='pointer-events-none absolute inset-0 hidden lg:block'>
-					<AnimateRightWave
-						size={200}
-						className='absolute left-[60%] top-[11%] z-20 rotate-[90deg]'
-					/>
-					<AnimateLeftWave
-						size={250}
-						className='absolute bottom-[68%] right-[59%] z-20 rotate-[340deg]'
-					/>
-					<AnimateLeftWave
-						size={250}
-						className='absolute bottom-[10%] right-[45%] z-20 rotate-[340deg]'
-					/>
-					<AnimateLeftWave
-						size={250}
-						className='absolute bottom-[33%] right-[5%] z-20 rotate-[130deg]'
-					/>
-				</div>
-
 				<motion.div
 					initial={{ x: '100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
 					whileInView={{ x: 0, y: 0, rotate: -5, opacity: 1, zIndex: 1 }}
@@ -114,7 +93,7 @@ const ProcessSection = () => {
 
 				<motion.div
 					initial={{ x: '50%', y: 0, rotate: 0, opacity: 1, zIndex: 2 }}
-					whileInView={{ x: '-14%', y: 0, rotate: 9, opacity: 1, zIndex: 2 }}
+					whileInView={{ x: '-7%', y: '-8%', rotate: 9, opacity: 1, zIndex: 2 }}
 					transition={{
 						delay: 0.5,
 						duration: 1,

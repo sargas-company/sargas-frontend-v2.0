@@ -48,7 +48,7 @@ const cards: CardStat[] = [
 
 const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	return (
-		<div className='flex w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
+		<div className='flex xl:w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex shrink-0 items-center justify-start'>{icon}</div>
 
@@ -78,7 +78,7 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 
 const StatCard = ({ data: { title, size, period } }: StatCardProps) => {
 	return (
-		<div className='flex h-full w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] px-12 py-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px]'>
+		<div className='flex h-full xl:w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] px-12 py-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px]'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex h-full w-full flex-col items-start justify-between text-[15px]'>
 					<ul className='h-full w-full'>
@@ -134,10 +134,9 @@ const Testimonial: React.FC<TestimonialProps> = ({
 	return (
 		<div
 			className={[
-				'relative flex flex-1 flex-col gap-5',
+				'relative flex flex-col gap-5',
 				'items-start',
-				className,
-				'lg:pr-[70px]',
+				className
 			].join(' ')}
 		>
 			<div className='flex'>
@@ -214,9 +213,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 export const CommentsSectionClutch: React.FC = () => {
 	return (
 		<section className='mt-15 relative w-full'>
-			<div className='relative flex w-full max-w-[1600px] flex-col gap-16 lg:flex-row lg:gap-24'>
-				<div className='pointer-events-none absolute inset-y-6 left-1/2 hidden w-px bg-black/10 lg:block' />
-
+			<div className='relative flex w-full flex-col gap-16 lg:flex-row lg:gap-24'>
 				<Testimonial
 					quote="Sargas Agency OÜ has delivered a fully functional web app that is aligned with existing mobile platforms. The team has improved consistency across platforms, enhancing the UX. Sargas Agency OÜ's flexibility and ability to adapt quickly to the client's processes and requirements are impressive."
 					name='Egor Antonyuk'
