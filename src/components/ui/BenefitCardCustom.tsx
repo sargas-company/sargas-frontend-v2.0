@@ -35,7 +35,7 @@ export const BenefitCardCustom = ({ href = '', children, ...aProps }: BenefitCar
 			href={isLinkEnabled ? href : undefined}
 			target='_blank'
 			aria-disabled={!isLinkEnabled}
-			className={`group relative flex h-full flex-1 flex-col gap-4 ${
+			className={`group relative flex h-full flex-col gap-4 ${
 				isLinkEnabled ? 'cursor-pointer' : 'cursor-default'
 			}`}
 			onClick={(e) => {

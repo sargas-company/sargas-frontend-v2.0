@@ -84,7 +84,7 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 
 const StatCard = ({ data: { title, earned, rate, hours, period } }: StatCardProps) => {
 	return (
-		<div className='flex h-full xl:w-[380px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] px-12 py-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px]'>
+		<div className='flex h-full max-w-[420px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] px-12 py-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px]'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex h-full w-full flex-col items-start justify-between text-[15px]'>
 					<ul className='h-full w-full'>
@@ -143,7 +143,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 	return (
 		<div
 			className={[
-				'relative flex flex-col',
+				'relative flex flex-col flex-1',
 				'items-start',
 				className
 			].join(' ')}
@@ -170,20 +170,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 			</div>
 
 			<motion.div
-				className='mt-8 flex items-center gap-4'
-				initial={{ opacity: 0, y: -20 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, amount: 0.5 }}
-				transition={{
-					type: 'tween',
-					duration: 0.6,
-					ease: 'easeOut',
-					delay: initialDelay + 0.2,
-				}}
-			/>
-
-			<motion.div
-				className='gap-15 mt-3 flex w-full items-center'
+				className='gap-15 mt-6 flex w-full items-center xs:hidden lg:flex'
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -210,7 +197,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 			</motion.div>
 
 			<motion.div
-				className='mt-8 flex items-center gap-4'
+				className='mt-8 flex items-center gap-4 xs:hidden sm:block'
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -244,8 +231,8 @@ const Testimonial: React.FC<TestimonialProps> = ({
 
 export const CommentsSectionUpwork: React.FC = () => {
 	return (
-		<section className='mt-15 relative w-full'>
-			<div className='relative flex w-full flex-col gap-16 lg:flex-row lg:gap-24'>
+		<section className='mt-15 relative w-full sm:flex sm:justify-center'>
+			<div className='relative flex lg:w-full xs:w-full sm:w-fit gap-16'>
 
 				<Testimonial
 					quote='Sargas Agency is an excellent development team - highly skilled, committed, and strong problem solvers. We would definitely work with them again.'
@@ -263,7 +250,7 @@ export const CommentsSectionUpwork: React.FC = () => {
 					name='Verified Client'
 					role='Product Founder'
 					avatarSrc={avatar3}
-					className='mt-[160px]'
+					className='mt-[160px] xs:hidden lg:block'
 					initialDelay={0.4}
 					cardStat={cards[1]}
 				/>

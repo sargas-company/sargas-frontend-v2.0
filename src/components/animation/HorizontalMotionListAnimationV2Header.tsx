@@ -59,7 +59,7 @@ export const HorizontalMotionListAnimationV2Header = () => {
 				rotate: -4,
 				transition: { duration: 0.35, ease: 'easeOut' },
 			}}
-			className='relative h-[53px] w-[69px] overflow-hidden rounded-[16px] border-2 bg-[transparent] shadow-xl md:h-[78px] md:w-[102px] md:rounded-[24px] xl:h-[100px] xl:w-[251px] xl:rounded-[36px]'
+			className='relative h-[53px] overflow-hidden rounded-[16px] border-2 bg-[transparent] shadow-xl md:h-[78px] md:rounded-[24px] xl:h-[100px] xl:w-[251px] xl:rounded-[36px]'
 			style={{
 				borderColor: 'rgba(35, 31, 31, 0.08)',
 				// boxShadow:
@@ -95,7 +95,7 @@ export const HorizontalMotionListAnimationV2Header = () => {
 							alt=''
 							className='mr-4 h-auto w-9'
 						/>
-						<strong className='align-middle text-[23px] !font-medium uppercase tracking-[-0.11em] accent-white md:text-[80px] xl:text-[38px]'>
+						<strong className='align-middle text-[23px] !font-medium uppercase tracking-[-0.11em] accent-white md:text-[38px] xl:text-[38px]'>
 							Sargas
 						</strong>
 					</Link>

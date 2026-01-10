@@ -12,7 +12,7 @@ const ProcessSection = () => {
 				</h2>
 			</div>
 
-			<div className='grid xl:grid-cols-3 md:grid-cols-2 xl:auto-rows-auto relative mb-5 box-border h-min w-full flex-wrap justify-center gap-3 overflow-visible p-0 font-sans text-[12px]'>
+			<div className='place-items-center grid xs:grid-cols-1 lg:grid-cols-2 25xl:grid-cols-3 25xl:auto-rows-auto relative mb-5 box-border h-min w-full flex-wrap justify-center gap-3 overflow-visible p-0 font-sans text-[12px]'>
 				<motion.div
 					initial={{ x: '100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
 					whileInView={{ x: 0, y: 0, rotate: -5, opacity: 1, zIndex: 1 }}
@@ -21,7 +21,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='xl:col-start-1 xl:row-start-1 md:col-start-1 md:row-start-1 relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='25xl:col-start-1 25xl:row-start-1 lg:col-start-1 lg:row-start-1 xs:col-start-1 xs:row-start-1 relative mt-16 flex sm:h-[454px] sm:max-w-[464px] xs:h-[324px] xs:max-w-[324px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -47,7 +47,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='xl:col-start-2 xl:row-start-1 md:col-start-2 md:row-start-1 relative flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='25xl:col-start-2 25xl:row-start-1 lg:col-start-2 lg:row-start-1 xs:col-start-1 xs:row-start-2 relative flex sm:h-[454px] sm:max-w-[464px] xs:h-[324px] xs:max-w-[324px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -73,7 +73,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='xl:col-start-3 xl:row-start-1 md:col-start-1 md:row-start-2 relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='25xl:col-start-3 25xl:row-start-1 lg:col-start-1 lg:row-start-2 xs:col-start-1 xs:row-start-3 relative mt-16 flex sm:h-[454px] sm:max-w-[464px] xs:h-[324px] xs:max-w-[324px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -99,7 +99,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='xl:col-start-2 xl:row-start-2 md:col-start-2 md:row-start-3  relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='25xl:col-start-2 25xl:row-start-2 lg:col-start-2 lg:row-start-3 xs:col-start-1 xs:row-start-5  relative mt-16 flex sm:h-[454px] sm:max-w-[464px] xs:h-[324px] xs:max-w-[324px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
@@ -125,7 +125,7 @@ const ProcessSection = () => {
 						duration: 1,
 					}}
 					viewport={{ once: true, amount: 0.4 }}
-					className='xl:col-start-3 xl:row-start-2 md:col-start-2 md:row-start-2 relative mt-16 flex h-[454px] w-[464px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
+					className='25xl:col-start-3 25xl:row-start-2 lg:col-start-2 lg:row-start-2 xs:col-start-1 xs:row-start-4 relative mt-16 flex sm:h-[454px] sm:max-w-[464px] xs:h-[324px] xs:max-w-[324px] overflow-hidden rounded-2xl bg-white px-8 py-8 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)]'
 				>
 					<div className='flex h-full flex-col items-start justify-between gap-6'>
 						<p className='text-[72px] font-light leading-[90px] tracking-[-0.06em] text-black'>
