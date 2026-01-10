@@ -14,7 +14,7 @@ export const HomePage = () => {
 			<AboutSection />
 			<IntroTextSection />
 			<AboutUsProjectsSection />
-			<ProcessSection />
+			{/*<ProcessSection />*/}
 			<BenefitsSection />
 			<PricingSection />
 			<FAQSection />
