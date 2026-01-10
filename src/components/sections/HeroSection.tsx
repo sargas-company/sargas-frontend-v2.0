@@ -155,7 +155,7 @@ export const HeroSection = () => {
 				</motion.div>
 
 				<div className='flex flex-col items-center justify-center gap-5'>
-					<div className='mt-2 flex items-center justify-center gap-6'>
+					<div className='mt-2 flex items-center justify-center gap-6 xs:flex-col sm:flex-row'>
 						<motion.div
 							initial={{
 								opacity: 0,
@@ -163,7 +163,6 @@ export const HeroSection = () => {
 									'rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px',
 							}}
 							animate={{
-								// opacity растёт, а тень сначала делаем сильнее, потом приводим к финальной
 								opacity: [0, 0.2, 1],
 								boxShadow: [
 									'rgba(255,255,255,0) 0px 0px 8px, rgba(0,0,0,0) 0px 16px 16px 0px',
