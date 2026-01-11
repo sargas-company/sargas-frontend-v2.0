@@ -18,7 +18,7 @@ const ProcessSection = () => {
 
 			<div className='place-items-center grid xs:grid-cols-1 lg:grid-cols-2 25xl:grid-cols-3 25xl:auto-rows-auto relative mb-5 box-border h-min w-full flex-wrap justify-center gap-3 overflow-visible p-0 font-sans text-[12px]'>
 				<motion.div
-					initial={{ x: '100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
+					initial={{ x: isMobile ? 0 : '-100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
 					whileInView={{ x: 0, y: 0, rotate: -5, opacity: 1, zIndex: 1 }}
 					transition={{
 						delay: 0,
