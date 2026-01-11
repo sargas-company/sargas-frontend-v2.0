@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { CommentsSectionUpwork } from './CommentsSectionUpwork.tsx'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 const ProcessSection = () => {
+	const isMobile = useMediaQuery('(max-width: 768px)')
+
+
 	return (
 		<section className='md:pb-50 pb-20' id='process'>
 			<div className='flex flex-col items-center gap-2.5'>
@@ -66,7 +70,7 @@ const ProcessSection = () => {
 				</motion.div>
 
 				<motion.div
-					initial={{ x: '-100%', y: 40, rotate: 15, opacity: 1, zIndex: 3 }}
+					initial={{ x: isMobile ? 0 : '-100%', y: 40, rotate: 15, opacity: 1, zIndex: 3 }}
 					whileInView={{ x: 0, y: 0, rotate: 3, opacity: 1, zIndex: 3 }}
 					transition={{
 						delay: 0.5,
