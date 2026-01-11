@@ -6,7 +6,7 @@ import { TGIcon } from '../ui/icons/TGIcon.tsx'
 import { LnIcon } from '../ui/icons/lnIcon.tsx'
 
 type Props = {
-	open: boolean
+	open?: boolean
 }
 
 const menuOptions = [
@@ -40,6 +40,11 @@ const menuOptions = [
 		link: '/#cta',
 		bold: false,
 	},
+	{
+		title: 'Privacy Policy',
+		link: '/policy',
+		bold: false,
+	},
 ]
 
 const socials = [
@@ -61,7 +66,7 @@ const socials = [
 	},
 ]
 
-export const HeaderDropdown = ({ open }: Props) => {
+export const HeaderDropdown = ({ open = false }: Props) => {
 	const navigate = useNavigate()
 	const location = useLocation()
 

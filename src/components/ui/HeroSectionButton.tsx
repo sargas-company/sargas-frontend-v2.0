@@ -28,7 +28,6 @@ export const HeroSectionButton = ({
 				rel='noopener noreferrer'
 				className={`group inline-flex w-full ${target === '_self' && 'flex-row-reverse'} items-center justify-center gap-3 rounded-[154px] bg-black px-6 py-3 text-[16px] font-medium text-white`}
 				style={{
-					// boxShadow: hovered ? hoverShadow : baseShadow,
 					transition: 'box-shadow 500ms ease-out, transform 150ms ease-out',
 				}}
 			>

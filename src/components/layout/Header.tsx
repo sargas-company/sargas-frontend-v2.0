@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { HeaderMenuButton } from './HeaderMenuButton'
 import { HeaderDropdown } from './HeaderDropdown'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, matchPath } from 'react-router-dom'
 import { HorizontalMotionListAnimationV2Header } from '../animation/HorizontalMotionListAnimationV2Header.tsx'
 import { HeroSectionButton } from '../ui/HeroSectionButton.tsx'
 import { ArrowLeftIcon } from '../ui/icons/ArrowLeftIcon.tsx'
@@ -12,6 +12,12 @@ export const Header = () => {
 	const location = useLocation()
 
 	const isHome = location.pathname === '/'
+
+	function useBackHref() {
+		const { pathname } = useLocation()
+		const isCase = !!matchPath('/work/:slug', pathname)
+		return isCase ? '/#work' : '/'
+	}
 
 	return (
 		<motion.header
@@ -35,7 +41,7 @@ export const Header = () => {
 					</Link>
 				) : (
 					<HeroSectionButton
-						href='/#work'
+						href={useBackHref()}
 						title='Back'
 						target='_self'
 						icon={<ArrowLeftIcon />}
