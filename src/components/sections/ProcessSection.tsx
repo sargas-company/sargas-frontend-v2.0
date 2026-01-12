@@ -1,11 +1,8 @@
 import { motion } from 'framer-motion'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { CommentsSectionUpwork } from './CommentsSectionUpwork.tsx'
-import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 const ProcessSection = () => {
-	const isMobile = useMediaQuery('(max-width: 768px)')
-
 	return (
 		<section className='md:pb-50 pb-20' id='process'>
 			<div className='flex flex-col items-center gap-2.5'>
