@@ -17,7 +17,7 @@ export const HeroSection = () => {
 					<div>
 						<h1>
 							<strong>
-								<span className='text-[44px] !font-medium leading-[1.25em] tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] !font-medium leading-[1.25em] tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'AI-ready'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
@@ -41,7 +41,7 @@ export const HeroSection = () => {
 						<h1>
 							<strong>
 								<span className='h-full px-1.5 md:px-2 xl:px-2.5' />
-								<span className='text-[44px] font-normal leading-[1.25em] tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] font-normal leading-[1.25em] tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'platforms'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
@@ -60,7 +60,7 @@ export const HeroSection = () => {
 					<div>
 						<h1>
 							<strong>
-								<span className='text-[44px] font-normal leading-[1.25em] tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] font-normal leading-[1.25em] tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'for \u00A0 B2B'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
@@ -84,7 +84,7 @@ export const HeroSection = () => {
 						<h1>
 							<strong>
 								<span className='h-full px-1.5 md:px-2 xl:px-2.5' />
-								<span className='text-[44px] !font-medium leading-[1.25em] tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] !font-medium leading-[1.25em] tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'Teams'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation

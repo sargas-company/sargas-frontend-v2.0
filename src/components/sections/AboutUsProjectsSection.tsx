@@ -92,7 +92,7 @@ export const AboutUsProjectsSection = () => {
 				<motion.div
 					initial={{ opacity: 0, y: 14, filter: 'blur(10px)' }}
 					whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-					viewport={{ once: true, amount: 0.45 }}
+					viewport={{ once: true, amount: 0.12 }}
 					transition={{ duration: 0.7, ease: 'easeOut' }}
 				>
 					<div className='grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_1fr] lg:gap-8'>
@@ -154,7 +154,7 @@ export const AboutUsProjectsSection = () => {
 							/>
 
 							<div className='col-span-2'>
-								<div className='grid h-full grid-cols-1 gap-6 rounded-[22px] bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] md:grid-cols-2'>
+								<div className='grid h-full grid-cols-2 gap-6 rounded-[22px] bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] md:grid-cols-2'>
 									<div className='flex h-full flex-col justify-between'>
 										<div className='h-12 w-12 shrink-0 rounded-[1rem] bg-[#1b1b1b] p-[1px]'>
 											<div className='relative z-[2] flex h-full w-full items-center justify-center rounded-[1rem] bg-[linear-gradient(184deg,#292929,#1b1b1b)] shadow-[inset_0_0.125rem_0.125rem_#ffffff4d,0_0.25rem_0.375rem_#00000024]'>

@@ -100,11 +100,11 @@ const chips = [
 		title: 'API & Integrations',
 		icon: DesignSystemsIcon,
 		bg: '#ff5e00',
-		rotation: 3,
+		rotation: 7,
 		positionClass: `
       absolute
       bottom-[209px] left-[26%] -translate-x-1/2
-      md:bottom-auto md:top-[6px] md:left-[-36px] md:translate-x-0
+      md:bottom-auto md:top-[6px] md:left-[-86px] md:translate-x-0
       xl:top-[62px] xl:left-[-120px]
     `,
 		animation: {
@@ -123,7 +123,7 @@ const chips = [
 		positionClass: `
       absolute
       bottom-[137px] left-[25%] -translate-x-1/2
-      md:bottom-auto md:top-[43%] md:left-[-21px] md:translate-x-0 md:-translate-y-1/2
+      md:bottom-auto md:top-[43%] md:left-[-111px] md:translate-x-0 md:-translate-y-1/2
       xl:top-1/2 xl:left-[-157px]
     `,
 		animation: {
@@ -142,7 +142,7 @@ const chips = [
 		positionClass: `
       absolute
       bottom-[64px] left-[30%] -translate-x-1/2
-      md:bottom-[55px] md:left-[1px] md:translate-x-0
+      md:bottom-[35px] md:left-[-60px] md:translate-x-0
       xl:bottom-[52px] xl:left-[-75px]
     `,
 		animation: {
@@ -157,11 +157,11 @@ const chips = [
 		title: 'Security',
 		icon: SecurityIcon,
 		bg: '#52ff69',
-		rotation: -5,
+		rotation: -8,
 		positionClass: `
       absolute
       bottom-[220px] left-[75%] -translate-x-1/2
-      md:bottom-auto md:top-[7px] md:right-[-20px] md:left-auto md:translate-x-0
+      md:bottom-auto md:top-[17px] md:right-[-40px] md:left-auto md:translate-x-0
       xl:top-[51px] xl:right-[-92px]
     `,
 		animation: {
@@ -176,11 +176,11 @@ const chips = [
 		title: 'Prototyping',
 		icon: PrototypingIcon,
 		bg: '#ff45ab',
-		rotation: -4,
+		rotation: -2,
 		positionClass: `
       absolute
       bottom-[139px] left-[67%] -translate-x-1/2
-      md:bottom-auto md:top-[42%] md:right-[-46px] md:left-auto md:translate-x-0 md:-translate-y-1/2
+      md:bottom-auto md:top-[48%] md:right-[-56px] md:left-auto md:translate-x-0 md:-translate-y-1/2
       xl:top-1/2 xl:right-[-98px]
     `,
 		animation: {
@@ -195,11 +195,11 @@ const chips = [
 		title: 'Architecture Strategy',
 		icon: StrategyIcon,
 		bg: '#ffd500',
-		rotation: 4,
+		rotation: 6,
 		positionClass: `
       absolute
       bottom-[63px] left-[71%] -translate-x-1/2
-      md:bottom-[76px] md:left-auto md:right-[-3px] md:translate-x-0
+      md:bottom-[26px] md:left-auto md:right-[-100px] md:translate-x-0
       xl:bottom-[52px] xl:right-[-78px]
     `,
 		animation: {

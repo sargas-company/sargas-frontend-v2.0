@@ -7,8 +7,8 @@ const IMAGES = [asset1, asset2]
 
 function getItemHeightByWidth(width: number) {
 	if (width >= 1440) return 113
-	if (width >= 810) return 77
-	return 53
+	if (width >= 810) return 88
+	return 73
 }
 
 export const VerticalMotionListAnimation = () => {
@@ -59,7 +59,7 @@ export const VerticalMotionListAnimation = () => {
 			onAnimationComplete={() => {
 				setHasEntered(true)
 			}}
-			className='relative h-[53px] w-[69px] overflow-hidden rounded-[16px] border-2 border-black bg-[#262626] shadow-xl md:h-[78px] md:w-[102px] md:rounded-[24px] xl:h-[113px] xl:w-[148px] xl:rounded-[36px]'
+			className='relative h-[73px] w-[96px] overflow-hidden rounded-[16px] border-2 border-black bg-[#262626] shadow-xl md:h-[88px] md:w-[115px] md:rounded-[24px] xl:h-[113px] xl:w-[148px] xl:rounded-[36px]'
 			style={{
 				boxShadow:
 					'.565274px .565274px .799418px -.708333px #00000080,1.44525px 1.44525px 2.04389px -1.41667px #0000007a,2.89741px 2.89741px 4.09755px -2.125px #00000075,5.49248px 5.49248px 7.76754px -2.83333px #00000069,10.9174px 10.9174px 15.4395px -3.54167px #00000052,24px 24px 33.9411px -4.25px #00000017',
@@ -101,7 +101,7 @@ export const VerticalMotionListAnimation = () => {
 					{items.map((src, i) => (
 						<li
 							key={i}
-							className='relative h-[53px] w-full flex-shrink-0 overflow-hidden md:h-[77px] xl:h-[113px]'
+							className='relative h-[73px] w-full flex-shrink-0 overflow-hidden md:h-[88px] xl:h-[113px]'
 						>
 							<img
 								src={src}
