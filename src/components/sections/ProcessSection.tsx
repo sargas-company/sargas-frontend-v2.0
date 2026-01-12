@@ -6,7 +6,6 @@ import { useMediaQuery } from '../../hooks/useMediaQuery'
 const ProcessSection = () => {
 	const isMobile = useMediaQuery('(max-width: 768px)')
 
-
 	return (
 		<section className='md:pb-50 pb-20' id='process'>
 			<div className='flex flex-col items-center gap-2.5'>
@@ -18,7 +17,7 @@ const ProcessSection = () => {
 
 			<div className='place-items-center grid xs:grid-cols-1 lg:grid-cols-2 25xl:grid-cols-3 25xl:auto-rows-auto relative mb-5 box-border h-min w-full flex-wrap justify-center gap-3 overflow-visible p-0 font-sans text-[12px]'>
 				<motion.div
-					initial={{ x: isMobile ? 0 : '-100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
+					initial={{ x: '-100%', y: 40, rotate: -15, opacity: 1, zIndex: 1 }}
 					whileInView={{ x: 0, y: 0, rotate: -5, opacity: 1, zIndex: 1 }}
 					transition={{
 						delay: 0,
@@ -70,7 +69,7 @@ const ProcessSection = () => {
 				</motion.div>
 
 				<motion.div
-					initial={{ x: isMobile ? 0 : '-100%', y: 40, rotate: 15, opacity: 1, zIndex: 3 }}
+					initial={{ x: '-100%', y: 40, rotate: 15, opacity: 1, zIndex: 3 }}
 					whileInView={{ x: 0, y: 0, rotate: 3, opacity: 1, zIndex: 3 }}
 					transition={{
 						delay: 0.5,
