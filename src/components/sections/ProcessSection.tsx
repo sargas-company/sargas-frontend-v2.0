@@ -142,9 +142,7 @@ const ProcessSection = () => {
 						</div>
 					</div>
 				</motion.div>
-
 			</div>
-
 			<CommentsSectionUpwork />
 		</section>
 	)
