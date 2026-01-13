@@ -185,7 +185,7 @@ export const PricingSection = () => {
 
 	return (
 		<div
-			className='md:pb-50 xl:gap-15 flex flex-col gap-6 pb-20 md:gap-9 xl:pb-[160px]'
+			className='md:pb-27 lg:pb-35 xl:pb-50 xl:gap-15 flex flex-col gap-6 pb-20 md:gap-9 xl:pb-[160px]'
 			id='pricing'
 		>
 			<div className='flex flex-col items-center gap-2.5'>
@@ -197,7 +197,7 @@ export const PricingSection = () => {
 
 			<motion.div
 				transition={{ type: 'spring', stiffness: 280, damping: 30, mass: 0.4 }}
-				className='relative flex flex-wrap justify-start gap-[60px] rounded-[24px] bg-white/50 p-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_0_rgba(0,0,0,0.1)] md:p-9 xl:p-[60px]'
+				className='relative flex-col lg:flex-row flex flex-wrap justify-start gap-[60px] rounded-[24px] bg-white/50 p-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_0_rgba(0,0,0,0.1)] md:p-9 xl:p-[60px]'
 			>
 				<div className='flex flex-1 flex-col justify-between gap-8'>
 					<div className='flex flex-col gap-6'>
@@ -244,7 +244,7 @@ export const PricingSection = () => {
 							{isRetainer && (
 								<div className='flex items-end'>
 									<motion.span
-										className='relative z-10 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black md:text-[56px] lg:text-[72px]'
+										className='relative z-10 text-[38px] leading-[1.25em] tracking-[-0.06em] text-black md:text-[50px] lg:text-[65px]'
 										animate={{ x: isRetainer ? 0 : priceShift }}
 										transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 									>
@@ -252,7 +252,7 @@ export const PricingSection = () => {
 									</motion.span>
 
 									<motion.span
-										className='relative z-0 -ml-4 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[56px] lg:text-[72px]'
+										className='relative z-0 text-[32px] ml-1 leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[45px] lg:text-[60px]'
 										animate={{ x: isRetainer ? labelShiftMonthly : labelShiftCustom }}
 										transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 									>
@@ -284,7 +284,7 @@ export const PricingSection = () => {
 
 							<div className='flex items-end'>
 								<motion.span
-									className='relative z-10 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black md:text-[56px] lg:text-[72px]'
+									className='relative z-10 text-[38px] leading-[1.25em] tracking-[-0.06em] text-black md:text-[50px] lg:text-[65px]'
 									animate={{ x: isRetainer ? 0 : priceShift }}
 									transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 								>
@@ -292,7 +292,7 @@ export const PricingSection = () => {
 								</motion.span>
 
 								<motion.span
-									className='relative z-0 -ml-4 text-[44px] leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[56px] lg:text-[72px]'
+									className='relative z-0 text-[32px] md:ml-3 ml-1 leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[45px] lg:text-[60px]'
 									animate={{ x: isRetainer ? labelShiftMonthly : labelShiftCustom }}
 									transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 								>

@@ -174,7 +174,7 @@ export const FooterSection = () => {
 						</div>
 
 						<div className='space-y-5'>
-							<h2 className='text-4xl leading-none tracking-tight md:text-8xl'>
+							<h2 className='text-4xl leading-none tracking-tight md:text-6xl lg:text-8xl'>
 								<span className='text-white'>Let&apos;s</span>{' '}
 								<span className='font-medium text-neutral-400'>Connect</span>
 							</h2>

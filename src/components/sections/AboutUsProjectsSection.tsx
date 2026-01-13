@@ -76,7 +76,7 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 
 export const AboutUsProjectsSection = () => {
 	return (
-		<section className='w-full pb-20 md:pb-40'>
+		<section className='w-full md:pb-27 lg:pb-35 xl:pb-50 pb-20'>
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
 				<motion.div
 					initial={{ opacity: 0, y: 24 }}
@@ -95,8 +95,8 @@ export const AboutUsProjectsSection = () => {
 					viewport={{ once: true, amount: 0.12 }}
 					transition={{ duration: 0.7, ease: 'easeOut' }}
 				>
-					<div className='grid grid-cols-1 gap-6 md:grid-cols-[1.2fr_1fr] lg:gap-8'>
-						<div className='relative min-h-[320px] overflow-hidden rounded-[26px] bg-neutral-900 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.18)] sm:min-h-[420px] sm:rounded-[28px] sm:p-8 lg:p-10'>
+					<div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.2fr_1fr] xl:gap-8">
+					<div className='relative min-h-[320px] overflow-hidden rounded-[26px] bg-neutral-900 p-5 shadow-[0_25px_70px_rgba(0,0,0,0.18)] sm:min-h-[420px] sm:rounded-[28px] sm:p-8 lg:p-10'>
 							<div className='pointer-events-none absolute inset-0 bg-[radial-gradient(90%_90%_at_0%_0%,rgba(255,255,255,0.08),transparent),radial-gradient(80%_80%_at_80%_10%,rgba(255,255,255,0.05),transparent)]' />
 							<div className='relative flex flex-col justify-end gap-6'>
 								<div className='relative mx-auto w-full max-w-[640px]'>

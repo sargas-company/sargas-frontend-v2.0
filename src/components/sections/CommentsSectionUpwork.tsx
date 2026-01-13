@@ -54,7 +54,7 @@ const cards: CardStat[] = [
 
 const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	return (
-		<div className='flex xl:w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
+		<div className='flex w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
 			<div className='mb-2.5 flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex shrink-0 items-center justify-start'>{icon}</div>
 
@@ -170,7 +170,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 			</div>
 
 			<motion.div
-				className='gap-15 mt-6 flex w-full items-center xs:hidden lg:flex'
+				className='gap-15 mt-6 flex w-full items-center xs:hidden xl:flex'
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -231,7 +231,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 
 export const CommentsSectionUpwork: React.FC = () => {
 	return (
-		<section className='mt-15 relative w-full sm:flex sm:justify-center'>
+		<section className='relative w-full sm:flex sm:justify-center'>
 			<div className='relative flex lg:w-full xs:w-full sm:w-fit gap-16'>
 
 				<Testimonial
@@ -250,7 +250,7 @@ export const CommentsSectionUpwork: React.FC = () => {
 					name='Verified Client'
 					role='Product Founder'
 					avatarSrc={avatar3}
-					className='mt-[160px] xs:hidden lg:block'
+					className='mt-[160px] xs:hidden lg:flex'
 					initialDelay={0.4}
 					cardStat={cards[1]}
 				/>

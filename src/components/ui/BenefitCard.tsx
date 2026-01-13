@@ -57,11 +57,11 @@ export const BenefitCard = ({ title, chips, link, img }: BenefitCardProps) => {
 			<div className='flex flex-nowrap items-center justify-between'>
 				<h4 className='text-lg text-black/50 md:text-xl'>{title}</h4>
 				<div className='flex gap-1'>
-					{chips.map((chip, index) => (
-						<span key={index} className='rounded-full bg-white px-3 py-1 text-xs opacity-50'>
-							{chip}
-						</span>
-					))}
+					{/*{chips.map((chip, index) => (*/}
+					{/*	<span key={index} className='rounded-full bg-white px-3 py-1 text-xs'>*/}
+					{/*		{chip}*/}
+					{/*	</span>*/}
+					{/*))}*/}
 				</div>
 			</div>
 

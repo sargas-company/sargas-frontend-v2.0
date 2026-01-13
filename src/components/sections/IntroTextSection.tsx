@@ -102,7 +102,7 @@ const chips = [
 		bg: '#ff5e00',
 		rotation: 7,
 		positionClass: `
-      absolute
+      lg:absolute lg:block xs:hidden
       bottom-[209px] left-[26%] -translate-x-1/2
       md:bottom-auto md:top-[6px] md:left-[-86px] md:translate-x-0
       xl:top-[62px] xl:left-[-120px]
@@ -121,7 +121,7 @@ const chips = [
 		bg: '#474747',
 		rotation: 4,
 		positionClass: `
-      absolute
+      lg:absolute lg:block xs:hidden
       bottom-[137px] left-[25%] -translate-x-1/2
       md:bottom-auto md:top-[43%] md:left-[-111px] md:translate-x-0 md:-translate-y-1/2
       xl:top-1/2 xl:left-[-157px]
@@ -140,7 +140,7 @@ const chips = [
 		bg: '#05a7ff',
 		rotation: -4,
 		positionClass: `
-      absolute
+      lg:absolute lg:block xs:hidden
       bottom-[64px] left-[30%] -translate-x-1/2
       md:bottom-[35px] md:left-[-60px] md:translate-x-0
       xl:bottom-[52px] xl:left-[-75px]
@@ -159,7 +159,7 @@ const chips = [
 		bg: '#52ff69',
 		rotation: -8,
 		positionClass: `
-      absolute
+      lg:absolute lg:block xs:hidden
       bottom-[220px] left-[75%] -translate-x-1/2
       md:bottom-auto md:top-[17px] md:right-[-40px] md:left-auto md:translate-x-0
       xl:top-[51px] xl:right-[-92px]
@@ -178,7 +178,7 @@ const chips = [
 		bg: '#ff45ab',
 		rotation: -2,
 		positionClass: `
-      absolute
+      lg:absolute lg:block xs:hidden
       bottom-[139px] left-[67%] -translate-x-1/2
       md:bottom-auto md:top-[48%] md:right-[-56px] md:left-auto md:translate-x-0 md:-translate-y-1/2
       xl:top-1/2 xl:right-[-98px]
@@ -197,7 +197,7 @@ const chips = [
 		bg: '#ffd500',
 		rotation: 6,
 		positionClass: `
-      absolute
+      lg:absolute lg:block xs:hidden
       bottom-[63px] left-[71%] -translate-x-1/2
       md:bottom-[26px] md:left-auto md:right-[-100px] md:translate-x-0
       xl:bottom-[52px] xl:right-[-78px]
@@ -241,7 +241,7 @@ export const IntroTextSection = () => {
 					mask: 'radial-gradient(50% 50%, #000 0%, transparent 100%)',
 				}}
 			/>
-			<div className='xl:py-18 xl:mb-15 xl:mt-15 flex min-h-[75vh] flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-10 xl:gap-0'>
+			<div className='md:pb-27 lg:pb-35 xl:pb-50  xl:py-18 xl:mb-15 xl:mt-15 flex min-h-[75vh] flex-col items-center justify-center gap-6 py-10 md:gap-7 md:py-10 xl:gap-0'>
 				<SectionTitle title='Hello!' />
 				<div className='relative flex h-min max-w-[940px] flex-col gap-[260px] pb-[280px] md:gap-12 md:px-[96px] md:py-12 xl:px-[120px]'>
 					<p className='font-inter-display text-center text-[28px] font-normal leading-[1.4em] tracking-[-0.04em] text-black md:text-[32px] xl:text-[44px]'>

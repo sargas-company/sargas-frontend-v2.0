@@ -48,7 +48,7 @@ const cards: CardStat[] = [
 
 const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 	return (
-		<div className='flex xl:w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
+		<div className='flex w-[190px] items-center justify-between rounded-[1rem] bg-[linear-gradient(165deg,#fff,#fff_25%)] p-3 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] saturate-[1.4] backdrop-blur-[12px] sm:p-6'>
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex shrink-0 items-center justify-start'>{icon}</div>
 
@@ -161,7 +161,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 			</div>
 
 			<motion.div
-				className='gap-15 mt-6 flex w-full items-center xs:hidden lg:flex'
+				className='gap-15 mt-6 flex w-full items-center xs:hidden xl:flex'
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -218,7 +218,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 
 export const CommentsSectionClutch: React.FC = () => {
 	return (
-		<section className='mt-15 relative w-full sm:flex sm:justify-center'>
+		<section className='mt-10 relative w-full sm:flex sm:justify-center'>
 			<div className='relative flex lg:w-full xs:w-full sm:w-fit gap-16'>
 				<Testimonial
 					quote="Sargas Agency OÜ has delivered a fully functional web app that is aligned with existing mobile platforms. The team has improved consistency across platforms, enhancing the UX. Sargas Agency OÜ's flexibility and ability to adapt quickly to the client's processes and requirements are impressive."
@@ -236,7 +236,7 @@ export const CommentsSectionClutch: React.FC = () => {
 					name='Priyadarshan Joshi'
 					role='CEO, Upnexo Technologies Private Limited'
 					avatarSrc={avatar1}
-					className='mt-[160px] xs:hidden lg:block'
+					className='mt-[160px] xs:hidden lg:flex'
 					cardStat={cards[1]}
 					initialDelay={0.4}
 				/>
