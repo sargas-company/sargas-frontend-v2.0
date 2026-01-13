@@ -11,7 +11,7 @@ import { NeonFrame } from '../animation/NeonFrame.tsx'
 
 export const HeroSection = () => {
 	return (
-		<div className='flex flex-col gap-6 pb-20 pt-[180px] md:gap-7 md:pb-14 xl:gap-12 xl:pb-[118px]'>
+		<div className='flex flex-col gap-6 pb-8 pt-[130px] md:pt-[180px] md:gap-7 md:pb-14 xl:gap-12 xl:pb-[118px]'>
 			<div className='flex flex-col items-center gap-9'>
 				<div className='flex h-min max-w-none flex-none flex-wrap items-center justify-center gap-1.5 md:max-w-[718px] md:gap-2 xl:max-w-[980px]'>
 					<div>

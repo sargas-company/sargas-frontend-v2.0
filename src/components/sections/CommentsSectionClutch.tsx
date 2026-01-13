@@ -145,7 +145,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 						text={quote}
 						initialDelay={initialDelay}
 						wordDelay={0.03}
-						className='text-[28px] leading-[1.6] tracking-[-0.03em]'
+						className='text-[28px] xs:text-[24px] leading-[1.6] tracking-[-0.03em]'
 					/>
 				</p>
 

@@ -35,7 +35,7 @@ export const Header = () => {
 				{isHome ? (
 					<Link
 						to='/'
-						className='mt-20 flex rounded-[22px] px-6 py-2.5 align-middle text-black'
+						className='mt-5 md:mt-20 flex rounded-[22px] px-6 py-2.5 align-middle text-black'
 					>
 						<HorizontalMotionListAnimationV2Header />
 					</Link>

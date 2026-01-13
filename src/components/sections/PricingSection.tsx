@@ -266,7 +266,7 @@ export const PricingSection = () => {
 									{retainerDetails.devTitle.map((word, wordIndex) => (
 										<span
 											key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
-											className='mr-[0.3em] inline-block'
+											className='mr-[0.3em] inline-block whitespace-nowrap'
 										>
 											{word.split('').map((letter, letterIndex) => (
 												<HeroSectionLetterAnimation
@@ -292,7 +292,7 @@ export const PricingSection = () => {
 								</motion.span>
 
 								<motion.span
-									className='relative z-0 text-[32px] md:ml-3 ml-1 leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[45px] lg:text-[60px]'
+									className='relative z-0 text-[32px] xs:ml-5 sm:ml-4 md:ml-3 ml-1 leading-[1.25em] tracking-[-0.06em] text-black/25 md:text-[45px] lg:text-[60px]'
 									animate={{ x: isRetainer ? labelShiftMonthly : labelShiftCustom }}
 									transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 								>
@@ -343,11 +343,11 @@ export const PricingSection = () => {
 							)}
 
 							{!isRetainer && (
-								<div className='flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
+								<div className='flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl flex-wrap'>
 									{fixedDetails.priceDescription.map((word, wordIndex) => (
 										<span
 											key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
-											className='mr-[0.3em] inline-block'
+											className='mr-[0.3em] inline-block whitespace-nowrap'
 										>
 											{word.split('').map((letter, letterIndex) => (
 												<HeroSectionLetterAnimation

@@ -162,7 +162,7 @@ export const FooterSection = () => {
 
 				<motion.div
 					style={{ y: contentY, opacity: contentOpacity }}
-					className='relative flex min-h-[80vh] flex-col px-6 py-12 text-center md:min-h-[85vh] md:px-16 md:py-16'
+					className='relative flex min-h-[60vh] flex-col px-6 py-12 text-center md:min-h-[85vh] md:px-16 md:py-16'
 				>
 					<div className='mt-4 translate-y-[-50px] space-y-8 md:mt-2'>
 						<div className='flex items-center justify-center'>
@@ -174,7 +174,7 @@ export const FooterSection = () => {
 						</div>
 
 						<div className='space-y-5'>
-							<h2 className='text-4xl leading-none tracking-tight md:text-6xl lg:text-8xl'>
+							<h2 className='text-6xl leading-none tracking-tight md:text-6xl lg:text-8xl'>
 								<span className='text-white'>Let&apos;s</span>{' '}
 								<span className='font-medium text-neutral-400'>Connect</span>
 							</h2>
