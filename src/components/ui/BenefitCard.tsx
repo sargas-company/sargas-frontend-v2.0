@@ -2,12 +2,11 @@ import { useRef, useState, type MouseEvent } from 'react'
 
 type BenefitCardProps = {
 	title: string
-	chips: string[]
 	link: string
 	img: string
 }
 
-export const BenefitCard = ({ title, chips, link, img }: BenefitCardProps) => {
+export const BenefitCard = ({ title, link, img }: BenefitCardProps) => {
 	const cardRef = useRef<HTMLAnchorElement | null>(null)
 	const [isHovering, setIsHovering] = useState(false)
 	const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
