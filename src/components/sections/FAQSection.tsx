@@ -12,6 +12,31 @@ type FAQItem = {
 
 const FAQ_ITEMS: FAQItem[] = [
 	{
+		question: 'How fast can we start?',
+		answer:
+			'Usually within 2–5 business days after we align on scope (Fixed) or capacity (Retainer). If your timeline is urgent, we’ll confirm availability on the call.',
+	},
+	{
+		question: 'What’s the minimum commitment?',
+		answer:
+			'Fixed Price projects start from $5,000 and are scoped before we lock budget and milestones. Retainers are month-to-month and usually start with 1 month to validate fit and delivery cadence.',
+	},
+	{
+		question: 'What types of projects are a good fit?',
+		answer:
+			'B2B web apps, dashboards, SaaS MVPs, integrations/automation, performance and reliability improvements, and product iterations. We also support mobile (React Native) when it’s part of a broader product workflow.',
+	},
+	{
+		question: 'Can you take over an existing codebase?',
+		answer:
+			'Yes. We start with a lightweight technical audit (architecture, deployments, data model, auth/security, and critical flows), then propose the safest plan: stabilize, reduce risk, and ship in small increments.',
+	},
+	{
+		question: 'How do communication and updates work?',
+		answer:
+			'You’ll have a single point of contact, async updates, and 1–2 check-ins per week. We keep work transparent in your tools (Jira/Linear/ClickUp + GitHub), with clear priorities and release notes.',
+	},
+	{
 		question: 'What’s the difference between Fixed Price and a Retainer?',
 		answer:
 			'Fixed Price is best for a clearly defined scope with a set timeline and milestones. Retainer is ongoing development where you reserve a developer or a team month-to-month, with flexible priorities and continuous delivery.',
@@ -19,37 +44,12 @@ const FAQ_ITEMS: FAQItem[] = [
 	{
 		question: 'What’s included in the Retainer?',
 		answer:
-			'A Retainer reserves monthly capacity for a dedicated developer or team. We run weekly planning, provide async updates, and deliver continuously (staging to production) so priorities can evolve without resetting the process.',
-	},
-	{
-		question: 'What’s the minimum commitment?',
-		answer:
-			'Fixed Price projects start from $5,000 and are scoped before we lock budget and milestones. Retainers are monthly engagements and typically start with 1 month to validate fit and delivery cadence.',
-	},
-	{
-		question: 'How fast can we start?',
-		answer:
-			'Typically within a few business days after aligning on scope (Fixed) or capacity (Retainer). If you have an urgent timeline, we’ll confirm availability on the call.',
+			'A Retainer reserves monthly capacity for a dedicated developer or team. We run weekly planning, provide async updates, and ship continuously (staging → production) with a calm release cadence and evolving priorities.',
 	},
 	{
 		question: 'How do you scope a Fixed Price project?',
 		answer:
-			'We clarify goals, constraints, and acceptance criteria, then propose milestones with deliverables and timeline. After approval, we lock scope and budget. Changes are handled via a separate change request.',
-	},
-	{
-		question: 'How do communication and updates work?',
-		answer:
-			'You’ll have a single point of contact, async updates, and regular check-ins (1–2 per week). We keep work visible in your preferred tools (Linear, Jira, ClickUp, and GitHub).',
-	},
-	{
-		question: 'What types of projects are a good fit?',
-		answer:
-			'Web apps, dashboards, SaaS MVPs, integrations, performance improvements, and product iterations. If you already have a mobile app, we can align the web platform with existing flows and UX.',
-	},
-	{
-		question: 'Can you take over an existing codebase?',
-		answer:
-			'Yes. We start with a quick technical review, identify risks and priorities, and propose the safest path forward (stabilize, improve, then ship).',
+			'We clarify goals, constraints, and acceptance criteria, then propose milestones with deliverables and timeline. After approval, we lock scope and budget. Any changes go through a change request so timelines stay predictable.',
 	},
 ]
 
