@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /sargas_favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /apple-touch-icon-180x180.png
+Disallow: /study-cases/
