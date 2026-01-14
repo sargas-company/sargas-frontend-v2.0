@@ -88,7 +88,7 @@ export function CookieConsentModal({
 						role="dialog"
 						aria-modal="true"
 						aria-label="Cookie consent"
-						className="fixed left-0 bottom-0 z-[9999] w-[92vw] max-w-[680px] -translate-x-[-20px] -translate-y-[20px] rounded-[28px] bg-white p-6 shadow-[0_30px_80px_rgba(0,0,0,0.22)] sm:p-12 sm:py-10"
+						className="fixed left-0 bottom-0 z-[9999] w-[92vw] max-w-[680px] -translate-x-[-20px] -translate-y-[20px] rounded-[28px] bg-white p-12 shadow-[0_30px_80px_rgba(0,0,0,0.22)] sm:p-12 sm:py-10"
 						initial={{ opacity: 0, y: 10, scale: 0.985 }}
 						animate={{ opacity: 1, y: 0, scale: 1 }}
 						exit={{ opacity: 0, y: 10, scale: 0.985 }}
