@@ -162,7 +162,7 @@ export const AboutUsProjectsSection = () => {
 											</div>
 										</div>
 
-										<div className='flex flex-col mt-5'>
+										<div className='flex flex-col mt-4'>
 											<span className='text-[34px] font-semibold leading-none text-black md:text-[38px]'>
 												8/10
 											</span>
