@@ -2,81 +2,32 @@ import { motion } from 'framer-motion'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { LinkIcon } from '../ui/icons/LinkIcon'
-import aws from '../../assets/tech/aws.svg'
-import docker from '../../assets/tech/docker.svg'
-import javascript from '../../assets/tech/javascript.svg'
-import nodejs from '../../assets/tech/nodejs.svg'
-import nestjs from '../../assets/tech/nestjs.svg'
-import nextJs from '../../assets/tech/nextjs.svg'
-import n8n from '../../assets/tech/n8n.svg'
-import nginx from '../../assets/tech/nginx.svg'
-import reactjs from '../../assets/tech/reactjs.svg'
 
 type PageSection = {
 	title: string
 	items: string[]
 }
 
+type Technology = {
+	src: string,
+	alt: string,
+	width: string,
+}
+
 type PageHeroProps = {
 	title: string
 	content: string[]
 	chips: string[]
+	technologies: Technology[]
 	href?: string
 	sections: PageSection[]
 }
-
-const technologies = [
-	{
-		src: aws,
-		alt: 'aws',
-		width: '50px',
-	},
-	{
-		src: docker,
-		alt: 'docker',
-		width: '50px',
-	},
-	{
-		src: javascript,
-		alt: 'javascript',
-		width: '50px',
-	},
-	{
-		src: nodejs,
-		alt: 'nodejs',
-		width: '50px',
-	},
-	{
-		src: nestjs,
-		alt: 'nestjs',
-		width: '50px',
-	},
-	{
-		src: nextJs,
-		alt: 'nextJs',
-		width: '50px',
-	},
-	{
-		src: n8n,
-		alt: 'n8n',
-		width: '90px',
-	},
-	{
-		src: nginx,
-		alt: 'nginx',
-		width: '50px',
-	},
-	{
-		src: reactjs,
-		alt: 'reactjs',
-		width: '50px',
-	},
-]
 
 export const PageHero = ({
 	title,
 	sections = [],
 	content,
+	technologies = [],
 	chips,
 	href = undefined,
 }: PageHeroProps) => {
