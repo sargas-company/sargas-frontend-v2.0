@@ -25,9 +25,10 @@ const retainerDetails = {
 		'Reserved monthly capacity',
 		'Weekly planning & priority alignment',
 		'Async updates + 1–2 sync calls/week',
-		'Continuous delivery (staging + prod)',
+		'Continuous delivery (staging + production releases)',
 		'Code reviews & best practices',
 		'Flexible month-to-month engagement',
+		'Work stays within the reserved hours'
 	],
 	content: [
 		'Sargas',
@@ -53,6 +54,7 @@ const retainerDetails = {
 		'again.',
 	],
 	devTitle: ['Dedicated', 'Developer'],
+	devDescription: ['160', 'hours/month'],
 	teamTitle: ['Dedicated', 'Team'],
 	teamDescription: [
 		'A',
@@ -68,8 +70,18 @@ const retainerDetails = {
 		'2',
 		'core',
 		'engineers',
+		'(320',
+		'hours/month)',
+		'+',
+		'QA',
+		'(up',
+		'to',
+		'80',
+		'hours/month)',
 		'+',
 		'lead',
+		'(40',
+		'hours/month)',
 		'support).',
 		'We',
 		'manage',
@@ -93,7 +105,7 @@ const fixedDetails = {
 		'Scope & deliverables defined upfront',
 		'Fixed budget & timeline',
 		'Milestones & release plan',
-		'QA + production launch',
+		'QA + launch support',
 		'Weekly updates & demos',
 		'Change requests scoped separately',
 	],
@@ -248,7 +260,7 @@ export const PricingSection = () => {
 										animate={{ x: isRetainer ? 0 : priceShift }}
 										transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 									>
-										$6,500
+										$6,400
 									</motion.span>
 
 									<motion.span
@@ -262,12 +274,13 @@ export const PricingSection = () => {
 							)}
 
 							{isRetainer && (
-								<div className='mb-10 flex items-end text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
-									{retainerDetails.devTitle.map((word, wordIndex) => (
-										<span
-											key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
-											className='mr-[0.3em] inline-block whitespace-nowrap'
-										>
+								<div className='mb-10 flex flex-col items-start text-lg leading-[1.5em] tracking-[-.02em] md:text-xl'>
+									<span className='mb-4'>
+										{retainerDetails.devTitle.map((word, wordIndex) => (
+											<span
+												key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
+												className='mr-[0.3em] inline-block whitespace-nowrap'
+											>
 											{word.split('').map((letter, letterIndex) => (
 												<HeroSectionLetterAnimation
 													initialDelay={0.1}
@@ -278,7 +291,27 @@ export const PricingSection = () => {
 												</HeroSectionLetterAnimation>
 											))}
 										</span>
-									))}
+										))}
+									</span>
+
+									<span>
+										{retainerDetails.devDescription.map((word, wordIndex) => (
+											<span
+												key={`${wordIndex}-${isRetainer ? 'c' : 'a'}`}
+												className='mr-[0.3em] inline-block'
+											>
+												{word.split('').map((letter, letterIndex) => (
+													<HeroSectionLetterAnimation
+														initialDelay={0.1}
+														delayRate={wordIndex * 0.07}
+														key={`${wordIndex}-${letterIndex}-${isRetainer ? 'c' : 'a'}`}
+													>
+														{letter}
+													</HeroSectionLetterAnimation>
+												))}
+											</span>
+										))}
+									</span>
 								</div>
 							)}
 
@@ -288,7 +321,7 @@ export const PricingSection = () => {
 									animate={{ x: isRetainer ? 0 : priceShift }}
 									transition={{ type: 'spring', stiffness: 400, damping: 40 }}
 								>
-									{isRetainer ? '$13,000' : '$5,000'}
+									{isRetainer ? '$16,300' : '$5,000'}
 								</motion.span>
 
 								<motion.span
