@@ -33,15 +33,13 @@ function safeSet(key: string, value: Consent) {
 }
 
 export function CookieConsentModal({
-	   storageKey = DEFAULT_KEY,
-	   title = 'This site uses cookies',
-	   description =
-		   `We and selected third parties use cookies (or similar technologies) for technical purposes, to enhance and analyze site usage, to support our marketing efforts, and for other purposes described below.\n\nBy clicking “Accept all”, you agree to the storing of cookies on your device for these purposes.`,
-	   acceptLabel = 'Accept all',
-	   denyLabel = 'Decline',
-	   onDecision,
-   }: Props) {
-
+									   storageKey = DEFAULT_KEY,
+									   title = 'This site uses cookies',
+									   description = `We and selected third parties use cookies (or similar technologies) for technical purposes, to enhance and analyze site usage, to support our marketing efforts, and for other purposes described below.\n\nBy clicking “Accept all”, you agree to the storing of cookies on your device for these purposes.`,
+									   acceptLabel = 'Accept all',
+									   denyLabel = 'Decline',
+									   onDecision,
+								   }: Props) {
 	const [open, setOpen] = useState(false)
 	const [mounted, setMounted] = useState(false)
 
@@ -59,6 +57,7 @@ export function CookieConsentModal({
 		setOpen(false)
 	}
 
+	// lock page scroll while modal is open (modal itself will scroll)
 	useEffect(() => {
 		if (!open) return
 		const prev = document.body.style.overflow
@@ -88,11 +87,20 @@ export function CookieConsentModal({
 						role="dialog"
 						aria-modal="true"
 						aria-label="Cookie consent"
+						// ⬇️ ПОЗИЦИОНИРОВАНИЕ ОСТАВИЛ КАК БЫЛО У ТЕБЯ
 						className="fixed left-0 bottom-0 z-[9999] w-[92vw] max-w-[680px] -translate-x-[-20px] -translate-y-[20px] rounded-[28px] bg-white p-12 shadow-[0_30px_80px_rgba(0,0,0,0.22)] sm:p-12 sm:py-10"
 						initial={{ opacity: 0, y: 10, scale: 0.985 }}
 						animate={{ opacity: 1, y: 0, scale: 1 }}
 						exit={{ opacity: 0, y: 10, scale: 0.985 }}
 						transition={{ duration: 0.22, ease: 'easeOut' }}
+						// ⬇️ ВАЖНО: делаем модалку скроллируемой, когда контент не помещается
+						style={{
+							maxHeight: 'calc(100dvh - 24px)',
+							overflowY: 'auto',
+							WebkitOverflowScrolling: 'touch',
+							overscrollBehavior: 'contain',
+							paddingBottom: 'calc(env(safe-area-inset-bottom) + 48px)',
+						}}
 					>
 						<button
 							type="button"

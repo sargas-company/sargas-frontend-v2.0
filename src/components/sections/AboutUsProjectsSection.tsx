@@ -76,7 +76,7 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 
 export const AboutUsProjectsSection = () => {
 	return (
-		<section className='w-full md:pb-27 lg:pb-35 xl:pb-50 pb-20'>
+		<section className='w-full md:pb-27 lg:pb-35 xl:pb-50 pb-20' id="about">
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
 				<motion.div
 					initial={{ opacity: 0, y: 24 }}

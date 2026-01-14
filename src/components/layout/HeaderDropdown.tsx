@@ -111,6 +111,7 @@ export const HeaderDropdown = ({ open = false }: Props) => {
 										if (!targetId) return
 										e.preventDefault()
 										if (location.pathname === '/') {
+											navigate({ pathname: '/', hash: targetId })
 											scrollToId(targetId)
 										} else {
 											navigate(`/#${targetId}`)
