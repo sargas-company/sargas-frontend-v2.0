@@ -100,7 +100,7 @@ export const PageHero = ({
 						{title}
 					</h2>
 
-					<div className='flex gap-1'>
+					<div className='flex gap-1 flex-wrap'>
 						{chips.map((chip, index) => (
 							<span key={index} className='text-md rounded-full bg-white px-4 py-2'>
 								{chip}
@@ -126,10 +126,10 @@ export const PageHero = ({
 					</p>
 				</div>
 
-				<div className='flex justify-between'>
+				<div className='justify-between grid grid-cols-2 sm:flex [&>*:last-child]:mb-5'>
 					{sections.map((item, index) => {
 						return (
-							<div key={index} className='flex flex-col gap-2'>
+							<div key={index} className='flex flex-col gap-2 mb-10 sm:mb-0'>
 								<h4 className='font-serif text-2xl italic leading-[1.2em] tracking-normal text-black/50'>
 									<HeroSectionLetterAnimation
 										initialDelay={1}
@@ -176,7 +176,7 @@ export const PageHero = ({
 							)
 						})}
 					</h4>
-					<div className='flex flex-row items-center justify-start'>
+					<div className='flex flex-row items-center justify-start flex-wrap'>
 						{technologies.map((item, index) => (
 							<HeroSectionLetterAnimation
 								initialDelay={0.5}
