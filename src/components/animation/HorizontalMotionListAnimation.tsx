@@ -1,16 +1,41 @@
 import { motion } from 'framer-motion'
 
 const asset1 = (
-	<svg className='md:w-[140px] xs:w-[100px]' width='170' viewBox='0 0 174 115' fill='none' xmlns='http://www.w3.org/2000/svg'>
-		<g filter='url(#filter0_d_186_761)'>
-			<rect x='38.4004' y='33.3999' width='42.3291' height='13' rx='3' fill='#555555' />
-			<rect x='84.0713' y='33.3999' width='42.3291' height='22' rx='3' fill='#555555' />
-			<rect x='84.0713' y='58.3999' width='42.3291' height='23' rx='3' fill='#555555' />
-			<rect x='38.4004' y='49.3999' width='42.3291' height='32' rx='3' fill='#555555' />
+	<svg
+		className="md:w-[140px] xs:w-[100px]"
+		width="170"
+		viewBox="0 0 174 115"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<defs>
+			<filter
+				id="asset1Shadow"
+				x="-20%"
+				y="-20%"
+				width="140%"
+				height="140%"
+				colorInterpolationFilters="sRGB"
+			>
+				<feDropShadow
+					dx="0"
+					dy="2"
+					stdDeviation="2"
+					floodColor="#000"
+					floodOpacity="0.18"
+				/>
+			</filter>
+		</defs>
+
+		<g filter="url(#asset1Shadow)">
+			<rect x="38.4004" y="33.3999" width="42.3291" height="13" rx="3" fill="#555555" />
+			<rect x="84.0713" y="33.3999" width="42.3291" height="22" rx="3" fill="#555555" />
+			<rect x="84.0713" y="58.3999" width="42.3291" height="23" rx="3" fill="#555555" />
+			<rect x="38.4004" y="49.3999" width="42.3291" height="32" rx="3" fill="#555555" />
 		</g>
-		<defs></defs>
 	</svg>
 )
+
 const asset2 = (
 	<svg className='md:w-[140px] xs:w-[100px]' width='170' viewBox='0 0 174 115' fill='none' xmlns='http://www.w3.org/2000/svg'>
 		<g filter='url(#filter0_d_186_760)'></g>
