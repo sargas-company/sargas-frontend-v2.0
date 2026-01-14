@@ -91,7 +91,7 @@ export const HorizontalMotionListAnimationV2Header = () => {
 						className='flex h-full flex-shrink-0 items-center justify-center bg-[transparent] px-5 md:px-5 md:pl-[29px] md:pr-[30px]'
 					>
 						<img
-							src='https://sargas.io/img/svg/logo.png'
+							src='https://sargas.io/logo.png'
 							alt=''
 							className='mr-4 h-auto md:w-9 xs:w-5'
 						/>
