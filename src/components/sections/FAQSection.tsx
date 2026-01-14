@@ -124,7 +124,7 @@ const FAQSection: React.FC = () => {
 							<div className='flex items-center gap-6'>
 								<div className='h-[82px] w-[82px] overflow-hidden rounded-full shadow-[0_0_0_8px_#ffffff40,12px_16px_16px_#0000001a]'>
 									<img
-										src='https://sargas.io/img/svg/logo.png'
+										src='https://sargas.io/logo.png'
 										alt='Portrait'
 										className='h-full w-full object-contain'
 									/>
