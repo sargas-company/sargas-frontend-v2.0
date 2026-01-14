@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { Background } from '../layout/Background'
 import noiseImage from '../../assets/noise.webp'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
@@ -39,14 +39,40 @@ const socialLinks: SocialLink[] = [
 	},
 ]
 
+// ✅ iPhone/jank fix: use visualViewport height + rAF + small debounce
 const useViewportHeight = () => {
 	const [height, setHeight] = useState<number | null>(null)
 
 	useEffect(() => {
-		const handleResize = () => setHeight(window.innerHeight)
-		handleResize()
-		window.addEventListener('resize', handleResize)
-		return () => window.removeEventListener('resize', handleResize)
+		if (typeof window === 'undefined') return
+
+		const vv = window.visualViewport
+		const getH = () => Math.round(vv?.height ?? window.innerHeight)
+
+		let raf = 0
+		let t: any = null
+
+		const schedule = () => {
+			cancelAnimationFrame(raf)
+			raf = requestAnimationFrame(() => {
+				clearTimeout(t)
+				t = setTimeout(() => setHeight(getH()), 100)
+			})
+		}
+
+		setHeight(getH())
+
+		vv?.addEventListener('resize', schedule)
+		vv?.addEventListener('scroll', schedule) // iOS can change viewport on scroll (toolbar)
+		window.addEventListener('orientationchange', schedule)
+
+		return () => {
+			vv?.removeEventListener('resize', schedule)
+			vv?.removeEventListener('scroll', schedule)
+			window.removeEventListener('orientationchange', schedule)
+			cancelAnimationFrame(raf)
+			clearTimeout(t)
+		}
 	}, [])
 
 	return height
@@ -54,9 +80,17 @@ const useViewportHeight = () => {
 
 export const FooterSection = () => {
 	const sectionRef = useRef<HTMLDivElement | null>(null)
+
 	const { scrollYProgress } = useScroll({
 		target: sectionRef,
 		offset: ['start end', 'end start'],
+	})
+
+	// ✅ smooth progress to reduce micro-jitters
+	const smoothProgress = useSpring(scrollYProgress, {
+		stiffness: 90,
+		damping: 25,
+		mass: 0.8,
 	})
 
 	const viewportHeight = useViewportHeight()
@@ -67,8 +101,8 @@ export const FooterSection = () => {
 		return Math.min(1760, Math.max(680, computed))
 	}, [viewportHeight])
 
-	const contentY = useTransform(scrollYProgress, [0, 1], [-360, endOffset])
-	const contentOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1])
+	const contentY = useTransform(smoothProgress, [0, 1], [-360, endOffset])
+	const contentOpacity = useTransform(smoothProgress, [0, 0.5, 1], [0, 1, 1])
 
 	const isMailto = (href: string) => /^\s*mailto:/i.test(String(href ?? ''))
 
@@ -82,15 +116,21 @@ export const FooterSection = () => {
 				<div className='opacity-8 pointer-events-none absolute inset-0 z-0 mix-blend-screen'>
 					<Background variant='section' />
 				</div>
+
 				<div
 					className='pointer-events-none absolute inset-0 z-10 opacity-5 mix-blend-screen'
 					style={{ backgroundImage: `url(${noiseImage})`, backgroundSize: '220px' }}
 				/>
+
 				<div className='pointer-events-none absolute inset-0 z-20 bg-[radial-gradient(140%_160%_at_15%_15%,rgba(255,255,255,0.22),transparent_45%),radial-gradient(130%_130%_at_82%_18%,rgba(255,255,255,0.12),transparent_52%),linear-gradient(120deg,rgba(255,255,255,0.18),transparent_42%)] opacity-35 mix-blend-screen' />
 
 				<motion.div
-					style={{ y: contentY, opacity: contentOpacity }}
-					className='relative flex min-h-[60vh] flex-col px-6 py-12 text-center md:min-h-[85vh] md:px-16 md:py-16'
+					style={{
+						y: contentY,
+						opacity: contentOpacity,
+						translateZ: 0, // ✅ keep GPU path on iOS
+					}}
+					className='relative flex min-h-[60vh] flex-col px-6 py-12 text-center md:min-h-[85vh] md:px-16 md:py-16 will-change-transform'
 				>
 					<div className='mt-4 translate-y-[-50px] space-y-8 md:mt-2'>
 						<div className='flex items-center justify-center'>
@@ -106,6 +146,7 @@ export const FooterSection = () => {
 								<span className='text-white'>Let&apos;s</span>{' '}
 								<span className='font-medium text-neutral-400'>Connect</span>
 							</h2>
+
 							<div>
 								<p className='mx-auto max-w-2xl text-base leading-relaxed tracking-tight text-white/80 md:text-xl'>
 									Feel free to contact me if having any questions.
@@ -138,6 +179,7 @@ export const FooterSection = () => {
 								key={item.label}
 								href={item.href}
 								target={!isMailto(item.href) ? '_blank' : undefined}
+								rel={!isMailto(item.href) ? 'noreferrer' : undefined}
 								aria-label={item.label}
 								className='flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition hover:border-white/50 hover:bg-white/5 md:h-12 md:w-12'
 							>
