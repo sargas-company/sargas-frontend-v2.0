@@ -21,8 +21,6 @@ import n8n from "../../assets/tech/n8n.svg";
 import nginx from "../../assets/tech/nginx.svg";
 import reactjs from "../../assets/tech/reactjs.svg";
 import mysql from "../../assets/tech/mysql.svg";
-import postgresql from "../../assets/tech/postgresql.svg";
-import mongo from "../../assets/tech/mongodb.svg";
 
 const project_details = {
 	main: {
