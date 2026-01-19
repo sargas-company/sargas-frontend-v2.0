@@ -34,7 +34,7 @@ const ProcessSection = () => {
 								Share your needs
 							</h3>
 							<p className='text-[16px] leading-[1.7] text-black/50'>
-								Share your idea, goals, or problem - even if it’s still1 raw. <br />
+								Share your idea, goals, or problem - even if it’s still raw. <br />
 								We help shape it into a clear direction.
 							</p>
 						</div>
@@ -59,7 +59,7 @@ const ProcessSection = () => {
 								Share your needs
 							</h3>
 							<p className='text-[16px] leading-[1.7] text-black/50'>
-								Share your idea, goals, or problem - even if it’s still2 raw. <br />
+								Share your idea, goals, or problem - even if it’s still raw. <br />
 								We help shape it into a clear direction.
 							</p>
 						</div>

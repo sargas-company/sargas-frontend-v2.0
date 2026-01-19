@@ -19,7 +19,7 @@ const FAQ_ITEMS: FAQItem[] = [
 	{
 		question: 'What’s the minimum commitment?',
 		answer:
-			'Fixed Price projects start from $5,000 and are scoped before we lock budget and milestones. Retainers are month-to-month and usually start with 1 month to validate fit and delivery cadence.',
+			'Fixed Price projects start from $5,000 and are scoped before we lock the budget and milestones. Retainers are month-to-month and usually start with 1 month to validate fit and delivery cadence.',
 	},
 	{
 		question: 'What types of projects are a good fit?',
@@ -49,7 +49,7 @@ const FAQ_ITEMS: FAQItem[] = [
 	{
 		question: 'How do you scope a Fixed Price project?',
 		answer:
-			'We clarify goals, constraints, and acceptance criteria, then propose milestones with deliverables and timeline. After approval, we lock scope and budget. Any changes go through a change request so timelines stay predictable.',
+			'We clarify goals, constraints, and acceptance criteria, then propose milestones with deliverables and a timeline. After approval, we lock scope and budget. Any changes go through a change request so timelines stay predictable.',
 	},
 ]
 

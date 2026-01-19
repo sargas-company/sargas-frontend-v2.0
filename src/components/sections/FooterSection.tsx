@@ -152,7 +152,7 @@ export const FooterSection = () => {
 									Feel free to contact me if having any questions.
 								</p>
 								<p className='mx-auto max-w-2xl text-base leading-relaxed tracking-tight text-white/80 md:text-xl'>
-									I&apos;m available for new projects or just for chatting.
+									We are available for new projects or just for chatting.
 								</p>
 							</div>
 						</div>
