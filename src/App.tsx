@@ -8,6 +8,7 @@ import { GraffitiPage } from './pages/work/GraffitiPage.tsx'
 import { LocalServicePage } from './pages/work/LocalServicePage.tsx'
 import { BotsPage } from './pages/work/BotsPage.tsx'
 import { PolicyPage } from './pages/PolicyPage.tsx'
+import { SecurityPage } from './pages/SecurityPage.tsx'
 
 import './index.css'
 
@@ -32,7 +33,9 @@ function App() {
 							<Route path='/work/graffiti' element={<GraffitiPage />} />
 							<Route path='/work/local-service' element={<LocalServicePage />} />
 							<Route path='/work/ai-bots' element={<BotsPage />} />
+
 							<Route path='/policy' element={<PolicyPage />} />
+							<Route path='/security' element={<SecurityPage />} />
 						</Routes>
 					</RootLayout>
 				</div>

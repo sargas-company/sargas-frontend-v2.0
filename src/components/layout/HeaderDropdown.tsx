@@ -45,6 +45,11 @@ const menuOptions = [
 		link: '/policy',
 		bold: false,
 	},
+	{
+		title: 'Security',
+		link: '/security',
+		bold: false,
+	},
 ]
 
 const socials = [
