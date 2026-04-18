@@ -54,7 +54,7 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 
 				<div className='flex justify-center'>
 					<div className='flex flex-col flex-wrap items-center gap-2'>
-						<span className='text-[28px] font-semibold leading-none text-black sm:text-[34px] md:text-[38px]'>
+						<span className='text-[28px] leading-none font-semibold text-black sm:text-[34px] md:text-[38px]'>
 							{rate}
 						</span>
 
@@ -82,14 +82,14 @@ const StatCard = ({ data: { title, size, period } }: StatCardProps) => {
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex h-full w-full flex-col items-start justify-between text-[15px]'>
 					<ul className='h-full w-full'>
-						<li className='mb-2 mt-2 text-sm font-semibold text-black/80 md:text-base'>
+						<li className='mt-2 mb-2 text-sm font-semibold text-black/80 md:text-base'>
 							{title}
 						</li>
 
 						<li className='flex items-center'>
 							<span className='pb-5 text-[20px]'>$</span>
 							<span className='mt-1 text-[40px] font-semibold text-black/80'>{size}</span>
-							<span className='pl-1 pt-4'>(size)</span>
+							<span className='pt-4 pl-1'>(size)</span>
 						</li>
 
 						<li>
@@ -132,20 +132,14 @@ const Testimonial: React.FC<TestimonialProps> = ({
 	},
 }) => {
 	return (
-		<div
-			className={[
-				'relative flex flex-col flex-1 gap-5',
-				'items-start',
-				className
-			].join(' ')}
-		>
+		<div className={['relative flex flex-1 flex-col gap-5', 'items-start', className].join(' ')}>
 			<div className='flex'>
 				<p className='max-w-[640px] text-[28px] leading-[1.6] tracking-[-0.03em] text-black'>
 					<BlurTypingText
 						text={quote}
 						initialDelay={initialDelay}
 						wordDelay={0.03}
-						className='text-[28px] xs:text-[24px] leading-[1.6] tracking-[-0.03em]'
+						className='xs:text-[24px] text-[28px] leading-[1.6] tracking-[-0.03em]'
 					/>
 				</p>
 
@@ -161,7 +155,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 			</div>
 
 			<motion.div
-				className='gap-15 mt-6 flex w-full items-center xs:hidden xl:flex'
+				className='xs:hidden mt-6 flex w-full items-center gap-15 xl:flex'
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -172,13 +166,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					delay: initialDelay + 0.2,
 				}}
 			>
-				<StatCardLogo
-					icon={<img
-						src={clutchLogo}
-						alt=''
-						className='w-[100px]'
-					/>}
-					rate='5.0' />
+				<StatCardLogo icon={<img src={clutchLogo} alt='' className='w-[100px]' />} rate='5.0' />
 
 				<StatCard data={cardStat} />
 			</motion.div>
@@ -207,7 +195,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					</div>
 
 					<div className='flex flex-col'>
-						<span className='text-[16px] font-medium leading-tight text-black'>{name}</span>
+						<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
 						<span className='text-[14px] leading-tight text-black/60'>{role}</span>
 					</div>
 				</BenefitCardCustom>
@@ -218,8 +206,8 @@ const Testimonial: React.FC<TestimonialProps> = ({
 
 export const CommentsSectionClutch: React.FC = () => {
 	return (
-		<section className='mt-10 relative w-full sm:flex sm:justify-center'>
-			<div className='relative flex lg:w-full xs:w-full sm:w-fit gap-16'>
+		<section className='relative mt-10 w-full sm:flex sm:justify-center'>
+			<div className='xs:w-full relative flex gap-16 sm:w-fit lg:w-full'>
 				<Testimonial
 					quote="Sargas Agency OÜ has delivered a fully functional web app that is aligned with existing mobile platforms. The team has improved consistency across platforms, enhancing the UX. Sargas Agency OÜ's flexibility and ability to adapt quickly to the client's processes and requirements are impressive."
 					name='Egor Antonyuk'
@@ -236,7 +224,7 @@ export const CommentsSectionClutch: React.FC = () => {
 					name='Priyadarshan Joshi'
 					role='CEO, Upnexo Technologies Private Limited'
 					avatarSrc={avatar1}
-					className='mt-[160px] xs:hidden lg:flex'
+					className='xs:hidden mt-[160px] lg:flex'
 					cardStat={cards[1]}
 					initialDelay={0.4}
 				/>

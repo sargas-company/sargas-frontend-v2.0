@@ -12,15 +12,15 @@ import secondImg from '../../assets/case_studies/recent/sophia/2a.png'
 import thirdImg from '../../assets/case_studies/recent/sophia/3a.png'
 import forthImg from '../../assets/case_studies/recent/sophia/4a.png'
 
-import netlify from "../../assets/tech/netlify-svgrepo-com.svg";
-import javascript from "../../assets/tech/javascript.svg";
-import nodejs from "../../assets/tech/nodejs.svg";
-import nestjs from "../../assets/tech/nestjs.svg";
-import nextJs from "../../assets/tech/nextjs.svg";
-import n8n from "../../assets/tech/n8n.svg";
-import nginx from "../../assets/tech/nginx.svg";
-import reactjs from "../../assets/tech/reactjs.svg";
-import mysql from "../../assets/tech/mysql.svg";
+import netlify from '../../assets/tech/netlify-svgrepo-com.svg'
+import javascript from '../../assets/tech/javascript.svg'
+import nodejs from '../../assets/tech/nodejs.svg'
+import nestjs from '../../assets/tech/nestjs.svg'
+import nextJs from '../../assets/tech/nextjs.svg'
+import n8n from '../../assets/tech/n8n.svg'
+import nginx from '../../assets/tech/nginx.svg'
+import reactjs from '../../assets/tech/reactjs.svg'
+import mysql from '../../assets/tech/mysql.svg'
 
 const project_details = {
 	main: {
@@ -28,7 +28,15 @@ const project_details = {
 		img: Sophia,
 		sections: [
 			{ title: 'Platform', items: ['Web + Admin(i18n)'] },
-			{ title: 'Deliverables', items: ['Website build', 'Admin panel (CMS)', 'i18n / Translations setup', 'Deployment'] },
+			{
+				title: 'Deliverables',
+				items: [
+					'Website build',
+					'Admin panel (CMS)',
+					'i18n / Translations setup',
+					'Deployment',
+				],
+			},
 			{ title: 'Integrations', items: ['Sanity', 'Auth', 'Storage', 'S3 Bucket'] },
 			{ title: 'Team', items: ['1 designer', '1 engineer'] },
 			{ title: 'Timeline', items: ['MVP: 2 weeks'] },
@@ -36,16 +44,16 @@ const project_details = {
 	},
 	details: [
 		{
-			img: firstImg
+			img: firstImg,
 		},
 		{
-			img: thirdImg
+			img: thirdImg,
 		},
 		{
-			img: forthImg
+			img: forthImg,
 		},
 		{
-			img: secondImg
+			img: secondImg,
 		},
 	],
 }
@@ -99,7 +107,7 @@ const technologies = [
 	{
 		src: netlify,
 		alt: 'netlify',
-		width: '50px'
+		width: '50px',
 	},
 	{
 		src: javascript,
@@ -130,7 +138,7 @@ const technologies = [
 		src: nginx,
 		alt: 'nginx',
 		width: '50px',
-	}
+	},
 ]
 
 const benefits = [

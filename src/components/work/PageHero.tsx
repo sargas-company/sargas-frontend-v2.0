@@ -9,9 +9,9 @@ type PageSection = {
 }
 
 type Technology = {
-	src: string,
-	alt: string,
-	width: string,
+	src: string
+	alt: string
+	width: string
 }
 
 type PageHeroProps = {
@@ -51,7 +51,7 @@ export const PageHero = ({
 						{title}
 					</h2>
 
-					<div className='flex gap-1 flex-wrap'>
+					<div className='flex flex-wrap gap-1'>
 						{chips.map((chip, index) => (
 							<span key={index} className='text-md rounded-full bg-white px-4 py-2'>
 								{chip}
@@ -77,11 +77,11 @@ export const PageHero = ({
 					</p>
 				</div>
 
-				<div className='justify-between grid grid-cols-2 sm:flex [&>*:last-child]:mb-5'>
+				<div className='grid grid-cols-2 justify-between sm:flex [&>*:last-child]:mb-5'>
 					{sections.map((item, index) => {
 						return (
-							<div key={index} className='flex flex-col gap-2 mb-10 sm:mb-0'>
-								<h4 className='font-serif text-2xl italic leading-[1.2em] tracking-normal text-black/50'>
+							<div key={index} className='mb-10 flex flex-col gap-2 sm:mb-0'>
+								<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
 									<HeroSectionLetterAnimation
 										initialDelay={1}
 										delayRate={index * 0.15}
@@ -114,7 +114,7 @@ export const PageHero = ({
 				</div>
 
 				<div className='flex flex-col items-start'>
-					<h4 className='font-serif text-2xl italic leading-[1.2em] tracking-normal text-black/50'>
+					<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
 						{['Stack'].map((str, index) => {
 							return (
 								<HeroSectionLetterAnimation
@@ -127,7 +127,7 @@ export const PageHero = ({
 							)
 						})}
 					</h4>
-					<div className='flex flex-row items-center justify-start flex-wrap'>
+					<div className='flex flex-row flex-wrap items-center justify-start'>
 						{technologies.map((item, index) => (
 							<HeroSectionLetterAnimation
 								initialDelay={0.5}

@@ -14,7 +14,7 @@ import './index.css'
 
 import { SmoothScrollProvider } from './components/layout/SmoothScrollProvider'
 import { HashScrollHandler } from './components/layout/HashScrollHandler'
-import {CookieConsentModal} from "./components/layout/CookieConsentModal.tsx";
+import { CookieConsentModal } from './components/layout/CookieConsentModal.tsx'
 function App() {
 	return (
 		<BrowserRouter>
@@ -24,7 +24,7 @@ function App() {
 					<HashScrollHandler />
 					<RouteTransitionOverlay />
 
-					<CookieConsentModal/>
+					<CookieConsentModal />
 
 					<RootLayout>
 						<Routes>

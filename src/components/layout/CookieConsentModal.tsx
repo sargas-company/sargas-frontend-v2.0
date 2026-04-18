@@ -33,13 +33,13 @@ function safeSet(key: string, value: Consent) {
 }
 
 export function CookieConsentModal({
-									   storageKey = DEFAULT_KEY,
-									   title = 'This site uses cookies',
-									   description = `We and selected third parties use cookies (or similar technologies) for technical purposes, to enhance and analyze site usage, to support our marketing efforts, and for other purposes described below.\n\nBy clicking “Accept all”, you agree to the storing of cookies on your device for these purposes.`,
-									   acceptLabel = 'Accept all',
-									   denyLabel = 'Decline',
-									   onDecision,
-								   }: Props) {
+	storageKey = DEFAULT_KEY,
+	title = 'This site uses cookies',
+	description = `We and selected third parties use cookies (or similar technologies) for technical purposes, to enhance and analyze site usage, to support our marketing efforts, and for other purposes described below.\n\nBy clicking “Accept all”, you agree to the storing of cookies on your device for these purposes.`,
+	acceptLabel = 'Accept all',
+	denyLabel = 'Decline',
+	onDecision,
+}: Props) {
 	const [open, setOpen] = useState(false)
 	const [mounted, setMounted] = useState(false)
 
@@ -75,7 +75,7 @@ export function CookieConsentModal({
 				<>
 					{/* overlay */}
 					<motion.div
-						className="fixed inset-0 z-[9998] bg-black/30 backdrop-blur-[2px]"
+						className='fixed inset-0 z-[9998] bg-black/30 backdrop-blur-[2px]'
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
@@ -84,11 +84,11 @@ export function CookieConsentModal({
 
 					{/* modal */}
 					<motion.div
-						role="dialog"
-						aria-modal="true"
-						aria-label="Cookie consent"
+						role='dialog'
+						aria-modal='true'
+						aria-label='Cookie consent'
 						// ⬇️ ПОЗИЦИОНИРОВАНИЕ ОСТАВИЛ КАК БЫЛО У ТЕБЯ
-						className="fixed left-0 bottom-0 z-[9999] w-[92vw] max-w-[680px] -translate-x-[-20px] -translate-y-[20px] rounded-[28px] bg-white p-12 shadow-[0_30px_80px_rgba(0,0,0,0.22)] sm:p-12 sm:py-10"
+						className='fixed bottom-0 left-0 z-[9999] w-[92vw] max-w-[680px] -translate-x-[-20px] -translate-y-[20px] rounded-[28px] bg-white p-12 shadow-[0_30px_80px_rgba(0,0,0,0.22)] sm:p-12 sm:py-10'
 						initial={{ opacity: 0, y: 10, scale: 0.985 }}
 						animate={{ opacity: 1, y: 0, scale: 1 }}
 						exit={{ opacity: 0, y: 10, scale: 0.985 }}
@@ -103,43 +103,43 @@ export function CookieConsentModal({
 						}}
 					>
 						<button
-							type="button"
+							type='button'
 							onClick={() => setOpen(false)}
-							className="absolute right-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full text-black/40 transition hover:bg-black/5 hover:text-black"
-							aria-label="Close"
+							className='absolute top-6 right-6 inline-flex h-10 w-10 items-center justify-center rounded-full text-black/40 transition hover:bg-black/5 hover:text-black'
+							aria-label='Close'
 						>
-							<span className="text-[26px] leading-none">×</span>
+							<span className='text-[26px] leading-none'>×</span>
 						</button>
 
-						<h3 className="text-[34px] font-semibold tracking-[-0.03em] text-black sm:text-[40px]">
+						<h3 className='text-[34px] font-semibold tracking-[-0.03em] text-black sm:text-[40px]'>
 							{title}
 						</h3>
 
-						<div className="mt-5 space-y-5 text-[18px] leading-[1.65] text-black/65">
+						<div className='mt-5 space-y-5 text-[18px] leading-[1.65] text-black/65'>
 							{description.split('\n\n').map((p, i) => (
 								<p key={i}>{p}</p>
 							))}
 						</div>
 
-						<div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6">
+						<div className='mt-10 flex flex-col gap-4 sm:flex-row sm:gap-6'>
 							<button
-								type="button"
+								type='button'
 								onClick={() => decide('denied')}
-								className="h-[56px] w-full cursor-pointer rounded-[18px] border border-black/15 bg-white px-8 text-[18px] font-semibold text-black transition hover:border-black/25 hover:bg-black/[0.02]"
+								className='h-[56px] w-full cursor-pointer rounded-[18px] border border-black/15 bg-white px-8 text-[18px] font-semibold text-black transition hover:border-black/25 hover:bg-black/[0.02]'
 							>
 								{denyLabel}
 							</button>
 
 							<button
-								type="button"
+								type='button'
 								onClick={() => decide('accepted')}
-								className="h-[56px] w-full cursor-pointer rounded-[18px] bg-[#101828] px-8 text-[18px] font-semibold text-white transition hover:bg-black"
+								className='h-[56px] w-full cursor-pointer rounded-[18px] bg-[#101828] px-8 text-[18px] font-semibold text-white transition hover:bg-black'
 							>
 								{acceptLabel}
 							</button>
 						</div>
 
-						<p className="mt-6 text-sm text-black/40">
+						<p className='mt-6 text-sm text-black/40'>
 							You can change your choice anytime in your browser settings.
 						</p>
 					</motion.div>

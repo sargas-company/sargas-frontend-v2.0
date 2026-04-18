@@ -11,17 +11,17 @@ import firstImg from '../../assets/case_studies/recent/bots/1.png'
 import secondImg from '../../assets/case_studies/recent/bots/2.png'
 import thirdImg from '../../assets/case_studies/recent/bots/3.png'
 
-import aws from "../../assets/tech/aws.svg";
-import docker from "../../assets/tech/docker.svg";
-import javascript from "../../assets/tech/javascript.svg";
-import nodejs from "../../assets/tech/nodejs.svg";
-import nestjs from "../../assets/tech/nestjs.svg";
-import nextJs from "../../assets/tech/nextjs.svg";
-import n8n from "../../assets/tech/n8n.svg";
-import nginx from "../../assets/tech/nginx.svg";
-import reactjs from "../../assets/tech/reactjs.svg";
-import postgresql from "../../assets/tech/postgresql.svg";
-import mongo from "../../assets/tech/mongodb.svg";
+import aws from '../../assets/tech/aws.svg'
+import docker from '../../assets/tech/docker.svg'
+import javascript from '../../assets/tech/javascript.svg'
+import nodejs from '../../assets/tech/nodejs.svg'
+import nestjs from '../../assets/tech/nestjs.svg'
+import nextJs from '../../assets/tech/nextjs.svg'
+import n8n from '../../assets/tech/n8n.svg'
+import nginx from '../../assets/tech/nginx.svg'
+import reactjs from '../../assets/tech/reactjs.svg'
+import postgresql from '../../assets/tech/postgresql.svg'
+import mongo from '../../assets/tech/mongodb.svg'
 
 const project_details = {
 	main: {
@@ -29,21 +29,42 @@ const project_details = {
 		img: Ai4u,
 		sections: [
 			{ title: 'Platform', items: ['Web + Admin', 'API / Webhooks'] },
-			{ title: 'Deliverables', items: ['Bot/Agent builder', 'Channel connectors (WA/IG/FB/Web)', 'Live dashboard', 'Knowledge base + routing', 'Billing + access control'] },
-			{ title: 'Integrations', items: ['WhatsApp Business', 'Instagram DM', 'Facebook Messenger', 'Website widget', 'Payments (Israeli PSP)'] },
-			{ title: 'Team', items: ['1 Team Lead', '1 designer', '2 engineers',  '1 AI/automation engineer'] },
+			{
+				title: 'Deliverables',
+				items: [
+					'Bot/Agent builder',
+					'Channel connectors (WA/IG/FB/Web)',
+					'Live dashboard',
+					'Knowledge base + routing',
+					'Billing + access control',
+				],
+			},
+			{
+				title: 'Integrations',
+				items: [
+					'WhatsApp Business',
+					'Instagram DM',
+					'Facebook Messenger',
+					'Website widget',
+					'Payments (Israeli PSP)',
+				],
+			},
+			{
+				title: 'Team',
+				items: ['1 Team Lead', '1 designer', '2 engineers', '1 AI/automation engineer'],
+			},
 			{ title: 'Timeline', items: ['MVP: 6-8 weeks'] },
 		],
 	},
 	details: [
 		{
-			img: firstImg
+			img: firstImg,
 		},
 		{
-			img: secondImg
+			img: secondImg,
 		},
 		{
-			img: thirdImg
+			img: thirdImg,
 		},
 	],
 }
@@ -131,7 +152,7 @@ const technologies = [
 		src: nginx,
 		alt: 'nginx',
 		width: '50px',
-	}
+	},
 ]
 
 const benefits = [

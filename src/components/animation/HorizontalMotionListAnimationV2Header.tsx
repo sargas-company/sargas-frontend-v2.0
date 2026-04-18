@@ -88,14 +88,14 @@ export const HorizontalMotionListAnimationV2Header = () => {
 				>
 					<Link
 						to='https://sargas.io'
-						className='flex h-full flex-shrink-0 items-center justify-center bg-[transparent] px-5 md:px-5 md:pl-[29px] md:pr-[30px]'
+						className='flex h-full flex-shrink-0 items-center justify-center bg-[transparent] px-5 md:px-5 md:pr-[30px] md:pl-[29px]'
 					>
 						<img
 							src='https://sargas.io/logo.png'
 							alt=''
-							className='mr-4 h-auto md:w-9 xs:w-5'
+							className='xs:w-5 mr-4 h-auto md:w-9'
 						/>
-						<strong className='align-middle text-[23px] !font-medium uppercase tracking-[-0.11em] accent-white md:text-[33px] xl:text-[38px]'>
+						<strong className='align-middle text-[23px] !font-medium tracking-[-0.11em] uppercase accent-white md:text-[33px] xl:text-[38px]'>
 							Sargas
 						</strong>
 					</Link>

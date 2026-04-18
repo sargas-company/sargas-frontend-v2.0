@@ -11,16 +11,16 @@ import firstImg from '../../assets/case_studies/recent/local_services/1.png'
 import secondImg from '../../assets/case_studies/recent/local_services/2.png'
 import thirdImg from '../../assets/case_studies/recent/local_services/3.png'
 
-import aws from "../../assets/tech/aws.svg";
-import docker from "../../assets/tech/docker.svg";
-import javascript from "../../assets/tech/javascript.svg";
-import nodejs from "../../assets/tech/nodejs.svg";
-import nestjs from "../../assets/tech/nestjs.svg";
-import n8n from "../../assets/tech/n8n.svg";
-import nginx from "../../assets/tech/nginx.svg";
-import reactjs from "../../assets/tech/reactjs.svg";
-import postgresql from "../../assets/tech/postgresql.svg";
-import mongo from "../../assets/tech/mongodb.svg";
+import aws from '../../assets/tech/aws.svg'
+import docker from '../../assets/tech/docker.svg'
+import javascript from '../../assets/tech/javascript.svg'
+import nodejs from '../../assets/tech/nodejs.svg'
+import nestjs from '../../assets/tech/nestjs.svg'
+import n8n from '../../assets/tech/n8n.svg'
+import nginx from '../../assets/tech/nginx.svg'
+import reactjs from '../../assets/tech/reactjs.svg'
+import postgresql from '../../assets/tech/postgresql.svg'
+import mongo from '../../assets/tech/mongodb.svg'
 
 const project_details = {
 	main: {
@@ -28,13 +28,16 @@ const project_details = {
 		img: Services,
 		sections: [
 			{ title: 'Platform', items: ['Mobile App (React Native)', 'Admin Panel (Backoffice)'] },
-			{ title: 'Deliverables', items: [
+			{
+				title: 'Deliverables',
+				items: [
 					'Mobile app',
 					'Admin panel',
 					'Staff management',
 					'Booking flow',
-					'Release + handover'
-				] },
+					'Release + handover',
+				],
+			},
 			{ title: 'Integrations', items: ['Maps', 'Push notifications', 'Payments', 'Storage'] },
 			{ title: 'Team', items: ['1 designer', '2 engineers'] },
 			{ title: 'Timeline', items: ['MVP: 6-8 weeks'] },
@@ -42,13 +45,13 @@ const project_details = {
 	},
 	details: [
 		{
-			img: firstImg
+			img: firstImg,
 		},
 		{
-			img: secondImg
+			img: secondImg,
 		},
 		{
-			img: thirdImg
+			img: thirdImg,
 		},
 	],
 }
@@ -134,7 +137,7 @@ const technologies = [
 		src: aws,
 		alt: 'aws',
 		width: '50px',
-	}
+	},
 ]
 
 const benefits = [

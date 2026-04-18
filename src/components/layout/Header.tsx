@@ -21,7 +21,7 @@ export const Header = () => {
 
 	return (
 		<motion.header
-			className='xl:px-30 absolute left-0 top-0 z-20 h-20 w-full px-6 md:px-12'
+			className='absolute top-0 left-0 z-20 h-20 w-full px-6 md:px-12 xl:px-30'
 			initial={{ opacity: 0, y: -50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{
@@ -35,7 +35,7 @@ export const Header = () => {
 				{isHome ? (
 					<Link
 						to='/'
-						className='mt-5 md:mt-20 flex rounded-[22px] px-6 py-2.5 align-middle text-black'
+						className='mt-5 flex rounded-[22px] px-6 py-2.5 align-middle text-black md:mt-20'
 					>
 						<HorizontalMotionListAnimationV2Header />
 					</Link>

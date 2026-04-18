@@ -16,7 +16,7 @@ export const HeadingWithScribble: React.FC<HeadingWithScribbleProps> = ({
 		<h2
 			className={[
 				'flex flex-wrap items-end gap-1',
-				'text-[26px] font-semibold leading-[1.1] md:text-[36px]',
+				'text-[26px] leading-[1.1] font-semibold md:text-[36px]',
 				'text-black',
 				className,
 			]
@@ -27,7 +27,7 @@ export const HeadingWithScribble: React.FC<HeadingWithScribbleProps> = ({
 
 			<span className='relative inline-block text-black/60'>
 				{highlight}
-				<span className='pointer-events-none absolute bottom-[-0.25em] left-0 right-0'>
+				<span className='pointer-events-none absolute right-0 bottom-[-0.25em] left-0'>
 					<AnimatedScribbleUnderline className='h-[13px] w-full text-black/40' />
 				</span>
 			</span>
