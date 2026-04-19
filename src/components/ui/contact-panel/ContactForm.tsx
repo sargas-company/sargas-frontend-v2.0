@@ -82,9 +82,9 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 				method: 'POST',
 				body: formData,
 
-				baseURL: '',   //  process.env.NEXT_PUBLIC_API_URL
+				baseURL: '', //  process.env.NEXT_PUBLIC_API_URL
 				headers: {
-					'Content-Type': 'application/json'
+					'Content-Type': 'application/json',
 				},
 			})
 

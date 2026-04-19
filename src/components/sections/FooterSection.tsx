@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { Background } from '../layout/Background'
+import usImg from '../../assets/us_timezone.png'
 import noiseImage from '../../assets/noise.webp'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { IconAt } from '../ui/icons/IconAt.tsx'
@@ -39,7 +40,6 @@ const socialLinks: SocialLink[] = [
 	},
 ]
 
-// ✅ iPhone/jank fix: use visualViewport height + rAF + small debounce
 const useViewportHeight = () => {
 	const [height, setHeight] = useState<number | null>(null)
 
@@ -128,7 +128,7 @@ export const FooterSection = () => {
 					style={{
 						y: contentY,
 						opacity: contentOpacity,
-						translateZ: 0, // ✅ keep GPU path on iOS
+						translateZ: 0,
 					}}
 					className='relative flex min-h-[60vh] flex-col px-6 py-12 text-center will-change-transform md:min-h-[85vh] md:px-16 md:py-16'
 				>
@@ -161,6 +161,7 @@ export const FooterSection = () => {
 							title='	Book a free intro call'
 							href='https://calendly.com/contact-sargas/60-minute-meeting'
 							icon={<ArrowRightIcon />}
+							setOpen={() => {}}
 							withOutline
 						/>
 					</div>
@@ -169,7 +170,7 @@ export const FooterSection = () => {
 				<div className='relative z-10 mt-45 flex flex-col items-center justify-between gap-5 pt-2 pb-10 md:mt-0 md:flex-row md:px-35'>
 					<div className='flex flex-col items-center gap-1 text-sm text-white/70 md:gap-3.5'>
 						<span className='h-[0.5px] w-full bg-white' />
-						<span className='px-4 whitespace-nowrap text-white'>© Sargas Agency, 2025</span>
+						<span className='px-4 whitespace-nowrap text-white'>© Sargas Agency, 2026</span>
 						<span className='h-[0.5px] w-full bg-white' />
 					</div>
 

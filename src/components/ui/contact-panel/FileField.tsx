@@ -6,11 +6,15 @@ export function FileField() {
 	const files = useContactFilesStore((s) => s.files)
 	const addFiles = useContactFilesStore((s) => s.addFiles)
 	const removeFile = useContactFilesStore((s) => s.removeFile)
+	const error = useContactFilesStore((s) => s.error)
+	const clearError = useContactFilesStore((s) => s.clearError)
+	const totalSize = useContactFilesStore((s) => s.totalSize)
 
 	const handleFilesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const nextFiles = Array.from(e.target.files || [])
 		if (!nextFiles.length) return
 
+		clearError()
 		addFiles(nextFiles)
 		e.target.value = ''
 	}
@@ -30,11 +34,18 @@ export function FileField() {
 					</div>
 				</div>
 
+				<div className='mt-2 flex items-center justify-between px-1 text-[13px] text-white/40'>
+					<span className='mr-2'>{files.length}/20 files</span>
+					<span>{(totalSize() / 1024 / 1024).toFixed(1)} / 100 MB</span>
+				</div>
+
 				<div className='inline-flex h-[42px] items-center rounded-full border border-white/12 bg-white/[0.05] px-4 text-[14px] text-white'>
 					Choose files
 				</div>
 
 				<input type='file' multiple onChange={handleFilesChange} className='hidden' />
+
+				{error && <div className='mt-2 px-2 text-[13px] text-[#ff9c85]'>{error}</div>}
 			</label>
 
 			<AnimatePresence>
