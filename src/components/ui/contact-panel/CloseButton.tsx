@@ -15,7 +15,7 @@ const closeButtonVariants = {
 		transition: {
 			duration: 0.4,
 			delay: 0.12,
-			ease: [0.22, 1, 0.36, 1],
+			ease: [0.22, 1, 0.36, 1] as const,
 		},
 	},
 	exit: {
@@ -25,7 +25,7 @@ const closeButtonVariants = {
 		rotate: 90,
 		transition: {
 			duration: 0.2,
-			ease: [0.4, 0, 1, 1],
+			ease: [0.4, 0, 1, 1] as const,
 		},
 	},
 }

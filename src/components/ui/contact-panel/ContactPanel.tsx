@@ -20,7 +20,7 @@ const overlayVariants = {
 			backdropFilter: {
 				duration: 0.35,
 				delay: 0.12,
-				ease: [0.22, 1, 0.36, 1],
+				ease: [0.22, 1, 0.36, 1] as const,
 			},
 		},
 	},
@@ -38,7 +38,7 @@ const panelVariants = {
 		scale: 1,
 		transition: {
 			duration: 0.55,
-			ease: [0.22, 1, 0.36, 1],
+			ease: [0.22, 1, 0.36, 1] as const,
 		},
 	},
 	exit: {
@@ -47,7 +47,7 @@ const panelVariants = {
 		scale: 0.99,
 		transition: {
 			duration: 0.3,
-			ease: [0.4, 0, 1, 1],
+			ease: [0.4, 0, 1, 1] as const,
 		},
 	},
 }

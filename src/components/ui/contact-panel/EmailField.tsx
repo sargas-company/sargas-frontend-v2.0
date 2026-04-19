@@ -8,6 +8,7 @@ const isValidEmail = (email: string) => {
 type EmailFieldProps = {
 	value: string
 	onChange: (value: string) => void
+	showError?: boolean
 }
 
 export function EmailField({ value, onChange }: EmailFieldProps) {
