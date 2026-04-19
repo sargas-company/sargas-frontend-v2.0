@@ -1,6 +1,5 @@
 import { VerticalMotionListAnimation } from '../animation/VerticalMotionListAnimation'
 import { HorizontalMotionListAnimation } from '../animation/HorizontalMotionListAnimation'
-import { HeroSectionButton } from '../ui/HeroSectionButton'
 import { motion } from 'framer-motion'
 import { HeroSectionLetterAnimation } from '../animation/HeroSectionLetterAnimation'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon'
@@ -8,6 +7,7 @@ import UpIcon from '../../assets/UpworkIcon.webp'
 import { ClutchIcon } from '../ui/icons/ClutchIcon.tsx'
 import { Link } from 'react-router-dom'
 import { NeonFrame } from '../animation/NeonFrame.tsx'
+import {QuoteSectionButton} from "../ui/QuoteSectionButton.tsx";
 
 export const HeroSection = ({ setOpen }) => {
 	return (
@@ -145,7 +145,7 @@ export const HeroSection = ({ setOpen }) => {
 					className='flex flex-wrap justify-center gap-4 rounded-[32px]'
 				>
 					<NeonFrame>
-						<HeroSectionButton
+						<QuoteSectionButton
 							title='Tell us about your project'
 							icon={<ArrowRightIcon />}
 							setOpen={setOpen}
