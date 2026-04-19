@@ -45,7 +45,7 @@ export const useContactFilesStore = create<ContactFilesState>((set, get) => ({
 		})
 	},
 
-	addFiles: (incomingFiles) => {
+	addFiles: (incomingFiles: File[]) => {
 		const currentFiles = get().files
 
 		const mergedFiles = [...currentFiles, ...incomingFiles].filter(
