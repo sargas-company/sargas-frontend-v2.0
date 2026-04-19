@@ -1,10 +1,10 @@
-import type { MouseEventHandler, ReactNode } from 'react'
+import type { Dispatch, SetStateAction, ReactNode } from 'react'
 
 
 type HeroSectionButtonProps = {
 	title: string
 	icon: ReactNode
-	setOpen: MouseEventHandler<HTMLDivElement>
+	setOpen: Dispatch<SetStateAction<boolean>>
 	withOutline?: boolean
 	target?: string
 	fullWidth?: boolean
