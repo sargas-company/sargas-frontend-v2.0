@@ -1,10 +1,10 @@
-import type { Dispatch, SetStateAction, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 
 type HeroSectionButtonProps = {
 	title: string
 	icon: ReactNode
-	setOpen: Dispatch<SetStateAction<boolean>>
+	setOpen: any
 	withOutline?: boolean
 	target?: string
 	fullWidth?: boolean
