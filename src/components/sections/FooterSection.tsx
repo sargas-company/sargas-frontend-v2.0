@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { Background } from '../layout/Background'
-import usImg from '../../assets/us_timezone.png'
 import noiseImage from '../../assets/noise.webp'
 import { SectionTitle } from '../ui/SectionTitle.tsx'
 import { IconAt } from '../ui/icons/IconAt.tsx'
@@ -161,7 +160,6 @@ export const FooterSection = () => {
 							title='	Book a free intro call'
 							href='https://calendly.com/contact-sargas/60-minute-meeting'
 							icon={<ArrowRightIcon />}
-							setOpen={() => {}}
 							withOutline
 						/>
 					</div>

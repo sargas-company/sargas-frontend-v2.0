@@ -23,9 +23,7 @@ const initialForm: FormState = {
 	message: '',
 }
 
-export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
-	const [files, setFiles] = useState<File[]>([])
-
+export function ContactForm({ onBookCall }: ContactFormProps) {
 	const [form, setForm] = useState<FormState>(initialForm)
 	const [submitAttempted, setSubmitAttempted] = useState(false)
 	const [selectedServices, setSelectedServices] = useState<string[]>([
@@ -82,7 +80,6 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 				method: 'POST',
 				body: formData,
 
-				baseURL: '', //  process.env.NEXT_PUBLIC_API_URL
 				headers: {
 					'Content-Type': 'application/json',
 				},

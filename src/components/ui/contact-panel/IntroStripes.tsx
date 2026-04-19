@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import React from 'react'
 
 export const IntroStripes = () => {
 	const ease = [0.22, 0.01, 0.86, 1] as const
