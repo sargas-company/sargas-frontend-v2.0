@@ -105,7 +105,7 @@ export function CookieConsentModal({
 						<button
 							type='button'
 							onClick={() => setOpen(false)}
-							className='absolute right-6 top-6 inline-flex h-10 w-10 items-center justify-center rounded-full text-black/40 transition hover:bg-black/5 hover:text-black'
+							className='absolute top-6 right-6 inline-flex h-10 w-10 items-center justify-center rounded-full text-black/40 transition hover:bg-black/5 hover:text-black'
 							aria-label='Close'
 						>
 							<span className='text-[26px] leading-none'>×</span>

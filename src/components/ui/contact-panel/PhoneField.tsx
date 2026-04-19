@@ -119,7 +119,7 @@ export function PhoneField({ value, onChange, country, onCountryChange }: PhoneF
 							animate={{ opacity: 1, y: 0, scale: 1 }}
 							exit={{ opacity: 0, y: 8, scale: 0.98 }}
 							transition={{ duration: 0.18 }}
-							className='absolute left-0 top-[72px] z-[90] min-w-[260px] overflow-hidden rounded-[20px] border border-white/10 bg-[#111214] shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl'
+							className='absolute top-[72px] left-0 z-[90] min-w-[260px] overflow-hidden rounded-[20px] border border-white/10 bg-[#111214] shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl'
 						>
 							<div className='max-h-[260px] overflow-y-auto p-2'>
 								{countries.map((item) => {

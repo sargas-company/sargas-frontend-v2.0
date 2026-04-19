@@ -83,7 +83,7 @@ export default function ContactPanel({ open, setOpen, onBookCall, onSubmit }: Co
 						initial='hidden'
 						animate='visible'
 						exit='exit'
-						className='absolute inset-x-3 bottom-3 top-3 z-40 rounded-[28px] backdrop-blur-3xl md:inset-x-auto md:bottom-auto md:right-6 md:top-6 md:h-[1200px] md:w-[820px] md:rounded-[34px]'
+						className='absolute inset-x-3 top-3 bottom-3 z-40 rounded-[28px] backdrop-blur-3xl md:inset-x-auto md:top-6 md:right-6 md:bottom-auto md:h-[1200px] md:w-[820px] md:rounded-[34px]'
 					>
 						{showIntroStripes && <IntroStripes />}
 

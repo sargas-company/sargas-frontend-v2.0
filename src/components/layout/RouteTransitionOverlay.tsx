@@ -64,7 +64,7 @@ export const RouteTransitionOverlay = () => {
 							}}
 						/>
 					</motion.div>
-					<div className='from-white/8 via-white/12 to-white/8 absolute inset-0 bg-gradient-to-br backdrop-blur-[1px]' />
+					<div className='absolute inset-0 bg-gradient-to-br from-white/8 via-white/12 to-white/8 backdrop-blur-[1px]' />
 				</div>
 			)}
 		</AnimatePresence>

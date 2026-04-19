@@ -30,7 +30,7 @@ export function EmailField({ value, onChange }: EmailFieldProps) {
 					value={value}
 					onBlur={() => setTouched(true)}
 					onChange={(e) => onChange(e.target.value)}
-					className={`h-[64px] w-full rounded-full bg-white/[0.05] px-7 pr-14 text-[16px] text-white outline-none transition placeholder:text-white/40 ${
+					className={`h-[64px] w-full rounded-full bg-white/[0.05] px-7 pr-14 text-[16px] text-white transition outline-none placeholder:text-white/40 ${
 						emailError
 							? 'border border-[#ff7a59]/70'
 							: 'border border-white/10 focus:border-white/20'
@@ -44,7 +44,7 @@ export function EmailField({ value, onChange }: EmailFieldProps) {
 							animate={{ opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }}
 							exit={{ opacity: 0, scale: 0.72, x: 8, filter: 'blur(6px)' }}
 							transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-							className='absolute right-4 top-1/2 -translate-y-1/2'
+							className='absolute top-1/2 right-4 -translate-y-1/2'
 						>
 							<div className='flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.06]'>
 								<span className='text-[11px] text-white'>✓</span>

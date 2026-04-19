@@ -197,12 +197,12 @@ export const PricingSection = () => {
 
 	return (
 		<div
-			className='md:pb-27 lg:pb-35 xl:gap-15 xl:pb-50 flex flex-col gap-6 pb-20 md:gap-9 xl:pb-[160px]'
+			className='flex flex-col gap-6 pb-20 md:gap-9 md:pb-27 lg:pb-35 xl:gap-15 xl:pb-50 xl:pb-[160px]'
 			id='pricing'
 		>
 			<div className='flex flex-col items-center gap-2.5'>
 				<SectionTitle title='Pricing' />
-				<h2 className='whitespace-pre-wrap break-words text-[28px] leading-[1.4] tracking-[-0.04em] md:text-[48px]'>
+				<h2 className='text-[28px] leading-[1.4] tracking-[-0.04em] break-words whitespace-pre-wrap md:text-[48px]'>
 					Fixed Price / Retainer
 				</h2>
 			</div>
@@ -239,7 +239,7 @@ export const PricingSection = () => {
 										damping: 30,
 										mass: 0.4,
 									}}
-									className='absolute left-[2px] top-1/2 h-5 w-5 -translate-y-1/2 rounded-full bg-white shadow-[0_4px_8px_rgba(0,0,0,0.2)]'
+									className='absolute top-1/2 left-[2px] h-5 w-5 -translate-y-1/2 rounded-full bg-white shadow-[0_4px_8px_rgba(0,0,0,0.2)]'
 								/>
 							</button>
 
@@ -410,7 +410,7 @@ export const PricingSection = () => {
 					</div>
 				</div>
 
-				<div className='xl:p-15 flex h-min min-w-[248px] flex-1 rotate-1 flex-col items-center justify-center gap-6 rounded-xl bg-white/75 p-6 md:p-9'>
+				<div className='flex h-min min-w-[248px] flex-1 rotate-1 flex-col items-center justify-center gap-6 rounded-xl bg-white/75 p-6 md:p-9 xl:p-15'>
 					<div className='flex w-full flex-col gap-9'>
 						<h4 className='text-lg leading-[1.6em] tracking-[-0.02em] md:text-xl xl:text-2xl'>
 							<strong>What&apos;s included</strong>
@@ -504,7 +504,7 @@ export const PricingSection = () => {
 					return (
 						<div key={index} className='flex items-center gap-2'>
 							<item.icon />
-							<span className='tracking-0 whitespace-nowrap leading-[1.7em] text-black/50'>
+							<span className='tracking-0 leading-[1.7em] whitespace-nowrap text-black/50'>
 								{item.title}
 							</span>
 							<div className='relative h-px w-full bg-black/10'></div>

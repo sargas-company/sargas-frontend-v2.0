@@ -45,7 +45,7 @@ export function TextField({
 					onBlur={() => setTouched(true)}
 					type={type}
 					placeholder={placeholder}
-					className={`h-[64px] w-full rounded-full bg-white/[0.05] px-7 pr-16 text-[16px] text-white outline-none transition placeholder:text-white/40 ${
+					className={`h-[64px] w-full rounded-full bg-white/[0.05] px-7 pr-16 text-[16px] text-white transition outline-none placeholder:text-white/40 ${
 						hasRequiredError
 							? 'border border-[#ff7a59]/70'
 							: 'border border-white/10 focus:border-white/20 focus:bg-white/[0.07]'
@@ -59,7 +59,7 @@ export function TextField({
 							animate={{ opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }}
 							exit={{ opacity: 0, scale: 0.72, x: 8, filter: 'blur(6px)' }}
 							transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-							className='absolute right-4 top-1/2 -translate-y-1/2'
+							className='absolute top-1/2 right-4 -translate-y-1/2'
 						>
 							<div className='flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] shadow-[0_0_0_1px_rgba(255,255,255,0.02)]'>
 								<motion.span

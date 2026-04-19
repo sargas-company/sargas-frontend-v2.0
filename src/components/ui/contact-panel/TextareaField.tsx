@@ -23,7 +23,7 @@ export function TextareaField({ label, value, onChange, placeholder }: TextareaF
 					value={value}
 					onChange={(e) => onChange(e.target.value)}
 					placeholder={placeholder}
-					className='min-h-[130px] w-full resize-none rounded-[26px] border border-white/10 bg-white/[0.05] px-6 py-5 pr-16 text-[16px] text-white outline-none transition placeholder:text-white/40 focus:border-white/20 focus:bg-white/[0.07]'
+					className='min-h-[130px] w-full resize-none rounded-[26px] border border-white/10 bg-white/[0.05] px-6 py-5 pr-16 text-[16px] text-white transition outline-none placeholder:text-white/40 focus:border-white/20 focus:bg-white/[0.07]'
 				/>
 
 				<AnimatePresence>
@@ -33,7 +33,7 @@ export function TextareaField({ label, value, onChange, placeholder }: TextareaF
 							animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
 							exit={{ opacity: 0, scale: 0.72, y: 6, filter: 'blur(6px)' }}
 							transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-							className='absolute bottom-4 right-4'
+							className='absolute right-4 bottom-4'
 						>
 							<div className='flex h-7 w-7 items-center justify-center rounded-full border border-white/10 bg-white/[0.05]'>
 								<span className='text-[11px] text-white'>✓</span>

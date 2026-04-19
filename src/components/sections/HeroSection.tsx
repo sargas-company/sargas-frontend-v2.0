@@ -15,13 +15,13 @@ type HeroSectionProps = {
 
 export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 	return (
-		<div className='flex flex-col gap-6 pb-8 pt-[130px] md:gap-7 md:pb-14 md:pt-[180px] xl:gap-12 xl:pb-[118px]'>
+		<div className='flex flex-col gap-6 pt-[130px] pb-8 md:gap-7 md:pt-[180px] md:pb-14 xl:gap-12 xl:pb-[118px]'>
 			<div className='flex flex-col items-center gap-9'>
 				<div className='flex h-min max-w-none flex-none flex-wrap items-center justify-center gap-1.5 md:max-w-[718px] md:gap-2 xl:max-w-[980px]'>
 					<div>
 						<h1>
 							<strong>
-								<span className='text-[54px] !font-medium leading-[1.25em] tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] leading-[1.25em] !font-medium tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'AI-ready'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
@@ -45,7 +45,7 @@ export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 						<h1>
 							<strong>
 								<span className='h-full px-1.5 md:px-2 xl:px-2.5' />
-								<span className='text-[54px] font-normal leading-[1.25em] tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] leading-[1.25em] font-normal tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'platforms'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
@@ -64,7 +64,7 @@ export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 					<div>
 						<h1>
 							<strong>
-								<span className='text-[54px] font-normal leading-[1.25em] tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] leading-[1.25em] font-normal tracking-[-0.06em] text-[rgba(0,0,0,0.5)] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'for \u00A0 B2B'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
@@ -88,7 +88,7 @@ export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 						<h1>
 							<strong>
 								<span className='h-full px-1.5 md:px-2 xl:px-2.5' />
-								<span className='text-[54px] !font-medium leading-[1.25em] tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
+								<span className='text-[54px] leading-[1.25em] !font-medium tracking-[-0.06em] md:text-[80px] md:leading-[1.15em] xl:text-[108px]'>
 									{'Teams'.split('').map((letter, index) => {
 										return (
 											<HeroSectionLetterAnimation
@@ -115,7 +115,7 @@ export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 						delay: 1.5,
 					}}
 				>
-					<p className='max-w-[500px] text-balance text-center leading-[1.7] tracking-[0em] text-black/50'>
+					<p className='max-w-[500px] text-center leading-[1.7] tracking-[0em] text-balance text-black/50'>
 						We engineer AI-ready products for B2B teams and startups: SaaS, marketplaces,
 						internal systems, integrations and automation
 					</p>
@@ -187,7 +187,7 @@ export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 								to='https://clutch.co/profile/sargas-agency-o'
 								target='_blank'
 								rel='noreferrer'
-								className={`flex h-full w-full min-w-[90px] items-center gap-2 whitespace-nowrap rounded-full px-6 py-[15px]`}
+								className={`flex h-full w-full min-w-[90px] items-center gap-2 rounded-full px-6 py-[15px] whitespace-nowrap`}
 								style={{
 									backgroundColor: 'white',
 									boxShadow:
@@ -226,7 +226,7 @@ export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 								to='https://www.upwork.com/agencies/1772989322229334016'
 								target='_blank'
 								rel='noreferrer'
-								className={`flex h-full w-full items-center gap-2 whitespace-nowrap rounded-full bg-white p-1 px-7 py-3`}
+								className={`flex h-full w-full items-center gap-2 rounded-full bg-white p-1 px-7 py-3 whitespace-nowrap`}
 								style={{
 									boxShadow:
 										'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',

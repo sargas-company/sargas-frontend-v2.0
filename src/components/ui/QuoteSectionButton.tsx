@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 
-
 type HeroSectionButtonProps = {
 	title: string
 	icon: ReactNode

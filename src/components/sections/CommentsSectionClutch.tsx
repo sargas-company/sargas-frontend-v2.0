@@ -54,7 +54,7 @@ const StatCardLogo = ({ icon, rate }: StatCardPropsLogo) => {
 
 				<div className='flex justify-center'>
 					<div className='flex flex-col flex-wrap items-center gap-2'>
-						<span className='text-[28px] font-semibold leading-none text-black sm:text-[34px] md:text-[38px]'>
+						<span className='text-[28px] leading-none font-semibold text-black sm:text-[34px] md:text-[38px]'>
 							{rate}
 						</span>
 
@@ -82,14 +82,14 @@ const StatCard = ({ data: { title, size, period } }: StatCardProps) => {
 			<div className='flex h-full w-full flex-col items-center justify-center gap-3'>
 				<div className='flex h-full w-full flex-col items-start justify-between text-[15px]'>
 					<ul className='h-full w-full'>
-						<li className='mb-2 mt-2 text-sm font-semibold text-black/80 md:text-base'>
+						<li className='mt-2 mb-2 text-sm font-semibold text-black/80 md:text-base'>
 							{title}
 						</li>
 
 						<li className='flex items-center'>
 							<span className='pb-5 text-[20px]'>$</span>
 							<span className='mt-1 text-[40px] font-semibold text-black/80'>{size}</span>
-							<span className='pl-1 pt-4'>(size)</span>
+							<span className='pt-4 pl-1'>(size)</span>
 						</li>
 
 						<li>
@@ -155,7 +155,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 			</div>
 
 			<motion.div
-				className='xs:hidden gap-15 mt-6 flex w-full items-center xl:flex'
+				className='xs:hidden mt-6 flex w-full items-center gap-15 xl:flex'
 				initial={{ opacity: 0, y: -20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.5 }}
@@ -195,7 +195,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
 					</div>
 
 					<div className='flex flex-col'>
-						<span className='text-[16px] font-medium leading-tight text-black'>{name}</span>
+						<span className='text-[16px] leading-tight font-medium text-black'>{name}</span>
 						<span className='text-[14px] leading-tight text-black/60'>{role}</span>
 					</div>
 				</BenefitCardCustom>

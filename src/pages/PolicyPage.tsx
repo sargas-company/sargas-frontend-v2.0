@@ -26,10 +26,10 @@ export const PolicyPage = () => {
 					className='h-full w-full'
 				>
 					<header className='mb-5 border-b border-black/10 pb-4'>
-						<h1 className='text-balance text-[44px] font-semibold tracking-[-0.04em] text-black sm:text-[56px]'>
+						<h1 className='text-[44px] font-semibold tracking-[-0.04em] text-balance text-black sm:text-[56px]'>
 							Privacy Policy
 						</h1>
-						<p className='mt-3 whitespace-nowrap font-serif text-2xl italic leading-relaxed tracking-normal text-black/55'>
+						<p className='mt-3 font-serif text-2xl leading-relaxed tracking-normal whitespace-nowrap text-black/55 italic'>
 							Last updated: {lastUpdated}
 						</p>
 					</header>

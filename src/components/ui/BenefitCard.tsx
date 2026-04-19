@@ -22,7 +22,7 @@ export const BenefitCard = ({ title, link, img }: BenefitCardProps) => {
 	const handleMouseMove = (e: MouseEvent<HTMLAnchorElement>) => {
 		if (!cardRef.current) return
 
-		const rect = cardRef.current.getBoundingClientRect()
+		const rect = cardRef.current?.getBoundingClientRect()
 
 		const cursorX = e.clientX - rect.left
 		const cursorY = e.clientY - rect.top
@@ -49,18 +49,13 @@ export const BenefitCard = ({ title, link, img }: BenefitCardProps) => {
 				<img
 					src={img}
 					alt={title}
-					className='duration-750 h-full w-full object-cover transition-transform ease-in-out group-hover:scale-105'
+					className='h-full w-full object-cover transition-transform duration-750 ease-in-out group-hover:scale-105'
 				/>
 			</div>
 
 			<div className='flex flex-nowrap items-center justify-between'>
 				<h4 className='text-lg text-black/50 md:text-xl'>{title}</h4>
 				<div className='flex gap-1'>
-					{/*{chips.map((chip, index) => (*/}
-					{/*	<span key={index} className='rounded-full bg-white px-3 py-1 text-xs'>*/}
-					{/*		{chip}*/}
-					{/*	</span>*/}
-					{/*))}*/}
 				</div>
 			</div>
 

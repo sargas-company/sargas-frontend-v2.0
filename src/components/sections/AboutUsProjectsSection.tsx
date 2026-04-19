@@ -41,7 +41,7 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 
 				<div className='flex w-full flex-col'>
 					<div className='flex flex-wrap items-center gap-2'>
-						<span className='text-[28px] font-semibold leading-none text-black sm:text-[34px] md:text-[38px]'>
+						<span className='text-[28px] leading-none font-semibold text-black sm:text-[34px] md:text-[38px]'>
 							{rate}
 						</span>
 
@@ -65,7 +65,7 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 						)}
 					</div>
 
-					<span className='mt-1 break-words text-sm font-semibold leading-snug text-black/60 sm:text-base'>
+					<span className='mt-1 text-sm leading-snug font-semibold break-words text-black/60 sm:text-base'>
 						{description}
 					</span>
 				</div>
@@ -76,7 +76,7 @@ const StatCard = ({ icon, rate, description, id }: StatCardProps) => {
 
 export const AboutUsProjectsSection = () => {
 	return (
-		<section className='md:pb-27 lg:pb-35 xl:pb-50 w-full pb-20' id='about'>
+		<section className='w-full pb-20 md:pb-27 lg:pb-35 xl:pb-50' id='about'>
 			<div className='mx-auto flex flex-col gap-8 md:gap-12'>
 				<motion.div
 					initial={{ opacity: 0, y: 24 }}
@@ -104,7 +104,7 @@ export const AboutUsProjectsSection = () => {
 										<motion.div
 											whileHover={{ y: -15, x: -30, rotate: -3 }}
 											transition={{ duration: 0.4, ease: 'easeOut' }}
-											className='absolute left-[6%] top-[4%] h-[82%] w-[82%] rotate-[-6deg] overflow-clip rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:rounded-[18px]'
+											className='absolute top-[4%] left-[6%] h-[82%] w-[82%] rotate-[-6deg] overflow-clip rounded-[14px] shadow-[0_18px_40px_rgba(0,0,0,0.35)] sm:rounded-[18px]'
 											style={{ willChange: 'transform' }}
 										>
 											<img
@@ -116,7 +116,7 @@ export const AboutUsProjectsSection = () => {
 										<motion.div
 											whileHover={{ y: -39, x: 12, rotate: 6 }}
 											transition={{ duration: 0.4, ease: 'easeOut' }}
-											className='absolute left-[38%] top-[44%] h-[62%] w-[70%] rotate-[5deg] overflow-clip rounded-[12px] sm:rounded-[16px]'
+											className='absolute top-[44%] left-[38%] h-[62%] w-[70%] rotate-[5deg] overflow-clip rounded-[12px] sm:rounded-[16px]'
 											style={{ willChange: 'transform' }}
 										>
 											<img
@@ -129,7 +129,7 @@ export const AboutUsProjectsSection = () => {
 								</div>
 
 								<div className='relative text-left text-white'>
-									<p className='text-4xl font-semibold leading-[1.05] md:text-5xl'>
+									<p className='text-4xl leading-[1.05] font-semibold md:text-5xl'>
 										7<span className='align-super text-2xl font-semibold'>+</span> years
 									</p>
 									<p className='mt-2 text-sm text-white/70 md:text-base'>
@@ -163,7 +163,7 @@ export const AboutUsProjectsSection = () => {
 										</div>
 
 										<div className='mt-4 flex flex-col'>
-											<span className='text-[34px] font-semibold leading-none text-black md:text-[38px]'>
+											<span className='text-[34px] leading-none font-semibold text-black md:text-[38px]'>
 												8/10
 											</span>
 											<span className='mt-1 text-sm font-semibold text-black/60 md:text-base'>
@@ -178,7 +178,7 @@ export const AboutUsProjectsSection = () => {
 											transition={{ duration: 0.35, ease: 'easeOut' }}
 											src={project_3}
 											alt='Showcase B'
-											className='absolute right-2 top-6 w-[70%] max-w-[240px] rotate-[4deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.15)]'
+											className='absolute top-6 right-2 w-[70%] max-w-[240px] rotate-[4deg] rounded-[18px] object-cover shadow-[0_18px_40px_rgba(0,0,0,0.15)]'
 											style={{ willChange: 'transform' }}
 										/>
 

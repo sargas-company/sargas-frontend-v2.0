@@ -106,7 +106,7 @@ export const VerticalMotionListAnimation = () => {
 							<img
 								src={src}
 								alt=''
-								className='h-full w-full select-none object-cover'
+								className='h-full w-full object-cover select-none'
 								draggable={false}
 								onDragStart={(e) => e.preventDefault()}
 							/>
