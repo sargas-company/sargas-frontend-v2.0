@@ -50,7 +50,7 @@ export const CloseButton = ({ handle }: CloseButtonProps) => {
 			whileTap={{
 				scale: 0.94,
 			}}
-			onClick={handle}
+			onClick={() => handle(false)}
 			className='h-13 w-13 absolute right-10 top-10 z-50 flex cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 backdrop-blur-xl transition-colors hover:bg-white/10 hover:text-white'
 		>
 			<span className='relative block h-9 w-9'>
