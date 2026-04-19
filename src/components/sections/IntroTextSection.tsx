@@ -241,10 +241,10 @@ export const IntroTextSection = () => {
 					mask: 'radial-gradient(50% 50%, #000 0%, transparent 100%)',
 				}}
 			/>
-			<div className='flex min-h-[62vh] flex-col items-center justify-center gap-6 py-10 md:min-h-[75vh] md:gap-7 md:py-10 md:pb-27 lg:pb-35 xl:mt-15 xl:mb-15 xl:gap-0 xl:py-18 xl:pb-50'>
+			<div className='md:pb-27 lg:pb-35 xl:mt-15 xl:mb-15 xl:py-18 xl:pb-50 flex min-h-[62vh] flex-col items-center justify-center gap-6 py-10 md:min-h-[75vh] md:gap-7 md:py-10 xl:gap-0'>
 				<SectionTitle title='Hello!' />
 				<div className='relative flex h-min max-w-[940px] flex-col gap-[260px] pb-[30px] md:gap-12 md:px-[96px] md:py-12 xl:px-[120px]'>
-					<p className='font-inter-display text-center text-[28px] leading-[1.4em] font-normal tracking-[-0.04em] text-black md:text-[32px] xl:text-[44px]'>
+					<p className='font-inter-display text-center text-[28px] font-normal leading-[1.4em] tracking-[-0.04em] text-black md:text-[32px] xl:text-[44px]'>
 						{Content.map((word, index) => (
 							<IntroTextSectionWordAnimation
 								key={index}

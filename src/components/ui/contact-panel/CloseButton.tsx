@@ -47,17 +47,17 @@ export const CloseButton = ({ handle }) => {
 				scale: 0.94,
 			}}
 			onClick={handle}
-			className='absolute top-10 right-10 z-50 flex h-13 w-13 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 backdrop-blur-xl transition-colors hover:bg-white/10 hover:text-white'
+			className='h-13 w-13 absolute right-10 top-10 z-50 flex cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 backdrop-blur-xl transition-colors hover:bg-white/10 hover:text-white'
 		>
 			<span className='relative block h-9 w-9'>
 				<motion.span
-					className='absolute top-1/2 left-1/2 h-[1.5px] w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current'
+					className='absolute left-1/2 top-1/2 h-[1.5px] w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current'
 					initial={{ rotate: 0 }}
 					animate={{ rotate: 45 }}
 					transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
 				/>
 				<motion.span
-					className='absolute top-1/2 left-1/2 h-[1.5px] w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current'
+					className='absolute left-1/2 top-1/2 h-[1.5px] w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current'
 					initial={{ rotate: 0 }}
 					animate={{ rotate: -45 }}
 					transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}

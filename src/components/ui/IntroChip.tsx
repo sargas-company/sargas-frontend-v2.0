@@ -30,7 +30,7 @@ export const IntroChip = ({ chip }: { chip: ChipConfig }) => {
 	return (
 		<div ref={ref} className={chip.positionClass}>
 			<motion.div
-				className={`flex h-min w-min items-center gap-2 rounded-full bg-white p-1 pr-5 whitespace-nowrap`}
+				className={`flex h-min w-min items-center gap-2 whitespace-nowrap rounded-full bg-white p-1 pr-5`}
 				style={{
 					boxShadow:
 						'rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px',

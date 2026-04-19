@@ -35,7 +35,7 @@ const RecentWorkTooltip = () => {
 	return (
 		<motion.div
 			variants={tooltipVariants}
-			className='pointer-events-none absolute -top-[66px] left-[-42px] inline-flex items-center justify-center gap-2 rounded-full bg-black px-6 py-3 text-[14px] leading-[1.2] font-semibold text-white'
+			className='pointer-events-none absolute -top-[66px] left-[-42px] inline-flex items-center justify-center gap-2 rounded-full bg-black px-6 py-3 text-[14px] font-semibold leading-[1.2] text-white'
 			style={{ willChange: 'transform, opacity' }}
 		>
 			<span className='absolute bottom-[-7px] left-1/2 block h-4 w-4 -translate-x-1/2 rotate-45 bg-black' />
@@ -56,7 +56,7 @@ export const RecentWorkButton = () => {
 	return (
 		<motion.a
 			href='#work'
-			className='group relative flex h-32 w-32 items-center justify-center rounded-full border border-white/80 bg-white/75 text-black backdrop-blur-[2px] transition-colors duration-600 hover:bg-white'
+			className='duration-600 group relative flex h-32 w-32 items-center justify-center rounded-full border border-white/80 bg-white/75 text-black backdrop-blur-[2px] transition-colors hover:bg-white'
 			initial='initial'
 			whileInView='inView'
 			whileHover='hover'

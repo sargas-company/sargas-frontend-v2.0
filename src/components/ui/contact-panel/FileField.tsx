@@ -39,7 +39,7 @@ export function FileField() {
 					<span>{(totalSize() / 1024 / 1024).toFixed(1)} / 100 MB</span>
 				</div>
 
-				<div className='inline-flex h-[42px] items-center rounded-full border border-white/12 bg-white/[0.05] px-4 text-[14px] text-white'>
+				<div className='border-white/12 inline-flex h-[42px] items-center rounded-full border bg-white/[0.05] px-4 text-[14px] text-white'>
 					Choose files
 				</div>
 

@@ -112,7 +112,7 @@ export const FooterSection = () => {
 			id='cta'
 		>
 			<div className='relative mx-auto h-full max-h-none w-full max-w-[100vw] overflow-hidden rounded-[25px] bg-black md:h-[100vh] md:max-h-[100vh] md:max-w-[100vw]'>
-				<div className='pointer-events-none absolute inset-0 z-0 opacity-8 mix-blend-screen'>
+				<div className='opacity-8 pointer-events-none absolute inset-0 z-0 mix-blend-screen'>
 					<Background variant='section' />
 				</div>
 
@@ -165,10 +165,10 @@ export const FooterSection = () => {
 					</div>
 				</motion.div>
 
-				<div className='relative z-10 mt-45 flex flex-col items-center justify-between gap-5 pt-2 pb-10 md:mt-0 md:flex-row md:px-35'>
+				<div className='mt-45 md:px-35 relative z-10 flex flex-col items-center justify-between gap-5 pb-10 pt-2 md:mt-0 md:flex-row'>
 					<div className='flex flex-col items-center gap-1 text-sm text-white/70 md:gap-3.5'>
 						<span className='h-[0.5px] w-full bg-white' />
-						<span className='px-4 whitespace-nowrap text-white'>© Sargas Agency, 2026</span>
+						<span className='whitespace-nowrap px-4 text-white'>© Sargas Agency, 2026</span>
 						<span className='h-[0.5px] w-full bg-white' />
 					</div>
 

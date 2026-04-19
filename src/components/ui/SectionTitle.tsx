@@ -19,7 +19,7 @@ export const SectionTitle = ({
 			/>
 
 			<h4
-				className={`font-serif text-2xl leading-[1.2em] tracking-normal whitespace-nowrap italic ${textColor}`}
+				className={`whitespace-nowrap font-serif text-2xl italic leading-[1.2em] tracking-normal ${textColor}`}
 			>
 				{title}
 			</h4>

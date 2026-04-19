@@ -19,7 +19,7 @@ export const ProjectsLinks = ({ links }: ProjecsLinksProps) => {
 					More <span className='text-black/50'>Projects</span>
 				</h2>
 			</div>
-			<div className='flex flex-col gap-8 md:flex-row md:gap-10 xl:gap-15'>
+			<div className='xl:gap-15 flex flex-col gap-8 md:flex-row md:gap-10'>
 				{links.map((item, index) => {
 					return <BenefitCard {...item} key={index} />
 				})}

@@ -81,7 +81,7 @@ export const PageHero = ({
 					{sections.map((item, index) => {
 						return (
 							<div key={index} className='mb-10 flex flex-col gap-2 sm:mb-0'>
-								<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
+								<h4 className='font-serif text-2xl italic leading-[1.2em] tracking-normal text-black/50'>
 									<HeroSectionLetterAnimation
 										initialDelay={1}
 										delayRate={index * 0.15}
@@ -114,7 +114,7 @@ export const PageHero = ({
 				</div>
 
 				<div className='flex flex-col items-start'>
-					<h4 className='font-serif text-2xl leading-[1.2em] tracking-normal text-black/50 italic'>
+					<h4 className='font-serif text-2xl italic leading-[1.2em] tracking-normal text-black/50'>
 						{['Stack'].map((str, index) => {
 							return (
 								<HeroSectionLetterAnimation

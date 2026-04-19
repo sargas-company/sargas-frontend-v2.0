@@ -11,7 +11,7 @@ export function SuccessPill({ text = 'Thank you! We’ll be in touch soon' }: Su
 			animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
 			exit={{ opacity: 0, y: 10, scale: 0.98, filter: 'blur(8px)' }}
 			transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-			className='relative mt-15 inline-flex h-[64px] min-w-[520px] items-center justify-between rounded-full border border-[#2F7BFF] bg-[rgba(28,52,102,0.24)] px-7 text-white shadow-[0_0_0_1px_rgba(47,123,255,0.18),0_0_28px_rgba(47,123,255,0.12)] backdrop-blur-xl'
+			className='mt-15 relative inline-flex h-[64px] min-w-[520px] items-center justify-between rounded-full border border-[#2F7BFF] bg-[rgba(28,52,102,0.24)] px-7 text-white shadow-[0_0_0_1px_rgba(47,123,255,0.18),0_0_28px_rgba(47,123,255,0.12)] backdrop-blur-xl'
 		>
 			<div className='pointer-events-none absolute inset-0 rounded-full bg-[linear-gradient(90deg,rgba(47,123,255,0.14)_0%,rgba(47,123,255,0.06)_45%,rgba(47,123,255,0.12)_100%)]' />
 

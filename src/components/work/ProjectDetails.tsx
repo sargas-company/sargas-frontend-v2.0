@@ -26,7 +26,7 @@ export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 				<img
 					src={main.img}
 					alt={main.name + ' name'}
-					className='transition-transform duration-750 ease-in-out hover:scale-105'
+					className='duration-750 transition-transform ease-in-out hover:scale-105'
 				/>
 			</div>
 
@@ -37,7 +37,7 @@ export const ProjectDetails = ({ main, details }: ProjectDetailsProps) => {
 							<div className='overflow-hidden rounded-[30px]'>
 								<img
 									src={item.img}
-									className='transition-transform duration-750 ease-in-out hover:scale-105'
+									className='duration-750 transition-transform ease-in-out hover:scale-105'
 									alt={index + 'test'}
 								/>
 							</div>

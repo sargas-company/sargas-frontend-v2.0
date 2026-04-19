@@ -21,7 +21,7 @@ export const Header = () => {
 
 	return (
 		<motion.header
-			className='absolute top-0 left-0 z-20 h-20 w-full px-6 md:px-12 xl:px-30'
+			className='xl:px-30 absolute left-0 top-0 z-20 h-20 w-full px-6 md:px-12'
 			initial={{ opacity: 0, y: -50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{

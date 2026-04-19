@@ -93,9 +93,9 @@ export function ContactForm({ onBookCall }: ContactFormProps) {
 	}
 
 	return (
-		<div className='relative z-[50] min-h-0 px-4 pt-6 pb-6 text-white sm:px-6 md:px-10 lg:px-12 lg:pt-10 lg:pb-10'>
+		<div className='relative z-[50] min-h-0 px-4 pb-6 pt-6 text-white sm:px-6 md:px-10 lg:px-12 lg:pb-10 lg:pt-10'>
 			<div className='max-w-[420px]'>
-				<h2 className='text-[28px] leading-[1.04] font-medium tracking-[-0.04em] sm:text-[32px] md:text-[36px]'>
+				<h2 className='text-[28px] font-medium leading-[1.04] tracking-[-0.04em] sm:text-[32px] md:text-[36px]'>
 					Get in touch to find out
 					<br />
 					how we can collaborate.

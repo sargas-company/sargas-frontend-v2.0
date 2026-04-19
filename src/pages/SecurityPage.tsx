@@ -26,10 +26,10 @@ export const SecurityPage = () => {
 					className='h-full w-full'
 				>
 					<header className='mb-5 border-b border-black/10 pb-4'>
-						<h1 className='text-[44px] font-semibold tracking-[-0.04em] text-balance text-black sm:text-[56px]'>
+						<h1 className='text-balance text-[44px] font-semibold tracking-[-0.04em] text-black sm:text-[56px]'>
 							Security
 						</h1>
-						<p className='mt-3 font-serif text-2xl leading-relaxed tracking-normal whitespace-nowrap text-black/55 italic'>
+						<p className='mt-3 whitespace-nowrap font-serif text-2xl italic leading-relaxed tracking-normal text-black/55'>
 							Last updated: {lastUpdated}
 						</p>
 					</header>
@@ -230,7 +230,7 @@ export const SecurityPage = () => {
 								<li>{AnimatedText({ text: 'To prepare proposals and estimates' })}</li>
 							</ul>
 
-							<p className='mt-4 mb-3'>{AnimatedText({ text: 'Access controls:' })}</p>
+							<p className='mb-3 mt-4'>{AnimatedText({ text: 'Access controls:' })}</p>
 
 							<ul className='list-disc space-y-2 pl-5'>
 								<li>

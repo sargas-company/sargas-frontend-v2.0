@@ -63,7 +63,7 @@ const StepLoader = ({ duration }: { duration: number }) => {
 	return (
 		<div className='relative h-1 w-[3.75rem] overflow-hidden rounded-[6.25rem] bg-black/10'>
 			<motion.div
-				className='absolute top-0 bottom-0 left-0 h-full rounded-[6.25rem] bg-[#1B1B1B]'
+				className='absolute bottom-0 left-0 top-0 h-full rounded-[6.25rem] bg-[#1B1B1B]'
 				initial={{ width: '0%' }}
 				animate={{ width: '100%' }}
 				transition={{ duration: duration / 1000, ease: 'linear' }}
@@ -96,7 +96,7 @@ export const MultiStepInfoSection = () => {
 
 	return (
 		<div className='relative flex w-full flex-col items-stretch justify-start pb-20 md:flex-row'>
-			<div className='relative flex w-full flex-col gap-2 md:mr-6 md:max-w-[22.6875rem] md:min-w-[22.6875rem]'>
+			<div className='relative flex w-full flex-col gap-2 md:mr-6 md:min-w-[22.6875rem] md:max-w-[22.6875rem]'>
 				{steps.map((step) => {
 					const isActive = step.id === currentStep
 
@@ -123,7 +123,7 @@ export const MultiStepInfoSection = () => {
 
 								{isActive && (
 									<div className='flex flex-col gap-[2rem] pb-[1.5rem]'>
-										<p className='text-sm leading-[1.2] font-normal text-[#909090]'>
+										<p className='text-sm font-normal leading-[1.2] text-[#909090]'>
 											{step.description}
 										</p>
 
