@@ -30,7 +30,11 @@ const closeButtonVariants = {
 	},
 }
 
-export const CloseButton = ({ handle }) => {
+type CloseButtonProps = {
+	handle: (value: boolean) => void
+}
+
+export const CloseButton = ({ handle }: CloseButtonProps) => {
 	return (
 		<motion.button
 			type='button'
