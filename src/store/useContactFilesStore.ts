@@ -18,81 +18,79 @@ type ContactFilesState = {
 	totalSize: () => number
 }
 
-export const useContactFilesStore = create<ContactFilesState>(
-	(set, get): ContactFilesState => ({
-		files: [],
-		error: null,
+export const useContactFilesStore = create<ContactFilesState>()((set, get) => ({
+	files: [],
+	error: null,
 
-		setFiles: (nextFiles: File[]): void => {
-			if (nextFiles.length > MAX_FILES_COUNT) {
-				set({
-					error: `You can upload up to ${MAX_FILES_COUNT} files.`,
-				})
-				return
-			}
-
-			const totalSize: number = getTotalSize(nextFiles)
-
-			if (totalSize > MAX_TOTAL_SIZE_BYTES) {
-				set({
-					error: 'Total file size must be less than 100 MB.',
-				})
-				return
-			}
-
+	setFiles: (nextFiles: File[]): void => {
+		if (nextFiles.length > MAX_FILES_COUNT) {
 			set({
-				files: nextFiles,
-				error: null,
+				error: `You can upload up to ${MAX_FILES_COUNT} files.`,
 			})
-		},
+			return
+		}
 
-		addFiles: (incomingFiles: File[]): void => {
-			const currentFiles: File[] = get().files
+		const totalSize = getTotalSize(nextFiles)
 
-			const mergedFiles: File[] = [...currentFiles, ...incomingFiles].filter(
-				(file: File, index: number, arr: File[]) =>
-					index === arr.findIndex((f: File) => f.name === file.name && f.size === file.size)
-			)
-
-			if (mergedFiles.length > MAX_FILES_COUNT) {
-				set({
-					error: `You can upload up to ${MAX_FILES_COUNT} files.`,
-				})
-				return
-			}
-
-			const totalSize: number = getTotalSize(mergedFiles)
-
-			if (totalSize > MAX_TOTAL_SIZE_BYTES) {
-				set({
-					error: 'Total file size must be less than 100 MB.',
-				})
-				return
-			}
-
+		if (totalSize > MAX_TOTAL_SIZE_BYTES) {
 			set({
-				files: mergedFiles,
-				error: null,
+				error: 'Total file size must be less than 100 MB.',
 			})
-		},
+			return
+		}
 
-		removeFile: (index: number): void =>
-			set((state: ContactFilesState) => ({
-				files: state.files.filter((_: File, i: number) => i !== index),
-				error: null,
-			})),
+		set({
+			files: nextFiles,
+			error: null,
+		})
+	},
 
-		resetFiles: (): void =>
+	addFiles: (incomingFiles: File[]): void => {
+		const currentFiles = get().files
+
+		const mergedFiles = [...currentFiles, ...incomingFiles].filter(
+			(file: File, index: number, arr: File[]) =>
+				index === arr.findIndex((f: File) => f.name === file.name && f.size === file.size)
+		)
+
+		if (mergedFiles.length > MAX_FILES_COUNT) {
 			set({
-				files: [],
-				error: null,
-			}),
+				error: `You can upload up to ${MAX_FILES_COUNT} files.`,
+			})
+			return
+		}
 
-		clearError: (): void =>
+		const totalSize = getTotalSize(mergedFiles)
+
+		if (totalSize > MAX_TOTAL_SIZE_BYTES) {
 			set({
-				error: null,
-			}),
+				error: 'Total file size must be less than 100 MB.',
+			})
+			return
+		}
 
-		totalSize: (): number => getTotalSize(get().files),
-	})
-)
+		set({
+			files: mergedFiles,
+			error: null,
+		})
+	},
+
+	removeFile: (index: number): void =>
+		set((state) => ({
+			files: state.files.filter((_: File, i: number) => i !== index),
+			error: null,
+		})),
+
+	resetFiles: (): void =>
+		set({
+			files: [],
+			error: null,
+		}),
+
+	clearError: (): void =>
+		set({
+			error: null,
+		}),
+
+	totalSize: (): number => getTotalSize(get().files),
+}))
