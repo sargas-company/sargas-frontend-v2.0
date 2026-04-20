@@ -150,7 +150,7 @@ export const HeroSection = ({ setOpen }: HeroSectionProps) => {
 				>
 					<NeonFrame>
 						<QuoteSectionButton
-							title='Tell us about your project'
+							title='Get a project estimate'
 							icon={<ArrowRightIcon />}
 							setOpen={setOpen}
 							withOutline
