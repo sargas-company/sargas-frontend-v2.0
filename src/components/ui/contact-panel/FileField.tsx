@@ -1,5 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useContactFilesStore } from '../../../store/useContactFilesStore'
+import {
+	CONTACT_FILE_ACCEPT,
+	useContactFilesStore,
+} from '../../../store/useContactFilesStore'
 import React from 'react'
 
 export function FileField() {
@@ -30,7 +33,7 @@ export function FileField() {
 				<div className='pr-4'>
 					<div className='text-[16px] font-medium text-white'>Upload files</div>
 					<div className='mt-1 text-[13px] text-white/40'>
-						Attach brief, screenshots, docs or references
+						Attach images, videos, docs, PDFs or design references
 					</div>
 				</div>
 
@@ -43,9 +46,13 @@ export function FileField() {
 					Choose files
 				</div>
 
-				<input type='file' multiple onChange={handleFilesChange} className='hidden' />
-
-				{error && <div className='mt-2 px-2 text-[13px] text-[#ff9c85]'>{error}</div>}
+				<input
+					type='file'
+					multiple
+					accept={CONTACT_FILE_ACCEPT}
+					onChange={handleFilesChange}
+					className='hidden'
+				/>
 			</label>
 
 			<AnimatePresence>
@@ -78,6 +85,7 @@ export function FileField() {
 						))}
 					</motion.div>
 				)}
+				{error && <div className='mt-2 px-2 text-[13px] text-[#ff9c85]'>{error}</div>}
 			</AnimatePresence>
 		</div>
 	)
