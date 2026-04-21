@@ -17,6 +17,8 @@ const countries: CountryOption[] = [
 	{ iso: 'pl', name: 'Poland', flag: '🇵🇱', dialCode: '+48' },
 ]
 
+const digitsOnly = (value: string) => value.replace(/\D/g, '')
+
 type PhoneFieldProps = {
 	value: string
 	onChange: (value: string) => void
@@ -93,7 +95,7 @@ export function PhoneField({ value, onChange, country, onCountryChange }: PhoneF
 						inputMode='tel'
 						placeholder='Phone number'
 						value={value}
-						onChange={(e) => onChange(e.target.value)}
+						onChange={(e) => onChange(digitsOnly(e.target.value))}
 						className='ml-3 min-w-0 flex-1 bg-transparent text-[16px] text-white outline-none placeholder:text-white/40'
 					/>
 

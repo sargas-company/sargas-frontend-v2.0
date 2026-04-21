@@ -7,12 +7,14 @@ import { TextareaField } from './TextareaField'
 import { TextField } from './TextField'
 import { EmailField, isEmailValid } from './EmailField'
 import { FileField } from './FileField'
-import type { ContactPanelProps, FormState } from './types'
+import type { ContactFormSubmitPayload, ContactPanelProps, FormState } from './types'
 import { SuccessPill } from './SuccessPill.tsx'
 import { PhoneField } from './PhoneField.tsx'
 import { useContactFilesStore } from '../../../store/useContactFilesStore.ts'
 
 type ContactFormProps = Pick<ContactPanelProps, 'onBookCall' | 'onSubmit'>
+
+const crmApiUrl = import.meta.env.API_CRM?.trim()
 
 const initialForm: FormState = {
 	name: '',
@@ -23,21 +25,31 @@ const initialForm: FormState = {
 	message: '',
 }
 
-export function ContactForm({ onBookCall }: ContactFormProps) {
+export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 	const [form, setForm] = useState<FormState>(initialForm)
 	const [submitAttempted, setSubmitAttempted] = useState(false)
 	const [selectedServices, setSelectedServices] = useState<string[]>([
 		'Web Development',
 		'MVP Development',
 	])
+	const [servicesTouched, setServicesTouched] = useState(false)
 	const [submitting, setSubmitting] = useState(false)
 	const [submitted, setSubmitted] = useState(false)
+	const [submitError, setSubmitError] = useState<string | null>(null)
+	const files = useContactFilesStore((s) => s.files)
+	const resetFiles = useContactFilesStore((s) => s.resetFiles)
+
+	const servicesValid = selectedServices.length > 0
+	const showServicesError = !servicesValid && (servicesTouched || submitAttempted)
 
 	const canSubmit = useMemo(() => {
-		return Boolean(form.name.trim() && form.email.trim() && isEmailValid(form.email))
-	}, [form])
+		return Boolean(
+			form.name.trim() && form.email.trim() && isEmailValid(form.email) && servicesValid
+		)
+	}, [form, servicesValid])
 
 	const toggleService = (service: string) => {
+		setServicesTouched(true)
 		setSelectedServices((prev) =>
 			prev.includes(service) ? prev.filter((item) => item !== service) : [...prev, service]
 		)
@@ -50,43 +62,58 @@ export function ContactForm({ onBookCall }: ContactFormProps) {
 		const nameValid = form.name.trim().length > 0
 		const emailValid = isEmailValid(form.email)
 
-		if (!nameValid || !emailValid || submitting) return
+		if (!nameValid || !emailValid || !servicesValid || submitting) return
 
 		setSubmitting(true)
+		setSubmitError(null)
 
 		try {
+			if (!crmApiUrl) {
+				throw new Error('API_CRM is not configured')
+			}
+
+			const payload: ContactFormSubmitPayload = {
+				name: form.name.trim(),
+				company: form.company.trim(),
+				email: form.email.trim(),
+				phone: form.phone.trim(),
+				phoneCountry: form.phoneCountry,
+				message: form.message.trim(),
+				services: selectedServices,
+				files,
+			}
+
 			const formData = new FormData()
 
-			const files = useContactFilesStore((s) => s.files)
-			const resetFiles = useContactFilesStore((s) => s.resetFiles)
+			formData.append('name', payload.name)
+			formData.append('company', payload.company)
+			formData.append('email', payload.email)
+			formData.append('phone', payload.phone)
+			formData.append('phoneCountry', payload.phoneCountry)
+			formData.append('message', payload.message)
+			formData.append('services', JSON.stringify(payload.services))
 
-			formData.append('name', form.name)
-			formData.append('company', form.company)
-			formData.append('email', form.email)
-			formData.append('phone', form.phone)
-			formData.append('phoneCountry', form.phoneCountry)
-			formData.append('message', form.message)
-			//formData.append('token', process.env.NEXT_PUBLIC_USER_REQUEST_TOKEN);
-
-			selectedServices.forEach((service) => {
-				formData.append('services[]', service)
-			})
-
-			files.forEach((file) => {
+			payload.files.forEach((file) => {
 				formData.append('files', file)
 			})
 
-			await fetch('/user-request', {
+			const response = await fetch(crmApiUrl, {
 				method: 'POST',
 				body: formData,
-
-				headers: {
-					'Content-Type': 'application/json',
-				},
 			})
 
+			if (!response.ok) {
+				throw new Error(`CRM API request failed with status ${response.status}`)
+			}
+
+			await onSubmit?.(payload)
+
 			setSubmitted(true)
+			setForm(initialForm)
 			resetFiles()
+		} catch (error) {
+			console.error('Contact form submit failed:', error)
+			setSubmitError('Something went wrong. Please try again or book a call.')
 		} finally {
 			setSubmitting(false)
 		}
@@ -165,6 +192,12 @@ export function ContactForm({ onBookCall }: ContactFormProps) {
 								/>
 							))}
 						</div>
+
+						{showServicesError && (
+							<p className='mt-3 pl-2 text-[13px] text-[#ff9c85]'>
+								Please select at least one type of work
+							</p>
+						)}
 					</div>
 
 					<div className='mt-7'>
@@ -188,6 +221,8 @@ export function ContactForm({ onBookCall }: ContactFormProps) {
 							<SecondaryAction onClick={onBookCall} />
 						</div>
 					</div>
+
+					{submitError && <p className='mt-4 text-[14px] text-[#ff9c85]'>{submitError}</p>}
 				</form>
 			)}
 		</div>
