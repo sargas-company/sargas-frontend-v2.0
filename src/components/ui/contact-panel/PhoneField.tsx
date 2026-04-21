@@ -245,7 +245,7 @@ export function PhoneField({
 							<div
 								data-lenis-prevent-wheel=''
 								data-lenis-prevent-touch=''
-								className='max-h-[260px] overflow-y-auto overscroll-contain p-2'
+								className='sargas-scrollbar max-h-[260px] overflow-y-auto overscroll-contain p-2'
 							>
 								{countries.map((item) => {
 									const active = item.iso === selectedCountry.iso

@@ -25,7 +25,7 @@ export function TextareaField({ label, value, onChange, placeholder }: TextareaF
 					value={value}
 					onChange={(e) => onChange(e.target.value)}
 					placeholder={placeholder}
-					className='max-h-[260px] min-h-[130px] w-full resize-none overflow-y-auto overscroll-contain rounded-[26px] border border-white/10 bg-white/[0.05] px-6 py-5 pr-16 text-[16px] text-white transition outline-none placeholder:text-white/40 focus:border-white/20 focus:bg-white/[0.07]'
+					className='sargas-scrollbar max-h-[260px] min-h-[130px] w-full resize-none overflow-y-auto overscroll-contain rounded-[26px] border border-white/10 bg-white/[0.05] px-6 py-5 pr-16 text-[16px] text-white transition outline-none placeholder:text-white/40 focus:border-white/20 focus:bg-white/[0.07]'
 				/>
 
 				<AnimatePresence>

@@ -79,6 +79,36 @@ html {
 	padding-left: 0 !important;
 }
 
+.sargas-scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
+}
+
+.sargas-scrollbar::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+.sargas-scrollbar::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.sargas-scrollbar::-webkit-scrollbar-thumb {
+	border: 2px solid transparent;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.22);
+	background-clip: padding-box;
+}
+
+.sargas-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.36);
+	background-clip: padding-box;
+}
+
+.sargas-scrollbar::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
