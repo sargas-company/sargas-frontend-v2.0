@@ -39,7 +39,7 @@ export function SubmitAction({ disabled, loading }: SubmitActionProps) {
 					marginRight: showHover ? 12 : 0,
 				}}
 				transition={spring}
-				className='flex h-[50px] items-center justify-center overflow-hidden rounded-full bg-[rgb(41,91,193)] text-white shadow-[0_8px_24px_rgba(41,91,193,0.28)]'
+				className='hidden sm:flex h-[50px] items-center justify-center overflow-hidden rounded-full bg-[rgb(41,91,193)] text-white shadow-[0_8px_24px_rgba(41,91,193,0.28)]'
 			>
 				<motion.span
 					initial={false}
@@ -62,7 +62,7 @@ export function SubmitAction({ disabled, loading }: SubmitActionProps) {
 					backgroundColor: showHover ? 'rgba(255,255,255,0.09)' : 'rgba(255,255,255,0.06)',
 				}}
 				transition={spring}
-				className='inline-flex h-[58px] items-center rounded-full px-7 text-[18px] font-semibold text-white'
+				className='xs:w-full sm:w-auto inline-flex h-[58px] items-center rounded-full px-7 text-[18px] font-semibold text-white xs:justify-center'
 			>
 				<motion.span
 					initial={false}
@@ -82,7 +82,7 @@ export function SubmitAction({ disabled, loading }: SubmitActionProps) {
 					marginLeft: showHover ? 0 : 12,
 				}}
 				transition={spring}
-				className='flex h-[50px] items-center justify-center overflow-hidden rounded-full bg-white text-black shadow-[0_8px_24px_rgba(255,255,255,0.08)]'
+				className='xs:hidden sm:flex h-[50px] items-center justify-center overflow-hidden rounded-full bg-white text-black shadow-[0_8px_24px_rgba(255,255,255,0.08)]'
 			>
 				<motion.span
 					initial={false}

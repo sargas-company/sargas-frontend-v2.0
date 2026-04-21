@@ -130,7 +130,7 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 		<div
 			data-lenis-prevent-wheel=''
 			data-lenis-prevent-touch=''
-			className='sargas-scrollbar relative z-[50] max-h-[calc(100svh-24px)] overflow-y-auto overscroll-contain px-4 pt-6 pb-6 text-white sm:px-6 md:max-h-[calc(100svh-48px)] md:px-10 lg:px-12 lg:pt-10 lg:pb-10'
+			className='sargas-scrollbar relative z-[50] max-h-[calc(100svh-24px)] overflow-y-auto overscroll-contain px-4 pt-6 pb-6 text-white xs:px-8 xs:pt-10 sm:px-6 md:max-h-[calc(100svh-48px)] md:px-10 lg:px-12 lg:pt-10 lg:pb-10'
 		>
 			<div className='max-w-[520px] pr-18 sm:pr-0'>
 				<h2 className='text-[24px] leading-[1.08] font-medium tracking-[-0.02em] sm:text-[32px] md:text-[36px] md:tracking-[-0.04em]'>
@@ -227,11 +227,11 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 						<FileField />
 					</div>
 
-					<div className='mt-6 flex flex-col gap-5 pt-0 sm:mt-8 sm:flex-row sm:items-end sm:justify-between'>
+					<div className='mt-6 flex flex-col gap-5 pt-0 sm:mt-8 xs:flex-col sm:flex-row sm:items-end sm:justify-between'>
 						<SubmitAction disabled={!canSubmit} loading={submitting} />
 
 						<div className='flex flex-col items-start gap-2 sm:items-end'>
-							<span className='text-[14px] text-white/40 sm:mr-5'>Not yet sure?</span>
+							<span className='text-[14px] text-white/40  xs:hidden sm:mr-5'>Not yet sure?</span>
 							<SecondaryAction onClick={onBookCall} />
 						</div>
 					</div>

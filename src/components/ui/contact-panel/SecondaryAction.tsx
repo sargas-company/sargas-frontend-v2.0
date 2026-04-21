@@ -11,7 +11,7 @@ export function SecondaryAction({ onClick }: SecondaryActionProps) {
 			onClick={onClick}
 			whileHover={{ y: -2, scale: 1.01 }}
 			whileTap={{ scale: 0.98 }}
-			className='inline-flex h-[54px] cursor-pointer items-center rounded-full border border-white/15 px-7 text-[16px] font-medium text-white shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition'
+			className='inline-flex h-[54px] cursor-pointer items-center rounded-full border border-white/15 px-7 text-[16px] font-medium text-white shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition xs:w-full xs:justify-center'
 		>
 			<motion.span
 				className='inline-flex items-center gap-2'
