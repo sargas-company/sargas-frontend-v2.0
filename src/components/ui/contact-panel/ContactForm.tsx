@@ -33,6 +33,7 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 		'MVP Development',
 	])
 	const [servicesTouched, setServicesTouched] = useState(false)
+	const [phoneValid, setPhoneValid] = useState(true)
 	const [submitting, setSubmitting] = useState(false)
 	const [submitted, setSubmitted] = useState(false)
 	const [submitError, setSubmitError] = useState<string | null>(null)
@@ -41,12 +42,17 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 
 	const servicesValid = selectedServices.length > 0
 	const showServicesError = !servicesValid && (servicesTouched || submitAttempted)
+	const phoneValidForSubmit = !form.phone.trim() || phoneValid
 
 	const canSubmit = useMemo(() => {
 		return Boolean(
-			form.name.trim() && form.email.trim() && isEmailValid(form.email) && servicesValid
+			form.name.trim() &&
+				form.email.trim() &&
+				isEmailValid(form.email) &&
+				servicesValid &&
+				phoneValidForSubmit
 		)
-	}, [form, servicesValid])
+	}, [form, phoneValidForSubmit, servicesValid])
 
 	const toggleService = (service: string) => {
 		setServicesTouched(true)
@@ -62,7 +68,7 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 		const nameValid = form.name.trim().length > 0
 		const emailValid = isEmailValid(form.email)
 
-		if (!nameValid || !emailValid || !servicesValid || submitting) return
+		if (!nameValid || !emailValid || !servicesValid || !phoneValidForSubmit || submitting) return
 
 		setSubmitting(true)
 		setSubmitError(null)
@@ -110,6 +116,7 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 
 			setSubmitted(true)
 			setForm(initialForm)
+			setPhoneValid(true)
 			resetFiles()
 		} catch (error) {
 			console.error('Contact form submit failed:', error)
@@ -168,6 +175,9 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 								onCountryChange={(value) =>
 									setForm((prev) => ({ ...prev, phoneCountry: value }))
 								}
+								isValid={phoneValid}
+								onValidityChange={setPhoneValid}
+								showError={submitAttempted}
 							/>
 						</div>
 					</div>

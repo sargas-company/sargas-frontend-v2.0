@@ -1,9 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import IntlTelInput from 'intl-tel-input/reactWithUtils'
+import type { IntlTelInputRef } from 'intl-tel-input/reactWithUtils'
+import type { Iso2 } from 'intl-tel-input'
 import { FieldLabel } from './FieldLabel'
 
 type CountryOption = {
-	iso: string
+	iso: Iso2
 	name: string
 	flag: string
 	dialCode: string
@@ -17,18 +20,31 @@ const countries: CountryOption[] = [
 	{ iso: 'pl', name: 'Poland', flag: '🇵🇱', dialCode: '+48' },
 ]
 
-const digitsOnly = (value: string) => value.replace(/\D/g, '')
+const allowedCountryCodes = countries.map((item) => item.iso)
 
 type PhoneFieldProps = {
 	value: string
 	onChange: (value: string) => void
 	country: string
 	onCountryChange: (country: string) => void
+	isValid: boolean
+	onValidityChange: (isValid: boolean) => void
+	showError?: boolean
 }
 
-export function PhoneField({ value, onChange, country, onCountryChange }: PhoneFieldProps) {
+export function PhoneField({
+	value,
+	onChange,
+	country,
+	onCountryChange,
+	isValid,
+	onValidityChange,
+	showError = false,
+}: PhoneFieldProps) {
 	const [open, setOpen] = useState(false)
+	const [touched, setTouched] = useState(false)
 	const rootRef = useRef<HTMLDivElement | null>(null)
+	const phoneInputRef = useRef<IntlTelInputRef | null>(null)
 
 	const selectedCountry = useMemo(() => {
 		return countries.find((item) => item.iso === country) ?? countries[0]
@@ -46,7 +62,50 @@ export function PhoneField({ value, onChange, country, onCountryChange }: PhoneF
 		return () => document.removeEventListener('mousedown', handleClickOutside)
 	}, [])
 
+	useEffect(() => {
+		const instance = phoneInputRef.current?.getInstance()
+		if (!instance) return
+
+		const currentCountry = instance.getSelectedCountryData()?.iso2
+		if (currentCountry !== selectedCountry.iso) {
+			instance.setCountry(selectedCountry.iso)
+		}
+
+		if (!value.trim()) {
+			onValidityChange(true)
+			return
+		}
+
+		onValidityChange(instance.isValidNumber() ?? false)
+	}, [onValidityChange, selectedCountry.iso, value])
+
+	const syncPhoneValue = () => {
+		const input = phoneInputRef.current?.getInput()
+		const instance = phoneInputRef.current?.getInstance()
+		const inputValue = input?.value.trim() ?? ''
+
+		if (!inputValue) {
+			onChange('')
+			onValidityChange(true)
+			return
+		}
+
+		onChange(instance?.getNumber() ?? inputValue)
+		onValidityChange(instance?.isValidNumber() ?? false)
+	}
+
+	const handleCountrySelect = (iso: Iso2) => {
+		setTouched(true)
+		onCountryChange(iso)
+		setOpen(false)
+
+		const instance = phoneInputRef.current?.getInstance()
+		instance?.setCountry(iso)
+		syncPhoneValue()
+	}
+
 	const filled = value.trim().length > 0
+	const showPhoneError = filled && !isValid && (touched || showError)
 
 	return (
 		<div className='block'>
@@ -90,17 +149,42 @@ export function PhoneField({ value, onChange, country, onCountryChange }: PhoneF
 						{selectedCountry.dialCode}
 					</span>
 
-					<input
-						type='tel'
-						inputMode='tel'
-						placeholder='Phone number'
+					<IntlTelInput
+						ref={phoneInputRef}
 						value={value}
-						onChange={(e) => onChange(digitsOnly(e.target.value))}
-						className='ml-3 min-w-0 flex-1 bg-transparent text-[16px] text-white outline-none placeholder:text-white/40'
+						initialCountry={selectedCountry.iso}
+						onlyCountries={allowedCountryCodes}
+						allowDropdown={false}
+						showFlags={false}
+						nationalMode
+						formatAsYouType
+						formatOnDisplay
+						strictMode
+						autoPlaceholder='aggressive'
+						placeholderNumberType='MOBILE'
+						containerClass='flex min-w-0 flex-1'
+						onChangeNumber={() => syncPhoneValue()}
+						onChangeValidity={(nextIsValid) => {
+							onValidityChange(
+								!phoneInputRef.current?.getInput()?.value.trim() || nextIsValid
+							)
+						}}
+						onChangeCountry={(iso) => {
+							if (allowedCountryCodes.includes(iso as Iso2)) {
+								onCountryChange(iso)
+							}
+						}}
+						inputProps={{
+							'aria-invalid': showPhoneError,
+							'aria-describedby': showPhoneError ? 'phone-error' : undefined,
+							onBlur: () => setTouched(true),
+							className:
+								'ml-3 min-w-0 flex-1 bg-transparent text-[16px] text-white outline-none placeholder:text-white/40',
+						}}
 					/>
 
 					<AnimatePresence>
-						{filled && (
+						{filled && isValid && (
 							<motion.div
 								initial={{ opacity: 0, scale: 0.72, x: 8, filter: 'blur(6px)' }}
 								animate={{ opacity: 1, scale: 1, x: 0, filter: 'blur(0px)' }}
@@ -113,6 +197,21 @@ export function PhoneField({ value, onChange, country, onCountryChange }: PhoneF
 						)}
 					</AnimatePresence>
 				</div>
+
+				<AnimatePresence>
+					{showPhoneError && (
+						<motion.p
+							id='phone-error'
+							initial={{ opacity: 0, y: 6 }}
+							animate={{ opacity: 1, y: 0 }}
+							exit={{ opacity: 0, y: 6 }}
+							transition={{ duration: 0.18 }}
+							className='mt-2 pl-2 text-[13px] text-[#ff9c85]'
+						>
+							Please enter a valid phone number
+						</motion.p>
+					)}
+				</AnimatePresence>
 
 				<AnimatePresence>
 					{open && (
@@ -131,10 +230,7 @@ export function PhoneField({ value, onChange, country, onCountryChange }: PhoneF
 										<button
 											key={item.iso}
 											type='button'
-											onClick={() => {
-												onCountryChange(item.iso)
-												setOpen(false)
-											}}
+											onClick={() => handleCountrySelect(item.iso)}
 											className={`flex w-full items-center justify-between rounded-[14px] px-3 py-3 text-left transition ${
 												active ? 'bg-white/[0.08]' : 'hover:bg-white/[0.05]'
 											}`}
