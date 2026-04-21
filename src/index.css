@@ -71,6 +71,14 @@ html {
 	scroll-behavior: smooth;
 }
 
+.sargas-phone-input .iti__country-container {
+	display: none;
+}
+
+.sargas-phone-input .iti__tel-input {
+	padding-left: 0 !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,26 +1,37 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import IntlTelInput from 'intl-tel-input/reactWithUtils'
+import IntlTelInput, { intlTelInput } from 'intl-tel-input/reactWithUtils'
 import type { IntlTelInputRef } from 'intl-tel-input/reactWithUtils'
-import type { Iso2 } from 'intl-tel-input'
+import type { Iso2, NumberType } from 'intl-tel-input'
 import { FieldLabel } from './FieldLabel'
 
 type CountryOption = {
 	iso: Iso2
 	name: string
 	flag: string
+}
+
+type CountryWithDialCode = CountryOption & {
 	dialCode: string
 }
 
-const countries: CountryOption[] = [
-	{ iso: 'us', name: 'United States', flag: '🇺🇸', dialCode: '+1' },
-	{ iso: 'ua', name: 'Ukraine', flag: '🇺🇦', dialCode: '+380' },
-	{ iso: 'gb', name: 'United Kingdom', flag: '🇬🇧', dialCode: '+44' },
-	{ iso: 'de', name: 'Germany', flag: '🇩🇪', dialCode: '+49' },
-	{ iso: 'pl', name: 'Poland', flag: '🇵🇱', dialCode: '+48' },
+const countryOptions: CountryOption[] = [
+	{ iso: 'us', name: 'United States', flag: '🇺🇸' },
+	{ iso: 'ua', name: 'Ukraine', flag: '🇺🇦' },
+	{ iso: 'gb', name: 'United Kingdom', flag: '🇬🇧' },
+	{ iso: 'de', name: 'Germany', flag: '🇩🇪' },
+	{ iso: 'pl', name: 'Poland', flag: '🇵🇱' },
 ]
 
+const dialCodesByIso = new Map(
+	intlTelInput.getCountryData().map(({ iso2, dialCode }) => [iso2, `+${dialCode}`])
+)
+const countries: CountryWithDialCode[] = countryOptions.map((item) => ({
+	...item,
+	dialCode: dialCodesByIso.get(item.iso) ?? '',
+}))
 const allowedCountryCodes = countries.map((item) => item.iso)
+const allowedNumberTypes: NumberType[] = ['MOBILE', 'FIXED_LINE']
 
 type PhoneFieldProps = {
 	value: string
@@ -76,7 +87,7 @@ export function PhoneField({
 			return
 		}
 
-		onValidityChange(instance.isValidNumber() ?? false)
+		onValidityChange(instance.isValidNumberPrecise() ?? false)
 	}, [onValidityChange, selectedCountry.iso, value])
 
 	const syncPhoneValue = () => {
@@ -91,7 +102,7 @@ export function PhoneField({
 		}
 
 		onChange(instance?.getNumber() ?? inputValue)
-		onValidityChange(instance?.isValidNumber() ?? false)
+		onValidityChange(instance?.isValidNumberPrecise() ?? false)
 	}
 
 	const handleCountrySelect = (iso: Iso2) => {
@@ -118,6 +129,9 @@ export function PhoneField({
 				<div className='flex h-[64px] items-center rounded-full border border-white/10 bg-white/[0.05] px-3'>
 					<button
 						type='button'
+						aria-expanded={open}
+						aria-haspopup='listbox'
+						aria-label='Select phone country'
 						onClick={() => setOpen((prev) => !prev)}
 						className='inline-flex h-[48px] shrink-0 items-center gap-3 rounded-full bg-white/[0.05] px-4 transition hover:bg-white/[0.08]'
 					>
@@ -154,15 +168,18 @@ export function PhoneField({
 						value={value}
 						initialCountry={selectedCountry.iso}
 						onlyCountries={allowedCountryCodes}
+						allowedNumberTypes={allowedNumberTypes}
 						allowDropdown={false}
 						showFlags={false}
-						nationalMode
+						nationalMode={false}
+						separateDialCode
 						formatAsYouType
 						formatOnDisplay
 						strictMode
+						usePreciseValidation
 						autoPlaceholder='aggressive'
 						placeholderNumberType='MOBILE'
-						containerClass='flex min-w-0 flex-1'
+						containerClass='sargas-phone-input flex min-w-0 flex-1'
 						onChangeNumber={() => syncPhoneValue()}
 						onChangeValidity={(nextIsValid) => {
 							onValidityChange(
@@ -177,6 +194,7 @@ export function PhoneField({
 						inputProps={{
 							'aria-invalid': showPhoneError,
 							'aria-describedby': showPhoneError ? 'phone-error' : undefined,
+							autoComplete: 'tel',
 							onBlur: () => setTouched(true),
 							className:
 								'ml-3 min-w-0 flex-1 bg-transparent text-[16px] text-white outline-none placeholder:text-white/40',
@@ -216,13 +234,19 @@ export function PhoneField({
 				<AnimatePresence>
 					{open && (
 						<motion.div
+							role='listbox'
+							aria-label='Phone country'
 							initial={{ opacity: 0, y: 8, scale: 0.98 }}
 							animate={{ opacity: 1, y: 0, scale: 1 }}
 							exit={{ opacity: 0, y: 8, scale: 0.98 }}
 							transition={{ duration: 0.18 }}
 							className='absolute top-[72px] left-0 z-[90] min-w-[260px] overflow-hidden rounded-[20px] border border-white/10 bg-[#111214] shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl'
 						>
-							<div className='max-h-[260px] overflow-y-auto p-2'>
+							<div
+								data-lenis-prevent-wheel=''
+								data-lenis-prevent-touch=''
+								className='max-h-[260px] overflow-y-auto overscroll-contain p-2'
+							>
 								{countries.map((item) => {
 									const active = item.iso === selectedCountry.iso
 
@@ -230,6 +254,8 @@ export function PhoneField({
 										<button
 											key={item.iso}
 											type='button'
+											role='option'
+											aria-selected={active}
 											onClick={() => handleCountrySelect(item.iso)}
 											className={`flex w-full items-center justify-between rounded-[14px] px-3 py-3 text-left transition ${
 												active ? 'bg-white/[0.08]' : 'hover:bg-white/[0.05]'

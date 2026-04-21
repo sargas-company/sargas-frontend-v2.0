@@ -84,7 +84,7 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 				email: form.email.trim(),
 				phone: form.phone.trim(),
 				phoneCountry: form.phoneCountry,
-				message: form.message.trim(),
+				message: form.message,
 				services: selectedServices,
 				files,
 			}
