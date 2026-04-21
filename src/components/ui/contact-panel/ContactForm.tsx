@@ -132,8 +132,8 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 			data-lenis-prevent-touch=''
 			className='sargas-scrollbar relative z-[50] max-h-[calc(100svh-24px)] overflow-y-auto overscroll-contain px-4 pt-6 pb-6 text-white sm:px-6 md:max-h-[calc(100svh-48px)] md:px-10 lg:px-12 lg:pt-10 lg:pb-10'
 		>
-			<div className='max-w-[420px]'>
-				<h2 className='text-[28px] leading-[1.04] font-medium tracking-[-0.04em] sm:text-[32px] md:text-[36px]'>
+			<div className='max-w-[520px] pr-18 sm:pr-0'>
+				<h2 className='text-[24px] leading-[1.08] font-medium tracking-[-0.02em] sm:text-[32px] md:text-[36px] md:tracking-[-0.04em]'>
 					Get in touch to find out
 					<br />
 					how we can collaborate.
@@ -163,7 +163,7 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 							optional
 						/>
 
-						<div className='col-span-2'>
+						<div className='md:col-span-2'>
 							<EmailField
 								value={form.email}
 								onChange={(value) => setForm((prev) => ({ ...prev, email: value }))}
@@ -171,7 +171,7 @@ export function ContactForm({ onBookCall, onSubmit }: ContactFormProps) {
 							/>
 						</div>
 
-						<div className='col-span-2'>
+						<div className='md:col-span-2'>
 							<PhoneField
 								value={form.phone}
 								onChange={(value) => setForm((prev) => ({ ...prev, phone: value }))}

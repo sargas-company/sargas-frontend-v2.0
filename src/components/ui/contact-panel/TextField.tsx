@@ -45,7 +45,7 @@ export function TextField({
 					onBlur={() => setTouched(true)}
 					type={type}
 					placeholder={placeholder}
-					className={`h-[64px] w-full rounded-full bg-white/[0.05] px-7 pr-16 text-[16px] text-white transition outline-none placeholder:text-white/40 ${
+					className={`h-[58px] w-full rounded-full bg-white/[0.05] px-5 pr-14 text-[16px] text-white transition outline-none placeholder:text-white/40 sm:h-[64px] sm:px-7 sm:pr-16 ${
 						hasRequiredError
 							? 'border border-[#ff7a59]/70'
 							: 'border border-white/10 focus:border-white/20 focus:bg-white/[0.07]'

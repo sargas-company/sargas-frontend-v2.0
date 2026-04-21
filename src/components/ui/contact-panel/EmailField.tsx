@@ -18,7 +18,7 @@ export function EmailField({ value, onChange }: EmailFieldProps) {
 	const emailError = (isFilled && !isValidEmail(value)) || (touched && !isFilled)
 
 	return (
-		<label className='col-span-2 block'>
+		<label className='block'>
 			<span className='mb-3 block text-[15px] font-medium text-white'>
 				Email Address <span className='text-[#2F7BFF]'>*</span>
 			</span>
@@ -30,7 +30,7 @@ export function EmailField({ value, onChange }: EmailFieldProps) {
 					value={value}
 					onBlur={() => setTouched(true)}
 					onChange={(e) => onChange(e.target.value)}
-					className={`h-[64px] w-full rounded-full bg-white/[0.05] px-7 pr-14 text-[16px] text-white transition outline-none placeholder:text-white/40 ${
+					className={`h-[58px] w-full rounded-full bg-white/[0.05] px-5 pr-14 text-[16px] text-white transition outline-none placeholder:text-white/40 sm:h-[64px] sm:px-7 ${
 						emailError
 							? 'border border-[#ff7a59]/70'
 							: 'border border-white/10 focus:border-white/20'

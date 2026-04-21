@@ -4,6 +4,7 @@ import { CloseButton } from './CloseButton'
 import { ContactForm } from './ContactForm'
 import { IntroStripes } from './IntroStripes'
 import type { ContactPanelProps } from './types'
+import { useContactFilesStore } from '../../../store/useContactFilesStore'
 
 const overlayVariants = {
 	hidden: {
@@ -54,12 +55,12 @@ const panelVariants = {
 
 export default function ContactPanel({ open, setOpen, onBookCall, onSubmit }: ContactPanelProps) {
 	const [showIntroStripes, setShowIntroStripes] = useState(true)
+	const resetFiles = useContactFilesStore((s) => s.resetFiles)
 
 	useEffect(() => {
-		if (!open) return
-
+		resetFiles()
 		setShowIntroStripes(true)
-	}, [open])
+	}, [open, resetFiles])
 
 	const handleClose = () => {
 		setOpen(false)

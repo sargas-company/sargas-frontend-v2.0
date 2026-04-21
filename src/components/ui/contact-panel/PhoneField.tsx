@@ -126,14 +126,14 @@ export function PhoneField({
 			</div>
 
 			<div ref={rootRef} className='relative'>
-				<div className='flex h-[64px] items-center rounded-full border border-white/10 bg-white/[0.05] px-3'>
+				<div className='flex h-[58px] items-center rounded-full border border-white/10 bg-white/[0.05] px-2 sm:h-[64px] sm:px-3'>
 					<button
 						type='button'
 						aria-expanded={open}
 						aria-haspopup='listbox'
 						aria-label='Select phone country'
 						onClick={() => setOpen((prev) => !prev)}
-						className='inline-flex h-[48px] shrink-0 items-center gap-3 rounded-full bg-white/[0.05] px-4 transition hover:bg-white/[0.08]'
+						className='inline-flex h-[44px] shrink-0 items-center gap-2 rounded-full bg-white/[0.05] px-3 transition hover:bg-white/[0.08] sm:h-[48px] sm:gap-3 sm:px-4'
 					>
 						<span className='text-[18px] leading-none'>{selectedCountry.flag}</span>
 
@@ -157,9 +157,9 @@ export function PhoneField({
 						</motion.svg>
 					</button>
 
-					<div className='mx-3 h-8 w-px bg-white/10' />
+					<div className='mx-2 h-8 w-px bg-white/10 sm:mx-3' />
 
-					<span className='shrink-0 text-[16px] text-white/90'>
+					<span className='shrink-0 text-[15px] text-white/90 sm:text-[16px]'>
 						{selectedCountry.dialCode}
 					</span>
 
@@ -197,7 +197,7 @@ export function PhoneField({
 							autoComplete: 'tel',
 							onBlur: () => setTouched(true),
 							className:
-								'ml-3 min-w-0 flex-1 bg-transparent text-[16px] text-white outline-none placeholder:text-white/40',
+								'ml-2 min-w-0 flex-1 bg-transparent text-[16px] text-white outline-none placeholder:text-white/40 sm:ml-3',
 						}}
 					/>
 

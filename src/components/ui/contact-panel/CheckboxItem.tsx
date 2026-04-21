@@ -12,7 +12,7 @@ export function CheckboxItem({ label, checked, onToggle }: CheckboxItemProps) {
 			type='button'
 			onClick={onToggle}
 			whileTap={{ scale: 0.98 }}
-			className='group flex items-center gap-3 text-left'
+			className='group flex items-start gap-3 text-left'
 		>
 			<motion.span
 				animate={{
@@ -21,7 +21,7 @@ export function CheckboxItem({ label, checked, onToggle }: CheckboxItemProps) {
 					scale: checked ? 1.02 : 1,
 				}}
 				transition={{ duration: 0.22 }}
-				className='relative flex h-6 w-6 items-center justify-center rounded-[8px] border'
+				className='relative mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[8px] border'
 			>
 				<AnimatePresence>
 					{checked && (

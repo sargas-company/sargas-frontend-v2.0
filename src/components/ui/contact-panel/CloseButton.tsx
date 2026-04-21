@@ -51,9 +51,9 @@ export const CloseButton = ({ handle }: CloseButtonProps) => {
 				scale: 0.94,
 			}}
 			onClick={() => handle(false)}
-			className='absolute top-10 right-10 z-50 flex h-13 w-13 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 backdrop-blur-xl transition-colors hover:bg-white/10 hover:text-white'
+			className='absolute top-5 right-5 z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 backdrop-blur-xl transition-colors hover:bg-white/10 hover:text-white sm:top-10 sm:right-10 sm:h-13 sm:w-13'
 		>
-			<span className='relative block h-9 w-9'>
+			<span className='relative block h-8 w-8 sm:h-9 sm:w-9'>
 				<motion.span
 					className='absolute top-1/2 left-1/2 h-[1.5px] w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-current'
 					initial={{ rotate: 0 }}

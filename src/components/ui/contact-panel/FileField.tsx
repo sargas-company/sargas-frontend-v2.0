@@ -29,20 +29,20 @@ export function FileField() {
 				<span className='text-[13px] font-normal text-white/35'>(optional)</span>
 			</div>
 
-			<label className='flex min-h-[64px] w-full cursor-pointer items-center justify-between rounded-[26px] border border-dashed border-white/15 bg-white/[0.04] px-6 py-4 transition hover:border-white/25 hover:bg-white/[0.06]'>
-				<div className='pr-4'>
+			<label className='flex min-h-[64px] w-full cursor-pointer flex-col gap-4 rounded-[26px] border border-dashed border-white/15 bg-white/[0.04] px-5 py-4 transition hover:border-white/25 hover:bg-white/[0.06] sm:flex-row sm:items-center sm:justify-between sm:px-6'>
+				<div className='sm:pr-4'>
 					<div className='text-[16px] font-medium text-white'>Upload files</div>
 					<div className='mt-1 text-[13px] text-white/40'>
 						Attach images, videos, docs, PDFs or design references
 					</div>
 				</div>
 
-				<div className='mt-2 flex items-center justify-between px-1 text-[13px] text-white/40'>
+				<div className='flex items-center justify-between px-1 text-[13px] text-white/40 sm:mt-2'>
 					<span className='mr-2'>{files.length}/20 files</span>
 					<span>{(totalSize() / 1024 / 1024).toFixed(1)} / 100 MB</span>
 				</div>
 
-				<div className='inline-flex h-[42px] items-center rounded-full border border-white/12 bg-white/[0.05] px-4 text-[14px] text-white'>
+				<div className='inline-flex h-[42px] w-full items-center justify-center rounded-full border border-white/12 bg-white/[0.05] px-4 text-[14px] text-white sm:w-auto'>
 					Choose files
 				</div>
 
