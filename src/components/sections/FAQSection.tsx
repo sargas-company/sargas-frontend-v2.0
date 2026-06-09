@@ -161,7 +161,7 @@ const FAQSection: React.FC = () => {
 												width={200}
 												height={200}
 												src={avatarSrc}
-												alt={name}
+												alt={''}
 												className='h-full w-full object-cover'
 											/>
 										</div>
