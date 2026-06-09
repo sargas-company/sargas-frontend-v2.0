@@ -4,11 +4,32 @@ import { FAQPlusIcon } from '../ui/icons/FAQPlusIcon.tsx'
 import { motion } from 'framer-motion'
 import { ArrowRightIcon } from '../ui/icons/ArrowRightIcon.tsx'
 import { HeroSectionButton } from '../ui/HeroSectionButton.tsx'
+import avatarSrc from "../../assets/avatars/avatar_5.png";
+import {BenefitCardCustom} from "../ui/BenefitCardCustom.tsx";
 
 type FAQItem = {
 	question: string
 	answer: string
 }
+
+type CardStat = {
+	title: string
+	size: string | number
+	period: string
+}
+
+const cards: CardStat[] = [
+	{
+		title: 'Web App & UX/UI Redesign for Community Engagement Co',
+		size: '10k - 49k',
+		period: 'Jun 2023 - Ongoing',
+	},
+	{
+		title: 'Website/Platform Development & UI/UX Design',
+		size: '10k - 49k',
+		period: 'Jan 2023 - March 2025',
+	},
+]
 
 const FAQ_ITEMS: FAQItem[] = [
 	{
@@ -121,21 +142,40 @@ const FAQSection: React.FC = () => {
 						className='mx-auto w-full max-w-[600px] lg:max-w-[500px]'
 					>
 						<div className='rounded-2xl bg-[#e8e8e8] p-6 shadow-[0_0_0_8px_rgba(255,255,255,0.25),12px_16px_16px_rgba(0,0,0,0.1)] md:p-8'>
-							<div className='flex items-center gap-6'>
-								<div className='h-[82px] w-[82px] overflow-hidden rounded-full shadow-[0_0_0_8px_#ffffff40,12px_16px_16px_#0000001a]'>
-									<img
-										src='https://sargas.io/logo.png'
-										alt='Portrait'
-										className='h-full w-full object-contain'
-									/>
-								</div>
+							<div className='flex justify-center items-center gap-6'>
+								<motion.div
+									className='mt-3 flex items-center gap-4'
+									initial={{ opacity: 0, y: -20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									viewport={{ once: true, amount: 0.5 }}
+									transition={{
+										type: 'tween',
+										duration: 0.6,
+										ease: 'easeOut',
+										delay: 0.4 + 0.2,
+									}}
+								>
+									<BenefitCardCustom href={''}>
+										<div className='h-[64px] w-[64px] overflow-hidden rounded-full bg-black/10'>
+											<img
+												width={200}
+												height={200}
+												src={avatarSrc}
+												alt={name}
+												className='h-full w-full object-cover'
+											/>
+										</div>
+
+										<div className='flex flex-col'>
+											<span className='text-[16px] leading-tight font-medium text-black'>Kudin Dmytro</span>
+											<span className='text-[14px] leading-tight text-black/60'>{'CTO, Sargas'}</span>
+										</div>
+									</BenefitCardCustom>
+								</motion.div>
 
 								<div className='flex flex-col leading-tight'>
 									<p className='text-[22px] leading-[1.7] font-medium tracking-[-0.02em] text-black'>
 										Have more questions?
-									</p>
-									<p className='text-[22px] leading-[1.7] font-medium tracking-[-0.02em] text-black'>
-										Book a free discovery call
 									</p>
 								</div>
 							</div>
