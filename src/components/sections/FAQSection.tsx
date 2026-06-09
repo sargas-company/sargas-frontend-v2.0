@@ -12,12 +12,6 @@ type FAQItem = {
 	answer: string
 }
 
-type CardStat = {
-	title: string
-	size: string | number
-	period: string
-}
-
 const FAQ_ITEMS: FAQItem[] = [
 	{
 		question: 'How fast can we start?',
