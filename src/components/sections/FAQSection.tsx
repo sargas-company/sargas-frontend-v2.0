@@ -18,19 +18,6 @@ type CardStat = {
 	period: string
 }
 
-const cards: CardStat[] = [
-	{
-		title: 'Web App & UX/UI Redesign for Community Engagement Co',
-		size: '10k - 49k',
-		period: 'Jun 2023 - Ongoing',
-	},
-	{
-		title: 'Website/Platform Development & UI/UX Design',
-		size: '10k - 49k',
-		period: 'Jan 2023 - March 2025',
-	},
-]
-
 const FAQ_ITEMS: FAQItem[] = [
 	{
 		question: 'How fast can we start?',
